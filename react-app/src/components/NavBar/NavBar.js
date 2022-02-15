@@ -30,7 +30,7 @@ const NavBar = ({ landingPage }) => {
                         {/* <div id="placesToStayBottomBorder"></div> */}
                     </div>
                     <div className="profileButtonContainer">
-                        <div className="navBarProfileButton" onClick={() => setProfileModal(true)}>
+                        <div className="navBarProfileButton" onClick={() => setProfileModal(!profileModal)}>
                             <BiMenu style={{ fontSize: "22px", marginRight: "5px" }} />
                             <FaRegUserCircle style={{ fontSize: "22px" }} />
                         </div>
