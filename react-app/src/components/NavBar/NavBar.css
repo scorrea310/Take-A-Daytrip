@@ -1,0 +1,121 @@
+.NavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    /* background-color: aqua; */
+    justify-content: center;
+}
+
+.navLogoContainer {
+    display: flex;
+    width: 312px;
+    /* background-color: blueviolet; */
+    flex-shrink: 2;
+    flex-direction: row;
+    align-items: center;
+}
+
+.centerNavBarContainer {
+    display: flex;
+    width: 85%;
+    height: 80px;
+    flex-direction: row;
+    /* background-color: brown; */
+    /* flex: 1 0 140px */
+    
+}
+
+#navLogo {
+    width: 50px;
+    height: 50px;
+    background-image: url("../../images/Screen\ Shot\ 2022-02-14\ at\ 9.03.44\ PM.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    display: none;
+    border-radius: 50%;
+    
+
+}
+
+.takeADayTripText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background: -webkit-linear-gradient(
+  45deg,
+  rgb(1, 1, 164) 0%,
+  rgb(116, 1, 142) 11%,
+  hsl(315deg 100% 27%) 22%,
+  hsl(329deg 100% 36%) 33%,
+  hsl(337deg 100% 43%) 44%,
+  hsl(357deg 91% 59%) 56%,
+  hsl(17deg 100% 59%) 67%,
+  hsl(34deg 100% 53%) 78%,
+  hsl(45deg 100% 50%) 89%,
+  hsl(55deg 100% 50%) 100%
+);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+}
+
+.placesToStayTextContainer {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 45px;
+}
+
+#placesToStayBottomBorder {
+    width: 20px;
+    /* height: 10px; */
+    border-bottom: 1px solid gray;
+    margin-top: 10px;
+}
+
+.profileButtonContainer {
+    display: flex;
+    /* background-color: aqua; */
+    width: fit-content;
+    height: 80px;
+    width: 300px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navBarProfileButton {
+   width: 77px;
+   height: 42px;
+   border-radius: 21px;
+   background-color: #FFFFFF;
+   border: 1px solid #DDDDDD;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+}
+
+.searchStayContainer{
+    display: flex;
+    width: 100%;
+    height: 64px;
+    background-color: aqua;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.searchStayForm {
+    display: flex;
+    width: 50%;
+    height: 64px;
+    background-color: rgb(247, 247, 247);
+    justify-content: center;
+    border-radius: 32px;
+    border: 1px solid rgb(221, 221, 221) 
+}
