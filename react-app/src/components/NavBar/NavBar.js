@@ -16,8 +16,6 @@ const NavBar = ({ landingPage }) => {
 
 
 
-
-
     return (
         <>
             <div className="NavBarContainer">
