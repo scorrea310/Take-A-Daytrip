@@ -8,7 +8,7 @@ class Reservation(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     check_in = db.Column(db.DateTime, nullable=False)
     check_out = db.Column(db.DateTime, nullable=False)
-    price = db.Column(db.Float(precision=6, decimal_return_scale=2), nullable=False)
+    price = db.Column(db.Numeric(9, 2), nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
     updated_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
 

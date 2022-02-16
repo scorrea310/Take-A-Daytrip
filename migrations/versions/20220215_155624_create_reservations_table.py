@@ -24,7 +24,7 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('check_in', sa.DateTime(), nullable=False),
     sa.Column('check_out', sa.DateTime(), nullable=False),
-    sa.Column('price', sa.Float(precision=6, decimal_return_scale=2), nullable=False),
+    sa.Column('price',sa.Numeric(precision=9, scale=2), nullable=False),
     sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.Column('updated_at', sa.DateTime(), nullable=False),
     sa.ForeignKeyConstraint(['spot_id'], ['spots.id'], ),
