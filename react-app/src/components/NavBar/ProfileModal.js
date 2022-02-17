@@ -46,7 +46,8 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal }
 
 
     return (
-        <div>hello</div>
+        { sessionUser? returnValue: null }
+
     )
 
 
