@@ -1,0 +1,96 @@
+.LoginForm {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.closeIconAndLoginText {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 64px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.closeLoginContainer {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginTextInModal {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.closeLoginModalIcon {
+    font-size: 24px;
+}
+
+.closeLoginModalIcon:hover {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.closeLoginCircleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px
+}
+
+.closeLoginCircleContainer:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #DDDDDD;
+    width: 30px;
+    height: 30px
+    
+}
+
+.welcomeToTextLoginContainer {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.loginInputBar {
+    width: 90%;
+    height: 45px;
+    margin-bottom: 15px;
+}
+
+#loginContainer {
+    /* background-color: aqua; */
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.loginInButtonInModalAndDemoButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.or {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+

@@ -1,19 +1,18 @@
 import "./NavBar.css"
 import { BiMenu } from "react-icons/bi"
 import { FaRegUserCircle } from "react-icons/fa"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import ProfileModal from "./ProfileModal"
+import { Modal } from '../../context/Modal';
+import LoginForm from "../LoginForm/LoginForm"
+
+
 
 const NavBar = ({ landingPage }) => {
 
     const [profileModal, setProfileModal] = useState(false)
-
-    // const searchStay = (
-    //     <div className="searchStayContainer">
-    //         <div class="searchStayForm"> Hello
-    //         </div>
-    //     </div>
-    // )
-
+    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [showSignUpModal, setShowSignupModal] = useState(false)
 
 
     return (
@@ -27,17 +26,30 @@ const NavBar = ({ landingPage }) => {
                     <div className="placesToStayTextContainer"> Places to Stay
                         {/* <div id="placesToStayBottomBorder"></div> */}
                     </div>
-                    <div className="profileButtonContainer">
-                        <div className="navBarProfileButton" onClick={() => setProfileModal(!profileModal)}>
-                            <BiMenu style={{ fontSize: "22px", marginRight: "5px" }} />
-                            <FaRegUserCircle style={{ fontSize: "22px" }} />
-                        </div>
+                    <div className="profileButtonContainer" >
+                        <div className="navBarProfileButton" onClick={() => setProfileModal(!profileModal)} >
+                            <BiMenu style={{ fontSize: "25px", marginRight: "10px" }} />
+                            <FaRegUserCircle style={{ fontSize: "25px" }} />
 
+                        </div>
+                        {showLoginModal && (
+                            <Modal onClose={() => setShowLoginModal(false)}>
+                                <LoginForm setShowLoginModal={setShowLoginModal} />
+                            </Modal>
+                        )}
+                        {showSignUpModal && (
+                            <Modal onClose={() => setShowSignupModal(false)}>
+                                <div>
+                                    poopt
+                                </div>
+                            </Modal>
+                        )}
+                        {profileModal ? <ProfileModal setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} profileModal={profileModal} setProfileModal={setProfileModal} /> : null}
                     </div>
 
                 </div>
             </div>
-            {profileModal ? <div style={{ marginTop: "100px" }}>hello</div> : null}
+
             {/* {landingPage ? searchStay : null} */}
         </>
     )
