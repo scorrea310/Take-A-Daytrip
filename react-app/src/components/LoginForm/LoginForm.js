@@ -6,10 +6,9 @@ import { IoMdClose } from "react-icons/io"
 import Button from '../common/Button/Button';
 
 const LoginForm = ({ setShowLoginModal }) => {
-
+    const [errors, setErrors] = useState([]);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errors, setErrors] = useState([]);
     const dispatch = useDispatch();
 
     const onLogin = async (e) => {
@@ -18,7 +17,11 @@ const LoginForm = ({ setShowLoginModal }) => {
         const data = await dispatch(login(email, password));
         if (data) {
             setErrors(data);
+        } else {
+            setShowLoginModal(false)
         }
+
+
     };
 
     const updateEmail = (e) => {
@@ -38,10 +41,11 @@ const LoginForm = ({ setShowLoginModal }) => {
             setErrors(data);
         }
 
+        setShowLoginModal(false)
     }
 
     return (
-        <div className="LoginForm">
+        <form className="LoginForm" onSubmit={onLogin}>
             <div className="closeIconAndLoginText">
                 <div className="closeLoginContainer">
                     <div className="closeLoginCircleContainer">
@@ -51,7 +55,15 @@ const LoginForm = ({ setShowLoginModal }) => {
                 <div className="loginTextInModal"> Log In</div>
             </div>
             {/* <div style={{ display: "flex", justifyContent: "center" }}>Center</div> */}
-            <div className="welcomeToTextLoginContainer">Welcome to Take A Daytrip</div>
+
+            <div className="welcomeToTextLoginContainer">Welcome to Take A Daytrip
+                <div>
+                    {errors.map((error, ind) => (
+                        <div className='loginErrors' key={ind}>{error}</div>
+                    ))}
+                </div>
+
+            </div>
             <div id="loginContainer">
                 <div className="loginLabelTextContainer">
                     <label htmlFor="email">Email address</label>
@@ -64,6 +76,7 @@ const LoginForm = ({ setShowLoginModal }) => {
                         value={email}
                         onChange={updateEmail}
                         className="loginInputBar"
+                        required={true}
                     />
                 </div>
                 <div className="loginLabelTextContainer">
@@ -77,15 +90,16 @@ const LoginForm = ({ setShowLoginModal }) => {
                         value={password}
                         onChange={updatePassword}
                         className="loginInputBar"
+                        required={true}
                     />
                 </div>
             </div>
             <div className='loginInButtonInModalAndDemoButton'>
-                <Button onClick={onLogin} label={"Log In"} className={"loginButtonInmodal"} />
+                <Button label={"Log In"} type="submit" className={"loginButtonInmodal"} />
                 <div className='or'> Or </div>
                 <Button onClick={demoUserLogin} label={"Demo User"} className={"demoButtonInmodal"} />
             </div>
-        </div >
+        </form >
 
     )
 

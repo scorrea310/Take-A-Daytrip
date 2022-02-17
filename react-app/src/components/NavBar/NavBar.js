@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import ProfileModal from "./ProfileModal"
 import { Modal } from '../../context/Modal';
 import LoginForm from "../LoginForm/LoginForm"
-
+import SignUpForm from "../SignUpForm/SignUpForm"
 
 
 const NavBar = ({ landingPage }) => {
@@ -39,9 +39,7 @@ const NavBar = ({ landingPage }) => {
                         )}
                         {showSignUpModal && (
                             <Modal onClose={() => setShowSignupModal(false)}>
-                                <div>
-                                    poopt
-                                </div>
+                                <SignUpForm setShowSignupModal={setShowSignupModal} />
                             </Modal>
                         )}
                         {profileModal ? <ProfileModal setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} profileModal={profileModal} setProfileModal={setProfileModal} /> : null}
@@ -49,8 +47,6 @@ const NavBar = ({ landingPage }) => {
 
                 </div>
             </div>
-
-            {/* {landingPage ? searchStay : null} */}
         </>
     )
 }

@@ -71,6 +71,7 @@
     width: 90%;
     height: 45px;
     margin-bottom: 15px;
+    font-size: 18px;
 }
 
 #loginContainer {
@@ -92,5 +93,11 @@
     height: 50px;
     display: flex;
     align-items: center;
+}
+
+.loginErrors {
+    color: red;
+    font-size: 13px;
+    margin-left: 15px;
 }
 

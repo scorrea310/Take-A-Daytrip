@@ -2,9 +2,11 @@ import "./NavBar.css"
 import React, { useEffect, useState } from 'react';
 import { Modal } from '../../context/Modal';
 import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../store/session';
 
 const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal }) => {
 
+    const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user);
 
     document.addEventListener("click", (event) => {
@@ -21,7 +23,12 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal }
     });
 
 
-    let returnValue = (
+    const onLogout = async (e) => {
+        await dispatch(logout());
+    };
+
+
+    let signInProfileWindow = (
         <>
 
             <div className="profileWindow">
@@ -45,8 +52,35 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal }
         </>)
 
 
+    let signedOutProfileWindow = (
+        <>
+
+            <div className="profileWindow">
+                <div className="profileWindowLoginText" onClick={() => onLogout()}>
+                    <button className="loginButton">Log Out</button>
+                </div>
+                <div className="profileWindowSignupText" onClick={() => {
+                    setShowLoginModal(false)
+                    setShowSignupModal(true)
+                    setProfileModal(false)
+                }}>
+                    <button className="signupButton" >Host a Trip</button>
+
+                </div>
+                <div className="profileWindowHostYourHomeText">View upcoming trips</div>
+            </div>
+        </>)
+
+
+
+
+
     return (
-        { sessionUser? returnValue: null }
+
+        <>
+            {sessionUser ? signedOutProfileWindow : signInProfileWindow}
+        </>
+
 
     )
 
