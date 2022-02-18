@@ -39,7 +39,7 @@
 
 .spotCard {
     width: 464px;
-    height: 120px;
+    height: 100px;
     border-radius: 12px;
     display: flex;
     justify-content: center;
@@ -50,7 +50,19 @@
 
 .spotCard:hover {
     width: 464px;
-    height: 120px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 2px #222222;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.selected {
+    width: 464px;
+    height: 100px;
     border-radius: 12px;
     display: flex;
     justify-content: center;
@@ -59,15 +71,16 @@
     margin-top: 30px;
 }
 
-.selected {
-     width: 464px;
-    height: 120px;
+.selected:hover {
+    width: 464px;
+    height: 100px;
     border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 0 2px #222222;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 .spotNameAndImageContainer {
@@ -106,6 +119,42 @@
     color: white;
     background-color: black;
     margin-top: 35px;
+}
+
+.apartmentImage {
+    width: 56px;
+    height: 56px;
+    background-image: url("../../images/logan_apartments.6.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+.daytripImage {
+    width: 56px;
+    height: 56px;
+    background-image: url("../../images/outdoor-things-to-do-outside-daytrips-from-houston-2020-enchanted-rock-696x407.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+.uniqueExperience {
+    width: 56px;
+    height: 56px;
+    background-image: url("../../images/theoneSkydiving.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+.beachImage {
+    width: 56px;
+    height: 56px;
+    background-image: url("../../images/beachimage.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
 }
 
 

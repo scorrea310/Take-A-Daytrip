@@ -1,9 +1,10 @@
+import "./AddSpot.css"
 
 
-
-const SpotCard = ({ name, selected, onClick }) => {
+const SpotCard = ({ name, selected, onClick, imageClassName }) => {
 
     let nameOfClass;
+
 
     if (selected) {
         nameOfClass = selected
@@ -15,7 +16,7 @@ const SpotCard = ({ name, selected, onClick }) => {
         <div className={nameOfClass} onClick={onClick}>
             <div className="spotNameAndImageContainer">
                 <div>{name}</div>
-                <div>Image</div>
+                <div className={imageClassName}></div>
             </div>
         </div>
     )
