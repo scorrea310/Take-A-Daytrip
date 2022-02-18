@@ -8,7 +8,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import LandingPage from './components/LandingPage/LandingPage';
-
+import AddSpot from './components/AddSpot/AddSpot';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -37,8 +37,8 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList />
+        <ProtectedRoute path='/spots/new' exact={true} >
+          <AddSpot />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
