@@ -17,8 +17,6 @@ class Spot(db.Model):
     has_heat = db.Column(db.Boolean, nullable=False)
     has_ac= db.Column(db.Boolean, nullable=False)
     price_per_day = db.Column(db.Float(precision=6, decimal_return_scale=2), nullable=False)
-    latitude = db.Column(db.String(255), nullable=False)
-    longitude = db.Column(db.String(255), nullable=False)
     host_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
     updated_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)

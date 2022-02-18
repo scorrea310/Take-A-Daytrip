@@ -6,7 +6,7 @@ import ProfileModal from "./ProfileModal"
 import { Modal } from '../../context/Modal';
 import LoginForm from "../LoginForm/LoginForm"
 import SignUpForm from "../SignUpForm/SignUpForm"
-
+import { NavLink } from "react-router-dom"
 
 const NavBar = ({ landingPage }) => {
 
@@ -21,7 +21,7 @@ const NavBar = ({ landingPage }) => {
                 <div className="centerNavBarContainer">
                     <div className="navLogoContainer">
                         <div id="navLogo" ></div>
-                        <div className="takeADayTripText">Take A Daytrip</div>
+                        <NavLink to="/" className="takeADayTripText">Take A Daytrip</NavLink>
                     </div>
                     <div className="placesToStayTextContainer"> Places to Stay
                         {/* <div id="placesToStayBottomBorder"></div> */}

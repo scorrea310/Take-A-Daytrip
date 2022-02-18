@@ -3,8 +3,7 @@ import FileInputWithPreview from './FileInputWithPreview';
 import "./SpotImageForm.css"
 
 
-const SpotImageForm = () => {
-    const [images, setImages] = useState([]);
+const SpotImageForm = ({ images, setImages }) => {
     const [errors, setErrors] = useState([]);
     const [_imageLoading, setImageLoading] = useState(false);
 
@@ -19,7 +18,8 @@ const SpotImageForm = () => {
 
     return (
         <div className="photosContainer">
-            <h1 className="page-heading">Add Photos</h1>
+
+            <h2 className="page-heading">Add Photos</h2>
             <div className="product-image-form">
                 <div className="form-row">
                     <div className="image-preview-grid">
@@ -35,25 +35,21 @@ const SpotImageForm = () => {
                             onChange={updateImages}
                             onClick={handleDelete}
                         />
-                        <FileInputWithPreview
-                            index={2}
-                            src={images.length > 2 ? toObjectURL(images[2]) : null}
-                            onChange={updateImages}
-                            onClick={handleDelete}
-                        />
-                        <FileInputWithPreview
-                            index={3}
-                            src={images.length > 3 ? toObjectURL(images[3]) : null}
-                            onChange={updateImages}
-                            onClick={handleDelete}
-                        />
-                        <FileInputWithPreview
-                            index={4}
-                            src={images.length > 4 ? toObjectURL(images[4]) : null}
-                            onChange={updateImages}
-                            onClick={handleDelete}
-                        />
                     </div>
+                </div>
+                <div className="image-preview-grid">
+                    <FileInputWithPreview
+                        index={2}
+                        src={images.length > 2 ? toObjectURL(images[2]) : null}
+                        onChange={updateImages}
+                        onClick={handleDelete}
+                    />
+                    <FileInputWithPreview
+                        index={3}
+                        src={images.length > 3 ? toObjectURL(images[3]) : null}
+                        onChange={updateImages}
+                        onClick={handleDelete}
+                    />
                 </div>
             </div>
             {errors.length > 0 && errors.map((e) => e)}

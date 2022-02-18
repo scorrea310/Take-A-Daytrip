@@ -32,8 +32,6 @@ def upgrade():
     sa.Column('has_heat', sa.Boolean(), nullable=False),
     sa.Column('has_ac', sa.Boolean(), nullable=False),
     sa.Column('price_per_day', sa.Float(precision=6, decimal_return_scale=2), nullable=False),
-    sa.Column('latitude', sa.String(length=255), nullable=False),
-    sa.Column('longitude', sa.String(length=255), nullable=False),
     sa.Column('host_id', sa.Integer(), nullable=False),
     sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.Column('updated_at', sa.DateTime(), nullable=False),
