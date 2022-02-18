@@ -5,6 +5,7 @@ import { IoMdClose } from "react-icons/io"
 import Button from '../common/Button/Button';
 import "./SignUpForm.css"
 
+
 const SignUpForm = ({ setShowSignupModal }) => {
     const [errors, setErrors] = useState([]);
     const [name, setname] = useState('');
@@ -124,7 +125,7 @@ const SignUpForm = ({ setShowSignupModal }) => {
             </div>
             <div className="signupLabelAndInput">
                 <div>
-                    <label>Repeat Password</label>
+                    <label>Confirm Password</label>
                 </div>
                 <input
                     type="password"

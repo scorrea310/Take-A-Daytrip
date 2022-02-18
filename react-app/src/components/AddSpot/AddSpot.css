@@ -130,10 +130,10 @@
     border-radius: 4px;
 }
 
-.daytripImage {
+.houseImage {
     width: 56px;
     height: 56px;
-    background-image: url("../../images/outdoor-things-to-do-outside-daytrips-from-houston-2020-enchanted-rock-696x407.jpeg");
+    background-image: url("../../images/houseImage.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 4px;
@@ -148,7 +148,7 @@
     border-radius: 4px;
 }
 
-.beachImage {
+.outdoorsImage {
     width: 56px;
     height: 56px;
     background-image: url("../../images/beachimage.jpeg");
