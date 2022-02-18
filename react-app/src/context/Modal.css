@@ -30,3 +30,14 @@
   width: 500px;
   border-radius: 10px;
 }
+
+#signupModal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+  height: 600px;
+  width: 500px;
+  border-radius: 10px;
+}

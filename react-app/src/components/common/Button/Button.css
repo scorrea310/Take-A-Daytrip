@@ -43,3 +43,10 @@
   color: black;
   cursor: pointer;
 }
+
+
+.btn.signUpmodal {
+  width: 70%;
+  border-radius: 24px;
+  height: 40px;
+}

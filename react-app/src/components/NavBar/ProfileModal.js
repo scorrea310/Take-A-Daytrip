@@ -3,24 +3,24 @@ import React, { useEffect, useState } from 'react';
 import { Modal } from '../../context/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../store/session';
+import { login } from "../../store/session";
+import { useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import OutsideClickHandler from 'react-outside-click-handler';
 
-const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal }) => {
-
+const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, profileModal }) => {
+    let history = useHistory()
     const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user);
 
-    document.addEventListener("click", (event) => {
-        const concernedElement = document.querySelector(".navBarProfileButton");
-        const loginButton = document.querySelector(".loginButton")
-        const signupButton = document.querySelector(".signupButton")
-        const loginDiv = document.querySelector(".profileWindowLoginText")
-        const signupDiv = document.querySelector(".profileWindowSignupText")
-        if (concernedElement?.contains(event.target) || loginButton?.contains(event.target) || signupButton?.contains(event.target) || loginDiv?.contains(event.target) || signupDiv?.contains(event.target)) {
-            return;
-        } else {
-            setProfileModal(false)
-        }
-    });
+
+    const demoUserLogin = async (e) => {
+        e.preventDefault();
+        const data = await dispatch(login('demo@aa.io', 'password'));
+
+
+        setShowLoginModal(false)
+    }
 
 
     const onLogout = async (e) => {
@@ -29,46 +29,53 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal }
 
 
     let signInProfileWindow = (
-        <>
 
-            <div className="profileWindow">
-                <div className="profileWindowLoginText" onClick={() => {
+        <OutsideClickHandler onOutsideClick={() => {
+            setProfileModal(false)
+        }}>
+            <div className="profileWindow" >
+
+                <button className="loginButton" onClick={() => {
                     setShowLoginModal(true)
                     setShowSignupModal(false)
                     setProfileModal(false)
-                }}>
-                    <button className="loginButton">Log In</button>
-                </div>
-                <div className="profileWindowSignupText" onClick={() => {
+                }}>Log In</button>
+
+
+                <button className="signupButton" onClick={() => {
                     setShowLoginModal(false)
                     setShowSignupModal(true)
                     setProfileModal(false)
-                }}>
-                    <button className="signupButton" >Register</button>
+                }} >Register</button>
 
-                </div>
-                <div className="profileWindowHostYourHomeText">Host your home</div>
+
+                <div className="profileWindowHostYourHomeText" onClick={demoUserLogin}>Demo User</div>
             </div>
-        </>)
+        </OutsideClickHandler>
+    )
 
 
     let signedOutProfileWindow = (
         <>
+            <OutsideClickHandler onOutsideClick={() => {
+                setProfileModal(false)
+            }}>
 
-            <div className="profileWindow">
-                <div className="profileWindowLoginText" onClick={() => onLogout()}>
-                    <button className="loginButton">Log Out</button>
-                </div>
-                <div className="profileWindowSignupText" onClick={() => {
-                    setShowLoginModal(false)
-                    setShowSignupModal(true)
-                    setProfileModal(false)
-                }}>
-                    <button className="signupButton" >Host a Trip</button>
+                <div className="profileWindow" >
 
+                    <div className="profileWindowLoginText" onClick={() => onLogout()}>
+                        <button className="loginButton">Log Out</button>
+                    </div>
+                    <div className="profileWindowSignupText">
+                        <div className="signupButton" to="/spots/new" onClick={() => {
+                            history.push("/spots/new")
+                        }} >Host a Trip</div>
+
+                    </div>
+                    <div className="profileWindowHostYourHomeText">View upcoming trips</div>
                 </div>
-                <div className="profileWindowHostYourHomeText">View upcoming trips</div>
-            </div>
+
+            </OutsideClickHandler>
         </>)
 
 
@@ -78,7 +85,7 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal }
     return (
 
         <>
-            {sessionUser ? signedOutProfileWindow : signInProfileWindow}
+            {sessionUser ? <div style={{ zIndex: "1000" }}>{signedOutProfileWindow}</div> : <div style={{ zIndex: "1000" }}>{signInProfileWindow}</div>}
         </>
 
 

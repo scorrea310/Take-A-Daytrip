@@ -9,6 +9,7 @@ const SignUpForm = ({ setShowSignupModal }) => {
     const [errors, setErrors] = useState([]);
     const [name, setname] = useState('');
     const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
     const dispatch = useDispatch();
@@ -29,14 +30,18 @@ const SignUpForm = ({ setShowSignupModal }) => {
         setRepeatPassword(e.target.value);
     };
 
+    const updateUsername = (e) => {
+        setUsername(e.target.value);
+    };
+
 
     const onSignUp = async (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (password === repeatPassword) {
 
-            console.log(name, email, password)
-            const data = await dispatch(signUp(name, email, password));
+            console.log(name, username, email, password)
+            const data = await dispatch(signUp(name, username, email, password));
 
             if (data) {
                 setErrors(data);
@@ -58,12 +63,14 @@ const SignUpForm = ({ setShowSignupModal }) => {
                 </div>
                 <div className="createAccountTextInModal"> Create Account</div>
             </div>
+            <div className="signupErrorsContainer">
+                {errors.map((error, ind) => (
+                    <div className="signupErrors" key={ind}>{error}</div>
+                ))}
+            </div>
+
             <div className="signupLabelAndInput">
-                <div>
-                    {errors.map((error, ind) => (
-                        <div className="signupErrors" key={ind}>{error}</div>
-                    ))}
-                </div>
+
                 <div>
                     <label>Name</label>
                 </div>
@@ -72,6 +79,19 @@ const SignUpForm = ({ setShowSignupModal }) => {
                     name="username"
                     onChange={updateName}
                     value={name}
+                    required={true}
+                    className="signupInput"
+                ></input>
+            </div>
+            <div className="signupLabelAndInput">
+                <div>
+                    <label>Username</label>
+                </div>
+                <input
+                    type="text"
+                    name="email"
+                    onChange={updateUsername}
+                    value={username}
                     required={true}
                     className="signupInput"
                 ></input>
@@ -116,7 +136,7 @@ const SignUpForm = ({ setShowSignupModal }) => {
                 ></input>
             </div>
             <div className="signupButtonContainer">
-                <Button label={"Create Account"} type="submit" className={"loginButtonInmodal"} />
+                <Button label={"Create Account"} type="submit" className={"signUpmodal"} />
             </div>
         </form>
     );

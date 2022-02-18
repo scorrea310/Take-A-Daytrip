@@ -38,11 +38,11 @@ const NavBar = ({ landingPage }) => {
                             </Modal>
                         )}
                         {showSignUpModal && (
-                            <Modal onClose={() => setShowSignupModal(false)}>
+                            <Modal idName={"signupModal"} onClose={() => setShowSignupModal(false)}>
                                 <SignUpForm setShowSignupModal={setShowSignupModal} />
                             </Modal>
                         )}
-                        {profileModal ? <ProfileModal setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} profileModal={profileModal} setProfileModal={setProfileModal} /> : null}
+                        {profileModal ? <ProfileModal profileModal={profileModal} setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} setProfileModal={setProfileModal} /> : null}
                     </div>
 
                 </div>

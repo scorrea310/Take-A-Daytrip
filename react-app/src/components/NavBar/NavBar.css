@@ -137,12 +137,12 @@
 .profileWindow {
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    min-width: 152px;
     height: 130px;
     margin-top: 10px;
     border-radius: 10px;
     border: 1px solid #DDDDDD;
-    z-index: 1000;
+    z-index: 2000;
     background-color: #FFFFFF;
 }
 
@@ -152,7 +152,7 @@
     height: 40px;
     justify-content: center;
     align-items: center;
-    border-bottom:1px solid #DDDDDD;
+    
 }
 .profileWindowSignupText:hover {
     display: flex;
@@ -170,23 +170,10 @@
     height: 40px;
     justify-content: center;
     align-items: center;
-    border-bottom:1px solid #DDDDDD;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-.profileWindowLoginText:hover {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    border-bottom:1px solid #DDDDDD;
-    background-color: #f7f7f7;
-    cursor: pointer;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
 
 .profileWindowHostYourHomeText {
     display: flex;
@@ -194,7 +181,7 @@
     height:40px;
     justify-content: center;
     align-items: center;
-    border-bottom:1px solid #DDDDDD;
+    cursor: pointer;
 }
 
 .profileWindowHostYourHomeText:hover {
@@ -214,22 +201,13 @@
     background: none;
     font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
     font-size: 16px;
-}
-
-.signupButton {
-    text-decoration: none;
-    border: none;
-    background: none;
-    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-    font-size: 16px;
-}
-
-.signupButton:hover {
-    text-decoration: none;
-    border: none;
-    background: none;
-    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-    font-size: 16px;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     cursor: pointer;
 }
 
@@ -239,5 +217,55 @@
     background: none;
     font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
     font-size: 16px;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+}
+
+
+
+
+.signupButton {
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
+
+.signupButton:hover {
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+}
+
+/* .loginButton:hover {
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+} */
