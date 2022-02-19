@@ -21,7 +21,7 @@ const AddSpot = () => {
     const [hasWifi, setHasWifi] = useState(true)
     const [hasTv, setHasTv] = useState(true)
     const [hasAc, setHasAc] = useState(true)
-    const [price, setPrice] = useState(0)
+    const [price, setPrice] = useState('')
 
     const toObjectURL = (file) => URL.createObjectURL(file);
 
@@ -83,17 +83,29 @@ const AddSpot = () => {
         </>
     )
 
+    /*
+    <div className="submitSpotButtonContainer">
+                            <button className="submitSpotButton" type="submit"> Add Spot </button>
+                        </div>
+    
+    */
+
 
     let slide3 = (
         <>
-            <div style={{ width: "50%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", backgroundImage: `url(${gradientBackground})` }}>
+            <div style={{ width: "50%", maxHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center", backgroundImage: `url(${gradientBackground})` }}>
                 <img src={images.length > 0 ? toObjectURL(images[0]) : null} style={{ width: "80%", height: "80%", borderRadius: "24px" }} alt="backgroundImage" />
             </div>
 
             <div className="rightHalf">
                 <div className="formAndNextButtonContainer">
                     <form onSubmit={onSubmit} className="addSpotTextFormSlide3">
-                        <h2>Tell us about your Daytrip</h2>
+                        <div className="tellUsAboutDaytripContainer">
+                            <h3>Tell us about your Daytrip</h3>
+                            <div className="submitSpotButtonContainer">
+                                <button className="submitSpotButton" type="submit"> Add Spot </button>
+                            </div>
+                        </div>
                         <label>Address</label>
                         <input
                             value={address}
@@ -176,7 +188,7 @@ const AddSpot = () => {
 
                         </div>
                         <label>Has AC?</label>
-                        <div className="pertsAllowedDivForm">
+                        <div className="hasAcContainer">
                             <input
                                 value={true}
                                 type="radio"
@@ -243,7 +255,6 @@ const AddSpot = () => {
                         >
 
                         </input>
-                        <button className="submitSpotButton" type="submit"> Add Spot </button>
                     </form>
 
                 </div>
