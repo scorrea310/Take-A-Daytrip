@@ -191,7 +191,7 @@
     width: 70%;
     /* min-height:auto; */
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 90px;
    
 }
 
@@ -240,4 +240,37 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.progressBarSlide1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.progressBarSlide1  > div {
+    margin-right: 5px;
+}
+
+
+.blackSlide {
+    border: 1px solid black;
+    width: 80px;
+}
+
+.graySlide {
+   border: 1px solid #DDDDDD;
+   width: 80px;
+}
+
+.progressBarSlide3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-right: 100px;
+}
+
+.progressBarSlide3  > div {
+    margin-right: 5px;
+}
+
 

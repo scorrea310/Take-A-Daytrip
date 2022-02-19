@@ -3,7 +3,7 @@ import FileInputWithPreview from './FileInputWithPreview';
 import "./SpotImageForm.css"
 
 
-const SpotImageForm = ({ images, setImages, noImagesError }) => {
+const SpotImageForm = ({ images, setImages, noImagesError, firstSlide, secondSlide, thirdSlide }) => {
     const [errors, setErrors] = useState([]);
     const [_imageLoading, setImageLoading] = useState(false);
 
@@ -23,6 +23,11 @@ const SpotImageForm = ({ images, setImages, noImagesError }) => {
 
     return (
         <div className="photosContainer">
+            <div className="progressBarSlide2">
+                <div className={firstSlide ? "blackSlide" : "graySlide"}></div>
+                <div className={secondSlide ? "blackSlide" : "graySlide"}></div>
+                <div className={thirdSlide ? "blackSlide" : "graySlide"}> </div>
+            </div>
             <div className='imageErrorsDiv'>
                 {noImagesError.map((error, ind) => (
                     <div className='loginErrors' key={ind}>{error}</div>

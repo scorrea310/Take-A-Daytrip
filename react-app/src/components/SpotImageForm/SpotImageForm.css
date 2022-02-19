@@ -14,5 +14,17 @@
 }
 
 .imageErrorsDiv {
-    height: 20px
+    height: 20px;
+    margin-bottom: 0px;
+}
+
+.progressBarSlide2 {
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.progressBarSlide2 > div {
+    margin-right: 5px;
 }

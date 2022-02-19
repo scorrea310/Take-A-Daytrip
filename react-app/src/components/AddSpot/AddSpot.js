@@ -4,7 +4,15 @@ import SpotCard from "./SpotCard";
 import { useState } from "react";
 import SpotImageForm from "../SpotImageForm/SpotImageForm";
 import gradientBackground from "../../images/Wiretap.jpeg"
+import { useHistory } from "react-router-dom";
+import { addSpot } from "../../store/spotReducer";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
 const AddSpot = () => {
+    const sessionUser = useSelector((state) => state.session.user);
+    const dispatch = useDispatch();
+    const history = useHistory()
 
     const [selected, setSelected] = useState("Apartment")
     const [firstSlide, setfirstSlide] = useState(true)
@@ -23,12 +31,37 @@ const AddSpot = () => {
     const [hasAc, setHasAc] = useState(true)
     const [price, setPrice] = useState('')
 
+
+
+
+
     const toObjectURL = (file) => URL.createObjectURL(file);
 
 
     const onSubmit = (e) => {
 
-        console.log(address, petsAllowed, totalOccupancy, totalBedrooms, totalBathrooms, description, hasWifi, hasTv, hasAc, price)
+        e.preventDefault();
+        console.log(address, petsAllowed, totalOccupancy, totalBedrooms, totalBathrooms, description, hasWifi, hasTv, hasAc, price, sessionUser.id)
+
+        let formObj = {
+            address,
+            petsAllowed,
+            totalOccupancy,
+            totalBedrooms,
+            totalBathrooms,
+            description,
+            hasWifi,
+            hasTv,
+            hasAc,
+            price,
+            userId: sessionUser.id,
+            type: selected
+        }
+
+
+        dispatch(addSpot(formObj))
+
+
 
     }
 
@@ -43,7 +76,13 @@ const AddSpot = () => {
                 <div className="whatKindOfText">What kind of Daytrip are you hosting?</div>
             </div>
             <div className="rightHalf">
+
                 <div>
+                    <div className="progressBarSlide1">
+                        <div className={firstSlide ? "blackSlide" : "graySlide"}></div>
+                        <div className={secondSlide ? "blackSlide" : "graySlide"}></div>
+                        <div className={thirdSlide ? "blackSlide" : "graySlide"}> </div>
+                    </div>
                     <SpotCard imageClassName={"apartmentImage"} name={"Apartment"} selected={selected === "Apartment" ? "selected" : null} onClick={() => setSelected("Apartment")} />
                     <SpotCard imageClassName={"houseImage"} name={"House"} selected={selected === "House" ? "selected" : null} onClick={() => setSelected("House")} />
                     <SpotCard imageClassName={"outdoorsImage"} name={"Outdoors"} selected={selected === "Outdoor" ? "selected" : null} onClick={() => setSelected("Outdoor")} />
@@ -65,7 +104,8 @@ const AddSpot = () => {
             </div>
             <div className="rightHalf">
 
-                <SpotImageForm images={images} setImages={setImages} noImagesError={noImagesError} />
+
+                <SpotImageForm firstSlide={firstSlide} secondSlide={secondSlide} thirdSlide={thirdSlide} images={images} setImages={setImages} noImagesError={noImagesError} />
 
                 <div className="nextButton" onClick={() => {
 
@@ -83,12 +123,8 @@ const AddSpot = () => {
         </>
     )
 
-    /*
-    <div className="submitSpotButtonContainer">
-                            <button className="submitSpotButton" type="submit"> Add Spot </button>
-                        </div>
-    
-    */
+
+
 
 
     let slide3 = (
@@ -98,8 +134,15 @@ const AddSpot = () => {
             </div>
 
             <div className="rightHalf">
+
                 <div className="formAndNextButtonContainer">
+
                     <form onSubmit={onSubmit} className="addSpotTextFormSlide3">
+                        <div className="progressBarSlide3">
+                            <div className={firstSlide ? "blackSlide" : "graySlide"}></div>
+                            <div className={secondSlide ? "blackSlide" : "graySlide"}></div>
+                            <div className={thirdSlide ? "blackSlide" : "graySlide"}> </div>
+                        </div>
                         <div className="tellUsAboutDaytripContainer">
                             <h3>Tell us about your Daytrip</h3>
                             <div className="submitSpotButtonContainer">
@@ -269,6 +312,7 @@ const AddSpot = () => {
         <div className="addSpotPageContainer">
             <NavBar />
             <div className="addSpotMainContent">
+
                 {firstSlide ? slide1 : null}
                 {secondSlide && slide2}
                 {thirdSlide && slide3}
