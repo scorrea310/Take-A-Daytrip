@@ -3,12 +3,14 @@ import "./AddSpot.css"
 import SpotCard from "./SpotCard";
 import { useState } from "react";
 import SpotImageForm from "../SpotImageForm/SpotImageForm";
-
+import gradientBackground from "../../images/Wiretap.jpeg"
 const AddSpot = () => {
 
     const [selected, setSelected] = useState("Apartment")
     const [firstSlide, setfirstSlide] = useState(true)
     const [secondSlide, setSecondSlide] = useState(false)
+    const [thirdSlide, setThirdSlide] = useState(false)
+    const [noImagesError, setnoImagesError] = useState([])
     const [images, setImages] = useState([]);
     const [address, setAddress] = useState('')
     const [petsAllowed, setpetsAllowed] = useState(true)
@@ -19,10 +21,14 @@ const AddSpot = () => {
     const [hasWifi, setHasWifi] = useState(true)
     const [hasTv, setHasTv] = useState(true)
     const [hasAc, setHasAc] = useState(true)
-    const [price, setPrice] = useState('')
+    const [price, setPrice] = useState(0)
+
+    const toObjectURL = (file) => URL.createObjectURL(file);
 
 
-    const onSubmit = () => {
+    const onSubmit = (e) => {
+
+        console.log(address, petsAllowed, totalOccupancy, totalBedrooms, totalBathrooms, description, hasWifi, hasTv, hasAc, price)
 
     }
 
@@ -34,7 +40,7 @@ const AddSpot = () => {
     let slide1 = (
         <>
             <div className="leftHalf">
-                <div className="whatKindOfText">What kind of spot are you hosting?</div>
+                <div className="whatKindOfText">What kind of Daytrip are you hosting?</div>
             </div>
             <div className="rightHalf">
                 <div>
@@ -58,10 +64,19 @@ const AddSpot = () => {
                 <div className="whatKindOfText">What does your spot look like?</div>
             </div>
             <div className="rightHalf">
-                <SpotImageForm images={images} setImages={setImages} />
+
+                <SpotImageForm images={images} setImages={setImages} noImagesError={noImagesError} />
+
                 <div className="nextButton" onClick={() => {
-                    setfirstSlide(false)
-                    setSecondSlide(true)
+
+                    if (!images.length) {
+                        setnoImagesError(["You have to include at least one image"])
+                    } else {
+                        setfirstSlide(false)
+                        setSecondSlide(false)
+                        setThirdSlide(true)
+                    }
+
                 }}>Next </div>
             </div>
 
@@ -71,19 +86,21 @@ const AddSpot = () => {
 
     let slide3 = (
         <>
-            <div className="leftHalf">
-                <div className="whatKindOfText">Tell us about your spot</div>
+            <div style={{ width: "50%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", backgroundImage: `url(${gradientBackground})` }}>
+                <img src={images.length > 0 ? toObjectURL(images[0]) : null} style={{ width: "80%", height: "80%", borderRadius: "24px" }} alt="backgroundImage" />
             </div>
+
             <div className="rightHalf">
                 <div className="formAndNextButtonContainer">
-                    <form onSubmit={onSubmit} className="addSpotTextForm">
-                        <div>Type: {selected} </div>
+                    <form onSubmit={onSubmit} className="addSpotTextFormSlide3">
+                        <h2>Tell us about your Daytrip</h2>
                         <label>Address</label>
                         <input
                             value={address}
                             type="text"
                             onChange={setAddressFunction}
                             placeholder="Address"
+                            required={true}
                         >
                         </input>
                         <label>Pets Allowed</label>
@@ -187,6 +204,7 @@ const AddSpot = () => {
                             value={totalOccupancy}
                             type="number"
                             onChange={(e) => setTotalOccupancy(e.target.value)}
+                            required={true}
                         >
                         </input>
                         <label>Total Bedrooms</label>
@@ -194,6 +212,7 @@ const AddSpot = () => {
                             value={totalBedrooms}
                             type="number"
                             onChange={(e) => setTotalBedrooms(e.target.value)}
+                            required={true}
                         >
                         </input>
                         <label>Total Bathrooms</label>
@@ -201,6 +220,7 @@ const AddSpot = () => {
                             value={totalBathrooms}
                             type="number"
                             onChange={(e) => setTotalBathrooms(e.target.value)}
+                            required={true}
                         >
                         </input>
                         <label>Description</label>
@@ -208,13 +228,24 @@ const AddSpot = () => {
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             style={{ fontFamily: "Arial" }}
+                            required={true}
                         >
                         </textarea>
+                        <label>Price</label>
+                        <input
+                            type="number"
+                            id="priceInputAddSpotFomr"
+                            value={price}
+                            onChange={(e) => {
+                                setPrice(e.target.value)
+                            }}
+                            required={true}
+                        >
+
+                        </input>
+                        <button className="submitSpotButton" type="submit"> Add Spot </button>
                     </form>
-                    <div className="nextButton" onClick={() => {
-                        setfirstSlide(false)
-                        setSecondSlide(true)
-                    }}>Next </div>
+
                 </div>
             </div >
 
@@ -228,7 +259,8 @@ const AddSpot = () => {
             <NavBar />
             <div className="addSpotMainContent">
                 {firstSlide ? slide1 : null}
-                {secondSlide && slide3}
+                {secondSlide && slide2}
+                {thirdSlide && slide3}
             </div>
         </div >
     )

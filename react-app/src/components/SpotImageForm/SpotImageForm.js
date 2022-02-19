@@ -3,7 +3,7 @@ import FileInputWithPreview from './FileInputWithPreview';
 import "./SpotImageForm.css"
 
 
-const SpotImageForm = ({ images, setImages }) => {
+const SpotImageForm = ({ images, setImages, noImagesError }) => {
     const [errors, setErrors] = useState([]);
     const [_imageLoading, setImageLoading] = useState(false);
 
@@ -16,9 +16,18 @@ const SpotImageForm = ({ images, setImages }) => {
         setImages(filtered);
     };
 
+    /*
+    
+    
+    */
+
     return (
         <div className="photosContainer">
-
+            <div className='imageErrorsDiv'>
+                {noImagesError.map((error, ind) => (
+                    <div className='loginErrors' key={ind}>{error}</div>
+                ))}
+            </div>
             <h2 className="page-heading">Add Photos</h2>
             <div className="product-image-form">
                 <div className="form-row">
