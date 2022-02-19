@@ -32,11 +32,19 @@ class SpotListingForm(FlaskForm):
 
     totalOccupancy = IntegerField(
         "Total Occupancy",
+        validators=[NumberRange(
+                min=0,
+                message="Occupancy cannot be a negative value",
+            )],
         default=0
     )
 
     totalBedrooms =  IntegerField(
         "Total Bedrooms",
+        validators=[NumberRange(
+                min=0,
+                message="Bedrooms cannot be a negative value",
+            )],
         default=0
     )
 
