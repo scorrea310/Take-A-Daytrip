@@ -28,5 +28,6 @@ class Spot(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            "type": self.type
+            "type": self.type,
+            "user_id": str(self.user.id)
         }

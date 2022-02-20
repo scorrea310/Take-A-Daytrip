@@ -21,14 +21,14 @@ const AddSpot = () => {
     const [noImagesError, setnoImagesError] = useState([])
     const [images, setImages] = useState([]);
     const [address, setAddress] = useState('')
-    const [petsAllowed, setpetsAllowed] = useState(true)
+    const [petsAllowed, setpetsAllowed] = useState("true")
     const [totalOccupancy, setTotalOccupancy] = useState(0)
     const [totalBedrooms, setTotalBedrooms] = useState(0)
     const [totalBathrooms, setTotalBathrooms] = useState(0)
     const [description, setDescription] = useState('')
-    const [hasWifi, setHasWifi] = useState(true)
-    const [hasTv, setHasTv] = useState(true)
-    const [hasAc, setHasAc] = useState(true)
+    const [hasWifi, setHasWifi] = useState("true")
+    const [hasTv, setHasTv] = useState("true")
+    const [hasAc, setHasAc] = useState("true")
     const [price, setPrice] = useState('')
 
 
@@ -41,7 +41,14 @@ const AddSpot = () => {
     const onSubmit = (e) => {
 
         e.preventDefault();
-        console.log(address, petsAllowed, totalOccupancy, totalBedrooms, totalBathrooms, description, hasWifi, hasTv, hasAc, price, sessionUser.id)
+        console.log(petsAllowed, hasWifi, hasTv, hasAc)
+
+        // console.log(images, "909090909090990") workssss---
+
+        const imageData = new FormData();
+        if (images && images.length) {
+            images.forEach((image) => imageData.append('images', image));
+        }
 
         let formObj = {
             address,
@@ -55,11 +62,11 @@ const AddSpot = () => {
             hasAc,
             price,
             userId: sessionUser.id,
-            type: selected
+            type: selected,
+
         }
 
-
-        dispatch(addSpot(formObj))
+        dispatch(addSpot(formObj, imageData))
 
 
 
@@ -161,22 +168,22 @@ const AddSpot = () => {
                         <label>Pets Allowed</label>
                         <div className="pertsAllowedDivForm">
                             <input
-                                value={true}
-                                type="radio"
+                                value={"true"}
+                                type="checkbox"
                                 onChange={() => {
-                                    setpetsAllowed(true)
+                                    setpetsAllowed("true")
                                 }}
                                 id="Yes"
-                                checked={petsAllowed === true}
+                                checked={petsAllowed === "true"}
                             >
                             </input>
                             <label htmlFor="Yes"> Yes</label>
                             <input
-                                value={false}
-                                type="radio"
-                                onChange={() => setpetsAllowed(false)}
+                                value={"false"}
+                                type="checkbox"
+                                onChange={() => setpetsAllowed("false")}
                                 id="No"
-                                checked={petsAllowed === false}
+                                checked={petsAllowed === "false"}
                             >
                             </input>
                             <label htmlFor="No"> No</label>
@@ -185,22 +192,22 @@ const AddSpot = () => {
                         <label>Has Wifi?</label>
                         <div className="pertsAllowedDivForm">
                             <input
-                                value={true}
-                                type="radio"
+                                value={"true"}
+                                type="checkbox"
                                 onChange={() => {
-                                    setHasWifi(true)
+                                    setHasWifi("true")
                                 }}
                                 id="Yes"
-                                checked={hasWifi === true}
+                                checked={hasWifi === "true"}
                             >
                             </input>
                             <label htmlFor="Yes"> Yes</label>
                             <input
-                                value={false}
-                                type="radio"
-                                onChange={() => setHasWifi(false)}
+                                value={"false"}
+                                type="checkbox"
+                                onChange={() => setHasWifi("false")}
                                 id="No"
-                                checked={hasWifi === false}
+                                checked={hasWifi === "false"}
                             >
                             </input>
                             <label htmlFor="No"> No</label>
@@ -209,22 +216,22 @@ const AddSpot = () => {
                         <label>Has Tv?</label>
                         <div className="pertsAllowedDivForm">
                             <input
-                                value={true}
-                                type="radio"
+                                value={"true"}
+                                type="checkbox"
                                 onChange={() => {
-                                    setHasTv(true)
+                                    setHasTv("true")
                                 }}
                                 id="Yes"
-                                checked={hasTv === true}
+                                checked={hasTv === "true"}
                             >
                             </input>
                             <label htmlFor="Yes"> Yes</label>
                             <input
-                                value={false}
-                                type="radio"
-                                onChange={() => setHasTv(false)}
+                                value={"false"}
+                                type="checkbox"
+                                onChange={() => setHasTv("false")}
                                 id="No"
-                                checked={hasTv === false}
+                                checked={hasTv === "false"}
                             >
                             </input>
                             <label htmlFor="No"> No</label>
@@ -233,22 +240,22 @@ const AddSpot = () => {
                         <label>Has AC?</label>
                         <div className="hasAcContainer">
                             <input
-                                value={true}
-                                type="radio"
+                                value={"true"}
+                                type="checkbox"
                                 onChange={() => {
-                                    setHasAc(true)
+                                    setHasAc("true")
                                 }}
                                 id="Yes"
-                                checked={hasAc === true}
+                                checked={hasAc === "true"}
                             >
                             </input>
                             <label htmlFor="Yes"> Yes</label>
                             <input
-                                value={false}
-                                type="radio"
-                                onChange={() => setHasAc(false)}
+                                value={"false"}
+                                type="checkbox"
+                                onChange={() => setHasAc("false")}
                                 id="No"
-                                checked={hasAc === false}
+                                checked={hasAc === "false"}
                             >
                             </input>
                             <label htmlFor="No"> No</label>
@@ -260,6 +267,7 @@ const AddSpot = () => {
                             type="number"
                             onChange={(e) => setTotalOccupancy(e.target.value)}
                             required={true}
+                            min="0"
                         >
                         </input>
                         <label>Total Bedrooms</label>
@@ -268,6 +276,7 @@ const AddSpot = () => {
                             type="number"
                             onChange={(e) => setTotalBedrooms(e.target.value)}
                             required={true}
+                            min="0"
                         >
                         </input>
                         <label>Total Bathrooms</label>
@@ -276,6 +285,7 @@ const AddSpot = () => {
                             type="number"
                             onChange={(e) => setTotalBathrooms(e.target.value)}
                             required={true}
+                            min="0"
                         >
                         </input>
                         <label>Description</label>
@@ -295,6 +305,7 @@ const AddSpot = () => {
                                 setPrice(e.target.value)
                             }}
                             required={true}
+                            min="0"
                         >
 
                         </input>

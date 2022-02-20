@@ -6,7 +6,8 @@ from wtforms.fields import (
     TextAreaField,
     IntegerField,
     DecimalField,
-    BooleanField
+    BooleanField,
+    RadioField
 )
 
 
@@ -25,9 +26,7 @@ class SpotListingForm(FlaskForm):
 
     petsAllowed = BooleanField(
         "Pets Allowed",
-        validators=[
-            DataRequired(),
-        ]
+        false_values=(False, 'false', 0, '0'),
     )
 
     totalOccupancy = IntegerField(
@@ -71,32 +70,28 @@ class SpotListingForm(FlaskForm):
 
     hasWifi = BooleanField(
         "Has Wifi",
-        validators=[
-            DataRequired(),
-        ]
+        false_values=(False, 'false', 0, '0'),
+        
     )
 
     hasTv = BooleanField(
         "Has TV",
-        validators=[
-            DataRequired(),
-        ]
+        false_values=(False, 'false', 0, '0'),
+        
     )
 
     hasAc = BooleanField(
         "Has AC",
-        validators=[
-            DataRequired(),
-        ]
+        false_values=(False, 'false', 0, '0'),
+        
     )
 
     price = DecimalField(
         "Price",
         places=2,
         validators=[
-            DataRequired(),
             NumberRange(
-                min=0.00,
+                min=0,
                 max=9999.99,
                 message="Price must be between $%(min)s0 and $%(max)s.",
             ),
