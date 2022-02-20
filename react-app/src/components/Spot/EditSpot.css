@@ -1,0 +1,101 @@
+.editSpotContainer {
+    display: flex;
+    height: 40%;
+    flex-direction: column;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    width: 70%;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+}
+
+.editDaytripText {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+
+}
+
+.editOrDeleteSpotContainer {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#editIcon {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+#deleteIcon {
+    font-size: 22px;
+    margin-right: 13px;
+    margin-left: 23px;
+}
+
+.editIconAndText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.editIconAndText:hover {
+    display: flex;
+    background-color: #f7f7f7;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.deleteIconAndText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.deleteIconAndText:hover {
+    display: flex;
+    background-color: #f7f7f7;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+#editModal {
+   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+  height: 600px;
+  width: 600px;
+  border-radius: 10px;
+}
+
+.editModalMainContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.closeIconAndEditTextContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: brown;
+    height: 64px;
+    width: 100%;
+    border-bottom: 1px solid #DDDDDD
+}
