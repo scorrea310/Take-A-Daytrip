@@ -85,3 +85,22 @@ def upload_spot_images(id):
         image_urls.append(image_url)
 
     return {"image_urls": image_urls}
+
+@spot_routes.route("/")
+def get_spots():
+    """
+    GETS all spots
+    """ 
+
+    all_spots = Spot.query.all()
+
+    return_spots = {}
+
+    for spot in all_spots:
+        return_spots[spot.id] = spot.to_dict()
+
+
+    click.echo(click.style(str(return_spots), bg='red', fg='white'))
+
+    return {"spots": return_spots}
+

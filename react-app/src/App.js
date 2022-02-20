@@ -9,9 +9,12 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import LandingPage from './components/LandingPage/LandingPage';
 import AddSpot from './components/AddSpot/AddSpot';
+import Spot from './components/Spot/Spot';
+import { loadSpotsFunc } from './store/spotReducer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [spotsLoaded, setSpotsLoaded] = useState(false)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,6 +23,14 @@ function App() {
       setLoaded(true);
     })();
   }, [dispatch]);
+
+  useEffect(() => {
+
+    dispatch(loadSpotsFunc()).then(() => setSpotsLoaded(true))
+
+  }, [dispatch])
+
+
 
   if (!loaded) {
     return null;
@@ -41,7 +52,7 @@ function App() {
           <AddSpot />
         </ProtectedRoute>
         <Route path='/spots/:spotId' exact={true}>
-          <h1>hello</h1>
+          <Spot spotsLoaded={spotsLoaded} />
         </Route>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />

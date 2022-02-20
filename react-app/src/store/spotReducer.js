@@ -1,5 +1,6 @@
 //constants 
 const CREATE_SPOT = "spot/CREATE_SPOT"
+const LOAD_SPOTS = "spot/LOAD_SPOTS"
 
 
 
@@ -20,10 +21,10 @@ const createSpot = (newSpot) => ({
 })
 
 
-
-
-
-
+const loadSpots = (spots) => ({
+    type: LOAD_SPOTS,
+    payload: spots
+})
 
 
 
@@ -63,11 +64,28 @@ export const addSpot = (formObj, imageData) => async (dispatch) => {
         console.log("something went wrong!!")
     }
 
-
-
     return spotObj
 
 }
+
+export const loadSpotsFunc = () => async (dispatch) => {
+
+    const response = await fetch("/api/spots/")
+
+    if (response.ok) {
+
+        let spots = await response.json()
+        console.log(spots.spots)
+        dispatch(loadSpots(spots.spots))
+    }
+
+
+
+}
+
+
+
+
 
 /*--------------------------------------------------------------------*/
 // REDUCER
@@ -82,6 +100,10 @@ const spotReducer = (state = initialState, action) => {
             newSpot[action.payload.id] = action.payload;
 
             return newSpot
+
+        case LOAD_SPOTS:
+
+            return action.payload
         default:
             return state;
     }

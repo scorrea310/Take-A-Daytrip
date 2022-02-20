@@ -29,6 +29,7 @@ const AddSpot = () => {
     const [hasTv, setHasTv] = useState("true")
     const [hasAc, setHasAc] = useState("true")
     const [price, setPrice] = useState('')
+    const [addSpotLoader, setAddSpotLoader] = useState(false)
 
 
 
@@ -40,9 +41,8 @@ const AddSpot = () => {
     const onSubmit = async (e) => {
 
         e.preventDefault();
-        console.log(petsAllowed, hasWifi, hasTv, hasAc)
 
-        // console.log(images, "909090909090990") workssss---
+        setAddSpotLoader(true)
 
         const imageData = new FormData();
         if (images && images.length) {
@@ -65,10 +65,13 @@ const AddSpot = () => {
 
         }
 
-        let newSpot = await dispatch(addSpot(formObj, imageData))
+        let newSpot = dispatch(addSpot(formObj, imageData)).then((data) => {
+            history.push(`/spots/${data.id}`)
+        })
 
-        console.log(newSpot)
-        history.push(`/spot/${newSpot.id}`);
+        // console.log(newSpot)
+
+        // history.push(`/spot/${newSpot.id}`);
 
 
     }
@@ -330,6 +333,7 @@ const AddSpot = () => {
                 {secondSlide && slide2}
                 {thirdSlide && slide3}
             </div>
+            {addSpotLoader ? <div className="addSpotLoaderBackground"><div className="lds-dual-ring"></div></div> : null}
         </div >
     )
 
