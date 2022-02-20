@@ -13,7 +13,6 @@ const AddSpot = () => {
     const sessionUser = useSelector((state) => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory()
-
     const [selected, setSelected] = useState("Apartment")
     const [firstSlide, setfirstSlide] = useState(true)
     const [secondSlide, setSecondSlide] = useState(false)
@@ -38,7 +37,7 @@ const AddSpot = () => {
     const toObjectURL = (file) => URL.createObjectURL(file);
 
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
 
         e.preventDefault();
         console.log(petsAllowed, hasWifi, hasTv, hasAc)
@@ -66,8 +65,10 @@ const AddSpot = () => {
 
         }
 
-        dispatch(addSpot(formObj, imageData))
+        let newSpot = await dispatch(addSpot(formObj, imageData))
 
+        console.log(newSpot)
+        history.push(`/spot/${newSpot.id}`);
 
 
     }
@@ -306,6 +307,7 @@ const AddSpot = () => {
                             }}
                             required={true}
                             min="0"
+                            step="any"
                         >
 
                         </input>

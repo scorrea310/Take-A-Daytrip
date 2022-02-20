@@ -1,5 +1,5 @@
 //constants 
-const ADD_SPOT = "spot/ADD_SPOT"
+const CREATE_SPOT = "spot/CREATE_SPOT"
 
 
 
@@ -14,8 +14,10 @@ const ADD_SPOT = "spot/ADD_SPOT"
 
 
 
-
-
+const createSpot = (newSpot) => ({
+    type: CREATE_SPOT,
+    payload: newSpot
+})
 
 
 
@@ -39,35 +41,33 @@ export const addSpot = (formObj, imageData) => async (dispatch) => {
         body: JSON.stringify(formObj),
     });
 
-    const data = await response.json();
+    const spotObj = await response.json();
 
     /*
     using data.id, make a request to my images api.
     */
 
-    const res = await fetch(`/api/spots/${data.id}/spot_images`, {
+    const res = await fetch(`/api/spots/${spotObj.id}/spot_images`, {
         method: 'POST',
         body: imageData,
     });
 
+    let data = await res.json();
+
+    spotObj.images = data.image_urls
+
     if (res.ok) {
-        let imageUrls = await res.json();
-        
-        
+
+        await dispatch(createSpot(spotObj))
     } else {
         console.log("something went wrong!!")
     }
 
+
+
+    return spotObj
+
 }
-
-
-
-
-
-
-
-
-
 
 /*--------------------------------------------------------------------*/
 // REDUCER
@@ -75,9 +75,16 @@ export const addSpot = (formObj, imageData) => async (dispatch) => {
 const initialState = {};
 
 const spotReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case CREATE_SPOT:
+            let newSpot = { ...state }
 
+            newSpot[action.payload.id] = action.payload;
 
-    return initialState
+            return newSpot
+        default:
+            return state;
+    }
 };
 
 export default spotReducer;

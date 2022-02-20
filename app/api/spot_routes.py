@@ -84,4 +84,4 @@ def upload_spot_images(id):
 
         image_urls.append(image_url)
 
-    return {id: {"image_url": image_urls}}
+    return {"image_urls": image_urls}

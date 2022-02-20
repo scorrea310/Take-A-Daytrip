@@ -29,5 +29,16 @@ class Spot(db.Model):
         return {
             'id': self.id,
             "type": self.type,
-            "user_id": str(self.user.id)
+            "user_id": str(self.user.id),
+            "pets_allowed": str(self.pets),
+            "total_occupancy": str(self.total_occupancy),
+            "total_bedrooms": str(self.total_bedrooms),
+            "total_bathrooms": str(self.total_bathrooms),
+            "description": str(self.description),
+            "has_wifi": str(self.has_wifi),
+            "has_tv": str(self.has_tv),
+            "has_ac": str(self.has_ac),
+            "price_per_hour": str(self.price_per_hour),
+            "host_id": str(self.host_id),
+            "images": [image.image_url for image in self.images],
         }
