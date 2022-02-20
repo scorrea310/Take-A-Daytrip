@@ -30,8 +30,7 @@ const AddSpot = () => {
     const [hasAc, setHasAc] = useState("true")
     const [price, setPrice] = useState('')
     const [addSpotLoader, setAddSpotLoader] = useState(false)
-
-
+    const [name, setName] = useState('')
 
 
 
@@ -62,6 +61,7 @@ const AddSpot = () => {
             price,
             userId: sessionUser.id,
             type: selected,
+            name
 
         }
 
@@ -120,8 +120,8 @@ const AddSpot = () => {
 
                 <div className="nextButton" onClick={() => {
 
-                    if (!images.length) {
-                        setnoImagesError(["You have to include at least one image"])
+                    if (images.length < 2) {
+                        setnoImagesError(["You have to include at least two images"])
                     } else {
                         setfirstSlide(false)
                         setSecondSlide(false)
@@ -160,6 +160,15 @@ const AddSpot = () => {
                                 <button className="submitSpotButton" type="submit"> Add Spot </button>
                             </div>
                         </div>
+                        <label>Name</label>
+                        <input
+                            value={name}
+                            type="text"
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Name"
+                            required={true}
+                        >
+                        </input>
                         <label>Address</label>
                         <input
                             value={address}

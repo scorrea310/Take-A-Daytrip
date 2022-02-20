@@ -21,6 +21,7 @@ def add_spot():
         click.echo(click.style("steveveve", bg='red', fg='white'))
         new_spot = Spot(
             type=form.data["type"],
+            name=form.data["name"],
             address=form.data["address"],
             pets=form.data["petsAllowed"],
             total_occupancy=form.data["totalOccupancy"],

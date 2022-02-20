@@ -6,6 +6,7 @@ class Spot(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(255), nullable=False)
+    name = db.Column(db.String(500), nullable=False)
     address = db.Column(db.String(1000), nullable=False)
     pets = db.Column(db.Boolean, nullable=False)
     total_occupancy = db.Column(db.Integer, nullable=False)
@@ -29,6 +30,7 @@ class Spot(db.Model):
         return {
             'id': self.id,
             "type": self.type,
+            "name": self.name,
             "user_id": str(self.user.id),
             "pets_allowed": str(self.pets),
             "total_occupancy": str(self.total_occupancy),

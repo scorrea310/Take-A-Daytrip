@@ -21,6 +21,7 @@ def upgrade():
     op.create_table('spots',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('type', sa.String(length=255), nullable=False),
+    sa.Column('name', sa.String(length=500), nullable=False),
     sa.Column('address', sa.String(length=1000), nullable=False),
     sa.Column('pets', sa.Boolean(), nullable=False),
     sa.Column('total_occupancy', sa.Integer(), nullable=False),

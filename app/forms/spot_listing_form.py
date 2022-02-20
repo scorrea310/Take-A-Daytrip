@@ -24,6 +24,18 @@ class SpotListingForm(FlaskForm):
         ]
     )
 
+    name = StringField(
+        "Name",
+        validators=[
+            DataRequired(),
+            Length(
+                min=1,
+                max=5000,
+                message="Name must be between %(min)s and %(max)s characters long.",
+            ),
+        ]
+    )
+
     petsAllowed = BooleanField(
         "Pets Allowed",
         false_values=(False, 'false', 0, '0'),
