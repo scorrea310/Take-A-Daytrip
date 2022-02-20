@@ -5,10 +5,12 @@ import NavBar from '../NavBar/NavBar';
 import "./Spot.css"
 import { BsDoorOpen } from "react-icons/bs"
 import { BsCalendarDate } from "react-icons/bs"
+import EditSpot from './EditSpot';
+import ReserveSpot from './ReserveSpot';
 
+const Spot = ({ spotsLoaded }) => {
 
-const Spot = ({ sessionId, spotsLoaded }) => {
-
+    const user = useSelector((state) => state.session.user)
     const [isLoading, setIsLoading] = useState(true);
     const dispatch = useDispatch();
     const spot = useSelector((state) => state.spotReducer)
@@ -53,7 +55,7 @@ const Spot = ({ sessionId, spotsLoaded }) => {
                     <div className='spotDescriptionContainer'>{spot[`${spotId}`]?.description}</div>
                 </div>
                 <div className='editDeleteOrReserveSection'>
-                    
+                    {user?.id === parseInt(spot[`${spotId}`]?.host_id, 10) ? <EditSpot /> : <ReserveSpot />}
                 </div>
             </div>
         </div>
