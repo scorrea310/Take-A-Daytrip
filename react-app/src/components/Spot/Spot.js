@@ -55,7 +55,7 @@ const Spot = ({ spotsLoaded }) => {
                     <div className='spotDescriptionContainer'>{spot[`${spotId}`]?.description}</div>
                 </div>
                 <div className='editDeleteOrReserveSection'>
-                    {user?.id === parseInt(spot[`${spotId}`]?.host_id, 10) ? <EditSpot /> : <ReserveSpot />}
+                    {user?.id === parseInt(spot[`${spotId}`]?.host_id, 10) ? <EditSpot spot={spot} spotId={spotId} /> : <ReserveSpot />}
                 </div>
             </div>
         </div>

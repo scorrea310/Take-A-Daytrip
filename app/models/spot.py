@@ -43,5 +43,6 @@ class Spot(db.Model):
             "price_per_hour": str(self.price_per_hour),
             "host_id": str(self.host_id),
             "images": [image.image_url for image in self.images],
-            "host_name": self.user.name
+            "host_name": self.user.name,
+            "address": self.address
         }

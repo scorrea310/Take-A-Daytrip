@@ -324,7 +324,6 @@ const AddSpot = () => {
 
                         </input>
                     </form>
-
                 </div>
             </div >
 

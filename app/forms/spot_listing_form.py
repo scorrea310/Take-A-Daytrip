@@ -38,7 +38,7 @@ class SpotListingForm(FlaskForm):
 
     petsAllowed = BooleanField(
         "Pets Allowed",
-        false_values=(False, 'false', 0, '0'),
+        false_values=(False, 'false', 0, '0', 'False'),
     )
 
     totalOccupancy = IntegerField(
@@ -82,19 +82,19 @@ class SpotListingForm(FlaskForm):
 
     hasWifi = BooleanField(
         "Has Wifi",
-        false_values=(False, 'false', 0, '0'),
+        false_values=(False, 'false', 0, '0', 'False'),
         
     )
 
     hasTv = BooleanField(
         "Has TV",
-        false_values=(False, 'false', 0, '0'),
+        false_values=(False, 'false', 0, '0', 'False'),
         
     )
 
     hasAc = BooleanField(
         "Has AC",
-        false_values=(False, 'false', 0, '0'),
+        false_values=(False, 'false', 0, '0', 'False'),
         
     )
 
@@ -119,9 +119,6 @@ class SpotListingForm(FlaskForm):
 
     userId = IntegerField(
         "User Id",
-        validators=[
-            DataRequired(),
-        ]
     )
 
 

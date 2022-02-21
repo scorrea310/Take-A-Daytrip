@@ -105,3 +105,44 @@ def get_spots():
 
     return {"spots": return_spots}
 
+
+@spot_routes.route("/<int:id>", methods=["PATCH"])
+def update_spot(id):
+
+    form = SpotListingForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        old_spot = Spot.query.get(id)
+
+        old_spot.type = form.data["type"]
+        old_spot.name=form.data["name"]
+        old_spot.address=form.data["address"]
+        old_spot.pets =form.data["petsAllowed"]
+        old_spot.total_occupancy =form.data["totalOccupancy"]
+        old_spot.total_bedrooms =form.data["totalBedrooms"]
+        old_spot.total_bathrooms =form.data["totalBathrooms"]
+        old_spot.description =form.data["description"]
+        old_spot.has_wifi =form.data["hasWifi"]
+        old_spot.has_tv =form.data["hasTv"]
+        old_spot.has_ac =form.data["hasAc"]
+        old_spot.price_per_hour = form.data["price"]
+
+        db.session.commit()
+
+        return old_spot.to_dict()
+
+    click.echo(click.style(str(form.errors), bg='red', fg='white'))
+    return {"errors": form.errors}, 400
+
+
+
+
+@spot_routes.route("/<int:id>/delete", methods=["DELETE"])
+def delete_cart_item(id):
+
+    spot_to_delete = Spot.query.get(id)
+    db.session.delete(spot_to_delete)
+    db.session.commit()
+
+    return {"message": "deleted"}
