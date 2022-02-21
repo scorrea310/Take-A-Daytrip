@@ -17,6 +17,14 @@ const Spot = ({ spotsLoaded }) => {
     const { spotId } = useParams();
     const [noProduct, setNoProduct] = useState(false)
 
+
+    const isUserLoggedIn = () => {
+        if (user === null) {
+            return <h1>Login to Reserve!</h1>
+        } else {
+            return <ReserveSpot price={spot[`${spotId}`]?.price_per_day} />
+        }
+    }
     /*
     style={{ width: "100%", height: "357px", backgroundImage: `url(${spot[`${spotId}`]?.images[0]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", borderRadius: "12px" }}
     
@@ -55,7 +63,7 @@ const Spot = ({ spotsLoaded }) => {
                     <div className='spotDescriptionContainer'>{spot[`${spotId}`]?.description}</div>
                 </div>
                 <div className='editDeleteOrReserveSection'>
-                    {user?.id === parseInt(spot[`${spotId}`]?.host_id, 10) ? <EditSpot spot={spot} spotId={spotId} /> : <ReserveSpot />}
+                    {user?.id === parseInt(spot[`${spotId}`]?.host_id, 10) ? <EditSpot spot={spot} spotId={spotId} /> : isUserLoggedIn()}
                 </div>
             </div>
         </div>
