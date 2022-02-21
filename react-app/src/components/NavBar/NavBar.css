@@ -4,6 +4,18 @@
     height: 80px;
     /* background-color: aqua; */
     justify-content: center;
+    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+    
+}
+
+.landingPageNavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    position: fixed;
+    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+    
 }
 
 .navLogoContainer {
@@ -13,6 +25,7 @@
     flex-shrink: 2;
     flex-direction: row;
     align-items: center;
+    
 }
 
 .centerNavBarContainer {
@@ -20,9 +33,19 @@
     width: 89%;
     height: 80px;
     flex-direction: row;
+    position: fixed;
+    background-color:white;
     /* background-color: brown; */
     /* flex: 1 0 140px */
     
+}
+
+.addSpotSlidesNavBar {
+    display: flex;
+    width: 89%;
+    height: 80px;
+    flex-direction: row;
+    position: fixed;
 }
 
 #navLogo {
@@ -81,7 +104,7 @@
     display: flex;
     /* background-color: aqua; */
     width: fit-content;
-    height: 500px;
+    height: fit-content;
     width: 33%;
     justify-content: flex-start;
     align-items: flex-end;

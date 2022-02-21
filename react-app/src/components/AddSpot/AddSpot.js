@@ -96,6 +96,7 @@ const AddSpot = () => {
                 <div className="nextButton" onClick={() => {
                     setfirstSlide(false)
                     setSecondSlide(true)
+                    console.log("sdcsdcd")
                 }}>Next</div>
             </div>
 
@@ -328,7 +329,7 @@ const AddSpot = () => {
 
     return (
         <div className="addSpotPageContainer">
-            <NavBar />
+            <NavBar addspotPage={true} />
             <div className="addSpotMainContent">
 
                 {firstSlide ? slide1 : null}
