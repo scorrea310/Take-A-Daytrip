@@ -96,6 +96,7 @@ const AddSpot = () => {
                 <div className="nextButton" onClick={() => {
                     setfirstSlide(false)
                     setSecondSlide(true)
+                    console.log("sdcsdcd")
                 }}>Next</div>
             </div>
 

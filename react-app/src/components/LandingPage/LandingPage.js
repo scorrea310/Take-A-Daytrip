@@ -1,6 +1,8 @@
 import NavBar from "../NavBar/NavBar"
 import "./LandingPage.css"
 import Button from "../common/Button/Button"
+import CategoryCard from "./CategoryCard"
+
 const LandingPage = () => {
 
 
@@ -14,8 +16,12 @@ const LandingPage = () => {
                 </div>
             </div>
             <div className="landingPageCategorySection">
-                <div className="categorySectionContainer"></div>
+                <div className="categorySectionContainer">
+                    <div className="inspritationForYourText">Inspiration for your next trip</div>
+                    <div className="landingPageCardSection"></div>
+                </div>
             </div>
+            <div style={{ height: "300px", backgroundColor: "black" }}></div>
         </div>
     )
 }
