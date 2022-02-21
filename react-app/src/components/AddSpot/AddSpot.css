@@ -1,0 +1,313 @@
+.addSpotPageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh
+}
+
+.addSpotMainContent {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    overflow: hidden
+}
+
+.leftHalf {
+    width: 50%;
+    height: 100%;
+    background-image: url("../../images/Wiretap.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px 
+}
+
+.rightHalf {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    min-height: fit-content;
+    align-items: center;
+
+}
+
+.whatKindOfText {
+    font-size: 40px;
+    color: white;
+    width: 350px;
+}
+
+.spotCard {
+    width: 464px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    border: 1px solid #DDDDDD
+}
+
+.spotCard:hover {
+    width: 464px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 2px #222222;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.selected {
+    width: 464px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 2px #222222;
+    margin-top: 30px;
+}
+
+.selected:hover {
+    width: 464px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 2px #222222;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.spotNameAndImageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+}
+
+.nextButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    width: 75px;
+    height: 40px;
+    border-radius: 24px;
+    box-shadow: 0 0 0 2px #222222;
+    margin-top: 35px;
+    background-color: #222222 ;
+    color: white;
+}
+
+.submitSpotButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    width: 75px;
+    height: 40px;
+    border-radius: 24px;
+    box-shadow: 0 0 0 2px #222222;
+    background-color: #222222 ;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.nextButton:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    width: 75px;
+    height: 40px;
+    border-radius: 24px;
+    box-shadow: 0 0 0 2px #222222;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    margin-top: 35px;
+}
+
+.apartmentImage {
+    width: 56px;
+    height: 56px;
+    background-image: url("../../images/logan_apartments.6.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+.houseImage {
+    width: 56px;
+    height: 56px;
+    background-image: url("../../images/houseImage.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+.uniqueExperience {
+    width: 56px;
+    height: 56px;
+    background-image: url("../../images/theoneSkydiving.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+.outdoorsImage {
+    width: 56px;
+    height: 56px;
+    background-image: url("../../images/beachimage.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+.addSpotTextForm {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    width: 70%;
+    margin-top: 30px;
+}
+
+.addSpotTextFormSlide3 {
+     display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    width: 70%;
+    /* min-height:auto; */
+    justify-content: center;
+    margin-top: 90px;
+   
+}
+
+.pertsAllowedDivForm {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+
+
+.hasAcContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.formAndNextButtonContainer {
+    display: flex;
+    width: 100%;
+    /* background-color: brown; */
+    height: 100%;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+}
+
+#priceInputAddSpotFomr::-webkit-inner-spin-button,
+#priceInputAddSpotFomr::-webkit-outer-spin-button {
+ -webkit-appearance: none; 
+}
+
+.submitSpotButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.addSpotTextFormSlide3 > input{
+   margin-bottom: 20px;
+}
+
+.tellUsAboutDaytripContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.progressBarSlide1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.progressBarSlide1  > div {
+    margin-right: 5px;
+}
+
+
+.blackSlide {
+    border: 1px solid black;
+    width: 80px;
+}
+
+.graySlide {
+   border: 1px solid #DDDDDD;
+   width: 80px;
+}
+
+.progressBarSlide3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-right: 100px;
+}
+
+.progressBarSlide3  > div {
+    margin-right: 5px;
+}
+
+.addSpotLoaderBackground {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

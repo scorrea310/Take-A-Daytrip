@@ -8,7 +8,7 @@
 
 .navLogoContainer {
     display: flex;
-    width: 312px;
+    width: 33%;
     /* background-color: blueviolet; */
     flex-shrink: 2;
     flex-direction: row;
@@ -17,7 +17,7 @@
 
 .centerNavBarContainer {
     display: flex;
-    width: 85%;
+    width: 89%;
     height: 80px;
     flex-direction: row;
     /* background-color: brown; */
@@ -63,12 +63,11 @@
 
 .placesToStayTextContainer {
     display: flex;
-    width: 50%;
+    width: 33%;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    margin-top: 20px;
-    margin-left: 45px;
+
+    font-size: 16px;
 }
 
 #placesToStayBottomBorder {
@@ -82,10 +81,11 @@
     display: flex;
     /* background-color: aqua; */
     width: fit-content;
-    height: 80px;
-    width: 300px;
-    justify-content: flex-end;
-    align-items: center;
+    height: 500px;
+    width: 33%;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
 }
 
 .navBarProfileButton {
@@ -98,7 +98,21 @@
    flex-direction: row;
    justify-content: center;
    align-items: center;
-   margin-top: 20px;
+   margin-top: 18px;
+}
+
+.navBarProfileButton:hover {
+   width: 77px;
+   height: 42px;
+   border-radius: 21px;
+   background-color: #FFFFFF;
+   border: 1px solid #DDDDDD;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin-top: 18px;
+   cursor: pointer;
 }
 
 .searchStayContainer{
@@ -119,3 +133,139 @@
     border-radius: 32px;
     border: 1px solid rgb(221, 221, 221) 
 }
+
+.profileWindow {
+    display: flex;
+    flex-direction: column;
+    min-width: 152px;
+    height: 130px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    z-index: 2000;
+    background-color: #FFFFFF;
+}
+
+.profileWindowSignupText {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.profileWindowSignupText:hover {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.profileWindowLoginText {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.profileWindowHostYourHomeText {
+    display: flex;
+    width: 100%;
+    height:40px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profileWindowHostYourHomeText:hover {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    
+}
+
+.loginButton {
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+}
+
+
+
+
+.signupButton {
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.signupButton:hover {
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+}
+
+/* .loginButton:hover {
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+} */

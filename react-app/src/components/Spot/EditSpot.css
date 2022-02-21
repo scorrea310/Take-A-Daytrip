@@ -1,0 +1,204 @@
+.editSpotContainer {
+    display: flex;
+    height: 40%;
+    flex-direction: column;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    width: 70%;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+}
+
+.editDaytripText {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+
+}
+
+.editOrDeleteSpotContainer {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#editIcon {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+#deleteIcon {
+    font-size: 22px;
+    margin-right: 13px;
+    margin-left: 23px;
+}
+
+.editIconAndText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.editIconAndText:hover {
+    display: flex;
+    background-color: #f7f7f7;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.deleteIconAndText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.deleteIconAndText:hover {
+    display: flex;
+    background-color: #f7f7f7;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+#editModal {
+   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+  height: 650px;
+  width: 600px;
+  border-radius: 10px;
+}
+
+.editModalMainContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.closeIconAndEditTextContainer {
+    display: flex;
+    flex-direction: row;
+    height: 64px;
+    width: 100%;
+    border-bottom: 1px solid #DDDDDD;
+    align-items: center;
+}
+
+.closeEditModalContainer {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.closeEditModalContainer:hover {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: #DDDDDD;
+}
+
+.closeEditModalIcon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.editTextInEditModal {
+    display: flex;
+    width: 85%;
+    justify-content: center;
+}
+
+.mainEditFormContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* background-color: aqua; */
+    align-items: center;
+}
+.editForm {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* background-color: blueviolet; */
+    margin-top: 10px;
+}
+
+.editPhotosAndSubmitSection {
+    width: 80%;
+    /* background-color: rgb(49, 198, 35); */
+    display: flex;
+    height: 12%;
+    justify-content: center;
+    align-items: center;
+}
+.btn.submitEditButton {
+border-radius: 24px;
+height: 48px;
+cursor: pointer;
+margin-top: 20px;
+}
+
+.deleteModalContentContainer {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.confirmOrCancelDeletButtons{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.btn.confirmDeleteSpotButton {
+    border-radius: 24px;
+    height: 48px;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+    margin-right: 10px;
+}
+
+.btn.confirmCancelSpotButton {
+    border-radius: 24px;
+    height: 48px;
+    cursor: pointer;
+    background-color: black;
+    border: none;
+}
+
