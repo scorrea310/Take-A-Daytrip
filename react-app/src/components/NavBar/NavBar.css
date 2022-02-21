@@ -4,6 +4,7 @@
     height: 80px;
     /* background-color: aqua; */
     justify-content: center;
+    
 }
 
 .navLogoContainer {
@@ -13,6 +14,7 @@
     flex-shrink: 2;
     flex-direction: row;
     align-items: center;
+    
 }
 
 .centerNavBarContainer {
@@ -20,9 +22,19 @@
     width: 89%;
     height: 80px;
     flex-direction: row;
+    position: fixed;
+    background-color:white;
     /* background-color: brown; */
     /* flex: 1 0 140px */
     
+}
+
+.addSpotSlidesNavBar {
+    display: flex;
+    width: 89%;
+    height: 80px;
+    flex-direction: row;
+    position: fixed;
 }
 
 #navLogo {

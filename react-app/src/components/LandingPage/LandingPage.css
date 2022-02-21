@@ -7,11 +7,15 @@
 
 .landingPageBigImageAndButtonContainer {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
     width: 89%;
     border-radius: 10px;
     height: 700px;
-    background-image: url("../../images/daytrip_landing_page_image.jpeg");
+    background-image: url("../../images/beachimage.jpeg");
     background-size: cover;
+    background-position: center;
 }
 
 .landingPageBigImageContainer {
@@ -21,4 +25,33 @@
     /* background-color: black; */
     align-items: center;
     height: 700px;
+}
+
+.btn.imFlexibleButton {
+    border-radius: 24px;
+    height: 48px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 60px;
+}
+
+.notSureWhereText {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+    
+}
+
+.landingPageCategorySection {
+    display: flex;
+    flex-direction: column;
+    height: 539px;
+    width: 100%;
+    align-items: center;
+}
+
+.categorySectionContainer{
+    width: 89%;
+    background-color: black;
+    height: 100% 
 }
