@@ -68,12 +68,6 @@ const AddSpot = () => {
         let newSpot = dispatch(addSpot(formObj, imageData)).then((data) => {
             history.push(`/spots/${data.id}`)
         })
-
-        // console.log(newSpot)
-
-        // history.push(`/spot/${newSpot.id}`);
-
-
     }
 
     const setAddressFunction = (e) => {
