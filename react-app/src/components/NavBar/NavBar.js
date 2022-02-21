@@ -6,22 +6,29 @@ import ProfileModal from "./ProfileModal"
 import { Modal } from '../../context/Modal';
 import LoginForm from "../LoginForm/LoginForm"
 import SignUpForm from "../SignUpForm/SignUpForm"
+import { NavLink } from "react-router-dom"
 
-
-const NavBar = ({ landingPage }) => {
+const NavBar = ({ landingPage, spotPage }) => {
 
     const [profileModal, setProfileModal] = useState(false)
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showSignUpModal, setShowSignupModal] = useState(false)
 
+    let centerNavBarClassName;
+
+    if (spotPage) {
+        centerNavBarClassName = "spotPageNavBar"
+    } else {
+        centerNavBarClassName = "centerNavBarContainer"
+    }
 
     return (
         <>
             <div className="NavBarContainer">
-                <div className="centerNavBarContainer">
+                <div className={centerNavBarClassName}>
                     <div className="navLogoContainer">
                         <div id="navLogo" ></div>
-                        <div className="takeADayTripText">Take A Daytrip</div>
+                        <NavLink to="/" className="takeADayTripText">Take A Daytrip</NavLink>
                     </div>
                     <div className="placesToStayTextContainer"> Places to Stay
                         {/* <div id="placesToStayBottomBorder"></div> */}

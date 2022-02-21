@@ -1,0 +1,119 @@
+.spotPageNavBar {
+    display: flex;
+    width: 79%;
+    height: 80px;
+    flex-direction: row;
+    
+}
+
+.spotPageNavBArContainerParent {
+   height: 80px; 
+   width: 100%;
+   box-shadow: rgb(0 0 0 / 8%) 0 1px 12px ;
+}
+
+.spotPageContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spotNameAndImageSection {
+    display: flex;
+    width: 79%;
+    flex-direction: column;
+}
+
+.spotNameAndImageSection > h1 {
+    font-weight:normal;
+}
+
+.spotPageImagesSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.spotInfoAndReserveOrEditContainer {
+    display: flex;
+    flex-direction: row;
+    height: 539px;
+    /* background-color: aqua; */
+    width: 79%;
+    margin-top: 30px;
+}
+
+.spotDescriptionAndInfoDiv {
+    display: flex;
+    width: 66%;
+    height: 100%;
+    /* background-color: blue; */
+    flex-direction: column;
+}
+
+.spotDetailsTitleAndStats {
+    border-bottom: 1px solid rgb(221, 221, 221);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+}
+
+.spotStatContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.reservationAndCancelationTextContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+#doorIcon {
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.doorAndSelfTextContainer {
+    display: flex;
+    align-items: center;
+}
+
+.checkInYouselfText {
+    margin-left: 40px;
+    margin-top: 5px;
+    color: rgb(113, 113, 113);
+    font-size: 14px;
+}
+
+#calendarIcon {
+    font-size: 25px;
+    margin-right: 15px;
+    
+}
+
+.calendarAndCancelationText {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    padding-bottom: 25px;
+}
+
+.spotDescriptionContainer{
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.editDeleteOrReserveSection {
+    display: flex;
+    width: 46%;
+    height: 430px;  
+    justify-content: center;
+    margin-top: 30px;
+}
