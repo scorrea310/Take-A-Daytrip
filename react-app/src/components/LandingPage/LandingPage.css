@@ -53,7 +53,7 @@
 .categorySectionContainer{
     width: 89%;
     /* background-color: rgb(247, 80, 80); */
-    height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
 }
@@ -67,8 +67,29 @@
 .landingPageCardSection {
     display: flex;
     flex-direction: row;
-    height: 500px;
-    background-color: aqua;
+    height: fit-content;
     margin-top: 50px;
     margin-bottom: 10px;
+    justify-content: center;
 }
+
+.regularCategoryCard {
+    display: flex;
+    flex-direction: column;
+    width: 316px;
+    height: 402px;
+    background-color: rgb(255, 77, 0);
+    border-radius: 12px;
+    margin-right: 10px;
+}
+
+.rightCategoryCard {
+    display: flex;
+    flex-direction: column;
+    width: 316px;
+    height: 402px;
+    background-color: rgb(235, 54, 14);
+    border-radius: 12px;
+}
+
+/* display: "flex", flexDirection: "column", width: "316px", height: "402px", backgroundColor: "red", borderRadius: "12px" */

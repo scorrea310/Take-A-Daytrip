@@ -15,6 +15,7 @@ const NavBar = ({ landingPage, spotPage, addspotPage }) => {
     const [showSignUpModal, setShowSignupModal] = useState(false)
 
     let centerNavBarClassName;
+    let navBarContainerClassName;
 
     if (spotPage) {
         centerNavBarClassName = "spotPageNavBar"
@@ -28,9 +29,15 @@ const NavBar = ({ landingPage, spotPage, addspotPage }) => {
         centerNavBarClassName = "centerNavBarContainer"
     }
 
+    if (landingPage) {
+        navBarContainerClassName = "landingPageNavBarContainer"
+    } else {
+        navBarContainerClassName = "NavBarContainer"
+    }
+
     return (
         <>
-            <div className="NavBarContainer">
+            <div className={navBarContainerClassName}>
                 <div className={centerNavBarClassName}>
                     <div className="navLogoContainer">
                         <div id="navLogo" ></div>

@@ -4,6 +4,15 @@
     height: 80px;
     /* background-color: aqua; */
     justify-content: center;
+    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+    
+}
+
+.landingPageNavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
     position: fixed;
     box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
     

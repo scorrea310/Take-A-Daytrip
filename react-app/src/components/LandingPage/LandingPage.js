@@ -18,10 +18,14 @@ const LandingPage = () => {
             <div className="landingPageCategorySection">
                 <div className="categorySectionContainer">
                     <div className="inspritationForYourText">Inspiration for your next trip</div>
-                    <div className="landingPageCardSection"></div>
+                    <div className="landingPageCardSection">
+                        <CategoryCard />
+                        <CategoryCard />
+                        <CategoryCard />
+                        <CategoryCard rightCard={true} />
+                    </div>
                 </div>
             </div>
-            <div style={{ height: "300px", backgroundColor: "black" }}></div>
         </div>
     )
 }
