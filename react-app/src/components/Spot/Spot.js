@@ -22,12 +22,12 @@ const Spot = ({ spotsLoaded }) => {
         if (user === null) {
             return <h1>Login to Reserve!</h1>
         } else {
-            return <ReserveSpot price={spot[`${spotId}`]?.price_per_day} />
+            return <ReserveSpot spotId={parseInt(spotId, 10)} totalOccupantsAllowed={spot[`${spotId}`]?.total_occupancy} price={spot[`${spotId}`]?.price_per_day} />
         }
     }
     /*
     style={{ width: "100%", height: "357px", backgroundImage: `url(${spot[`${spotId}`]?.images[0]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", borderRadius: "12px" }}
-    
+     
     */
 
     /*

@@ -62,4 +62,10 @@
     border-bottom-right-radius: 8px;
     align-items: center;
     margin-left: 10px;
+    flex-direction: row;
+}
+
+.numberOfGuestsReserve{
+     margin-left: 10px;
+     width: 50%
 }

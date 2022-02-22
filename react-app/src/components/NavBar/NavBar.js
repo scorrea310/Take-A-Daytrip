@@ -16,24 +16,31 @@ const NavBar = ({ landingPage, spotPage, addspotPage }) => {
 
     let centerNavBarClassName;
     let navBarContainerClassName;
-
-    if (spotPage) {
+    //spotPageNavBarContainer
+    if (spotPage === true) {
         centerNavBarClassName = "spotPageNavBar"
+        navBarContainerClassName = "spotPageNavBarContainer"
     } else {
+
         centerNavBarClassName = "centerNavBarContainer"
     }
 
     if (addspotPage) {
         centerNavBarClassName = "addSpotSlidesNavBar"
-    } else {
+    } else if (!addspotPage && !spotPage) {
         centerNavBarClassName = "centerNavBarContainer"
     }
 
     if (landingPage) {
         navBarContainerClassName = "landingPageNavBarContainer"
-    } else {
+    } else if (!landingPage && !spotPage) {
         navBarContainerClassName = "NavBarContainer"
     }
+
+    console.log(spotPage)
+
+    console.log(centerNavBarClassName)
+
 
     return (
         <>
