@@ -35,3 +35,21 @@ def add_reservation(id):
     
     click.echo(click.style(str(form.errors), bg='red', fg='white'))
     return {"errors": form.errors}, 400
+
+
+@reservation_routes.route("/<int:id>")
+def get_reservations_for_user(id):
+
+    users_reservations = Reservation.query.filter(Reservation.user_id == id)
+
+    all_of_users_reservations = {}
+
+    for reservation in users_reservations:
+        all_of_users_reservations[reservation.id] = reservation.to_dict()
+
+    # click.echo(click.style(str(all_of_users_reservations), bg='red', fg='white'))
+
+    return {"reservations": all_of_users_reservations}
+
+
+

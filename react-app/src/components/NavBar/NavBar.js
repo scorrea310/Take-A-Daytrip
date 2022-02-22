@@ -37,11 +37,6 @@ const NavBar = ({ landingPage, spotPage, addspotPage }) => {
         navBarContainerClassName = "NavBarContainer"
     }
 
-    console.log(spotPage)
-
-    console.log(centerNavBarClassName)
-
-
     return (
         <>
             <div className={navBarContainerClassName}>

@@ -1,6 +1,6 @@
 //constants
 const CREATE_RESERVATION = "reservation/CREATE_RESERVATION"
-
+const LOAD_RESERVATIONS = "reservation/LOAD_RESERVATIONS"
 
 
 
@@ -16,7 +16,10 @@ const createReservationAction = (reservation) => ({
 })
 
 
-
+const loadResevationsAction = (reservations) => ({
+    type: LOAD_RESERVATIONS,
+    payload: reservations
+})
 
 
 
@@ -50,9 +53,30 @@ export const creatReservationThunk = (reservationFormObj, userId) => async (disp
         console.log("ERROR IN CREATE RESERVATION THUNK")
     }
 
-
 }
 
+
+export const loadreservationsthunk = (userId) => async (dispatch) => {
+
+    if (!userId) return
+
+    const response = await fetch(`/api/reservations/${userId}`);
+
+    const usersReservations = await response.json();
+
+    if (response.ok) {
+        dispatch(loadResevationsAction(usersReservations))
+
+
+    } else {
+        console.log("IN THUNK")
+    }
+
+
+
+
+
+}
 
 
 
@@ -76,6 +100,12 @@ const reservationsReducer = (state = initialState, action) => {
             newState[action.payload.id] = action.payload
 
             return newState
+
+
+        case LOAD_RESERVATIONS:
+
+
+            return action.payload
         default:
             return state;
     }
