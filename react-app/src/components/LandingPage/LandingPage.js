@@ -19,10 +19,10 @@ const LandingPage = () => {
                 <div className="categorySectionContainer">
                     <div className="inspritationForYourText">Inspiration for your next trip</div>
                     <div className="landingPageCardSection">
-                        <CategoryCard />
-                        <CategoryCard />
-                        <CategoryCard />
-                        <CategoryCard rightCard={true} />
+                        <CategoryCard firstCard={true} picture={"outdoor"} />
+                        <CategoryCard secondCard={true} picture={"house"} />
+                        <CategoryCard thirdCard={true} picture={"apartment"} />
+                        <CategoryCard rightCard={true} picture={"unique experience"} />
                     </div>
                 </div>
             </div>

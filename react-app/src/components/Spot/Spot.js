@@ -7,6 +7,9 @@ import { BsDoorOpen } from "react-icons/bs"
 import { BsCalendarDate } from "react-icons/bs"
 import EditSpot from './EditSpot';
 import ReserveSpot from './ReserveSpot';
+import { GiVacuumCleaner } from "react-icons/gi"
+import { FaAddressCard } from "react-icons/fa"
+
 
 const Spot = ({ spotsLoaded }) => {
 
@@ -25,16 +28,39 @@ const Spot = ({ spotsLoaded }) => {
             return <ReserveSpot spotId={parseInt(spotId, 10)} totalOccupantsAllowed={spot[`${spotId}`]?.total_occupancy} price={spot[`${spotId}`]?.price_per_day} />
         }
     }
-    /*
-    style={{ width: "100%", height: "357px", backgroundImage: `url(${spot[`${spotId}`]?.images[0]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", borderRadius: "12px" }}
 
-    */
+    let petsAllowed;
+    let hasAc;
+    let hasTv;
+    let hasWifi;
 
-    /*
-    total_bathrooms: "0"
-    total_bedrooms: "0"
-    total_occupancy: "0"
-    */
+
+    if (spot[`${spotId}`]?.pets_allowed === "True") {
+        petsAllowed = "Yes"
+    } else {
+        petsAllowed = "No"
+    }
+
+    if (spot[`${spotId}`]?.has_ac === "True") {
+        hasAc = "Yes"
+    } else {
+        hasAc = "No"
+    }
+
+    if (spot[`${spotId}`]?.has_tv === "True") {
+        hasTv = "Yes"
+    } else {
+        hasTv = "No"
+    }
+
+    if (spot[`${spotId}`]?.has_wifi === "True") {
+        hasWifi = "Yes"
+    } else {
+        hasWifi = "No"
+    }
+
+
+
     let spotDiv = (
         <div className='spotPageContainer'>
             <div className='spotPageNavBArContainerParent'>
@@ -54,11 +80,21 @@ const Spot = ({ spotsLoaded }) => {
                         <div className='spotStatContainer'>
                             Total Bathrooms {spot[`${spotId}`]?.total_bathrooms} - Total Bedrooms {spot[`${spotId}`]?.total_bedrooms} - Total Occupants Allowed {spot[`${spotId}`]?.total_occupancy}
                         </div>
+                        <div className='spotStatContainerPetsAllowed'>
+                            <div>Pets Allowed: {petsAllowed}</div>
+                            <div>Has Ac: {hasAc}</div>
+                            <div>Has Wifi: {hasWifi}</div>
+                            <div>Has TV: {hasTv}</div>
+                        </div>
                     </div>
                     <div className='reservationAndCancelationTextContainer'>
                         <div className='doorAndSelfTextContainer'> <BsDoorOpen id="doorIcon" /> Self Check In </div>
                         <div className='checkInYouselfText'>Check yourself by showing up.</div>
                         <div className='calendarAndCancelationText'> <BsCalendarDate id="calendarIcon" /> Free cancellation before start date. </div>
+                    </div>
+                    <div className='reservationAndCancelationTextContainer'>
+                        <div className='doorAndSelfTextContainer'> <FaAddressCard style={{ fontSize: "25px", marginRight: "15px" }} /> Address: {spot[`${spotId}`]?.address} </div>
+                        <div className='calendarAndCancelationText'> <GiVacuumCleaner style={{ fontSize: "25px", marginRight: "15px" }} /> Don't worry about cleaning! Daytrip cleaning service on us.</div>
                     </div>
                     <div className='spotDescriptionContainer'>{spot[`${spotId}`]?.description}</div>
                 </div>
@@ -68,7 +104,11 @@ const Spot = ({ spotsLoaded }) => {
             </div>
         </div>
     )
-
+    /*
+    font-size: 25px;
+    margin-right: 15px;
+    
+    */
 
 
     if (!spotsLoaded) {

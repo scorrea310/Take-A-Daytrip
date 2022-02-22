@@ -8,7 +8,7 @@ import LoginForm from "../LoginForm/LoginForm"
 import SignUpForm from "../SignUpForm/SignUpForm"
 import { NavLink } from "react-router-dom"
 
-const NavBar = ({ landingPage, spotPage, addspotPage }) => {
+const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
 
     const [profileModal, setProfileModal] = useState(false)
     const [showLoginModal, setShowLoginModal] = useState(false);
@@ -35,6 +35,12 @@ const NavBar = ({ landingPage, spotPage, addspotPage }) => {
         navBarContainerClassName = "landingPageNavBarContainer"
     } else if (!landingPage && !spotPage) {
         navBarContainerClassName = "NavBarContainer"
+    }
+
+    if (spotListingsPage) {
+        centerNavBarClassName = "centerNavBarContainerListingsPage"
+    } else if (!addspotPage && !spotPage && !spotListingsPage) {
+        centerNavBarClassName = "centerNavBarContainer"
     }
 
     return (

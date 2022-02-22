@@ -25,12 +25,12 @@ const EditSpot = ({ spot, spotId }) => {
     const [hasWifi, setHasWifi] = useState(spot[`${spotId}`].has_wifi)
     const [hasTv, setHasTv] = useState(spot[`${spotId}`].has_tv)
     const [hasAc, setHasAc] = useState(spot[`${spotId}`].has_ac)
-    const [price, setPrice] = useState(parseFloat(spot[`${spotId}`].price_per_hour))
+    const [price, setPrice] = useState(parseFloat(spot[`${spotId}`].price_per_day))
     const [addSpotLoader, setAddSpotLoader] = useState(false)
     const [name, setName] = useState(spot[`${spotId}`].name)
     const [type, setType] = useState(spot[`${spotId}`].type)
 
-
+    //
     const setAddressFunction = (e) => {
         setAddress(e.target.value);
     }
@@ -253,7 +253,6 @@ const EditSpot = ({ spot, spotId }) => {
                             <label>Price</label>
                             <input
                                 type="number"
-
                                 value={price}
                                 onChange={(e) => {
                                     setPrice(e.target.value)

@@ -46,9 +46,20 @@
     position: fixed;
     background-color:white;
     /* background-color: brown; */
-    /* flex: 1 0 140px */
-    
+    /* flex: 1 0 140px */ 
 }
+
+.centerNavBarContainerListingsPage {
+    display: flex;
+    width: 97%;
+    height: 80px;
+    flex-direction: row;
+    position: fixed;
+    background-color:white;
+    /* background-color: brown; */
+    /* flex: 1 0 140px */ 
+}
+
 
 .addSpotSlidesNavBar {
     display: flex;

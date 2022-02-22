@@ -73,6 +73,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
     // console.log(typeof totalOccupantsAllowed)
 
+    console.log(totalOccupantsAllowed)
 
     return (
         <div className="reserveASpotContainer">

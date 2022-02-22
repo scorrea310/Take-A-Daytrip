@@ -13,6 +13,7 @@ import Spot from './components/Spot/Spot';
 import { loadSpotsFunc } from './store/spotReducer';
 import MyTrips from './components/MyTrips/MyTrips';
 import { loadreservationsthunk } from './store/reservationsReducer';
+import SpotListings from './components/SpotListings/SpotListings';
 
 function App() {
 
@@ -39,11 +40,7 @@ function App() {
 
     dispatch(loadSpotsFunc()).then(() => setSpotsLoaded(true))
 
-
-
   }, [dispatch])
-
-
 
 
 
@@ -63,6 +60,9 @@ function App() {
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
+        </Route>
+        <Route path='/allspots' exact={true}>
+          <SpotListings />
         </Route>
         <ProtectedRoute path='/spots/new' exact={true} >
           <AddSpot />
