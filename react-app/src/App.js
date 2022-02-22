@@ -11,6 +11,7 @@ import LandingPage from './components/LandingPage/LandingPage';
 import AddSpot from './components/AddSpot/AddSpot';
 import Spot from './components/Spot/Spot';
 import { loadSpotsFunc } from './store/spotReducer';
+import MyTrips from './components/MyTrips/MyTrips';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -52,7 +53,7 @@ function App() {
           <AddSpot />
         </ProtectedRoute>
         <ProtectedRoute path='/mytrips' exact={true} >
-          <h1>My Trips</h1>
+          <MyTrips />
         </ProtectedRoute>
         <Route path='/spots/:spotId' exact={true}>
           <Spot spotsLoaded={spotsLoaded} />

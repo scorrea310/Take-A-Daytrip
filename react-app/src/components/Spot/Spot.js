@@ -27,7 +27,7 @@ const Spot = ({ spotsLoaded }) => {
     }
     /*
     style={{ width: "100%", height: "357px", backgroundImage: `url(${spot[`${spotId}`]?.images[0]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", borderRadius: "12px" }}
-     
+
     */
 
     /*

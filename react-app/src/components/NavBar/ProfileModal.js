@@ -72,7 +72,7 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
                         }} >Host a Trip</div>
 
                     </div>
-                    <div className="profileWindowHostYourHomeText">View upcoming trips</div>
+                    <div className="profileWindowHostYourHomeText" onClick={() => history.push("/mytrips")}>View upcoming trips</div>
                 </div>
 
             </OutsideClickHandler>
