@@ -2,7 +2,7 @@ import "./ReservationSpotCard.css"
 import { FiEdit } from "react-icons/fi"
 import { RiDeleteBinLine } from "react-icons/ri"
 import { MdOutlineCancelPresentation } from "react-icons/md"
-
+import { CgDetailsMore } from "react-icons/cg"
 
 const ReservedSpotCard = ({ reservation }) => {
 
@@ -35,11 +35,14 @@ const ReservedSpotCard = ({ reservation }) => {
                         <div>Address</div>
                         <div>{reservation.spot_address}</div>
                     </div>
-                    <div className="checkInDateReservedCArd">
+                    <div className="priceReservationCardContainer">
                         <div>Price</div>
                         <div>${reservation.price}</div>
                     </div>
-                </div>
+                    <div className="seeMoreDetailsIconAndTextContainerReserveCard">
+                        <CgDetailsMore style={{ fontSize: "24px", marginRight: "5px" }} />
+                        <div>Details</div>
+                    </div></div>
             </div>
         </div >
     )

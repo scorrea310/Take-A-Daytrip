@@ -6,7 +6,7 @@
     /* background-color: aqua; */
     margin-bottom: 60px;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .reservesSpotCardInfo {
@@ -63,6 +63,17 @@
     margin-bottom: 30px;
 }
 
+
+.priceReservationCardContainer {
+    display: flex;
+    flex-direction: row;
+    /* background-color: aqua; */
+    width: 60%;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
 .editAndDeleteReservationIconAndText {
     display: flex;
     flex-direction: row;
@@ -87,4 +98,18 @@
     cursor: pointer;
     margin-left: 20px;
     align-items: center;
+}
+
+.seeMoreDetailsIconAndTextContainerReserveCard {
+    display: flex;
+    flex-direction: row;
+    /* background-color: aqua; */
+    width: 60%;
+    height: 70px;
+    justify-content: center;
+    /* margin-top: 20px;
+    margin-bottom: 30px; */
+    /* background-color: aqua; */
+    align-items: center;
+    cursor: pointer;
 }
