@@ -43,3 +43,7 @@ class ReservationForm(FlaskForm):
             ),
         ],
     )
+
+    user_id = IntegerField(
+        "User Id",
+    )

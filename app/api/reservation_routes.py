@@ -53,3 +53,43 @@ def get_reservations_for_user(id):
 
 
 
+@reservation_routes.route("/<int:id>", methods=["PATCH"])
+def update_reservation(id):
+    """
+    UPDATES a Reservation
+    the id above is the reservation id to create reservation for.
+    """ 
+    form = ReservationForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        old_reservation = Reservation.query.get(id)
+
+        old_reservation.spot_id = form.data["spot_id"],
+        old_reservation.user_id = form.data["user_id"],
+        old_reservation.number_of_guests =form.data["number_of_guests"],
+        old_reservation.reservation =form.data["reservation"],
+        old_reservation.price=form.data["price"],
+
+        db.session.commit()
+
+        return old_reservation.to_dict()
+
+    click.echo(click.style(str(form.errors), bg='red', fg='white'))
+    return {"errors": form.errors}, 400
+
+
+
+@reservation_routes.route("/<int:id>", methods=["DELETE"])
+def delete_reservation(id):
+    """
+    DELETE a Reservation
+    the id above is the reservation id to DELETE
+    """ 
+
+    old_reservation = Reservation.query.get(id)
+
+    db.session.delete(old_reservation)
+    db.session.commit()
+
+    return {"message": "deleted"}

@@ -10,7 +10,7 @@ const MyTrips = ({ reservationsLoaded }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     const [isLoaded, setIsloaded] = useState(false)
-    const reservations = useSelector((state) => state.reservationsReducer?.reservations);
+    const reservations = useSelector((state) => state.reservationsReducer);
 
     useEffect(() => {
         dispatch(loadreservationsthunk(sessionUser.id)).then(() => {
@@ -34,10 +34,10 @@ const MyTrips = ({ reservationsLoaded }) => {
             <div className="mainContentTripsPage">
                 <div className="TripsTextTripsPage">Trips</div>
                 <div className="tripsSpotCardSection">
-                    {Object.values(reservations).map((reservation) => {
-                        return <ReservedSpotCard reservation={reservation} />
+                    {Object.values(reservations).length > 0 && Object.values(reservations).map((reservation) => {
+                        return <ReservedSpotCard key={reservation.id} reservation={reservation} />
                     })}
-
+                    {Object.values(reservations).length === 0 && <div className="noTripsSection">No trips booked...yet!</div>}
                 </div>
             </div>
 

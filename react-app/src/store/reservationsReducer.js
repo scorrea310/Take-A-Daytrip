@@ -1,8 +1,8 @@
 //constants
 const CREATE_RESERVATION = "reservation/CREATE_RESERVATION"
 const LOAD_RESERVATIONS = "reservation/LOAD_RESERVATIONS"
-
-
+const UPDATE_RESERVATION = "reservation/UPDATE_RESERVATION"
+const DELETE_RESERVATION = "reservation/DELETE_RESERVATION"
 
 
 
@@ -21,7 +21,15 @@ const loadResevationsAction = (reservations) => ({
     payload: reservations
 })
 
+const updateReservationAction = (reservation) => ({
+    type: UPDATE_RESERVATION,
+    payload: reservation
+})
 
+const deleteReservationAction = (reservationId) => ({
+    type: DELETE_RESERVATION,
+    payload: reservationId
+})
 
 
 /*--------------------------------------------------------------------*/
@@ -65,17 +73,59 @@ export const loadreservationsthunk = (userId) => async (dispatch) => {
     const usersReservations = await response.json();
 
     if (response.ok) {
-        dispatch(loadResevationsAction(usersReservations))
+        dispatch(loadResevationsAction(usersReservations.reservations))
+
+        console.log(usersReservations.reservations)
 
 
     } else {
         console.log("IN THUNK")
     }
+}
 
 
+export const updateReservationThunk = (reservationFormObj, reservationId) => async (dispatch) => {
+
+    const response = await fetch(`/api/reservations/${reservationId}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reservationFormObj),
+    });
 
 
+    const updatedReservation = await response.json();
 
+    if (response.ok) {
+
+        await dispatch(updateReservationAction(updatedReservation))
+
+        return updatedReservation;
+
+    } else {
+        console.log("ERROR IN CREATE RESERVATION THUNK")
+    }
+}
+
+
+export const deleteReservationThunk = (reservationId) => async (dispatch) => {
+
+    const response = await fetch(`/api/reservations/${reservationId}`, {
+        method: 'DELETE',
+    });
+
+    const updatedReservation = await response.json();
+
+    if (response.ok) {
+
+        dispatch(deleteReservationAction(reservationId))
+
+        return updatedReservation
+
+    } else {
+        console.log("something went wrong!!")
+    }
 }
 
 
@@ -106,6 +156,22 @@ const reservationsReducer = (state = initialState, action) => {
 
 
             return action.payload
+
+        case UPDATE_RESERVATION:
+
+            let newStateAgain = { ...state }
+
+            newStateAgain[`${action.payload.id}`] = action.payload
+
+            return newStateAgain;
+
+        case DELETE_RESERVATION:
+            let newStateDelete = { ...state }
+
+            delete newStateDelete[`${action.payload}`];
+
+            return newStateDelete
+
         default:
             return state;
     }
