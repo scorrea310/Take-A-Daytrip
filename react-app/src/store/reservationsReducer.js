@@ -44,7 +44,7 @@ export const creatReservationThunk = (reservationFormObj, userId) => async (disp
 
         await dispatch(createReservationAction(newReservation))
 
-        console.log(newReservation)
+        return newReservation;
 
     } else {
         console.log("ERROR IN CREATE RESERVATION THUNK")
@@ -69,8 +69,16 @@ export const creatReservationThunk = (reservationFormObj, userId) => async (disp
 const initialState = {};
 
 const reservationsReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case CREATE_RESERVATION:
+            let newState = { ...state }
 
-    return initialState
+            newState[action.payload.id] = action.payload
+
+            return newState
+        default:
+            return state;
+    }
 }
 
 

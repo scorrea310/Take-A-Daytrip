@@ -51,6 +51,9 @@ function App() {
         <ProtectedRoute path='/spots/new' exact={true} >
           <AddSpot />
         </ProtectedRoute>
+        <ProtectedRoute path='/mytrips' exact={true} >
+          <h1>My Trips</h1>
+        </ProtectedRoute>
         <Route path='/spots/:spotId' exact={true}>
           <Spot spotsLoaded={spotsLoaded} />
         </Route>
