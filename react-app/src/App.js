@@ -48,7 +48,7 @@ function App() {
   if (!loaded) {
     return null;
   }
-
+  //outdoors, apartments, house, unique
   return (
     <BrowserRouter>
       <Switch>
@@ -63,6 +63,12 @@ function App() {
         </Route>
         <Route path='/allspots' exact={true}>
           <SpotListings allSpots={true} />
+        </Route>
+        <Route path='/apartments' exact={true}>
+          <SpotListings apartments={true} />
+        </Route>
+        <Route path='/outdoors' exact={true}>
+          <SpotListings outdoors={true} />
         </Route>
         <ProtectedRoute path='/spots/new' exact={true} >
           <AddSpot />

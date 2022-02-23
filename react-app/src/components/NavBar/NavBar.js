@@ -7,9 +7,11 @@ import { Modal } from '../../context/Modal';
 import LoginForm from "../LoginForm/LoginForm"
 import SignUpForm from "../SignUpForm/SignUpForm"
 import { NavLink } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
 
+    const history = useHistory()
     const [profileModal, setProfileModal] = useState(false)
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showSignUpModal, setShowSignupModal] = useState(false)
@@ -51,7 +53,7 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
                         <div id="navLogo" ></div>
                         <NavLink to="/" className="takeADayTripText">Take A Daytrip</NavLink>
                     </div>
-                    <div className="placesToStayTextContainer"> Places to Stay
+                    <div className="placesToStayTextContainer"> <div className="placesToStayButtonContainer" onClick={() => history.push("/allspots")}>Places to Stay</div>
                         {/* <div id="placesToStayBottomBorder"></div> */}
                     </div>
                     <div className="profileButtonContainer" >

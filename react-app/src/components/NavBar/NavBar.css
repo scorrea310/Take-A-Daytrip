@@ -110,9 +110,18 @@
     width: 33%;
     justify-content: center;
     align-items: center;
-
     font-size: 16px;
 }
+
+.placesToStayButtonContainer:hover {
+
+    width: fit-content;
+    background-color: #DDDDDD;
+    padding: 10px;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
 
 #placesToStayBottomBorder {
     width: 20px;

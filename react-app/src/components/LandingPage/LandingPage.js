@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer"
 
 const LandingPage = () => {
 
-
+    //outdoors, apartments, house, unique 
     return (
         <div className="landingPage">
             <NavBar landingPage={true} />
@@ -20,9 +20,9 @@ const LandingPage = () => {
                 <div className="categorySectionContainer">
                     <div className="inspritationForYourText">Inspiration for your next trip</div>
                     <div className="landingPageCardSection">
-                        <CategoryCard firstCard={true} picture={"outdoor"} />
+                        <CategoryCard firstCard={true} picture={"outdoor"} historyUrl={"/outdoors"} />
                         <CategoryCard secondCard={true} picture={"house"} />
-                        <CategoryCard thirdCard={true} picture={"apartment"} />
+                        <CategoryCard thirdCard={true} picture={"apartment"} historyUrl={"/apartments"} />
                         <CategoryCard rightCard={true} picture={"unique experience"} />
                     </div>
 

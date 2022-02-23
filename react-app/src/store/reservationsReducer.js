@@ -142,6 +142,8 @@ export const deleteReservationThunk = (reservationId) => async (dispatch) => {
 
 const initialState = {};
 
+
+
 const reservationsReducer = (state = initialState, action) => {
     switch (action.type) {
         case CREATE_RESERVATION:
