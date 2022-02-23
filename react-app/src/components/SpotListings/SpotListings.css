@@ -2,4 +2,26 @@
     display: flex;
     flex-direction: column;
     /* background-color: aqua; */
+    align-items: center;
 }
+
+.listingsAndImageMainContainer {
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    height: 88vh;
+    /* background-color: aqua; */
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.listingsContainer {
+    width: 59%;
+    min-height: fit-content;
+    /* background-color: blueviolet; */
+    overflow:auto;
+}
+
+/* .listingsContainer::-webkit-scrollbar {
+    display: none;
+} */

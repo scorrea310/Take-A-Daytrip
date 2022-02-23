@@ -159,14 +159,14 @@ const reservationsReducer = (state = initialState, action) => {
 
         case UPDATE_RESERVATION:
 
-            let newStateAgain = { ...state }
+            let newStateAgain = { ...state, [action.payload.id]: { ...state[`${action.payload.id}`] } }
 
             newStateAgain[`${action.payload.id}`] = action.payload
 
             return newStateAgain;
 
         case DELETE_RESERVATION:
-            let newStateDelete = { ...state }
+            let newStateDelete = { ...state, [action.payload]: { ...state[`${action.payload}`] } }
 
             delete newStateDelete[`${action.payload}`];
 

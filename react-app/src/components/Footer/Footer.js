@@ -24,6 +24,7 @@ const Footer = () => {
                     <div style={{ marginTop: "5px", fontSize: "14px" }}>HTML 5</div>
                     <div style={{ marginTop: "5px", fontSize: "14px" }}>CSS</div>
                     <div style={{ marginTop: "5px", fontSize: "14px" }}>Amazon S3</div>
+                    <div style={{ marginTop: "5px", fontSize: "14px" }}>Docker</div>
                 </div>
                 <div className="aboutCategory">
                     <div style={{ fontSize: "14px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>Projects</div>

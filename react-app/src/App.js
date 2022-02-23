@@ -62,7 +62,7 @@ function App() {
           <SignUpForm />
         </Route>
         <Route path='/allspots' exact={true}>
-          <SpotListings />
+          <SpotListings allSpots={true} />
         </Route>
         <ProtectedRoute path='/spots/new' exact={true} >
           <AddSpot />
