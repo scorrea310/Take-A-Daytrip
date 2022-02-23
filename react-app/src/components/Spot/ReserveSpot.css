@@ -8,6 +8,9 @@
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     justify-content: center;
     align-items: center;
+    position:sticky;
+	top: 100px;
+    margin-top: 10px;
 }
 
 .makeReservationMainContent {

@@ -75,7 +75,7 @@
 .firstCategoryCard {
     display: flex;
     flex-direction: column;
-    width: 295px;
+    width: 25%;
     height: 402px;
     background-color: #DE3151;
     border-radius: 12px;
@@ -86,7 +86,7 @@
 .secondCategoryCard {
     display: flex;
     flex-direction: column;
-    width: 295px;
+    width: 25%;
     height: 402px;
     background-color: #D93B30;
     border-radius: 12px;
@@ -96,7 +96,7 @@
 .thirdCategoryCard {
     display: flex;
     flex-direction: column;
-    width: 295px;
+    width: 25%;
     height: 402px;
     background-color: #BC1A6E;
     border-radius: 12px;
@@ -107,7 +107,7 @@
 .rightCategoryCard {
     display: flex;
     flex-direction: column;
-    width: 295px;
+    width: 25%;
     height: 402px;
     background-color: rgb(235, 54, 14);
     border-radius: 12px;

@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { creatReservationThunk } from "../../store/reservationsReducer";
 import { updateReservationThunk } from "../../store/reservationsReducer";
 import { useHistory } from "react-router-dom";
-const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentReservation, setShowEditModal }) => {
+const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentReservation, setShowEditModal, reservationDate }) => {
     const history = useHistory()
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user.id);
@@ -65,15 +65,17 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
         if (editModal) {
             setTotalOccupancy(parseInt(currentReservation.number_of_guests, 10))
-
+            setStartDate(new Date(reservationDate))
+            console.log("------", new Date(reservationDate).getDay())
         } else {
             setTotalOccupancy(0)
+            setStartDate(new Date())
         }
     }, [])
 
     // console.log(typeof totalOccupantsAllowed)
 
-    console.log(totalOccupantsAllowed)
+    console.log(totalOccupantsAllowed, "83749857389465384639846539")
 
     return (
         <div className="reserveASpotContainer">

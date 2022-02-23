@@ -18,6 +18,8 @@ const ReservedSpotCard = ({ reservation }) => {
     const [showEditModal, setShowEditModal] = useState(false)
     const [showCancelReservationModal, setCancelReservation] = useState(false)
     let dateArray = reservation.reservation.split(" ")
+    let reservationDateObject = new Date(dateArray);
+    let date = reservationDateObject.toDateString()
 
     const cancelReservation = () => {
 
@@ -39,7 +41,7 @@ const ReservedSpotCard = ({ reservation }) => {
                         <div className="editIconAndDeleteReserveCard" onClick={() => setShowEditModal(true)} ><FiEdit style={{ marginRight: "5px" }} /> Edit </div>
                         <div className="deleteIconAndTextReserveCard" onClick={() => setCancelReservation(true)} ><MdOutlineCancelPresentation style={{ color: "red", marginRight: "5px" }} /> Cancel</div>
                         {showEditModal && <Modal idName={"edit-Reservation-Modal"} onClose={() => setShowEditModal(false)}>
-                            <ReserveSpot setShowEditModal={setShowEditModal} totalOccupantsAllowed={reservation.total_occupants_allowed} price={reservation.price} editModal={true} currentReservation={reservation} />
+                            <ReserveSpot reservationDate={reservation.reservation} setShowEditModal={setShowEditModal} totalOccupantsAllowed={reservation.total_occupants_allowed} price={reservation.price} editModal={true} currentReservation={reservation} />
                         </Modal>}
                         {showCancelReservationModal && <Modal idName={"edit-Reservation-Modal"} onClose={() => setCancelReservation(false)}>
                             <div className="cancelReservationInModalContainer">
@@ -55,21 +57,26 @@ const ReservedSpotCard = ({ reservation }) => {
                 </div>
                 <div className="reservedSpotCardMainInfo">
                     <div className="checkInDateReservedCArd">
-                        <div>Check in</div>
-                        <div>{dateArray[0]}</div>
+                        <div>Reservation Date:</div>
+                        <div>{date}</div>
                     </div>
                     <div className="checkInDateReservedCArd">
                         <div>Address</div>
                         <div>{reservation.spot_address}</div>
                     </div>
+                    <div className="checkInDateReservedCArd">
+                        <div>Number of Guests</div>
+                        <div>{reservation.number_of_guests}</div>
+                    </div>
                     <div className="priceReservationCardContainer">
                         <div>Price</div>
                         <div>${reservation.price}</div>
                     </div>
-                    <div className="seeMoreDetailsIconAndTextContainerReserveCard">
+                    {/* <div className="seeMoreDetailsIconAndTextContainerReserveCard">
                         <CgDetailsMore style={{ fontSize: "24px", marginRight: "5px" }} />
                         <div>Details</div>
-                    </div></div>
+                    </div> */}
+                </div>
             </div>
         </div >
     )
