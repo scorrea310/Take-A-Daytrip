@@ -47,7 +47,7 @@ const CategoryCard = ({ label, backgroundColor, milesAway, picture, rightCard, f
                 {firstCard && "Outdoors"}
                 {secondCard && "House"}
                 {thirdCard && "Apartments"}
-                {rightCard && "Unique Experience"}
+                {rightCard && "Unique"}
             </div>
         </div>
     )

@@ -1,0 +1,15 @@
+.footerContainer {
+    display: flex;
+    height: 400px;
+    background-color: rgb(247, 247, 247);
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutLinksSectionFooter {
+    display: flex;
+    width: 89%;
+    height: 83%;
+    border-bottom: 1px solid rgb(221, 221, 221)
+}

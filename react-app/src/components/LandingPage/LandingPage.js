@@ -2,6 +2,7 @@ import NavBar from "../NavBar/NavBar"
 import "./LandingPage.css"
 import Button from "../common/Button/Button"
 import CategoryCard from "./CategoryCard"
+import Footer from "../Footer/Footer"
 
 const LandingPage = () => {
 
@@ -24,8 +25,10 @@ const LandingPage = () => {
                         <CategoryCard thirdCard={true} picture={"apartment"} />
                         <CategoryCard rightCard={true} picture={"unique experience"} />
                     </div>
+
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
