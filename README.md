@@ -132,3 +132,15 @@ of your Heroku app in the url and tag name:
    ```bash=3
    docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
    ```
+
+# Technologies Used
+
+![pythonIcon](https://user-images.githubusercontent.com/46228676/155580259-d463ce91-0e5f-428d-b493-4fb8e2fdc26d.png) 
+![flaskIcon](https://user-images.githubusercontent.com/46228676/155580604-551e8f24-3ebc-4c53-8eaa-f98732c4ddb9.png)
+![ReduxIcon](https://user-images.githubusercontent.com/46228676/155580882-4864d2fa-7c8a-4500-a0e1-48675f26c1aa.png)
+![JSIcon](https://user-images.githubusercontent.com/46228676/155581097-f6c3326c-5062-4a14-9d85-ad554b800dc8.png)
+![GitIcon](https://user-images.githubusercontent.com/46228676/155581231-7e0913d2-db16-4e90-84f9-f3952ee10520.png)
+![DockerIcon](https://user-images.githubusercontent.com/46228676/155581328-b6caf92b-2f70-4cfa-8758-1d42344cffb4.png)
+![CSSIcon](https://user-images.githubusercontent.com/46228676/155581460-d049b83a-9113-4663-83a3-445385e207fb.png)
+![HTML Icon 1](https://user-images.githubusercontent.com/46228676/155582063-d058a367-35c4-4f44-aee4-f7e4de58bdb1.png)
+![ReactIcon](https://user-images.githubusercontent.com/46228676/155582169-e92128f9-58a6-46c7-b312-58f83f126717.png)
