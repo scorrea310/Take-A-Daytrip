@@ -9,7 +9,7 @@ import uniqueImage from "../../images/uniqueSpotPage.jpeg"
 import outdoorImage from "../../images/outdoorsSpotPage.jpeg"
 import houseImage from "../../images/houseSpotPage.jpeg"
 
-const SpotListings = ({ allSpots, outdoors, apartments, house, unique }) => {
+const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
 
     const spots = useSelector((state) => state.spotReducer)
     let imageUrl;
@@ -22,7 +22,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, house, unique }) => {
         imageUrl = uniqueImage
     } else if (outdoors) {
         imageUrl = outdoorImage
-    } else if (house) {
+    } else if (houses) {
         imageUrl = houseImage
     }
 
@@ -52,6 +52,16 @@ const SpotListings = ({ allSpots, outdoors, apartments, house, unique }) => {
                     })}
                     {outdoors && Object.values(spots).map((spot) => {
                         if (spot.type === "Outdoor") {
+                            return <SpotListingCard key={spot.id} spot={spot} />
+                        }
+                    })}
+                    {houses && Object.values(spots).map((spot) => {
+                        if (spot.type === "House") {
+                            return <SpotListingCard key={spot.id} spot={spot} />
+                        }
+                    })}
+                    {unique && Object.values(spots).map((spot) => {
+                        if (spot.type === "Unique Experience") {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}

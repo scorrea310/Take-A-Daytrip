@@ -70,6 +70,12 @@ function App() {
         <Route path='/outdoors' exact={true}>
           <SpotListings outdoors={true} />
         </Route>
+        <Route path='/houses' exact={true}>
+          <SpotListings houses={true} />
+        </Route>
+        <Route path='/unique' exact={true}>
+          <SpotListings unique={true} />
+        </Route>
         <ProtectedRoute path='/spots/new' exact={true} >
           <AddSpot />
         </ProtectedRoute>

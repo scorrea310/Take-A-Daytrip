@@ -315,6 +315,7 @@ const AddSpot = () => {
                             required={true}
                             min="0"
                             step="any"
+                            max="9999.99"
                         >
 
                         </input>

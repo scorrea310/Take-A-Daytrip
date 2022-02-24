@@ -9,10 +9,10 @@
     display: flex;
     flex-direction: row;
     width: 96%;
-    height: 88vh;
+    height: 83vh;
     /* background-color: aqua; */
     overflow: hidden;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .listingsContainer {
