@@ -16,7 +16,7 @@ class Spot(db.Model):
     has_wifi = db.Column(db.Boolean, nullable=False)
     has_tv = db.Column(db.Boolean, nullable=False)
     has_ac= db.Column(db.Boolean, nullable=False)
-    price_per_hour = db.Column(db.Numeric(9, 2), nullable=False)
+    price_per_day = db.Column(db.Numeric(9, 2), nullable=False)
     host_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
     updated_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
@@ -40,7 +40,7 @@ class Spot(db.Model):
             "has_wifi": str(self.has_wifi),
             "has_tv": str(self.has_tv),
             "has_ac": str(self.has_ac),
-            "price_per_hour": str(self.price_per_hour),
+            "price_per_day": str(self.price_per_day),
             "host_id": str(self.host_id),
             "images": [image.image_url for image in self.images],
             "host_name": self.user.name,

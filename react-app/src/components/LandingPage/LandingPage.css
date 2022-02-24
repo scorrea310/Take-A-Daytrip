@@ -70,26 +70,57 @@
     height: fit-content;
     margin-top: 50px;
     margin-bottom: 10px;
-    justify-content: center;
 }
 
-.regularCategoryCard {
+.firstCategoryCard {
     display: flex;
     flex-direction: column;
-    width: 316px;
+    width: 25%;
     height: 402px;
-    background-color: rgb(255, 77, 0);
+    background-color: #DE3151;
     border-radius: 12px;
-    margin-right: 10px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.secondCategoryCard {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 402px;
+    background-color: #D93B30;
+    border-radius: 12px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.thirdCategoryCard {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 402px;
+    background-color: #BC1A6E;
+    border-radius: 12px;
+    margin-right: 30px;
+    cursor: pointer;
 }
 
 .rightCategoryCard {
     display: flex;
     flex-direction: column;
-    width: 316px;
+    width: 25%;
     height: 402px;
     background-color: rgb(235, 54, 14);
     border-radius: 12px;
+    cursor: pointer;
 }
 
-/* display: "flex", flexDirection: "column", width: "316px", height: "402px", backgroundColor: "red", borderRadius: "12px" */
+.cardTitleLandingPage {
+    display: flex;
+    /* background-color: aqua; */
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 32px;
+    font-weight: 400;
+}

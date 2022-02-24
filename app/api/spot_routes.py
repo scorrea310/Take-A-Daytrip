@@ -31,7 +31,7 @@ def add_spot():
             has_wifi=form.data["hasWifi"],
             has_tv=form.data["hasTv"],
             has_ac=form.data["hasAc"],
-            price_per_hour=form.data["price"],
+            price_per_day=form.data["price"],
             host_id=form.data["userId"]
         )
     
@@ -126,7 +126,7 @@ def update_spot(id):
         old_spot.has_wifi =form.data["hasWifi"]
         old_spot.has_tv =form.data["hasTv"]
         old_spot.has_ac =form.data["hasAc"]
-        old_spot.price_per_hour = form.data["price"]
+        old_spot.price_per_day= form.data["price"]
 
         db.session.commit()
 

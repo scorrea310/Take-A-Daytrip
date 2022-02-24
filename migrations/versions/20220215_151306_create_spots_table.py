@@ -31,7 +31,7 @@ def upgrade():
     sa.Column('has_wifi', sa.Boolean(), nullable=False),
     sa.Column('has_tv', sa.Boolean(), nullable=False),
     sa.Column('has_ac', sa.Boolean(), nullable=False),
-    sa.Column('price_per_hour',sa.Numeric(precision=9, scale=2), nullable=False),
+    sa.Column('price_per_day',sa.Numeric(precision=9, scale=2), nullable=False),
     sa.Column('host_id', sa.Integer(), nullable=False),
     sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.Column('updated_at', sa.DateTime(), nullable=False),

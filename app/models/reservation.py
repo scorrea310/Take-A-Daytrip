@@ -6,8 +6,8 @@ class Reservation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     spot_id = db.Column(db.Integer, db.ForeignKey("spots.id"), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    check_in = db.Column(db.DateTime, nullable=False)
-    check_out = db.Column(db.DateTime, nullable=False)
+    reservation = db.Column(db.DateTime, nullable=False)
+    number_of_guests = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Numeric(9, 2), nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
     updated_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
@@ -18,5 +18,14 @@ class Reservation(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            "spot_id": str(self.spot_id)
+            "spot_id": str(self.spot_id),
+            "user_id": str(self.user_id),
+            "reservation": str(self.reservation),
+            "number_of_guests": str(self.number_of_guests),
+            "price": str(self.price),
+            "spot_name": self.spot.name,
+            "spot_address": self.spot.address,
+            "spot_description": self.spot.description,
+            "spot_images": [image.image_url for image in self.spot.images],
+            "total_occupants_allowed": str(self.spot.total_occupancy)
         }

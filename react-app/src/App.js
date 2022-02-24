@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -11,11 +11,23 @@ import LandingPage from './components/LandingPage/LandingPage';
 import AddSpot from './components/AddSpot/AddSpot';
 import Spot from './components/Spot/Spot';
 import { loadSpotsFunc } from './store/spotReducer';
+import MyTrips from './components/MyTrips/MyTrips';
+import { loadreservationsthunk } from './store/reservationsReducer';
+import SpotListings from './components/SpotListings/SpotListings';
 
 function App() {
+
+  const sessionUser = useSelector((state) => state.session.user);
   const [loaded, setLoaded] = useState(false);
   const [spotsLoaded, setSpotsLoaded] = useState(false)
   const dispatch = useDispatch();
+  const [reservationsLoaded, setReservationsLoaded] = useState(false)
+
+  // useEffect(() => {
+
+  //   dispatch(loadreservationsthunk(sessionUser?.id)).then(() => setReservationsLoaded(true))
+
+  // }, [dispatch])
 
   useEffect(() => {
     (async () => {
@@ -32,10 +44,11 @@ function App() {
 
 
 
+
   if (!loaded) {
     return null;
   }
-
+  //outdoors, apartments, house, unique
   return (
     <BrowserRouter>
       <Switch>
@@ -48,8 +61,26 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <Route path='/allspots' exact={true}>
+          <SpotListings allSpots={true} />
+        </Route>
+        <Route path='/apartments' exact={true}>
+          <SpotListings apartments={true} />
+        </Route>
+        <Route path='/outdoors' exact={true}>
+          <SpotListings outdoors={true} />
+        </Route>
+        <Route path='/houses' exact={true}>
+          <SpotListings houses={true} />
+        </Route>
+        <Route path='/unique' exact={true}>
+          <SpotListings unique={true} />
+        </Route>
         <ProtectedRoute path='/spots/new' exact={true} >
           <AddSpot />
+        </ProtectedRoute>
+        <ProtectedRoute path='/mytrips' exact={true} >
+          <MyTrips reservationsLoaded={reservationsLoaded} />
         </ProtectedRoute>
         <Route path='/spots/:spotId' exact={true}>
           <Spot spotsLoaded={spotsLoaded} />

@@ -57,3 +57,23 @@
   height: 48px;
   cursor: pointer;
 }
+
+.btn.cancelReservationButton {
+   border-radius: 24px;
+    height: 48px;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+    margin-right: 20px;
+    width: 70px;
+}
+
+.btn.noCancelReservationButton {
+   border-radius: 24px;
+    height: 48px;
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    margin-right: 20px;
+    width: 70px;
+}
