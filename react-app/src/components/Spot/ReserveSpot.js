@@ -1,5 +1,4 @@
 import "./ReserveSpot.css"
-import DatePicker from "react-datepicker";
 import { useEffect, useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import Button from "../common/Button/Button";
@@ -7,8 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { creatReservationThunk } from "../../store/reservationsReducer";
 import { updateReservationThunk } from "../../store/reservationsReducer";
 import { useHistory } from "react-router-dom";
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import DatePicker from 'react-date-picker';
 
 const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentReservation, setShowEditModal, reservationDate }) => {
     const history = useHistory()
@@ -38,15 +36,12 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     };
 
     const handleDateChange = (date) => {
-        if (date === null) {
-            setNullDateError(true)
-            return;
-        }
-        if (date.toDateString() === "Invalid Date") {
-            console.log("truuueee")
-            setNotDateError(true)
-            return;
-        }
+
+        // if (date.toDateString() === "Invalid Date") {
+        //     console.log("truuueee")
+        //     setNotDateError(true)
+        //     return;
+        // }
         setStartDate(date)
     }
 
@@ -151,8 +146,9 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             <form className="makeReservationMainContent" onSubmit={editModal ? editReservation : handleReservation}>
                 <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price}</div>/ day</div>
                 <div className="reserveMainBox">
-                    <div className="reservationDateAndDatePickerContainer"> <div style={{ marginRight: "10px", marginLeft: "10px" }}>Reservation:</div> <div><Calendar onChange={handleDateChange} value={startDate} />
-                    </div></div>
+                    <div className="reservationDateAndDatePickerContainer"> <div style={{ marginRight: "10px", marginLeft: "10px" }}>Reservation:</div> <div style={{ width: "fit-content" }}><DatePicker onChange={handleDateChange} value={startDate} />
+                    </div>
+                    </div>
 
                     <div className="addReservationNumberofGuestsText">Number of Guests
                         <input
