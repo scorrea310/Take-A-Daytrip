@@ -22,12 +22,7 @@ const ReservedSpotCard = ({ reservation }) => {
     let date = reservationDateObject.toDateString()
 
     const cancelReservation = () => {
-
-        //dispatch cancelreservationThunk passing in reservation.id
-        dispatch(deleteReservationThunk(reservation.id)).then(() => {
-            setCancelReservation(false)
-        })
-
+        dispatch(deleteReservationThunk(reservation.id))
     }
 
     return (
