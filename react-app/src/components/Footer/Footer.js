@@ -8,10 +8,14 @@ const Footer = () => {
         <div className="footerContainer">
             <div className="aboutLinksSectionFooter">
                 <div className="aboutCategory">
+                    <div style={{ fontSize: "14px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>Contact</div>
+                    <div style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "14px" }} >s.correa@berkeley.edu </div>
+                    <div style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "14px" }} >(310)894-0493 </div>
+                </div>
+                <div className="aboutCategory">
                     <div style={{ fontSize: "14px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>About</div>
                     <a style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "14px" }} href="https://www.linkedin.com/in/steve-correa/">Linkedin <AiFillLinkedin style={{ fontSize: "24px", borderRadius: "12px", marginLeft: "5px" }} /></a>
                     <a style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "14px" }} href="https://github.com/scorrea310">GitHub <AiFillGithub style={{ fontSize: "24px", marginLeft: "5px" }} /></a>
-                    <div style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "14px" }} >s.correa@berkeley.edu </div>
                 </div>
                 <div className="aboutCategory">
                     <div style={{ fontSize: "14px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>Built With</div>
