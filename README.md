@@ -23,7 +23,7 @@ Landing Page
 
 <img width="1440" alt="Screen Shot 2022-02-24 at 10 13 25 AM" src="https://user-images.githubusercontent.com/46228676/155582917-00149f2a-181b-45cf-ab02-48bfc574a3e5.png">
 
-Users Can Login or user Demo user
+Users Can Login or use Demo user
 
 <img width="1440" alt="Screen Shot 2022-02-24 at 10 13 59 AM" src="https://user-images.githubusercontent.com/46228676/155583023-b829041f-c777-44b3-828f-fd7966c292ad.png">
 
