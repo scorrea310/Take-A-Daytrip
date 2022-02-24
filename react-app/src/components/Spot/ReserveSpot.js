@@ -16,6 +16,9 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     const [startDate, setStartDate] = useState(new Date());
     const [sameDayError, setSameDayError] = useState(false);
     const [pastDateErrors, setpastDateErrors] = useState(false)
+    const [notDateError, setNotDateError] = useState(false)
+    const [nullDateError, setNullDateError] = useState(false)
+
 
     const dateInPast = function (firstDate, presentDate) {
         firstDate.setHours(0, 0, 0, 0)
@@ -32,14 +35,39 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     };
 
     const handleDateChange = (date) => {
+        if (date === null) {
+            setNullDateError(true)
+            return;
+        }
+        if (date.toDateString() === "Invalid Date") {
+            console.log("truuueee")
+            setNotDateError(true)
+            return;
+        }
         setStartDate(date)
+    }
 
-
+    const handleRightDateInput = (startDate) => {
+        if (typeof startDate !== "object") {
+            return false
+        } else {
+            return true
+        }
     }
 
 
     const handleReservation = (e) => {
         e.preventDefault()
+
+        if (startDate === null) {
+            setNullDateError(true)
+            return;
+        }
+
+        if (startDate.toDateString() === "Invalid Date") {
+            setNotDateError(true)
+            return;
+        }
 
         if (dateInPast(startDate, today) === true) {
             setpastDateErrors(true)
@@ -62,6 +90,16 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
     const editReservation = (e) => {
         e.preventDefault()
+
+        if (startDate === null) {
+            setNullDateError(true)
+            return;
+        }
+
+        if (startDate.toDateString() === "Invalid Date") {
+            setNotDateError(true)
+            return;
+        }
 
         if (dateInPast(startDate, today) === true) {
             setpastDateErrors(true)
@@ -104,7 +142,9 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
     return (
         <div className="reserveASpotContainer">
-            {pastDateErrors && <div style={{ color: "red", fontSize: "13px" }}>You can't select a date in the past.</div>}
+            {pastDateErrors && <div style={{ color: "red", fontSize: "13px" }}>Enter a current or upcoming valid date.</div>}
+            {notDateError && <div style={{ color: "red", fontSize: "13px" }}>You must enter a valid date.</div>}
+            {nullDateError && <div style={{ color: "red", fontSize: "13px" }}>Enter a valid date.</div>}
             <form className="makeReservationMainContent" onSubmit={editModal ? editReservation : handleReservation}>
                 <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price}</div>/ day</div>
                 <div className="reserveMainBox">
