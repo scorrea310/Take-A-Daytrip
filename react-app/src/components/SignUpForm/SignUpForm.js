@@ -41,7 +41,7 @@ const SignUpForm = ({ setShowSignupModal }) => {
         e.stopPropagation();
         if (password === repeatPassword) {
 
-            console.log(name, username, email, password)
+            
             const data = await dispatch(signUp(name, username, email, password));
 
             if (data) {

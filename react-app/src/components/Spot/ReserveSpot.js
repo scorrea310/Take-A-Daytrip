@@ -14,29 +14,48 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     const [totalOccupancy, setTotalOccupancy] = useState(0)
     const today = new Date()
     const [startDate, setStartDate] = useState(new Date());
+    const [sameDayError, setSameDayError] = useState(false);
+    const [pastDateErrors, setpastDateErrors] = useState(false)
 
+    const dateInPast = function (firstDate, presentDate) {
+        firstDate.setHours(0, 0, 0, 0)
+        firstDate.setSeconds(0, 0)
+        firstDate.setMinutes(0)
+        presentDate.setHours(0, 0, 0, 0)
+        presentDate.setSeconds(0, 0)
+        presentDate.setMinutes(0)
 
+        if (firstDate < presentDate) {
+            return true;
+        }
+        return false;
+    };
 
     const handleDateChange = (date) => {
         setStartDate(date)
-        // console.log(typeof date)
-        // console.log(typeof new Date(date))
+
+
     }
 
 
     const handleReservation = (e) => {
         e.preventDefault()
 
-        const reservationFormObj = {
-            number_of_guests: parseInt(totalOccupancy, 10),
-            spot_id: spotId,
-            reservation: startDate.toISOString().split('T')[0],
-            price: parseFloat(price)
+        if (dateInPast(startDate, today) === true) {
+            setpastDateErrors(true)
+        } else {
+            const reservationFormObj = {
+                number_of_guests: parseInt(totalOccupancy, 10),
+                spot_id: spotId,
+                reservation: startDate.toISOString().split('T')[0],
+                price: parseFloat(price)
+            }
+
+            dispatch(creatReservationThunk(reservationFormObj, userId)).then(() => {
+                history.push("/mytrips")
+            })
         }
 
-        dispatch(creatReservationThunk(reservationFormObj, userId)).then(() => {
-            history.push("/mytrips")
-        })
     }
 
 
@@ -44,19 +63,25 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     const editReservation = (e) => {
         e.preventDefault()
 
-        const reservationFormObj = {
-            number_of_guests: parseInt(totalOccupancy, 10),
-            spot_id: parseInt(currentReservation.spot_id, 10),
-            reservation: startDate.toISOString().split('T')[0],
-            price: parseFloat(price),
-            user_id: userId
+        if (dateInPast(startDate, today) === true) {
+            setpastDateErrors(true)
+        } else {
+
+            const reservationFormObj = {
+                number_of_guests: parseInt(totalOccupancy, 10),
+                spot_id: parseInt(currentReservation.spot_id, 10),
+                reservation: startDate.toISOString().split('T')[0],
+                price: parseFloat(price),
+                user_id: userId
+            }
+
+
+
+            dispatch(updateReservationThunk(reservationFormObj, currentReservation.id)).then(() => {
+                setShowEditModal(false)
+            })
         }
 
-        console.log(reservationFormObj)
-
-        dispatch(updateReservationThunk(reservationFormObj, currentReservation.id)).then(() => {
-            setShowEditModal(false)
-        })
     }
 
 
@@ -66,23 +91,24 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         if (editModal) {
             setTotalOccupancy(parseInt(currentReservation.number_of_guests, 10))
             setStartDate(new Date(reservationDate))
-            console.log("------", new Date(reservationDate).getDay())
+
         } else {
             setTotalOccupancy(0)
             setStartDate(new Date())
         }
     }, [])
 
-    // console.log(typeof totalOccupantsAllowed)
 
-    console.log(totalOccupantsAllowed, "83749857389465384639846539")
+
+
 
     return (
         <div className="reserveASpotContainer">
+            {pastDateErrors && <div style={{ color: "red", fontSize: "13px" }}>You can't select a date in the past.</div>}
             <form className="makeReservationMainContent" onSubmit={editModal ? editReservation : handleReservation}>
                 <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price}</div>/ day</div>
                 <div className="reserveMainBox">
-                    <div className="reservationDateAndDatePickerContainer"> <div style={{ marginRight: "10px", marginLeft: "10px" }}>Reservation:</div> <div><DatePicker minDate={today} selected={startDate} onChange={handleDateChange} /></div></div>
+                    <div className="reservationDateAndDatePickerContainer"> <div style={{ marginRight: "10px", marginLeft: "10px" }}>Reservation:</div> <div><DatePicker selected={startDate} onChange={handleDateChange} /></div></div>
 
                     <div className="addReservationNumberofGuestsText">Number of Guests
                         <input

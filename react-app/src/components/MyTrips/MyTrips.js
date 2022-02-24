@@ -16,7 +16,7 @@ const MyTrips = ({ reservationsLoaded }) => {
 
     useEffect(() => {
         dispatch(loadreservationsthunk(sessionUser.id)).then(() => {
-            console.log("ksjdbc")
+            
             setIsloaded(true)
         })
     }, [dispatch])
@@ -25,7 +25,7 @@ const MyTrips = ({ reservationsLoaded }) => {
     if (!isLoaded) {
         return null
     } else {
-        console.log(reservations, "909090909")
+       
         // reservationsArray = reservations.values()
         console.table(reservations)
     }
