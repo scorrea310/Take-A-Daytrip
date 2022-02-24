@@ -1,0 +1,74 @@
+.reserveASpotContainer {
+    display: flex;
+    height: 277px;
+    flex-direction: column;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    width: 372px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    justify-content: center;
+    align-items: center;
+    position:sticky;
+	top: 100px;
+    margin-top: 10px;
+}
+
+.makeReservationMainContent {
+    display: flex;
+    width: 85%;
+    height: 80%;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+
+.reservePricePerDayContainer{
+    display: flex;
+    flex-direction: row;
+    /* background-color: blueviolet; */
+    height: fit-content;
+    align-items: center;
+}
+
+.reserveMainBox {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    height: 112px;
+    width: 315px;
+    border: 1px solid rgb(176, 176, 176);
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.reservationDateAndDatePickerContainer {
+    /* background-color: blueviolet; */
+    height: 90px;
+    display: flex;
+    align-items: center; 
+    flex-direction: row;
+    border-bottom: 1px solid rgb(176, 176, 176);;
+}
+
+.btn.addReserveationButton {
+    width: 100%;
+    border-radius: 24px;
+    height: 48px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.addReservationNumberofGuestsText {
+    display: flex;
+    /* background-color: aqua; */
+    height: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    align-items: center;
+    margin-left: 10px;
+    flex-direction: row;
+}
+
+.numberOfGuestsReserve{
+     margin-left: 10px;
+     width: 50%
+}

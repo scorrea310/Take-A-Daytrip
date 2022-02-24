@@ -73,7 +73,7 @@ export const loadSpotsFunc = () => async (dispatch) => {
     if (response.ok) {
 
         let spots = await response.json()
-        console.log(spots.spots)
+
         dispatch(loadSpots(spots.spots))
     }
 }

@@ -4,6 +4,28 @@
     height: 80px;
     /* background-color: aqua; */
     justify-content: center;
+    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+    
+}
+
+.landingPageNavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    position: fixed;
+    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+    
+}
+
+.spotPageNavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    position: fixed;
+    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+    background-color: white;
 }
 
 .navLogoContainer {
@@ -13,6 +35,7 @@
     flex-shrink: 2;
     flex-direction: row;
     align-items: center;
+    
 }
 
 .centerNavBarContainer {
@@ -20,9 +43,30 @@
     width: 89%;
     height: 80px;
     flex-direction: row;
+    position: fixed;
+    background-color:white;
     /* background-color: brown; */
-    /* flex: 1 0 140px */
-    
+    /* flex: 1 0 140px */ 
+}
+
+.centerNavBarContainerListingsPage {
+    display: flex;
+    width: 97%;
+    height: 80px;
+    flex-direction: row;
+    position: fixed;
+    background-color:white;
+    /* background-color: brown; */
+    /* flex: 1 0 140px */ 
+}
+
+
+.addSpotSlidesNavBar {
+    display: flex;
+    width: 89%;
+    height: 80px;
+    flex-direction: row;
+    position: fixed;
 }
 
 #navLogo {
@@ -43,32 +87,55 @@
     justify-content: center;
     align-items: center;
     height: 80px;
-    background: -webkit-linear-gradient(
-  45deg,
-  rgb(1, 1, 164) 0%,
-  rgb(116, 1, 142) 11%,
-  hsl(315deg 100% 27%) 22%,
-  hsl(329deg 100% 36%) 33%,
-  hsl(337deg 100% 43%) 44%,
-  hsl(357deg 91% 59%) 56%,
-  hsl(17deg 100% 59%) 67%,
-  hsl(34deg 100% 53%) 78%,
-  hsl(45deg 100% 50%) 89%,
-  hsl(55deg 100% 50%) 100%
-);
-    -webkit-background-clip: text;
+    -webkit-background: -webkit-linear-gradient(45deg,
+    rgb(1, 1, 164) 0%,
+    rgb(116, 1, 142) 11%,
+    hsl(315deg 100% 27%) 22%,
+    hsl(329deg 100% 36%) 33%,
+    hsl(337deg 100% 43%) 44%,
+    hsl(357deg 91% 59%) 56%,
+    hsl(17deg 100% 59%) 67%,
+    hsl(34deg 100% 53%) 78%,
+    hsl(45deg 100% 50%) 89%,
+    hsl(55deg 100% 50%) 100% );
+    background-clip: text;
+    background: -webkit-linear-gradient(45deg,
+    rgb(1, 1, 164) 0%,
+    rgb(116, 1, 142) 11%,
+    hsl(315deg 100% 27%) 22%,
+    hsl(329deg 100% 36%) 33%,
+    hsl(337deg 100% 43%) 44%,
+    hsl(357deg 91% 59%) 56%,
+    hsl(17deg 100% 59%) 67%,
+    hsl(34deg 100% 53%) 78%,
+    hsl(45deg 100% 50%) 89%,
+    hsl(55deg 100% 50%) 100% );
     -webkit-text-fill-color: transparent;
     font-size: 20px;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
 }
+
+
 
 .placesToStayTextContainer {
     display: flex;
     width: 33%;
     justify-content: center;
     align-items: center;
-
     font-size: 16px;
 }
+
+.placesToStayButtonContainer:hover {
+
+    width: fit-content;
+    background-color: #DDDDDD;
+    padding: 10px;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
 
 #placesToStayBottomBorder {
     width: 20px;
@@ -81,7 +148,7 @@
     display: flex;
     /* background-color: aqua; */
     width: fit-content;
-    height: 500px;
+    height: fit-content;
     width: 33%;
     justify-content: flex-start;
     align-items: flex-end;
@@ -138,7 +205,7 @@
     display: flex;
     flex-direction: column;
     min-width: 152px;
-    height: 130px;
+    height: fit-content;
     margin-top: 10px;
     border-radius: 10px;
     border: 1px solid #DDDDDD;
@@ -192,7 +259,8 @@
     align-items: center;
     background-color: #f7f7f7;
     cursor: pointer;
-    
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .loginButton {

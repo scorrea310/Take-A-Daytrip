@@ -1,0 +1,34 @@
+.spotListingsPage {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    align-items: center;
+}
+
+.listingsAndImageMainContainer {
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    height: 83vh;
+    /* background-color: aqua; */
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.listingsContainer {
+    width: 59%;
+    min-height: fit-content;
+    /* background-color: blueviolet; */
+    overflow:auto;
+}
+
+/* .listingsContainer::-webkit-scrollbar {
+    display: none;
+} */
+
+.listingsImageContainer {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+
+}

@@ -1,0 +1,40 @@
+.footerContainer {
+    display: flex;
+    height: 400px;
+    background-color: rgb(247, 247, 247);
+    margin-top: 110px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutLinksSectionFooter {
+    display: flex;
+    width: 89%;
+    height: 83%;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    /* background-color: aqua; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutCategory {
+    width: 20%;
+    height: 80%;
+    display: flex;
+    /* background-color: blueviolet; */
+    margin-left: 60px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottomSectionFooter {
+    width: 89%;
+    height: 45px;
+    align-items: flex-end;
+    display: flex;
+    font-size: 14px;
+    color: rgb(34, 34, 34);
+    flex-direction: row;
+    justify-content: space-between;
+}

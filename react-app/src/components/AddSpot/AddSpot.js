@@ -96,6 +96,7 @@ const AddSpot = () => {
                 <div className="nextButton" onClick={() => {
                     setfirstSlide(false)
                     setSecondSlide(true)
+                    
                 }}>Next</div>
             </div>
 
@@ -314,6 +315,7 @@ const AddSpot = () => {
                             required={true}
                             min="0"
                             step="any"
+                            max="9999.99"
                         >
 
                         </input>
@@ -328,7 +330,7 @@ const AddSpot = () => {
 
     return (
         <div className="addSpotPageContainer">
-            <NavBar />
+            <NavBar addspotPage={true} />
             <div className="addSpotMainContent">
 
                 {firstSlide ? slide1 : null}
