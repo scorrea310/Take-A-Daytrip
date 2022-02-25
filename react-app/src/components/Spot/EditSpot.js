@@ -221,7 +221,7 @@ const EditSpot = ({ spot, spotId }) => {
                                 type="number"
                                 onChange={(e) => setTotalOccupancy(e.target.value)}
                                 required={true}
-                                min="0"
+                                min="1"
                             >
                             </input>
                             <label>Total Bedrooms</label>

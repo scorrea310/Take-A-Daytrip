@@ -16,7 +16,7 @@ const MyTrips = ({ reservationsLoaded }) => {
 
     useEffect(() => {
         dispatch(loadreservationsthunk(sessionUser.id)).then(() => {
-            
+
             setIsloaded(true)
         })
     }, [dispatch])
@@ -24,10 +24,6 @@ const MyTrips = ({ reservationsLoaded }) => {
 
     if (!isLoaded) {
         return null
-    } else {
-       
-        // reservationsArray = reservations.values()
-        console.table(reservations)
     }
 
     return (

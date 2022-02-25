@@ -37,11 +37,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
     const handleDateChange = (date) => {
 
-        // if (date.toDateString() === "Invalid Date") {
-        //     console.log("truuueee")
-        //     setNotDateError(true)
-        //     return;
-        // }
+
         setStartDate(date)
     }
 

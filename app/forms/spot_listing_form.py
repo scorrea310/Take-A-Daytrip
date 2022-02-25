@@ -44,7 +44,7 @@ class SpotListingForm(FlaskForm):
     totalOccupancy = IntegerField(
         "Total Occupancy",
         validators=[NumberRange(
-                min=0,
+                min=1,
                 message="Occupancy cannot be a negative value",
             )],
         default=0
