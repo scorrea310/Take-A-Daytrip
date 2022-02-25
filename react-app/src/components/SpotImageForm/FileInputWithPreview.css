@@ -20,7 +20,7 @@
 
 .grid-block:hover {
   cursor: pointer;
-  border-color: #f1641e;
+  border-color: hsl(357deg 91% 59%)
 }
 
 .icon-container {
