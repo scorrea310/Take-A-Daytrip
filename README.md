@@ -1,10 +1,14 @@
 # Take A Daytrip
 
+[Live Link Here](https://take-a-daytrip.herokuapp.com/)
+
 Take A Datrip is a clone of Airbnb where users can view spots available to reserve for the day. Users can also create, update, delete, and view a reservation and a spot. 
 
 Take A Daytrip encourages users to get out the house and experience a new place for the day. 
 
 # Technologies Used
+
+Take A Daytrip is built on a React frontend with a Flask backend using PostgreSQL as a database. I used React for all the display logic and Redux with thunks making API calls to the backend server to manage the state. The backend uses the Flask framework and a PostgreSQL database. SQLAlchemy is the ORM used to handle all data manipulation of the database. Take A Daytrip image storage is implemented through Amazon Web Services S3.
 
 ![pythonIcon](https://user-images.githubusercontent.com/46228676/155580259-d463ce91-0e5f-428d-b493-4fb8e2fdc26d.png) 
 ![flaskIcon](https://user-images.githubusercontent.com/46228676/155580604-551e8f24-3ebc-4c53-8eaa-f98732c4ddb9.png)
@@ -16,7 +20,7 @@ Take A Daytrip encourages users to get out the house and experience a new place 
 ![HTML Icon 1](https://user-images.githubusercontent.com/46228676/155582063-d058a367-35c4-4f44-aee4-f7e4de58bdb1.png)
 ![ReactIcon](https://user-images.githubusercontent.com/46228676/155582169-e92128f9-58a6-46c7-b312-58f83f126717.png)
 
-# Features
+# Walthrough
 
 
 Landing Page
@@ -45,139 +49,37 @@ User can view, edit, and delete their reservation
 <img width="1440" alt="Screen Shot 2022-02-24 at 10 19 33 AM" src="https://user-images.githubusercontent.com/46228676/155583841-a7718761-47e9-4ea3-b379-ad0ce68733c2.png">
 
 
-# Feature List
+## Feature List
 
-Please view official Feature List here: https://github.com/scorrea310/Take-A-Daytrip/wiki/Feature-List
+1. Spots: Users can create, read, update, and delete a spot.
+2. Reservations: Users can create, read, update, and delete a reservation.
 
 ## Getting started
 
-1. Clone this repository (only this branch)
+1. Clone this repository `https://github.com/scorrea310/Take-A-Daytrip.git`
+2. CD into the /app directory and install dependencies `pipenv install`
+3. CD into the /react-app directory and install dependencies `npm install`
+4. Create a .env file based on the .env.example given An AWS S3 account is required for adding/editing user and spot images
+5. Create a user in psql based on your .env DATABASE_URL app_name `psql -c "CREATE USER <username> PASSWORD '<password>' CREATEDB"
+6. Create a databse in psql based on your.env DATABASE_URL app_db_name
+7. Start your shell, migrate your database, seed your database, and run the flask app
+  `pipenv shell`
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+  `flask db upgrade`
 
-2. Install dependencies
+  `flask seed all`
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+  `flask run`
+  
+  
+8. Open another terminal and change directory into /react-app and run the React app  `npm start`
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+9. Now go to http://localhost:3000 and enjoy the site.
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+## Features Coming Soon.
 
-   ```bash
-   pipenv shell
-   ```
+1. Reviews: Full CRUD
+2. Search
 
-   ```bash
-   flask db upgrade
-   ```
-
-   ```bash
-   flask seed all
-   ```
-
-   ```bash
-   flask run
-   ```
-
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
-
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
-
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
-
-## Deploy to Heroku
-
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
-
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
-
-   ```bash
-   heroku login
-   ```
-
-6. Login to the heroku container registry
-
-   ```bash
-   heroku container:login
-   ```
-
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
-
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
-
-9. Release your docker container to heroku
-
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
-
-10. set up your database
-
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
-
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
-
-12. profit
-
-### For M1 Mac users
-
-(Replaces **Step 8**)
-
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
-
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
-
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
-
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
-
-3. Use docker to push the image to the Heroku container registry:
-
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
 
 

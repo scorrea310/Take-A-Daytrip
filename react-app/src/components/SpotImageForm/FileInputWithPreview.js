@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { FaCamera } from 'react-icons/fa';
 import './FileInputWithPreview.css';
 import ButtonWithIcon from '../ButtonWithIcon';
-import Badge from '../common/Badge';
+
 
 const FileInputWithPreview = ({
     index,
@@ -29,9 +29,6 @@ const FileInputWithPreview = ({
             onMouseEnter={() => setIsVisible(true)}
             onMouseLeave={() => setIsVisible(false)}
         >
-            {index === 0 && (
-                <Badge text="Primary" className="badge-black badge-small" />
-            )}
             {!src && (
                 <div className="icon-container" onClick={handleClick}>
                     <div className="icon file-upload-icon">
