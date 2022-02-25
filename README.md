@@ -70,6 +70,8 @@ User can view, edit, and delete their reservation
   `flask seed all`
 
   `flask run`
+  
+  
 8. Open another terminal and change directory into /react-app and run the React app  `npm start`
 
 9. Now go to http://localhost:3000 and enjoy the site.
