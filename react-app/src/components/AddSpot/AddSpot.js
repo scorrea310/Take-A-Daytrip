@@ -21,7 +21,7 @@ const AddSpot = () => {
     const [images, setImages] = useState([]);
     const [address, setAddress] = useState('')
     const [petsAllowed, setpetsAllowed] = useState("true")
-    const [totalOccupancy, setTotalOccupancy] = useState(0)
+    const [totalOccupancy, setTotalOccupancy] = useState(1)
     const [totalBedrooms, setTotalBedrooms] = useState(0)
     const [totalBathrooms, setTotalBathrooms] = useState(0)
     const [description, setDescription] = useState('')
@@ -96,7 +96,7 @@ const AddSpot = () => {
                 <div className="nextButton" onClick={() => {
                     setfirstSlide(false)
                     setSecondSlide(true)
-                    
+
                 }}>Next</div>
             </div>
 
@@ -275,7 +275,7 @@ const AddSpot = () => {
                             type="number"
                             onChange={(e) => setTotalOccupancy(e.target.value)}
                             required={true}
-                            min="0"
+                            min="1"
                         >
                         </input>
                         <label>Total Bedrooms</label>
