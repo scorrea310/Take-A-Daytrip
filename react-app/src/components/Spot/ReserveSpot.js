@@ -12,7 +12,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     const history = useHistory()
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user.id);
-    const [totalOccupancy, setTotalOccupancy] = useState(0)
+    const [totalOccupancy, setTotalOccupancy] = useState(1)
     const today = new Date()
     const [startDate, setStartDate] = useState(new Date());
     const [sameDayError, setSameDayError] = useState(false);
@@ -125,7 +125,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             setStartDate(new Date(reservationDate))
 
         } else {
-            setTotalOccupancy(0)
+            setTotalOccupancy(1)
             setStartDate(new Date())
         }
     }, [])
@@ -152,7 +152,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                             type="number"
                             onChange={(e) => setTotalOccupancy(e.target.value)}
                             required={true}
-                            min="0"
+                            min="1"
                             className="numberOfGuestsReserve"
                             max={totalOccupantsAllowed}
                         >
