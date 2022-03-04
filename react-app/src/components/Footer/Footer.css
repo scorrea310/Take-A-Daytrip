@@ -23,8 +23,6 @@
     width: 20%;
     height: 80%;
     display: flex;
-    /* background-color: blueviolet; */
-
     flex-direction: column;
     align-items: center;
 }
@@ -38,4 +36,37 @@
     color: rgb(34, 34, 34);
     flex-direction: row;
     justify-content: space-between;
+}
+
+.englishAndUSDTextContainer {
+    margin-right: 80px;
+}
+
+
+@media screen and (max-width: 390px) {
+
+.footerContainer {
+height: fit-content;
+}
+
+.aboutLinksSectionFooter {
+    flex-direction: column;
+}
+
+.aboutCategory {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+.englishAndUSDTextContainer {
+    margin-right: 0px;
+}
+
 }
