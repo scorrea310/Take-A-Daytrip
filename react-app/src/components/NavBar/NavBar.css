@@ -381,3 +381,54 @@
 }
 
 }
+
+
+@media only screen
+    and (device-width: 414px)
+    and (device-height: 896px)
+    and (-webkit-device-pixel-ratio: 2) {
+
+
+    .centerNavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    right: 0;
+    flex-direction: row;
+    position: fixed;
+    background-color:white;
+    /* background-color: brown; */
+    /* flex: 1 0 140px */ 
+    margin-top: -5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.landingPageNavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+    /* padding-left: 4px;
+    padding-right: 5px; */
+    margin-top: -5px;
+    background-color: white;
+}
+
+.profileModalWindowContainerNavBar {
+    width: 200px;
+    margin-top: 0px;
+}
+
+.navLogoContainer {
+    width: 35%;
+}
+
+.takeADayTripText {
+    font-size: 17px;
+}
+    }
