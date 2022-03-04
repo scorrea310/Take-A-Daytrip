@@ -25,6 +25,7 @@
     /* background-color: black; */
     align-items: center;
     height: 700px;
+    margin-top: 100px;
 }
 
 .btn.imFlexibleButton {
@@ -125,7 +126,7 @@
     font-weight: 400;
 }
 
-@media screen 
+/* @media screen 
     and (width: 390px) 
     and (height: 844px) 
     and (-webkit-device-pixel-ratio: 3) {
@@ -166,17 +167,21 @@
     width: 100%;
      margin-top: 30px;
 }
-}
+} */
 
 
 @media only screen
-    and (min-device-width: 428px)
-    and (min-device-height: 926px)
-    and (-webkit-min-device-pixel-ratio: 3) {
+    and (max-device-width: 428px)
+    {
 
  .landingPageBigImageAndButtonContainer {
-    width: 100%;
-    padding: 0
+    width: 89%;
+    padding: 0;
+    
+}
+
+.landingPageBigImageContainer {
+    margin-top: 130px;
 }
 
 .notSureWhereText {
@@ -184,32 +189,40 @@
     display: flex;
     justify-content: center;
 }
+.categorySectionContainer {
+    overflow: hidden;
+}
 
 .landingPageCategorySection {
     height: fit-content
 }
 
 .landingPageCardSection {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: scroll;
+    width: 100%;
+    
 }
 
 .firstCategoryCard {
-    width: 100%;
+    min-width: 35%;
+    margin-right: 20px;
 }
 
 .secondCategoryCard  {
-    width: 100%;
-    margin-top: 30px;
+    min-width: 35%;
+    margin-right: 20px;
 }
 
 .thirdCategoryCard {
-    width: 100%;
-     margin-top: 30px;
-}
+    min-width: 35%;
+    margin-right: 20px;
+}    
 
 .rightCategoryCard {
-    width: 100%;
-     margin-top: 30px;
+    min-width: 35%;
+    margin-right: 20px;
 }
 
     } 
