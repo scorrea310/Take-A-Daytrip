@@ -125,7 +125,7 @@
     font-weight: 400;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 390px), (max-width: 428px) {
     .landingPageBigImageAndButtonContainer {
     width: 100%;
     padding: 0
