@@ -15,7 +15,6 @@
     justify-content: center;
     position: fixed;
     box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
-    
 }
 
 .spotPageNavBarContainer {
@@ -48,6 +47,8 @@
     /* background-color: brown; */
     /* flex: 1 0 140px */ 
 }
+
+
 
 .centerNavBarContainerListingsPage {
     display: flex;
@@ -337,3 +338,37 @@
     font-size: 16px;
     cursor: pointer;
 } */
+
+
+@media screen and (max-width: 390px) {
+
+    .centerNavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    right: 0;
+    flex-direction: row;
+    position: fixed;
+    background-color:white;
+    /* background-color: brown; */
+    /* flex: 1 0 140px */ 
+    margin-top: -5px;
+}
+
+.landingPageNavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+    /* padding-left: 4px;
+    padding-right: 5px; */
+    margin-top: -5px;
+    background-color: white;
+}
+
+
+}

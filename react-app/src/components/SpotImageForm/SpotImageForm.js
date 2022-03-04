@@ -16,11 +16,6 @@ const SpotImageForm = ({ images, setImages, noImagesError, firstSlide, secondSli
         setImages(filtered);
     };
 
-    /*
-    
-    
-    */
-
     return (
         <div className="photosContainer">
             <div className="progressBarSlide2">
