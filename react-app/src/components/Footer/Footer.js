@@ -40,7 +40,7 @@ const Footer = () => {
 
             <div className="bottomSectionFooter">
                 <div>© 2022 Take A Daytrip, Inc. · Privacy · Terms · Sitemap</div>
-                <div style={{ marginRight: "80px" }}>English(US)  $ USD</div>
+                <div className="englishAndUSDTextContainer" >English(US)  $ USD</div>
             </div>
         </div>
     )

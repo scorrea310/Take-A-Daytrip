@@ -130,4 +130,37 @@
     width: 100%;
     padding: 0
 }
+
+.notSureWhereText {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.landingPageCategorySection {
+    height: fit-content
+}
+
+.landingPageCardSection {
+    flex-direction: column;
+}
+
+.firstCategoryCard {
+    width: 100%;
+}
+
+.secondCategoryCard  {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.thirdCategoryCard {
+    width: 100%;
+     margin-top: 30px;
+}
+
+.rightCategoryCard {
+    width: 100%;
+     margin-top: 30px;
+}
 }

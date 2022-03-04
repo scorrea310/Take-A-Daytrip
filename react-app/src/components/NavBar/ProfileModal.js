@@ -85,7 +85,7 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
     return (
 
         <>
-            {sessionUser ? <div style={{ zIndex: "1000" }}>{signedOutProfileWindow}</div> : <div style={{ zIndex: "1000" }}>{signInProfileWindow}</div>}
+            {sessionUser ? <div className="profileModalWindowContainerNavBar" >{signedOutProfileWindow}</div> : <div className="profileModalWindowContainerNavBar" >{signInProfileWindow}</div>}
         </>
 
 
