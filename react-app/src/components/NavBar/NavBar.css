@@ -335,7 +335,7 @@
     z-index: 1000;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 390px), (max-width: 428px) {
 
     .centerNavBarContainer {
     display: flex;
