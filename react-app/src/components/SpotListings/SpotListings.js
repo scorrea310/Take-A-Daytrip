@@ -67,7 +67,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                     })}
                 </div>
                 <div className="listingsImageContainer">
-                    <div style={{ width: "90%", height: "90%", backgroundImage: `url(${imageUrl})`, backgroundSize: "cover", borderRadius: "12px", backgroundPosition: "center" }}></div>
+                    <div style={{ width: "100%", height: "90%", backgroundImage: `url(${imageUrl})`, backgroundSize: "cover", borderRadius: "12px", backgroundPosition: "center" }}></div>
                 </div>
             </div>
         </div>

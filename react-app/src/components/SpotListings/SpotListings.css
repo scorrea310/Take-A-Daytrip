@@ -32,3 +32,27 @@
     justify-content: center;
 
 }
+
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px)
+    and (-webkit-min-device-pixel-ratio: 3) 
+    { 
+
+.listingsAndImageMainContainer {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: fit-content;
+}
+
+.listingsImageContainer {
+    height: 400px;
+    width: 100%;
+    justify-content: flex-start;
+}
+.listingsContainer {
+    width: 100%
+}
+
+    }

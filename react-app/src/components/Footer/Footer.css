@@ -41,7 +41,40 @@
 .englishAndUSDTextContainer {
     margin-right: 80px;
 }
+/*  alignItems: "center", marginTop: "20px", fontSize: "16px"  */
+.aboutText {
+text-decoration: none;
+color: black;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+font-size: 16px;
+}
 
+/* fontSize: "16px", color: "rgb(34, 34, 34)", fontWeight: "800"  */
+
+.aboutCategoryTextFooter {
+font-size: 14px;
+color: rgb(34, 34, 34);
+font-weight: 800;
+}
+ 
+.technologyText {
+margin-top: 5px;
+font-size: 16px;
+}
+
+.javascriptText {
+margin-top: 20px;
+font-size: 16px;
+}
+#builtWithTextFooter {
+    font-size: 14px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
 
 @media screen and (max-width: 390px), (max-width: 428px) {
 
@@ -75,9 +108,9 @@ height: fit-content;
 }
 
 @media only screen
-    and (min-device-width: 428px)
-    and (min-device-height: 926px)
-    and (-webkit-min-device-pixel-ratio: 3) {
+    and (max-device-width: 428px)
+    and (max-device-height: 926px)
+    and (-webkit-min-device-pixel-ratio: 3)  {
 
 .footerContainer {
 height: fit-content;

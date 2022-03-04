@@ -384,20 +384,28 @@
 } */
 
 @media only screen
-    and (min-device-width: 428px)
-    and (min-device-height: 926px)
+    and (max-device-width: 428px)
+    and (max-device-height: 926px)
     and (-webkit-min-device-pixel-ratio: 3) {
 
-    .centerNavBarContainer {
-    display: flex;
-    width: 89%;
-    height: 150px;
-    flex-direction: row;
-    position: fixed;
-    background-color:white;
-    /* background-color: brown; */
-    /* flex: 1 0 140px */ 
-    margin-top: -5px;
+.NavBarContainer {
+height: 150px;
+}
+
+.centerNavBarContainerListingsPage {
+height: 150px;
+}
+
+.centerNavBarContainer {
+display: flex;
+width: 89%;
+height: 150px;
+flex-direction: row;
+position: fixed;
+background-color:white;
+/* background-color: brown; */
+/* flex: 1 0 140px */ 
+margin-top: -5px;
 }
 .navBarProfileButton {
     width: 120px;
@@ -412,6 +420,7 @@
 .loginButton {
     height: 33%;
     font-size: 22px;
+    color: black
 }
 .profileButtonContainer  {
     min-height: 100px;
@@ -424,6 +433,7 @@
 .signupButton {
     height: 33%;
     font-size: 22px;
+    color: black;
 }
 .placesToStayTextContainer {
     font-size: 25px;
@@ -459,5 +469,7 @@
 
 .takeADayTripText {
     font-size: 30px;
+    display: block;
+    height: fit-content
 }
     }
