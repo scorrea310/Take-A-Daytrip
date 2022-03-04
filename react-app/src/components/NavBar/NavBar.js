@@ -72,10 +72,11 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
                                 <SignUpForm setShowSignupModal={setShowSignupModal} />
                             </Modal>
                         )}
-                        {profileModal ? <ProfileModal profileModal={profileModal} setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} setProfileModal={setProfileModal} /> : null}
+
                     </div>
 
                 </div>
+                {profileModal ? <ProfileModal profileModal={profileModal} setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} setProfileModal={setProfileModal} /> : null}
             </div>
         </>
     )
