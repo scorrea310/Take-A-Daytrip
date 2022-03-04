@@ -8,14 +8,14 @@ const Footer = () => {
         <div className="footerContainer">
             <div className="aboutLinksSectionFooter">
                 <div className="aboutCategory">
-                    <div style={{ fontSize: "16px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>Contact</div>
+                    <div className="contactText">Contact</div>
                     <div className="aboutText" >s.correa@berkeley.edu </div>
                     <div className="aboutText" >(310)894-0493 </div>
                 </div>
                 <div className="aboutCategory">
                     <div className="aboutCategoryTextFooter" >About</div>
-                    <a className="aboutText" href="https://www.linkedin.com/in/steve-correa/">Linkedin <AiFillLinkedin style={{ fontSize: "24px", borderRadius: "12px", marginLeft: "5px" }} /></a>
-                    <a className="aboutText" href="https://github.com/scorrea310">GitHub <AiFillGithub style={{ fontSize: "24px", marginLeft: "5px" }} /></a>
+                    <a className="aboutText" href="https://www.linkedin.com/in/steve-correa/">Linkedin <AiFillLinkedin style={{ fontSize: "30px", borderRadius: "12px", marginLeft: "5px" }} /></a>
+                    <a className="aboutText" href="https://github.com/scorrea310">GitHub <AiFillGithub style={{ fontSize: "30px", marginLeft: "5px" }} /></a>
                 </div>
                 <div className="aboutCategory">
                     <div id="builtWithTextFooter">Built With</div>
@@ -31,7 +31,7 @@ const Footer = () => {
                     <div className="technologyText" >Docker</div>
                 </div>
                 <div className="aboutCategory">
-                    <div style={{ fontSize: "16px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>Projects</div>
+                    <div className="projectsText" >Projects</div>
                     <a className="aboutText" href="http://udderly-forgetful.herokuapp.com/">Udderly ForgetFul </a>
                     <a className="aboutText" href="https://song-cloud-clone.herokuapp.com/">SongCloud</a>
                     <a className="aboutText" href="https://qwerty2022.herokuapp.com/">Qwerty </a>

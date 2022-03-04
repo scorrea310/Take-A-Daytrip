@@ -40,6 +40,13 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
     return (
         <div className="spotListingsPage">
             <NavBar spotListingsPage={true} />
+            <div className="spotCategoryTitle">
+                {allSpots && <div>All Spots</div>}
+                {apartments && <div>Apartments</div>}
+                {unique && <div>Unique</div>}
+                {outdoors && <div>outdoors</div>}
+                {houses && <div>Houses</div>}
+            </div>
             <div className="listingsAndImageMainContainer">
                 <div className="listingsContainer">
                     {allSpots && Object.values(spots).map((spot) => {

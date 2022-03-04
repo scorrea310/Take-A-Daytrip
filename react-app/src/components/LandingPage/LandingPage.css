@@ -179,6 +179,7 @@
  .landingPageBigImageAndButtonContainer {
     width: 89%;
     padding: 0;
+    height: 850px;
 }
 
 .btn.imFlexibleButton {
@@ -193,6 +194,7 @@
 
 .landingPageBigImageContainer {
     margin-top: 170px;
+    height:fit-content
 }
 
 .notSureWhereText {
