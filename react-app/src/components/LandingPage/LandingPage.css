@@ -25,6 +25,7 @@
     /* background-color: black; */
     align-items: center;
     height: 700px;
+    margin-top: 100px;
 }
 
 .btn.imFlexibleButton {
@@ -175,8 +176,13 @@
     and (-webkit-min-device-pixel-ratio: 3) {
 
  .landingPageBigImageAndButtonContainer {
-    width: 100%;
-    padding: 0
+    width: 89%;
+    padding: 0;
+    
+}
+
+.landingPageBigImageContainer {
+    margin-top: 130px;
 }
 
 .notSureWhereText {
@@ -184,32 +190,40 @@
     display: flex;
     justify-content: center;
 }
+.categorySectionContainer {
+    overflow: hidden;
+}
 
 .landingPageCategorySection {
     height: fit-content
 }
 
 .landingPageCardSection {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: scroll;
+    width: 100%;
+    
 }
 
 .firstCategoryCard {
-    width: 100%;
+    min-width: 35%;
+    margin-right: 20px;
 }
 
 .secondCategoryCard  {
-    width: 100%;
-    margin-top: 30px;
+    min-width: 35%;
+    margin-right: 20px;
 }
 
 .thirdCategoryCard {
-    width: 100%;
-     margin-top: 30px;
-}
+    min-width: 35%;
+    margin-right: 20px;
+}    
 
 .rightCategoryCard {
-    width: 100%;
-     margin-top: 30px;
+    min-width: 35%;
+    margin-right: 20px;
 }
 
     } 
