@@ -19,7 +19,7 @@ const Footer = () => {
                 </div>
                 <div className="aboutCategory">
                     <div style={{ fontSize: "14px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>Built With</div>
-                    <div style={{ marginTop: "5px", fontSize: "14px" }}>Javascript</div>
+                    <div style={{ marginTop: "20px", fontSize: "14px" }}>Javascript</div>
                     <div style={{ marginTop: "5px", fontSize: "14px" }}>React</div>
                     <div style={{ marginTop: "5px", fontSize: "14px" }}>Redux</div>
                     <div style={{ marginTop: "5px", fontSize: "14px" }}>Python</div>
