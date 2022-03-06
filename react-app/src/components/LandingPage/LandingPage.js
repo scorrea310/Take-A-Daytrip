@@ -15,7 +15,7 @@ const LandingPage = () => {
             <div className="landingPageBigImageContainer">
                 <div className="landingPageBigImageAndButtonContainer">
                     <div className="notSureWhereText">Not sure where to go? Perfect.</div>
-                    <Button type={"Button"} className={"imFlexibleButton"} label={"I'm Flexible"} onClick={() => history.push("/allspots")} />
+                    <Button type={"Button"} className={"imFlexibleButton"} label={"I'm flexible"} onClick={() => history.push("/allspots")} />
                 </div>
             </div>
             <div className="landingPageCategorySection">

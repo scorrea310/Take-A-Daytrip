@@ -44,7 +44,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                 {allSpots && <div>All Spots</div>}
                 {apartments && <div>Apartments</div>}
                 {unique && <div>Unique</div>}
-                {outdoors && <div>outdoors</div>}
+                {outdoors && <div>Outdoors</div>}
                 {houses && <div>Houses</div>}
             </div>
             <div className="listingsAndImageMainContainer">
