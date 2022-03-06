@@ -119,7 +119,8 @@
     -webkit-background-clip: text;
 }
 
-
+/* padding: 20px;
+    border-radius: 34px; */
 
 .placesToStayTextContainer {
     display: flex;
@@ -129,13 +130,21 @@
     font-size: 16px;
 }
 
-.placesToStayButtonContainer:hover {
-
+.placesToStayButtonContainer {
     width: fit-content;
-    background-color: #DDDDDD;
-    padding: 10px;
+    background-color: white;
+    padding: 12px;
+    border-radius: 24px;
+    border: 1px solid #e4e2e2;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 1%)
+}
+
+.placesToStayButtonContainer:hover {
+    width: fit-content;
     border-radius: 24px;
     cursor: pointer;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 6%)
 }
 
 
@@ -167,7 +176,6 @@
    flex-direction: row;
    justify-content: center;
    align-items: center;
-   
 }
 
 .navBarProfileButton:hover {
@@ -181,6 +189,7 @@
    justify-content: center;
    align-items: center;
    cursor: pointer;
+   box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 4%)
 }
 
 .searchStayContainer{
@@ -392,6 +401,12 @@
 height: 150px;
 }
 
+
+.placesToStayButtonContainer  {
+    padding: 20px;
+    border-radius: 34px;
+}
+
 .centerNavBarContainerListingsPage {
 height: 150px;
 }
@@ -408,9 +423,9 @@ background-color:white;
 margin-top: -5px;
 }
 .navBarProfileButton {
-    width: 120px;
-    height: 62px;
-    border-radius: 33px;
+    width: 130px;
+    height: 72px;
+    border-radius: 40px;
 }
 .navBarProfileButton:hover {
     width: 120px;
@@ -419,7 +434,7 @@ margin-top: -5px;
 }
 .loginButton {
     height: 33%;
-    font-size: 22px;
+    font-size: 30px;
     color: black
 }
 .profileButtonContainer  {
@@ -428,11 +443,11 @@ margin-top: -5px;
 }
 .profileWindowHostYourHomeText {
     height: 33%;
-    font-size: 22px;
+    font-size: 30px;
 }
 .signupButton {
     height: 33%;
-    font-size: 22px;
+    font-size: 30px;
     color: black;
 }
 .placesToStayTextContainer {
@@ -462,13 +477,22 @@ margin-top: -5px;
     right: 0px;
     height: 200px
 }
+.profileWindowSignupText {
+    height: 33%;
+    font-size: 30px;
+}
+
+.profileWindowLoginText {
+    height: 33%;
+    font-size: 30px;
+}
 
 .navLogoContainer {
     width: 35%;
 }
 
 .takeADayTripText {
-    font-size: 30px;
+    font-size: 35px;
     display: block;
     height: fit-content
 }

@@ -47,7 +47,7 @@ const CategoryCard = ({ label, backgroundColor, milesAway, picture, rightCard, f
             <div style={{ width: "100%", height: "50%", backgroundImage: `url(${imageUrl})`, borderTopLeftRadius: "12px", borderTopRightRadius: "12px", backgroundSize: "cover" }}></div>
             <div className="cardTitleLandingPage">
                 {firstCard && "Outdoors"}
-                {secondCard && "House"}
+                {secondCard && "Houses"}
                 {thirdCard && "Apartments"}
                 {rightCard && "Unique"}
             </div>

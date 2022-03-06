@@ -14,8 +14,8 @@ const Footer = () => {
                 </div>
                 <div className="aboutCategory">
                     <div className="aboutCategoryTextFooter" >About</div>
-                    <a className="aboutText" href="https://www.linkedin.com/in/steve-correa/">Linkedin <AiFillLinkedin style={{ fontSize: "30px", borderRadius: "12px", marginLeft: "5px" }} /></a>
-                    <a className="aboutText" href="https://github.com/scorrea310">GitHub <AiFillGithub style={{ fontSize: "30px", marginLeft: "5px" }} /></a>
+                    <a className="aboutText" href="https://www.linkedin.com/in/steve-correa/">Linkedin </a>
+                    <a className="aboutText" href="https://github.com/scorrea310">GitHub </a>
                 </div>
                 <div className="aboutCategory">
                     <div id="builtWithTextFooter">Built With</div>
