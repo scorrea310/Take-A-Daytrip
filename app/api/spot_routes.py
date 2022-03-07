@@ -101,7 +101,7 @@ def get_spots():
         return_spots[spot.id] = spot.to_dict()
 
 
-    click.echo(click.style(str(return_spots), bg='red', fg='white'))
+    # click.echo(click.style(str(return_spots), bg='red', fg='white'))
 
     return {"spots": return_spots}
 
@@ -132,7 +132,7 @@ def update_spot(id):
 
         return old_spot.to_dict()
 
-    click.echo(click.style(str(form.errors), bg='red', fg='white'))
+    # click.echo(click.style(str(form.errors), bg='red', fg='white'))
     return {"errors": form.errors}, 400
 
 
