@@ -1,7 +1,7 @@
 .NavBarContainer {
     display: flex;
     width: 100%;
-    height: 80px;
+    min-height: 80px;
     background-color: white;
     justify-content: center;
     box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
@@ -497,4 +497,15 @@ margin-top: -5px;
     display: block;
     height: fit-content
 }
+    }
+
+
+@media only screen 
+        and (max-width: 1200px)
+    {
+
+.NavBarContainer {
+    position: fixed;
+}
+
     }
