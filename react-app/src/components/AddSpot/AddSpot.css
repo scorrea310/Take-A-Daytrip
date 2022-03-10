@@ -337,3 +337,16 @@
     }
 
     }
+
+
+    @media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+        .addSpotMainContent {
+            margin-top: 150px;
+        }
+
+        .leftHalf {
+                height: 500px;
+        }
+    }
