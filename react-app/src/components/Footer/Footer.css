@@ -41,7 +41,51 @@
 .englishAndUSDTextContainer {
     margin-right: 80px;
 }
+/*  alignItems: "center", marginTop: "20px", fontSize: "16px"  */
+.aboutText {
+text-decoration: none;
+color: black;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+font-size: 14px;
+}
 
+
+.aboutCategoryTextFooter {
+font-size: 14px;
+color: rgb(34, 34, 34);
+font-weight: 800;
+}
+ 
+.technologyText {
+margin-top: 5px;
+font-size: 14px;
+}
+
+.projectsText {
+    font-size: 14px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+.contactText {
+font-size: 14px;
+color: rgb(34, 34, 34);
+font-weight: 800;
+}
+
+.javascriptText {
+margin-top: 20px;
+font-size: 14px;
+}
+#builtWithTextFooter {
+    font-size: 14px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
 
 @media screen and (max-width: 390px), (max-width: 428px) {
 
@@ -75,17 +119,20 @@ height: fit-content;
 }
 
 @media only screen
-    and (min-device-width: 428px)
-    and (min-device-height: 926px)
-    and (-webkit-min-device-pixel-ratio: 3) {
+    and (max-device-width: 428px)
+    and (max-device-height: 926px)
+    and (-webkit-min-device-pixel-ratio: 3)  {
 
 .footerContainer {
 height: fit-content;
 }
 
+
+
 .aboutLinksSectionFooter {
     flex-direction: column;
     align-items: flex-start;
+    padding-bottom: 30px;
 }
 
 .aboutCategory {
@@ -106,6 +153,145 @@ height: fit-content;
 
 .bottomSectionFooter {
     margin-bottom: 20px;
+}
+
+.aboutText {
+text-decoration: none;
+color: black;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+font-size: 30px;
+}
+
+
+.aboutCategoryTextFooter {
+font-size: 30px;
+color: rgb(34, 34, 34);
+font-weight: 800;
+}
+ 
+.technologyText {
+margin-top: 5px;
+font-size: 30px;
+}
+
+.projectsText {
+    font-size: 30px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+.contactText {
+font-size: 30px;
+color: rgb(34, 34, 34);
+font-weight: 800;
+}
+
+.javascriptText {
+margin-top: 20px;
+font-size: 30px;
+}
+#builtWithTextFooter {
+    font-size: 30px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+.bottomSectionFooter {
+    font-size: 30px;
+    height: fit-content;
+    margin-top: 20px;
+}
+
+    }
+
+
+@media only screen
+    and (max-width: 628px)
+    {
+    .footerContainer {
+    height: fit-content;
+}
+
+
+
+.aboutLinksSectionFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 30px;
+}
+
+.aboutCategory {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.englishAndUSDTextContainer {
+    margin-right: 0px;
+}
+
+.bottomSectionFooter {
+    margin-bottom: 20px;
+}
+
+.aboutText {
+text-decoration: none;
+color: black;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+font-size: 14px;
+}
+
+
+.aboutCategoryTextFooter {
+font-size: 14px;
+color: rgb(34, 34, 34);
+font-weight: 800;
+}
+ 
+.technologyText {
+margin-top: 5px;
+font-size: 14px;
+}
+
+.projectsText {
+    font-size: 14px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+.contactText {
+font-size: 14px;
+color: rgb(34, 34, 34);
+font-weight: 800;
+}
+
+.javascriptText {
+margin-top: 20px;
+font-size: 14px;
+}
+#builtWithTextFooter {
+    font-size: 14px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+.bottomSectionFooter {
+    font-size: 14px;
+    height: fit-content;
+    margin-top: 20px;
 }
 
     }

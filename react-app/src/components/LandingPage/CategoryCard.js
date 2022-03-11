@@ -9,13 +9,6 @@ const CategoryCard = ({ label, backgroundColor, milesAway, picture, rightCard, f
 
     ///Users/stevecorrea/Desktop/JS_Problem_Sets_and_materials/App-Academy/Mod7/Take-A-Daytrip/react-app/src/images/outdoor-things-to-do-outside-daytrips-from-houston-2020-enchanted-rock-696x407.jpeg
 
-    /*
-    colors
-    #DE3151;
-    #D93B30;
-    #BC1A6E;
-    #CC2D4A;
-    */
 
     const history = useHistory()
     let cardClassName;
@@ -47,7 +40,7 @@ const CategoryCard = ({ label, backgroundColor, milesAway, picture, rightCard, f
             <div style={{ width: "100%", height: "50%", backgroundImage: `url(${imageUrl})`, borderTopLeftRadius: "12px", borderTopRightRadius: "12px", backgroundSize: "cover" }}></div>
             <div className="cardTitleLandingPage">
                 {firstCard && "Outdoors"}
-                {secondCard && "House"}
+                {secondCard && "Houses"}
                 {thirdCard && "Apartments"}
                 {rightCard && "Unique"}
             </div>

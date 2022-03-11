@@ -26,8 +26,8 @@ const FileInputWithPreview = ({
         <div
             className={`grid-block grid-block-${index}`}
             style={src && gridBlockStyle}
-            onMouseEnter={() => setIsVisible(true)}
-            onMouseLeave={() => setIsVisible(false)}
+        // onMouseEnter={() => setIsVisible(true)}
+        // onMouseLeave={() => setIsVisible(false)}
         >
             {!src && (
                 <div className="icon-container" onClick={handleClick}>
@@ -37,18 +37,18 @@ const FileInputWithPreview = ({
                     <p className="form-label">Add a photo</p>
                 </div>
             )}
-            {isVisible && (
-                <div className="grid-block-icons">
-                    <ButtonWithIcon
-                        className={'file-input-btn' + (error ? 'error-field' : '')}
-                        size="small"
-                        action="delete"
-                        shape="square"
-                        onClick={(e) => onClick(e, +index)}
-                    />
-                    {error && <p className="validation-error">{error}</p>}
-                </div>
-            )}
+            {/* {isVisible && ( */}
+            <div className="grid-block-icons">
+                <ButtonWithIcon
+                    className={'file-input-btn' + (error ? 'error-field' : '')}
+                    size="small"
+                    action="delete"
+                    shape="square"
+                    onClick={(e) => onClick(e, +index)}
+                />
+                {error && <p className="validation-error">{error}</p>}
+            </div>
+            {/* )} */}
             <input
                 type="file"
                 accept=".png,.jpg,.jpeg,.gif"

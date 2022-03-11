@@ -8,6 +8,7 @@ import LoginForm from "../LoginForm/LoginForm"
 import SignUpForm from "../SignUpForm/SignUpForm"
 import { NavLink } from "react-router-dom"
 import { useHistory } from "react-router-dom"
+import OutsideClickHandler from 'react-outside-click-handler';
 
 const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
 
@@ -57,26 +58,31 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
                         {/* <div id="placesToStayBottomBorder"></div> */}
                     </div>
                     <div className="profileButtonContainer" >
-                        <div className="navBarProfileButton" onClick={() => setProfileModal(!profileModal)} >
-                            <BiMenu style={{ fontSize: "25px", marginRight: "10px" }} />
-                            <FaRegUserCircle style={{ fontSize: "25px" }} />
+                        <OutsideClickHandler onOutsideClick={() => {
+                            setProfileModal(false)
+                        }}>
+                            <div className="navBarProfileButton" onClick={() => setProfileModal(!profileModal)} >
+                                <BiMenu style={{ fontSize: "25px", marginRight: "10px" }} />
+                                <FaRegUserCircle style={{ fontSize: "25px" }} />
 
-                        </div>
-                        {showLoginModal && (
-                            <Modal onClose={() => setShowLoginModal(false)}>
-                                <LoginForm setShowLoginModal={setShowLoginModal} />
-                            </Modal>
-                        )}
-                        {showSignUpModal && (
-                            <Modal idName={"signupModal"} onClose={() => setShowSignupModal(false)}>
-                                <SignUpForm setShowSignupModal={setShowSignupModal} />
-                            </Modal>
-                        )}
+                            </div>
+                            {profileModal ? <ProfileModal profileModal={profileModal} setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} setProfileModal={setProfileModal} /> : null}
 
+                            {showLoginModal && (
+                                <Modal onClose={() => setShowLoginModal(false)}>
+                                    <LoginForm setShowLoginModal={setShowLoginModal} />
+                                </Modal>
+                            )}
+                            {showSignUpModal && (
+                                <Modal idName={"signupModal"} onClose={() => setShowSignupModal(false)}>
+                                    <SignUpForm setShowSignupModal={setShowSignupModal} />
+                                </Modal>
+                            )}
+                        </OutsideClickHandler>
                     </div>
 
                 </div>
-                {profileModal ? <ProfileModal profileModal={profileModal} setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} setProfileModal={setProfileModal} /> : null}
+
             </div>
         </>
     )

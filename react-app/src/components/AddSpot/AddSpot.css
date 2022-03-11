@@ -9,7 +9,7 @@
     width: 100%;
     height: 100%;
     flex-direction: row;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .leftHalf {
@@ -38,7 +38,7 @@
 .whatKindOfText {
     font-size: 40px;
     color: white;
-    width: 350px;
+    width: 60%;
 }
 
 .spotCard {
@@ -297,3 +297,93 @@
   }
 }
 
+
+@media only screen 
+        and (max-width: 1200px)
+    {
+    .addSpotMainContent {
+    flex-direction: column;
+    margin-top: 80px;
+    }
+
+    .leftHalf {
+        width: 100%;
+        height: 300px;
+    }
+     .rightHalf {
+        width: 100%;
+        height: fit-content;
+        overflow-y: unset;
+    }
+
+    .selected {
+    width: 100%;
+    height: 100px;
+    height: 150px;
+    }
+
+    .selected:hover {
+    width: 100%;
+    height: 100px;
+    height: 150px;
+    }
+
+    .whatKindOfText {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .addSpotPageContainer {
+        height: fit-content
+    }
+
+    .spotCardCategorySelectionDiv {
+        margin-top: 30px;
+        width: 70%;
+    }
+
+    .spotCard {
+        width: 100%;
+        height: 150px;
+    }
+
+    .spotCard:hover{
+        width: 100%;
+        height: 150px;
+    }
+
+
+    .photosContainer {
+    margin-top: 30px;
+    }
+
+    
+
+    }
+
+
+    @media only screen
+    and (max-device-width: 428px)
+    {
+        .addSpotMainContent {
+            margin-top: 150px;
+        }
+
+        .leftHalf {
+                height: 500px;
+        }
+
+         .rightHalf {
+        width: 100%;
+        height: fit-content;
+        overflow-y: unset;
+        flex-direction: column;
+    }
+
+        .nextButton {
+        width: 110px;
+        height: 60px;
+        border-radius: 33px;
+    }
+    }
