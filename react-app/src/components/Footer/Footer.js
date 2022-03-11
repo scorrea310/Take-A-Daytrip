@@ -8,33 +8,33 @@ const Footer = () => {
         <div className="footerContainer">
             <div className="aboutLinksSectionFooter">
                 <div className="aboutCategory">
-                    <div style={{ fontSize: "16px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>Contact</div>
-                    <div style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "16px" }} >s.correa@berkeley.edu </div>
-                    <div style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "16px" }} >(310)894-0493 </div>
+                    <div className="contactText">Contact</div>
+                    <div className="aboutText" >s.correa@berkeley.edu </div>
+                    <div className="aboutText" >(310)894-0493 </div>
                 </div>
                 <div className="aboutCategory">
-                    <div style={{ fontSize: "16px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>About</div>
-                    <a style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "16px" }} href="https://www.linkedin.com/in/steve-correa/">Linkedin <AiFillLinkedin style={{ fontSize: "24px", borderRadius: "12px", marginLeft: "5px" }} /></a>
-                    <a style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "16px" }} href="https://github.com/scorrea310">GitHub <AiFillGithub style={{ fontSize: "24px", marginLeft: "5px" }} /></a>
+                    <div className="aboutCategoryTextFooter" >About</div>
+                    <a className="aboutText" href="https://www.linkedin.com/in/steve-correa/">Linkedin </a>
+                    <a className="aboutText" href="https://github.com/scorrea310">GitHub </a>
                 </div>
                 <div className="aboutCategory">
-                    <div style={{ fontSize: "16px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>Built With</div>
-                    <div style={{ marginTop: "20px", fontSize: "16px" }}>Javascript</div>
-                    <div style={{ marginTop: "5px", fontSize: "16px" }}>React</div>
-                    <div style={{ marginTop: "5px", fontSize: "16px" }}>Redux</div>
-                    <div style={{ marginTop: "5px", fontSize: "16px" }}>Python</div>
-                    <div style={{ marginTop: "5px", fontSize: "16px" }}>Flask</div>
-                    <div style={{ marginTop: "5px", fontSize: "16px" }}>SQLalchemy</div>
-                    <div style={{ marginTop: "5px", fontSize: "16px" }}>HTML 5</div>
-                    <div style={{ marginTop: "5px", fontSize: "16px" }}>CSS</div>
-                    <div style={{ marginTop: "5px", fontSize: "16px" }}>Amazon S3</div>
-                    <div style={{ marginTop: "5px", fontSize: "16px" }}>Docker</div>
+                    <div id="builtWithTextFooter">Built With</div>
+                    <div className="javascriptText" >Javascript</div>
+                    <div className="technologyText">React</div>
+                    <div className="technologyText" >Redux</div>
+                    <div className="technologyText" >Python</div>
+                    <div className="technologyText" >Flask</div>
+                    <div className="technologyText" >SQLalchemy</div>
+                    <div className="technologyText" >HTML 5</div>
+                    <div className="technologyText" >CSS</div>
+                    <div className="technologyText" >Amazon S3</div>
+                    <div className="technologyText" >Docker</div>
                 </div>
                 <div className="aboutCategory">
-                    <div style={{ fontSize: "16px", color: "rgb(34, 34, 34)", fontWeight: "800" }}>Projects</div>
-                    <a style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "16px" }} href="http://udderly-forgetful.herokuapp.com/">Udderly ForgetFul </a>
-                    <a style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "16px" }} href="https://song-cloud-clone.herokuapp.com/">SongCloud</a>
-                    <a style={{ textDecoration: "none", color: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: "20px", fontSize: "16px" }} href="https://qwerty2022.herokuapp.com/">Qwerty </a>
+                    <div className="projectsText" >Projects</div>
+                    <a className="aboutText" href="http://udderly-forgetful.herokuapp.com/">Udderly ForgetFul </a>
+                    <a className="aboutText" href="https://song-cloud-clone.herokuapp.com/">SongCloud</a>
+                    <a className="aboutText" href="https://qwerty2022.herokuapp.com/">Qwerty </a>
                 </div>
             </div>
 

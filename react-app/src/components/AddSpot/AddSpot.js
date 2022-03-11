@@ -34,7 +34,13 @@ const AddSpot = () => {
 
 
 
-    const toObjectURL = (file) => URL.createObjectURL(file);
+    const toObjectURL = (file) => {
+
+        if (file === null || file === undefined) {
+            return
+        }
+        return URL.createObjectURL(file);
+    }
 
 
     const onSubmit = async (e) => {
@@ -82,7 +88,7 @@ const AddSpot = () => {
             </div>
             <div className="rightHalf">
 
-                <div>
+                <div className="spotCardCategorySelectionDiv">
                     <div className="progressBarSlide1">
                         <div className={firstSlide ? "blackSlide" : "graySlide"}></div>
                         <div className={secondSlide ? "blackSlide" : "graySlide"}></div>
