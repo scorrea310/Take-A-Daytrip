@@ -113,7 +113,7 @@
     hsl(45deg 100% 50%) 89%,
     hsl(55deg 100% 50%) 100% );
     -webkit-text-fill-color: transparent;
-    font-size: 22px;
+    font-size: 20px;
     background-clip: text;
     color: transparent;
     -webkit-background-clip: text;
@@ -410,6 +410,7 @@ height: 150px;
 .placesToStayButtonContainer  {
     padding: 20px;
     border-radius: 34px;
+    font-size: 20px;
 }
 
 .centerNavBarContainerListingsPage {

@@ -260,6 +260,7 @@ const EditSpot = ({ spot, spotId }) => {
                                 required={true}
                                 min="0"
                                 step="any"
+                                max="9999.00"
                             >
                             </input>
                             <label style={{ marginTop: "10px" }}>Type:</label>
