@@ -34,7 +34,13 @@ const AddSpot = () => {
 
 
 
-    const toObjectURL = (file) => URL.createObjectURL(file);
+    const toObjectURL = (file) => {
+
+        if (file === null || file === undefined) {
+            return
+        }
+        return URL.createObjectURL(file);
+    }
 
 
     const onSubmit = async (e) => {
