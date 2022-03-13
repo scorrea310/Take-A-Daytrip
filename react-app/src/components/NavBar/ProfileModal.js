@@ -62,7 +62,9 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
             }}> */}
 
             <div className="profileWindow" >
-                <div className="profileWindowLoginText">Welcome, {sessionUser?.name}</div>
+                <div className="profileWindowLoginText">
+                    <div className="welcomeUserTextProfileModal">Welcome, {sessionUser?.name}</div>
+                </div>
                 <div className="profileWindowLoginText" onClick={() => onLogout()}>
                     <button className="logoutButton">Log Out</button>
                 </div>
@@ -72,7 +74,9 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
                     }} >Host a Trip</div>
 
                 </div>
-                <div className="profileWindowHostYourHomeText" onClick={() => history.push("/mytrips")}>View upcoming trips</div>
+                <div className="profileWindowHostYourHomeText" onClick={() => history.push("/mytrips")}>
+                    <div className="upcomingTripsTextProfileWindow">View upcoming trips</div>
+                </div>
             </div>
 
             {/* </OutsideClickHandler> */}

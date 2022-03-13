@@ -228,7 +228,7 @@
     display: flex;
     width: 100%;
     height: 40px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     
 }
@@ -242,14 +242,26 @@
     cursor: pointer;
 }
 
+.welcomeUserTextProfileModal {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.upcomingTripsTextProfileWindow {
+    width: 100%;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
 .profileWindowLoginText {
     display: flex;
     width: 100%;
     height: 40px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border-bottom: 1px solid #e4e2e2;
 }
 
 
@@ -283,11 +295,11 @@
     display: flex;
     width: 100%;
     height: 40px;
-    justify-content: center;
     align-items: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
+    padding-left: 10px;
 }
 
 .logoutButton:hover {
@@ -299,7 +311,7 @@
     display: flex;
     width: 100%;
     height: 40px;
-    justify-content: center;
+    padding-left: 10px;
     align-items: center;
     
     border-top-left-radius: 10px;
@@ -354,9 +366,10 @@
     display: flex;
     width: 100%;
     height: 40px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     cursor: pointer;
+    padding-left: 10px;
 }
 
 .signupButton:hover {
@@ -369,9 +382,10 @@
     display: flex;
     width: 100%;
     height: 40px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: #f7f7f7;
+    padding-left: 10px;
 }
 
 .profileModalWindowContainerNavBar {
