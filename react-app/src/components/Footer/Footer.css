@@ -60,7 +60,7 @@ font-weight: 280;
 .aboutCategoryTextFooter {
 font-size: 14px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
  
 .technologyText {
@@ -75,13 +75,13 @@ font-weight: 280;
 .projectsText {
     font-size: 14px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .contactText {
 font-size: 14px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
 
 .javascriptText {
@@ -89,10 +89,11 @@ margin-top: 20px;
 font-size: 15px;
 font-weight: 280;
 }
+
 #builtWithTextFooter {
     font-size: 14px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .bottomFooterText {
@@ -183,7 +184,7 @@ font-size: 30px;
 .aboutCategoryTextFooter {
 font-size: 30px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
  
 .technologyText {
@@ -194,13 +195,13 @@ font-size: 30px;
 .projectsText {
     font-size: 30px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .contactText {
 font-size: 30px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
 
 .javascriptText {
@@ -210,7 +211,7 @@ font-size: 30px;
 #builtWithTextFooter {
     font-size: 30px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .bottomSectionFooter {
@@ -271,7 +272,7 @@ font-size: 14px;
 .aboutCategoryTextFooter {
 font-size: 14px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
  
 .technologyText {
@@ -282,13 +283,13 @@ font-size: 14px;
 .projectsText {
     font-size: 14px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .contactText {
 font-size: 14px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
 
 .javascriptText {
@@ -298,7 +299,7 @@ font-size: 14px;
 #builtWithTextFooter {
     font-size: 14px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .bottomSectionFooter {
