@@ -65,7 +65,7 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
                 <div className="profileWindowLoginText">
                     <div className="welcomeUserTextProfileModal">Welcome, {sessionUser?.name}</div>
                 </div>
-                <div className="profileWindowLoginText" onClick={() => onLogout()}>
+                <div className="profileWindowLogOutContainer" onClick={() => onLogout()}>
                     <button className="logoutButton">Log Out</button>
                 </div>
                 <div className="profileWindowSignupText">
