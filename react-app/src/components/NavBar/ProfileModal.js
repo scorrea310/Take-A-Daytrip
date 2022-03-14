@@ -39,7 +39,7 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
                 setShowLoginModal(true)
                 setShowSignupModal(false)
                 setProfileModal(false)
-            }}>Log In</button>
+            }}>Log in</button>
 
 
             <button className="signupButton" onClick={() => {
@@ -49,7 +49,7 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
             }} >Register</button>
 
 
-            <div className="profileWindowHostYourHomeText" onClick={demoUserLogin}>Demo User</div>
+            <div className="profileWindowDemoUserTextContainer" onClick={demoUserLogin}>Demo User</div>
         </div>
         // </OutsideClickHandler>
     )
@@ -66,7 +66,7 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
                     <div className="welcomeUserTextProfileModal">Welcome, {sessionUser?.name}</div>
                 </div>
                 <div className="profileWindowLogOutContainer" onClick={() => onLogout()}>
-                    <button className="logoutButton">Log Out</button>
+                    <button className="logoutButton">Log out</button>
                 </div>
                 <div className="profileWindowSignupText">
                     <div className="signupButton" to="/spots/new" onClick={() => {
