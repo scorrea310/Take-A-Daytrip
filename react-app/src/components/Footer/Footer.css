@@ -24,7 +24,7 @@
     height: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .bottomSectionFooter {
@@ -40,6 +40,8 @@
 
 .englishAndUSDTextContainer {
     margin-right: 80px;
+    font-size: 15px;
+    font-weight: 280;
 }
 /*  alignItems: "center", marginTop: "20px", fontSize: "16px"  */
 .aboutText {
@@ -50,41 +52,53 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 margin-top: 20px;
-font-size: 14px;
+font-size: 15px;
+font-weight: 280;
 }
 
 
 .aboutCategoryTextFooter {
 font-size: 14px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
  
 .technologyText {
 margin-top: 5px;
-font-size: 14px;
+font-size: 15px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+font-weight: 280;
 }
 
 .projectsText {
     font-size: 14px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .contactText {
 font-size: 14px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
 
 .javascriptText {
 margin-top: 20px;
-font-size: 14px;
+font-size: 15px;
+font-weight: 280;
 }
+
 #builtWithTextFooter {
     font-size: 14px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
+}
+
+.bottomFooterText {
+    font-size: 15px;
+    font-weight: 280;
 }
 
 @media screen and (max-width: 390px), (max-width: 428px) {
@@ -102,7 +116,7 @@ height: fit-content;
     height: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 20px;
     border-bottom: 1px solid rgb(221, 221, 221);
     padding-bottom: 10px;
@@ -170,7 +184,7 @@ font-size: 30px;
 .aboutCategoryTextFooter {
 font-size: 30px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
  
 .technologyText {
@@ -181,13 +195,13 @@ font-size: 30px;
 .projectsText {
     font-size: 30px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .contactText {
 font-size: 30px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
 
 .javascriptText {
@@ -197,7 +211,7 @@ font-size: 30px;
 #builtWithTextFooter {
     font-size: 30px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .bottomSectionFooter {
@@ -258,7 +272,7 @@ font-size: 14px;
 .aboutCategoryTextFooter {
 font-size: 14px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
  
 .technologyText {
@@ -269,13 +283,13 @@ font-size: 14px;
 .projectsText {
     font-size: 14px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .contactText {
 font-size: 14px;
 color: rgb(34, 34, 34);
-font-weight: 800;
+font-weight: 700;
 }
 
 .javascriptText {
@@ -285,7 +299,7 @@ font-size: 14px;
 #builtWithTextFooter {
     font-size: 14px;
     color: rgb(34, 34, 34);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .bottomSectionFooter {

@@ -39,7 +39,7 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
                 setShowLoginModal(true)
                 setShowSignupModal(false)
                 setProfileModal(false)
-            }}>Log In</button>
+            }}>Log in</button>
 
 
             <button className="signupButton" onClick={() => {
@@ -49,7 +49,7 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
             }} >Register</button>
 
 
-            <div className="profileWindowHostYourHomeText" onClick={demoUserLogin}>Demo User</div>
+            <div className="profileWindowDemoUserTextContainer" onClick={demoUserLogin}>Demo User</div>
         </div>
         // </OutsideClickHandler>
     )
@@ -62,9 +62,11 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
             }}> */}
 
             <div className="profileWindow" >
-                <div className="profileWindowLoginText">Welcome, {sessionUser?.name}</div>
-                <div className="profileWindowLoginText" onClick={() => onLogout()}>
-                    <button className="loginButton">Log Out</button>
+                <div className="profileWindowLoginText">
+                    <div className="welcomeUserTextProfileModal">Welcome, {sessionUser?.name}</div>
+                </div>
+                <div className="profileWindowLogOutContainer" onClick={() => onLogout()}>
+                    <button className="logoutButton">Log out</button>
                 </div>
                 <div className="profileWindowSignupText">
                     <div className="signupButton" to="/spots/new" onClick={() => {
@@ -72,7 +74,9 @@ const ProfileModal = ({ setProfileModal, setShowLoginModal, setShowSignupModal, 
                     }} >Host a Trip</div>
 
                 </div>
-                <div className="profileWindowHostYourHomeText" onClick={() => history.push("/mytrips")}>View upcoming trips</div>
+                <div className="profileWindowHostYourHomeText" onClick={() => history.push("/mytrips")}>
+                    <div className="upcomingTripsTextProfileWindow">View upcoming trips</div>
+                </div>
             </div>
 
             {/* </OutsideClickHandler> */}

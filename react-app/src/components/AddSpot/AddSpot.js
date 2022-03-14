@@ -141,7 +141,7 @@ const AddSpot = () => {
 
     let slide3 = (
         <>
-            <div style={{ width: "50%", maxHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center", backgroundImage: `url(${gradientBackground})` }}>
+            <div className="spotToAddImageContainer">
                 <img src={images.length > 0 ? toObjectURL(images[0]) : null} style={{ width: "80%", height: "80%", borderRadius: "24px" }} alt="backgroundImage" />
             </div>
 

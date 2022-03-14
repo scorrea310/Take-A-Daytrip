@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
 
             <div className="bottomSectionFooter">
-                <div>© 2022 Take A Daytrip, Inc. · Privacy · Terms · Sitemap</div>
+                <div className="bottomFooterText">© 2022 Take A Daytrip, Inc. · Privacy · Terms · Sitemap</div>
                 <div className="englishAndUSDTextContainer" >English(US)  $ USD</div>
             </div>
         </div>

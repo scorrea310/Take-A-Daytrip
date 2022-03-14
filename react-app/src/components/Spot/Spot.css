@@ -126,3 +126,24 @@
     justify-content: center;
     margin-top: 30px;
 }
+
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+
+.spotPageNavBArContainerParent {
+    height: 150px;
+}
+
+.spotPageNavBarContainer {
+    height: 150px;
+    align-items: center;
+}
+
+.spotNameAndImageSection {
+    margin-top: 30px;
+}
+
+
+    }

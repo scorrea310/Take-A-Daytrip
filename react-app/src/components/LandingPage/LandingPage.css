@@ -12,11 +12,11 @@
     flex-direction: column;
     width: 89%;
     border-radius: 10px;
-    height: 600px;
+    height: 520px;
     background-image: url("../../images/beachimage.jpeg");
     background-size: cover;
-    background-position: center;
-    margin-top: 70px;
+    background-position:bottom;
+    margin-top: 60px;
     margin-bottom: 80px;
 }
 
