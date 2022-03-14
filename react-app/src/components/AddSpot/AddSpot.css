@@ -205,6 +205,16 @@
     align-items: center;
 }
 
+
+.spotToAddImageContainer {
+    width: 50%;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../images/Wiretap.jpeg");
+}
+
 #priceInputAddSpotFomr::-webkit-inner-spin-button,
 #priceInputAddSpotFomr::-webkit-outer-spin-button {
  -webkit-appearance: none; 
@@ -304,6 +314,19 @@
     .addSpotMainContent {
     flex-direction: column;
     margin-top: 80px;
+    align-items: center;
+    }
+
+    .spotToAddImageContainer {
+        width: 89%;
+        height: 50%;
+        padding-top: 30px;
+        height: fit-content;
+        padding-bottom: 30px;
+    }
+
+    .addSpotTextFormSlide3 {
+        margin-top: 0px;
     }
 
     .leftHalf {
@@ -314,6 +337,7 @@
         width: 100%;
         height: fit-content;
         overflow-y: unset;
+        margin-top: 50px;
     }
 
     .selected {
@@ -372,6 +396,10 @@
 
         .leftHalf {
                 height: 500px;
+        }
+
+        .formAndNextButtonContainer {
+            min-height: fit-content;
         }
 
          .rightHalf {

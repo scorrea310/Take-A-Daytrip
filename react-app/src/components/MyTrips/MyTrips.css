@@ -41,3 +41,13 @@
     font-size: 22px;
     font-weight: 600;
 }
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+.tripsSpotCardSection {
+    margin-top: 80px;
+}
+
+    }
+
