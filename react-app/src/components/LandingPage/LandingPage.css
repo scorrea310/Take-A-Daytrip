@@ -12,12 +12,13 @@
     flex-direction: column;
     width: 89%;
     border-radius: 10px;
-    height: 520px;
-    background-image: url("../../images/beachimage.jpeg");
+    height: 480px;
+    background-image: url("../../images/houseWoodsLandingPage.jpeg");
     background-size: cover;
-    background-position:bottom;
-    margin-top: 60px;
+    background-position:center;
+    margin-top: 80px;
     margin-bottom: 80px;
+    
 }
 
 .landingPageBigImageContainer {
@@ -28,6 +29,7 @@
     background-color: black;
     align-items: center;
     height: fit-content;
+    /* background-image: linear-gradient(to top, #FFF1EB 0%, #ACE0F9 100%); */
 }
 
 .btn.imFlexibleButton {
@@ -36,7 +38,7 @@
     height: 58px;
     cursor: pointer;
     border: none;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     font-size: 16px;
     font-weight: 650
 }
