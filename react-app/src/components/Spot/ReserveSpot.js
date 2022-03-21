@@ -18,10 +18,13 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     const [totalOccupancy, setTotalOccupancy] = useState(1)
     const today = new Date()
     const [startDate, setStartDate] = useState(new Date());
+    const [state, setState] = useState({ start_date: "", end_date: "" })
     const [sameDayError, setSameDayError] = useState(false);
     const [pastDateErrors, setpastDateErrors] = useState(false)
     const [notDateError, setNotDateError] = useState(false)
     const [nullDateError, setNullDateError] = useState(false)
+    const [priceState, setPriceState] = useState("")
+    const [calendarErrors, setCalendarErrors] = useState(false)
 
 
     const dateInPast = function (firstDate, presentDate) {
@@ -38,48 +41,68 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         return false;
     };
 
-    const handleDateChange = (date) => {
+    const setTotalCost = (startDate, endDate) => {
 
+        if (startDate.getTime() < endDate.getTime()) {
+            let days = (endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24);
 
-        setStartDate(date)
-    }
-
-    const handleRightDateInput = (startDate) => {
-        if (typeof startDate !== "object") {
-            return false
+            setPriceState((days * price).toFixed(2))
         } else {
-            return true
+            setPriceState("")
         }
+
     }
+
+    const handleDateChange = (e) => {
+        let { startDate, endDate } = e.selection;
+        setState({ start_date: startDate, end_date: endDate })
+        setTotalCost(startDate, endDate)
+        console.log(e.selection)
+        console.log(endDate.getTime())
+    }
+
+
 
 
     const handleReservation = (e) => {
         e.preventDefault()
+        setCalendarErrors("")
 
-        if (startDate === null) {
-            setNullDateError(true)
-            return;
+        if (state.start_date === "" || state.end_date === "") {
+            setCalendarErrors("Please select dates.")
+            return
         }
 
-        if (startDate.toDateString() === "Invalid Date") {
-            setNotDateError(true)
-            return;
+
+        if (state.start_date.getTime() === state.end_date.getTime()) {
+            setCalendarErrors("Please choose at least two days")
+            return
         }
 
-        if (dateInPast(startDate, today) === true) {
-            setpastDateErrors(true)
-        } else {
-            const reservationFormObj = {
-                number_of_guests: parseInt(totalOccupancy, 10),
-                spot_id: spotId,
-                reservation: startDate.toISOString().split('T')[0],
-                price: parseFloat(price)
-            }
 
-            dispatch(creatReservationThunk(reservationFormObj, userId)).then(() => {
-                history.push("/mytrips")
-            })
+        // if (startDate === null) {
+        //     setNullDateError(true)
+        //     return;
+        // }
+
+        // if (startDate.toDateString() === "Invalid Date") {
+        //     setNotDateError(true)
+        //     return;
+        // }
+
+        const reservationFormObj = {
+            number_of_guests: parseInt(totalOccupancy, 10),
+            spot_id: spotId,
+            check_in: state.start_date.toISOString().split('T')[0],
+            check_out: state.end_date.toISOString().split('T')[0],
+            price: parseFloat(price)
         }
+
+        dispatch(creatReservationThunk(reservationFormObj, userId)).then(() => {
+            history.push("/mytrips")
+        })
+
+        console.log(state)
 
     }
 
@@ -135,25 +158,55 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
 
 
-
+    let selectionRange;
+    if (state.start_date === "") {
+        selectionRange = {
+            startDate: new Date(),
+            endDate: new Date(),
+            key: "selection",
+        };
+    } else if (state.start_date !== "" && state.end_date === "") {
+        selectionRange = {
+            startDate: state.start_date,
+            endDate: new Date(),
+            key: "selection",
+        };
+    } else if (state.end_date !== "") {
+        selectionRange = {
+            startDate: state.start_date,
+            endDate: state.end_date,
+            key: "selection",
+        };
+    }
 
     return (
         <div className="reserveASpotContainer">
             <form className="makeReservationMainContent" onSubmit={editModal ? editReservation : handleReservation}>
-                <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price}</div>/ day</div>
+                <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price} / day</div></div>
                 <div className="reserveMainBox">
 
 
-                    <div className="reservationDateAndDatePickerContainer"> <div style={{ marginRight: "10px", marginLeft: "10px" }}>Reservation:</div> <div style={{ width: "fit-content" }}>
-                        <DateRange />
-                    </div>
-                    </div>
+                    <div className="reservationDateAndDatePickerContainer">
 
+                        <DateRange
+                            ranges={[selectionRange]}
+                            minDate={new Date()}
+                            className="calendar"
+                            rangeColors={["#E61E4D"]}
+                            onChange={e => handleDateChange(e)}
+                            editableDateInputs={true}
+                            showSelectionPreview={true}
+                            months={1}
+                            direction="vertical"
+                            showDateDisplay={false}
+                            showMonthAndYearPickers={true}
+                        />
+                    </div>
                     <div className="addReservationNumberofGuestsText">Number of Guests
                         <input
                             value={totalOccupancy}
                             type="number"
-                            onChange={(e) => setTotalOccupancy(e.target.value)}
+                            onChange={setTotalOccupancy}
                             required={true}
                             min="1"
                             className="numberOfGuestsReserve"
@@ -161,10 +214,11 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                         >
                         </input>
                     </div>
+                    <div className="totalPriceCalculated">Total: ${priceState}</div>
                 </div>
+                <div className="calendarError">{calendarErrors}</div>
                 <Button type={"submit"} label={"Reserve"} className={"addReserveationButton"} />
-
-            </form>
+            </form >
         </div >
     )
 }

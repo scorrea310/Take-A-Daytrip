@@ -121,10 +121,11 @@
 
 .editDeleteOrReserveSection {
     display: flex;
-    width: 46%;
-    height: 430px;  
+    width: fit-content;
+    height: fit-content;  
     justify-content: center;
     margin-top: 30px;
+    padding-left: 40px;
 }
 
 

@@ -23,7 +23,8 @@ def add_reservation(id):
             spot_id=form.data["spot_id"],
             user_id=id,
             number_of_guests=form.data["number_of_guests"],
-            reservation=form.data["reservation"],
+            check_in=form.data["check_in"],
+            check_out=form.data["check_out"],
             price=form.data["price"],
         )
 
