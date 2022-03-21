@@ -7,6 +7,9 @@ import { creatReservationThunk } from "../../store/reservationsReducer";
 import { updateReservationThunk } from "../../store/reservationsReducer";
 import { useHistory } from "react-router-dom";
 import DatePicker from 'react-date-picker';
+import { DateRange } from 'react-date-range';
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 
 const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentReservation, setShowEditModal, reservationDate }) => {
     const history = useHistory()
@@ -128,7 +131,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             setTotalOccupancy(1)
             setStartDate(new Date())
         }
-    }, [])
+    }, [currentReservation?.number_of_guests, editModal, reservationDate])
 
 
 
@@ -136,13 +139,13 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
     return (
         <div className="reserveASpotContainer">
-            {pastDateErrors && <div style={{ color: "red", fontSize: "13px" }}>Enter a current or upcoming valid date.</div>}
-            {notDateError && <div style={{ color: "red", fontSize: "13px" }}>You must enter a valid date.</div>}
-            {nullDateError && <div style={{ color: "red", fontSize: "13px" }}>Enter a valid date.</div>}
             <form className="makeReservationMainContent" onSubmit={editModal ? editReservation : handleReservation}>
                 <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price}</div>/ day</div>
                 <div className="reserveMainBox">
-                    <div className="reservationDateAndDatePickerContainer"> <div style={{ marginRight: "10px", marginLeft: "10px" }}>Reservation:</div> <div style={{ width: "fit-content" }}><DatePicker onChange={handleDateChange} value={startDate} />
+
+
+                    <div className="reservationDateAndDatePickerContainer"> <div style={{ marginRight: "10px", marginLeft: "10px" }}>Reservation:</div> <div style={{ width: "fit-content" }}>
+                        <DateRange />
                     </div>
                     </div>
 
@@ -160,6 +163,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                     </div>
                 </div>
                 <Button type={"submit"} label={"Reserve"} className={"addReserveationButton"} />
+
             </form>
         </div >
     )

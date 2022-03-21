@@ -8,7 +8,7 @@ const SpotImageForm = ({ images, setImages, noImagesError, firstSlide, secondSli
     const [_imageLoading, setImageLoading] = useState(false);
 
     const toObjectURL = (file) => {
-        if (file === null || file === undefined) return
+        if (file === null || file === undefined) return;
         return URL.createObjectURL(file)
     };
     const updateImages = (e) => {
