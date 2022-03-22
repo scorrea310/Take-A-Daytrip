@@ -41,7 +41,7 @@ const SignUpForm = ({ setShowSignupModal }) => {
         e.stopPropagation();
         if (password === repeatPassword) {
 
-            
+
             const data = await dispatch(signUp(name, username, email, password));
 
             if (data) {
@@ -65,6 +65,7 @@ const SignUpForm = ({ setShowSignupModal }) => {
                 <div className="createAccountTextInModal"> Create Account</div>
             </div>
             <div className="signupErrorsContainer">
+                <div className="welcomeToTakeAText">Welcome to Take A Daytrip!</div>
                 {errors.map((error, ind) => (
                     <div className="signupErrors" key={ind}>{error}</div>
                 ))}

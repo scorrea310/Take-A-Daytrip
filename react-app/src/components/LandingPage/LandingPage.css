@@ -54,7 +54,7 @@
 .landingPageCategorySection {
     display: flex;
     flex-direction: column;
-    height: 539px;
+    height: fit-content;
     width: 100%;
     align-items: center;
 }
@@ -327,3 +327,31 @@
     height: 450px;
 }
 }
+
+
+
+@media only screen
+    and (min-device-width: 1560px)
+    and (min-height: 900px) {
+
+        .firstCategoryCard {
+            height: 480px
+        }
+
+        .secondCategoryCard {
+            height: 480px
+        }
+        .thirdCategoryCard {
+            height: 480px
+        }
+        .rightCategoryCard {
+            height: 480px   
+        }
+
+        .landingPageBigImageAndButtonContainer {
+            height: 680px;
+        }
+        .formAndNextButtonContainer {
+                min-height: 80vh;
+        }
+    }

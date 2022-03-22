@@ -56,7 +56,7 @@ const LoginForm = ({ setShowLoginModal }) => {
             </div>
             {/* <div style={{ display: "flex", justifyContent: "center" }}>Center</div> */}
 
-            <div className="welcomeToTextLoginContainer">Welcome to Take A Daytrip
+            <div className="welcomeToTextLoginContainer">Welcome back!
                 <div>
                     {errors.map((error, ind) => (
                         <div className='loginErrors' key={ind}>{error}</div>

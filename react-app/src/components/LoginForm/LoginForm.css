@@ -65,6 +65,9 @@
     align-items: center;
     margin-left: 30px;
     font-size: 20px;
+    color: hsl(357deg 91% 59%);
+    font-size: 20px;
+
 }
 
 .loginInputBar {

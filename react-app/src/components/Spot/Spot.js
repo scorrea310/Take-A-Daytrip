@@ -26,7 +26,11 @@ const Spot = ({ spotsLoaded }) => {
 
     const isUserLoggedIn = () => {
         if (user === null) {
-            return <h1>Login to Reserve!</h1>
+            return <div className='logInDivSpot'><div>
+                <div>Log in</div>
+                <div>Or</div>
+                <div> Sign Up</div>
+            </div></div>
         } else {
             return <ReserveSpot spotId={parseInt(spotId, 10)} totalOccupantsAllowed={spot[`${spotId}`]?.total_occupancy} price={spot[`${spotId}`]?.price_per_day} />
         }

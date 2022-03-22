@@ -415,3 +415,22 @@
         border-radius: 33px;
     }
     }
+
+
+    @media only screen
+    and (min-device-width: 1560px)
+    and (min-height: 900px) {
+
+        .formAndNextButtonContainer {
+                min-height: fit-content;
+                height: 80vh;
+        }
+
+        .addSpotTextFormSlide3 {
+            margin-top: 0px;
+        }
+
+        .rightHalf {
+            margin-top: 0px;
+        }
+    }
