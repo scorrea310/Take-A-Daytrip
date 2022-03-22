@@ -46,7 +46,11 @@
     and (max-device-width: 428px)
     and (max-device-height: 926px) {
 .tripsSpotCardSection {
-    margin-top: 80px;
+    margin-top: 20px;
+}
+
+.mainContentTripsPage {
+    margin-top: 150px;
 }
 
     }

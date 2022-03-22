@@ -550,6 +550,9 @@ margin-top: -5px;
     width: 100%;
     display: flex;
     justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .logoutButton:hover {
@@ -576,7 +579,7 @@ margin-top: -5px;
     justify-content: center;
 }
 .profileWindowHostYourHomeText {
-    height: 33%;
+    height: 40%;
     font-size: 30px;
 }
 
@@ -590,6 +593,9 @@ margin-top: -5px;
     width: 100%;
     display: flex;
     justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .profileWindowDemoUserTextContainer:hover {
@@ -617,7 +623,7 @@ margin-top: -5px;
 }
 
 .signupButton:hover {
-    height: 33%;
+    height: 100%;
     font-size: 30px;
     color: black;
 
@@ -636,7 +642,9 @@ margin-top: -5px;
     font-size: 25px;
 }
 .profileWindow {
-    height: 200px
+    height: 200px;
+    border: none;
+    border-radius: 0px
 }
 .landingPageNavBarContainer {
     display: flex;
@@ -665,9 +673,8 @@ margin-top: -5px;
 }
 
 .profileWindowSignupText:hover {
-    height: 33%;
+    height: 40%;
     font-size: 30px;
-
     display: flex;
     width: 100%;
     justify-content: center;
@@ -675,12 +682,12 @@ margin-top: -5px;
 }
 
 .profileWindowLoginText {
-    height: 33%;
+    height: 40%;
     font-size: 30px;
 }
 
 .profileWindowLogOutContainer {
-    height: 33%;
+    height: 40%;
     font-size: 30px;
 }
 

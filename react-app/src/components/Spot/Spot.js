@@ -10,7 +10,6 @@ import ReserveSpot from './ReserveSpot';
 import { GiVacuumCleaner } from "react-icons/gi"
 import { FaAddressCard } from "react-icons/fa"
 
-
 const Spot = ({ spotsLoaded }) => {
 
     const user = useSelector((state) => state.session.user)
@@ -20,6 +19,10 @@ const Spot = ({ spotsLoaded }) => {
     const { spotId } = useParams();
     const [noProduct, setNoProduct] = useState(false)
 
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
 
     const isUserLoggedIn = () => {
         if (user === null) {

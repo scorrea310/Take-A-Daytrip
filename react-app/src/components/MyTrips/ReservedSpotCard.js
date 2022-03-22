@@ -26,12 +26,12 @@ const ReservedSpotCard = ({ reservation }) => {
     let checkOutDate = reservationCheckOutDateObject.toDateString()
     let days = (reservationCheckOutDateObject.getTime() - reservationCheckInDateObject.getTime()) / (1000 * 3600 * 24);
     const [priceState, setPriceState] = useState((days * reservation.price).toFixed(2))
-
     const cancelReservation = () => {
         dispatch(deleteReservationThunk(reservation.id))
     }
 
-    console.log(days, reservation.price)
+    
+    // console.log(reservationCheckInDateObject, "RESERVATION!")
 
     useEffect(() => {
         setPriceState((days * reservation.price).toFixed(2))

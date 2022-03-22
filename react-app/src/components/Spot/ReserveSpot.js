@@ -19,31 +19,11 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user.id);
     const [totalOccupancy, setTotalOccupancy] = useState(1)
-    const today = new Date()
-    const [startDate, setStartDate] = useState(new Date());
     const [state, setState] = useState({ start_date: "", end_date: "" })
-    const [sameDayError, setSameDayError] = useState(false);
-    const [pastDateErrors, setpastDateErrors] = useState(false)
-    const [notDateError, setNotDateError] = useState(false)
-    const [nullDateError, setNullDateError] = useState(false)
     const [priceState, setPriceState] = useState("")
     const [calendarErrors, setCalendarErrors] = useState(false)
     const [isOpened, setIsOpened] = useState(false)
     const scrollBy = useScrollBy();
-
-    const dateInPast = function (firstDate, presentDate) {
-        firstDate.setHours(0, 0, 0, 0)
-        firstDate.setSeconds(0, 0)
-        firstDate.setMinutes(0)
-        presentDate.setHours(0, 0, 0, 0)
-        presentDate.setSeconds(0, 0)
-        presentDate.setMinutes(0)
-
-        if (firstDate < presentDate) {
-            return true;
-        }
-        return false;
-    };
 
     const setTotalCost = (startDate, endDate) => {
 
@@ -85,16 +65,6 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         }
 
 
-        // if (startDate === null) {
-        //     setNullDateError(true)
-        //     return;
-        // }
-
-        // if (startDate.toDateString() === "Invalid Date") {
-        //     setNotDateError(true)
-        //     return;
-        // }
-
         const reservationFormObj = {
             number_of_guests: parseInt(totalOccupancy, 10),
             spot_id: spotId,
@@ -123,35 +93,24 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             return
         }
 
-        // if (startDate.toDateString() === "Invalid Date") {
-        //     setNotDateError(true)
-        //     return;
-        // }
-
         if (state.start_date.getTime() === state.end_date.getTime()) {
             setCalendarErrors("Please choose at least two days")
             return
         }
 
-        if (dateInPast(startDate, today) === true) {
-            setpastDateErrors(true)
-        } else {
-
-            const reservationFormObj = {
-                number_of_guests: parseInt(totalOccupancy, 10),
-                spot_id: parseInt(currentReservation.spot_id, 10),
-                check_in: state.start_date.toISOString().split('T')[0],
-                check_out: state.end_date.toISOString().split('T')[0],
-                price: parseFloat(price),
-                user_id: userId
-            }
-
-
-
-            dispatch(updateReservationThunk(reservationFormObj, currentReservation.id)).then(() => {
-                setShowEditModal(false)
-            })
+        const reservationFormObj = {
+            number_of_guests: parseInt(totalOccupancy, 10),
+            spot_id: parseInt(currentReservation.spot_id, 10),
+            check_in: state.start_date.toISOString().split('T')[0],
+            check_out: state.end_date.toISOString().split('T')[0],
+            price: parseFloat(price),
+            user_id: userId
         }
+
+        dispatch(updateReservationThunk(reservationFormObj, currentReservation.id)).then(() => {
+            setShowEditModal(false)
+        })
+
 
     }
 
@@ -162,13 +121,22 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         if (editModal) {
 
             setTotalOccupancy(parseInt(currentReservation.number_of_guests, 10))
-            setStartDate(new Date(reservationDate))
+
+            let startDate = editStartDate.split(" ")
+            let endDate = editEndDate.split(" ")
+            let reservationCheckInDateObject = new Date(startDate[0].replace(/-/g, '\/'));
+            let reservationCheckOutDateObject = new Date(endDate[0].replace(/-/g, '\/'));
+
+            setState({ start_date: reservationCheckInDateObject, end_date: reservationCheckOutDateObject })
+
+            let days = (reservationCheckOutDateObject.getTime() - reservationCheckInDateObject.getTime()) / (1000 * 3600 * 24);
+
+            setPriceState((days * price).toFixed(2))
 
         } else {
             setTotalOccupancy(1)
-            setStartDate(new Date())
         }
-    }, [currentReservation?.number_of_guests, editModal, reservationDate])
+    }, [currentReservation?.number_of_guests, editEndDate, editModal, editStartDate, price, reservationDate])
 
 
 
@@ -196,7 +164,6 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
 
     let editPreview = {}
-    let focusDate;
     if (editModal) {
         let startDate = editStartDate.split(" ")
         let endDate = editEndDate.split(" ")
@@ -205,9 +172,6 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         editPreview.startDate = reservationCheckInDateObject
         editPreview.endDate = reservationCheckOutDateObject
         editPreview.color = "#E61E4D"
-
-        selectionRange.startDate = reservationCheckInDateObject
-        selectionRange.endDate = reservationCheckOutDateObject
     }
 
     return (
@@ -223,7 +187,6 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                         <div className="reservationDateAndDatePickerContainer">
 
                             <DateRange
-                                // preview={editModal && editPreview}
                                 ranges={[selectionRange]}
                                 showPreview={editModal}
                                 minDate={new Date()}
@@ -236,7 +199,6 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                                 direction="vertical"
                                 showDateDisplay={false}
                                 showMonthAndYearPickers={true}
-                                shownDate={editModal && focusDate}
 
                             />
                         </div>
