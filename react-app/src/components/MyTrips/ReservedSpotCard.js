@@ -10,6 +10,7 @@ import Button from "../common/Button/Button"
 import { deleteReservationThunk } from "../../store/reservationsReducer"
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom"
+import { useEffect } from "react"
 
 const ReservedSpotCard = ({ reservation }) => {
 
@@ -30,10 +31,12 @@ const ReservedSpotCard = ({ reservation }) => {
         dispatch(deleteReservationThunk(reservation.id))
     }
 
-    // console.log(startDate[0])
-    // console.log(reservationCheckInDateObject)
+    console.log(days, reservation.price)
 
-    console.log(priceState)
+    useEffect(() => {
+        setPriceState((days * reservation.price).toFixed(2))
+    }, [days, reservation.price, setPriceState])
+
     return (
 
         <div className="reservedTripCardContainer">
@@ -45,7 +48,7 @@ const ReservedSpotCard = ({ reservation }) => {
                         <div className="editIconAndDeleteReserveCard" onClick={() => setShowEditModal(true)} ><FiEdit style={{ marginRight: "5px" }} /> Edit </div>
                         <div className="deleteIconAndTextReserveCard" onClick={() => setCancelReservation(true)} ><MdOutlineCancelPresentation style={{ color: "red", marginRight: "5px" }} /> Cancel</div>
                         {showEditModal && <Modal idName={"edit-Reservation-Modal"} onClose={() => setShowEditModal(false)}>
-                            <ReserveSpot reservationDate={reservation.reservation} setShowEditModal={setShowEditModal} totalOccupantsAllowed={reservation.total_occupants_allowed} price={reservation.price} editModal={true} currentReservation={reservation} />
+                            <ReserveSpot editStartDate={reservation.check_in} editEndDate={reservation.check_out} reservationDate={reservation.reservation} setShowEditModal={setShowEditModal} totalOccupantsAllowed={reservation.total_occupants_allowed} price={reservation.price} editModal={true} currentReservation={reservation} />
                         </Modal>}
                         {showCancelReservationModal && <Modal idName={"edit-Reservation-Modal"} onClose={() => setCancelReservation(false)}>
                             <div className="cancelReservationInModalContainer">

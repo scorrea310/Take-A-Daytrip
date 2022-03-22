@@ -69,7 +69,8 @@ def update_reservation(id):
         old_reservation.spot_id = form.data["spot_id"],
         old_reservation.user_id = form.data["user_id"],
         old_reservation.number_of_guests =form.data["number_of_guests"],
-        old_reservation.reservation =form.data["reservation"],
+        old_reservation.check_in =form.data["check_in"],
+        old_reservation.check_out =form.data["check_out"],
         old_reservation.price=form.data["price"],
 
         db.session.commit()

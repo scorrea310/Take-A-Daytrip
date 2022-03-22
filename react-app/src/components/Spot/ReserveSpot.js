@@ -12,9 +12,10 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { Collapse } from 'react-collapse';
 import { useScrollBy } from "react-use-window-scroll";
+import { CgEditExposure } from "react-icons/cg";
 
 
-const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentReservation, setShowEditModal, reservationDate }) => {
+const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentReservation, setShowEditModal, reservationDate, editStartDate, editEndDate }) => {
     const history = useHistory()
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user.id);
@@ -115,14 +116,21 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     const editReservation = (e) => {
         e.preventDefault()
 
-        if (startDate === null) {
-            setNullDateError(true)
-            return;
+        setCalendarErrors("")
+
+        if (state.start_date === "" || state.end_date === "") {
+            setCalendarErrors("Please select dates.")
+            return
         }
 
-        if (startDate.toDateString() === "Invalid Date") {
-            setNotDateError(true)
-            return;
+        // if (startDate.toDateString() === "Invalid Date") {
+        //     setNotDateError(true)
+        //     return;
+        // }
+
+        if (state.start_date.getTime() === state.end_date.getTime()) {
+            setCalendarErrors("Please choose at least two days")
+            return
         }
 
         if (dateInPast(startDate, today) === true) {
@@ -132,7 +140,8 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             const reservationFormObj = {
                 number_of_guests: parseInt(totalOccupancy, 10),
                 spot_id: parseInt(currentReservation.spot_id, 10),
-                reservation: startDate.toISOString().split('T')[0],
+                check_in: state.start_date.toISOString().split('T')[0],
+                check_out: state.end_date.toISOString().split('T')[0],
                 price: parseFloat(price),
                 user_id: userId
             }
@@ -158,7 +167,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             setTotalOccupancy(1)
             setStartDate(new Date())
         }
-    }, [editModal, reservationDate])
+    }, [currentReservation.number_of_guests, editModal, reservationDate])
 
 
 
@@ -183,6 +192,19 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         };
     }
 
+    let editPreview = {}
+    let focusDate;
+    if (editModal) {
+        let startDate = editStartDate.split(" ")
+        let endDate = editEndDate.split(" ")
+        let reservationCheckInDateObject = new Date(startDate[0].replace(/-/g, '\/'));
+        let reservationCheckOutDateObject = new Date(endDate[0].replace(/-/g, '\/'));
+        editPreview.startDate = reservationCheckInDateObject
+        focusDate = reservationCheckInDateObject
+        editPreview.endDate = reservationCheckOutDateObject
+        editPreview.color = "#E61E4D"
+    }
+
     return (
         <div className="reserveASpotContainer">
             <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price} / day</div></div>
@@ -196,7 +218,9 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                         <div className="reservationDateAndDatePickerContainer">
 
                             <DateRange
+                                preview={editModal && editPreview}
                                 ranges={[selectionRange]}
+                                showPreview={editModal}
                                 minDate={new Date()}
                                 className="calendar"
                                 rangeColors={["#E61E4D"]}
@@ -207,6 +231,8 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                                 direction="vertical"
                                 showDateDisplay={false}
                                 showMonthAndYearPickers={true}
+                                shownDate={editModal && focusDate}
+
                             />
                         </div>
                     </Collapse>
