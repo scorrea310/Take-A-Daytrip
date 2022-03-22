@@ -17,13 +17,19 @@ const ReservedSpotCard = ({ reservation }) => {
     const dispatch = useDispatch();
     const [showEditModal, setShowEditModal] = useState(false)
     const [showCancelReservationModal, setCancelReservation] = useState(false)
-    let dateArray = reservation.reservation.split(" ")
-    let reservationDateObject = new Date(dateArray);
-    let date = reservationDateObject.toDateString()
+    let startDate = reservation.check_in.split(" ")
+    let endDate = reservation.check_out.split(" ")
+    let reservationCheckInDateObject = new Date(startDate[0].replace(/-/g, '\/'));
+    let checkInDate = reservationCheckInDateObject.toDateString()
+    let reservationCheckOutDateObject = new Date(endDate[0].replace(/-/g, '\/'));
+    let checkOutDate = reservationCheckOutDateObject.toDateString()
 
     const cancelReservation = () => {
         dispatch(deleteReservationThunk(reservation.id))
     }
+
+    console.log(startDate[0])
+    console.log(reservationCheckInDateObject)
 
     return (
 
@@ -52,8 +58,12 @@ const ReservedSpotCard = ({ reservation }) => {
                 </div>
                 <div className="reservedSpotCardMainInfo">
                     <div className="checkInDateReservedCArd">
-                        <div>Reservation Date:</div>
-                        <div>{date}</div>
+                        <div>Check In</div>
+                        <div>{checkInDate}</div>
+                    </div>
+                    <div className="checkInDateReservedCArd">
+                        <div>Check Out</div>
+                        <div>{checkOutDate}</div>
                     </div>
                     <div className="checkInDateReservedCArd">
                         <div>Address</div>

@@ -10,6 +10,9 @@ import DatePicker from 'react-date-picker';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import { Collapse } from 'react-collapse';
+import { useScrollBy } from "react-use-window-scroll";
+
 
 const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentReservation, setShowEditModal, reservationDate }) => {
     const history = useHistory()
@@ -25,7 +28,8 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     const [nullDateError, setNullDateError] = useState(false)
     const [priceState, setPriceState] = useState("")
     const [calendarErrors, setCalendarErrors] = useState(false)
-
+    const [isOpened, setIsOpened] = useState(false)
+    const scrollBy = useScrollBy();
 
     const dateInPast = function (firstDate, presentDate) {
         firstDate.setHours(0, 0, 0, 0)
@@ -154,7 +158,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             setTotalOccupancy(1)
             setStartDate(new Date())
         }
-    }, [currentReservation?.number_of_guests, editModal, reservationDate])
+    }, [editModal, reservationDate])
 
 
 
@@ -181,32 +185,36 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
     return (
         <div className="reserveASpotContainer">
+            <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price} / day</div></div>
+
             <form className="makeReservationMainContent" onSubmit={editModal ? editReservation : handleReservation}>
-                <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price} / day</div></div>
+
+
                 <div className="reserveMainBox">
 
+                    <Collapse isOpened={isOpened}>
+                        <div className="reservationDateAndDatePickerContainer">
 
-                    <div className="reservationDateAndDatePickerContainer">
-
-                        <DateRange
-                            ranges={[selectionRange]}
-                            minDate={new Date()}
-                            className="calendar"
-                            rangeColors={["#E61E4D"]}
-                            onChange={e => handleDateChange(e)}
-                            editableDateInputs={true}
-                            showSelectionPreview={true}
-                            months={1}
-                            direction="vertical"
-                            showDateDisplay={false}
-                            showMonthAndYearPickers={true}
-                        />
-                    </div>
+                            <DateRange
+                                ranges={[selectionRange]}
+                                minDate={new Date()}
+                                className="calendar"
+                                rangeColors={["#E61E4D"]}
+                                onChange={e => handleDateChange(e)}
+                                editableDateInputs={true}
+                                showSelectionPreview={true}
+                                months={1}
+                                direction="vertical"
+                                showDateDisplay={false}
+                                showMonthAndYearPickers={true}
+                            />
+                        </div>
+                    </Collapse>
                     <div className="addReservationNumberofGuestsText">Number of Guests
                         <input
                             value={totalOccupancy}
                             type="number"
-                            onChange={setTotalOccupancy}
+                            onChange={(e) => setTotalOccupancy(e.target.value)}
                             required={true}
                             min="1"
                             className="numberOfGuestsReserve"
@@ -217,7 +225,11 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                     <div className="totalPriceCalculated">Total: ${priceState}</div>
                 </div>
                 <div className="calendarError">{calendarErrors}</div>
-                <Button type={"submit"} label={"Reserve"} className={"addReserveationButton"} />
+                {isOpened ? <Button type={"submit"} label={"Reserve"} className={"addReserveationButton"} /> : <div className="checkAvailabilityButton" onClick={() => {
+                    setIsOpened(true)
+                    scrollBy({ top: 400, left: 0, behavior: "smooth" })
+                }
+                }>Check Availability</div>}
             </form >
         </div >
     )

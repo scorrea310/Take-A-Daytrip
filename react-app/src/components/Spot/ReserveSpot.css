@@ -28,7 +28,8 @@
     /* background-color: blueviolet; */
     height: fit-content;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .reserveMainBox {
@@ -53,11 +54,29 @@
 
 .btn.addReserveationButton {
     width: 100%;
+    border-radius: 8px;
+    height: 48px;
+    cursor: pointer;
+    background-color: #E61E4D ;
+    border: none;
+}
+.checkAvailabilityButton {
+    width: 100%;
     border-radius: 12px;
     height: 48px;
     cursor: pointer;
     background-color: #E61E4D ;
     border: none;
+    padding: 8px 12px;
+    color: #fff;
+    border-radius: 8px;
+    border-width: 1px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .addReservationNumberofGuestsText {
@@ -99,4 +118,8 @@
     display: flex;
     align-items: center;
     /* background-color: aquamarine; */
+}
+
+.ReactCollapse--collapse {
+  transition: height 600ms;
 }
