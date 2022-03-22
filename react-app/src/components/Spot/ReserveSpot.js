@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { creatReservationThunk } from "../../store/reservationsReducer";
 import { updateReservationThunk } from "../../store/reservationsReducer";
 import { useHistory } from "react-router-dom";
-import DatePicker from 'react-date-picker';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -62,8 +61,9 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         let { startDate, endDate } = e.selection;
         setState({ start_date: startDate, end_date: endDate })
         setTotalCost(startDate, endDate)
-        console.log(e.selection)
-        console.log(endDate.getTime())
+        console.log(startDate, "handleDateChange")
+        console.log(endDate, "sdc")
+
     }
 
 
@@ -160,6 +160,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
     useEffect(() => {
 
         if (editModal) {
+
             setTotalOccupancy(parseInt(currentReservation.number_of_guests, 10))
             setStartDate(new Date(reservationDate))
 
@@ -167,7 +168,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             setTotalOccupancy(1)
             setStartDate(new Date())
         }
-    }, [currentReservation.number_of_guests, editModal, reservationDate])
+    }, [currentReservation?.number_of_guests, editModal, reservationDate])
 
 
 
@@ -192,6 +193,8 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         };
     }
 
+
+
     let editPreview = {}
     let focusDate;
     if (editModal) {
@@ -200,9 +203,11 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         let reservationCheckInDateObject = new Date(startDate[0].replace(/-/g, '\/'));
         let reservationCheckOutDateObject = new Date(endDate[0].replace(/-/g, '\/'));
         editPreview.startDate = reservationCheckInDateObject
-        focusDate = reservationCheckInDateObject
         editPreview.endDate = reservationCheckOutDateObject
         editPreview.color = "#E61E4D"
+
+        selectionRange.startDate = reservationCheckInDateObject
+        selectionRange.endDate = reservationCheckOutDateObject
     }
 
     return (
@@ -218,7 +223,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                         <div className="reservationDateAndDatePickerContainer">
 
                             <DateRange
-                                preview={editModal && editPreview}
+                                // preview={editModal && editPreview}
                                 ranges={[selectionRange]}
                                 showPreview={editModal}
                                 minDate={new Date()}
