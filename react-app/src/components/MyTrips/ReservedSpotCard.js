@@ -23,14 +23,17 @@ const ReservedSpotCard = ({ reservation }) => {
     let checkInDate = reservationCheckInDateObject.toDateString()
     let reservationCheckOutDateObject = new Date(endDate[0].replace(/-/g, '\/'));
     let checkOutDate = reservationCheckOutDateObject.toDateString()
+    let days = (reservationCheckOutDateObject.getTime() - reservationCheckInDateObject.getTime()) / (1000 * 3600 * 24);
+    const [priceState, setPriceState] = useState((days * reservation.price).toFixed(2))
 
     const cancelReservation = () => {
         dispatch(deleteReservationThunk(reservation.id))
     }
 
-    console.log(startDate[0])
-    console.log(reservationCheckInDateObject)
+    // console.log(startDate[0])
+    // console.log(reservationCheckInDateObject)
 
+    console.log(priceState)
     return (
 
         <div className="reservedTripCardContainer">
@@ -75,7 +78,7 @@ const ReservedSpotCard = ({ reservation }) => {
                     </div>
                     <div className="priceReservationCardContainer">
                         <div>Price</div>
-                        <div>${reservation.price}</div>
+                        <div>${priceState}</div>
                     </div>
                     {/* <div className="seeMoreDetailsIconAndTextContainerReserveCard">
                         <CgDetailsMore style={{ fontSize: "24px", marginRight: "5px" }} />
