@@ -20,7 +20,7 @@ const MyTrips = ({ reservationsLoaded }) => {
     const noReservations = (valuesArray) => {
 
         console.log(valuesArray)
-        if (valuesArray.length === 0) return true
+        if (valuesArray.length === 0 || valuesArray === false) return true
 
         for (let reservation = 0; reservation < valuesArray.length; reservation++) {
             let startDate = reservation.check_in.split(" ")
