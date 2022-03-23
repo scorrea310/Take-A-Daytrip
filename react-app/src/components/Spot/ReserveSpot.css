@@ -13,6 +13,11 @@
     padding: 30px 40px;
 }
 
+.close-calendar-text {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .makeReservationMainContent {
     display: flex;
     width: fit-content;
@@ -27,7 +32,7 @@
     /* background-color: blueviolet; */
     height: fit-content;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
 }
 

@@ -59,7 +59,7 @@ export const addSpot = (formObj, imageData) => async (dispatch) => {
 
         await dispatch(createSpot(spotObj))
     } else {
-        console.log("something went wrong!!")
+        console.log("something went wrong!")
     }
 
     return spotObj

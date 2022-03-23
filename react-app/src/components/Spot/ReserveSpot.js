@@ -41,8 +41,6 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
         let { startDate, endDate } = e.selection;
         setState({ start_date: startDate, end_date: endDate })
         setTotalCost(startDate, endDate)
-        console.log(startDate, "handleDateChange")
-        console.log(endDate, "sdc")
 
     }
 
@@ -176,7 +174,7 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
 
     return (
         <div className="reserveASpotContainer">
-            <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price} / day</div></div>
+            <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price} / day</div> {isOpened && <div onClick={() => setIsOpened(false)} className="close-calendar-text">close calendar</div>}</div>
 
             <form className="makeReservationMainContent" onSubmit={editModal ? editReservation : handleReservation}>
 

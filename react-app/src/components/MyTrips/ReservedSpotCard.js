@@ -30,9 +30,6 @@ const ReservedSpotCard = ({ reservation }) => {
         dispatch(deleteReservationThunk(reservation.id))
     }
 
-    
-    // console.log(reservationCheckInDateObject, "RESERVATION!")
-
     useEffect(() => {
         setPriceState((days * reservation.price).toFixed(2))
     }, [days, reservation.price, setPriceState])

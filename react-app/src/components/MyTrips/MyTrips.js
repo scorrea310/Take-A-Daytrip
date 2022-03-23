@@ -44,7 +44,7 @@ const MyTrips = ({ reservationsLoaded }) => {
                         reservationCheckInDateObject.setMilliseconds(0)
 
                         if (reservationCheckInDateObject.getTime() >= today.getTime()) {
-                            console.log("great than or equal to")
+
                             return <ReservedSpotCard key={reservation.id} reservation={reservation} />
                         }
                     })}

@@ -34,7 +34,7 @@ const AddSpot = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-    })
+    }, [])
 
 
     const toObjectURL = (file) => {

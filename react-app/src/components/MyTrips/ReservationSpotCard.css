@@ -154,4 +154,12 @@
         width: 90%;
 
         }
+
+        .reservedTripCardContainer {
+            margin-bottom: 150px;
+        }
+
+        .TripsTextTripsPage {
+            font-size: 40px;
+        }
     }

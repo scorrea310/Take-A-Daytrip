@@ -18,6 +18,8 @@ const Spot = ({ spotsLoaded }) => {
     const spot = useSelector((state) => state.spotReducer)
     const { spotId } = useParams();
     const [noProduct, setNoProduct] = useState(false)
+    const loginModal = useSelector((state) => state.modals.loginModal)
+    const signupModal = useSelector((state) => state.modals.signUpModal)
 
 
     useEffect(() => {
@@ -26,11 +28,13 @@ const Spot = ({ spotsLoaded }) => {
 
     const isUserLoggedIn = () => {
         if (user === null) {
-            return <div className='logInDivSpot'><div>
-                <div>Log in</div>
-                <div>Or</div>
-                <div> Sign Up</div>
-            </div></div>
+            return <div className='logInDivSpot'>
+                <div className='logInOrSignUpTextContainerSpotPage'>
+                    <div onClick={() => loginModal(true)} className='logInTextSpotPage'>Log in</div>
+                    <div className='orTextSpotPage'>Or</div>
+                    <div onClick={() => signupModal(true)} className='signUpTextSpotPage'> Sign Up</div>
+                </div>
+            </div>
         } else {
             return <ReserveSpot spotId={parseInt(spotId, 10)} totalOccupantsAllowed={spot[`${spotId}`]?.total_occupancy} price={spot[`${spotId}`]?.price_per_day} />
         }
