@@ -10,6 +10,7 @@ import Button from "../common/Button/Button"
 import { deleteReservationThunk } from "../../store/reservationsReducer"
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom"
+import { useEffect } from "react"
 
 const ReservedSpotCard = ({ reservation }) => {
 
@@ -17,13 +18,21 @@ const ReservedSpotCard = ({ reservation }) => {
     const dispatch = useDispatch();
     const [showEditModal, setShowEditModal] = useState(false)
     const [showCancelReservationModal, setCancelReservation] = useState(false)
-    let dateArray = reservation.reservation.split(" ")
-    let reservationDateObject = new Date(dateArray);
-    let date = reservationDateObject.toDateString()
-
+    let startDate = reservation.check_in.split(" ")
+    let endDate = reservation.check_out.split(" ")
+    let reservationCheckInDateObject = new Date(startDate[0].replace(/-/g, '\/'));
+    let checkInDate = reservationCheckInDateObject.toDateString()
+    let reservationCheckOutDateObject = new Date(endDate[0].replace(/-/g, '\/'));
+    let checkOutDate = reservationCheckOutDateObject.toDateString()
+    let days = (reservationCheckOutDateObject.getTime() - reservationCheckInDateObject.getTime()) / (1000 * 3600 * 24);
+    const [priceState, setPriceState] = useState((days * reservation.price).toFixed(2))
     const cancelReservation = () => {
         dispatch(deleteReservationThunk(reservation.id))
     }
+
+    useEffect(() => {
+        setPriceState((days * reservation.price).toFixed(2))
+    }, [days, reservation.price, setPriceState])
 
     return (
 
@@ -36,7 +45,7 @@ const ReservedSpotCard = ({ reservation }) => {
                         <div className="editIconAndDeleteReserveCard" onClick={() => setShowEditModal(true)} ><FiEdit style={{ marginRight: "5px" }} /> Edit </div>
                         <div className="deleteIconAndTextReserveCard" onClick={() => setCancelReservation(true)} ><MdOutlineCancelPresentation style={{ color: "red", marginRight: "5px" }} /> Cancel</div>
                         {showEditModal && <Modal idName={"edit-Reservation-Modal"} onClose={() => setShowEditModal(false)}>
-                            <ReserveSpot reservationDate={reservation.reservation} setShowEditModal={setShowEditModal} totalOccupantsAllowed={reservation.total_occupants_allowed} price={reservation.price} editModal={true} currentReservation={reservation} />
+                            <ReserveSpot editStartDate={reservation.check_in} editEndDate={reservation.check_out} reservationDate={reservation.reservation} setShowEditModal={setShowEditModal} totalOccupantsAllowed={reservation.total_occupants_allowed} price={reservation.price} editModal={true} currentReservation={reservation} />
                         </Modal>}
                         {showCancelReservationModal && <Modal idName={"edit-Reservation-Modal"} onClose={() => setCancelReservation(false)}>
                             <div className="cancelReservationInModalContainer">
@@ -52,8 +61,12 @@ const ReservedSpotCard = ({ reservation }) => {
                 </div>
                 <div className="reservedSpotCardMainInfo">
                     <div className="checkInDateReservedCArd">
-                        <div>Reservation Date:</div>
-                        <div>{date}</div>
+                        <div>Check In</div>
+                        <div>{checkInDate}</div>
+                    </div>
+                    <div className="checkInDateReservedCArd">
+                        <div>Check Out</div>
+                        <div>{checkOutDate}</div>
                     </div>
                     <div className="checkInDateReservedCArd">
                         <div>Address</div>
@@ -65,7 +78,7 @@ const ReservedSpotCard = ({ reservation }) => {
                     </div>
                     <div className="priceReservationCardContainer">
                         <div>Price</div>
-                        <div>${reservation.price}</div>
+                        <div>${priceState}</div>
                     </div>
                     {/* <div className="seeMoreDetailsIconAndTextContainerReserveCard">
                         <CgDetailsMore style={{ fontSize: "24px", marginRight: "5px" }} />

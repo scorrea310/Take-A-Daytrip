@@ -10,7 +10,6 @@ import ReserveSpot from './ReserveSpot';
 import { GiVacuumCleaner } from "react-icons/gi"
 import { FaAddressCard } from "react-icons/fa"
 
-
 const Spot = ({ spotsLoaded }) => {
 
     const user = useSelector((state) => state.session.user)
@@ -19,11 +18,23 @@ const Spot = ({ spotsLoaded }) => {
     const spot = useSelector((state) => state.spotReducer)
     const { spotId } = useParams();
     const [noProduct, setNoProduct] = useState(false)
+    const loginModal = useSelector((state) => state.modals.loginModal)
+    const signupModal = useSelector((state) => state.modals.signUpModal)
 
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
 
     const isUserLoggedIn = () => {
         if (user === null) {
-            return <h1>Login to Reserve!</h1>
+            return <div className='logInDivSpot'>
+                <div className='logInOrSignUpTextContainerSpotPage'>
+                    <div onClick={() => loginModal(true)} className='logInTextSpotPage'>Log in</div>
+                    <div className='orTextSpotPage'>Or</div>
+                    <div onClick={() => signupModal(true)} className='signUpTextSpotPage'> Sign Up</div>
+                </div>
+            </div>
         } else {
             return <ReserveSpot spotId={parseInt(spotId, 10)} totalOccupantsAllowed={spot[`${spotId}`]?.total_occupancy} price={spot[`${spotId}`]?.price_per_day} />
         }

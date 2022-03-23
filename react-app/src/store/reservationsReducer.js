@@ -74,12 +74,8 @@ export const loadreservationsthunk = (userId) => async (dispatch) => {
 
     if (response.ok) {
         dispatch(loadResevationsAction(usersReservations.reservations))
-
-        console.log(usersReservations.reservations)
-
-
     } else {
-        console.log("IN THUNK")
+        console.log("ERROR IN loadreservationsthunk")
     }
 }
 

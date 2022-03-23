@@ -9,10 +9,14 @@ import SignUpForm from "../SignUpForm/SignUpForm"
 import { NavLink } from "react-router-dom"
 import { useHistory } from "react-router-dom"
 import OutsideClickHandler from 'react-outside-click-handler';
+import { useLayoutEffect } from "react"
+import { setModals } from "../../store/LoginAndRegisterModals"
+import { useDispatch, useSelector } from 'react-redux';
 
 const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
 
     const history = useHistory()
+    const dispatch = useDispatch();
     const [profileModal, setProfileModal] = useState(false)
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showSignUpModal, setShowSignupModal] = useState(false)
@@ -45,6 +49,11 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
     } else if (!addspotPage && !spotPage && !spotListingsPage) {
         centerNavBarClassName = "centerNavBarContainer"
     }
+
+    useEffect(() => {
+
+        dispatch(setModals(setShowLoginModal, setShowSignupModal))
+    }, [dispatch])
 
     return (
         <>

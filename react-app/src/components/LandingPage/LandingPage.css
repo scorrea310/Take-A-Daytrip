@@ -12,12 +12,13 @@
     flex-direction: column;
     width: 89%;
     border-radius: 10px;
-    height: 520px;
-    background-image: url("../../images/beachimage.jpeg");
+    height: 480px;
+    background-image: url("../../images/houseWoodsLandingPage.jpeg");
     background-size: cover;
-    background-position:bottom;
-    margin-top: 60px;
+    background-position:center;
+    margin-top: 80px;
     margin-bottom: 80px;
+    
 }
 
 .landingPageBigImageContainer {
@@ -28,6 +29,7 @@
     background-color: black;
     align-items: center;
     height: fit-content;
+    /* background-image: linear-gradient(to top, #FFF1EB 0%, #ACE0F9 100%); */
 }
 
 .btn.imFlexibleButton {
@@ -36,7 +38,7 @@
     height: 58px;
     cursor: pointer;
     border: none;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     font-size: 16px;
     font-weight: 650
 }
@@ -52,7 +54,7 @@
 .landingPageCategorySection {
     display: flex;
     flex-direction: column;
-    height: 539px;
+    height: fit-content;
     width: 100%;
     align-items: center;
 }
@@ -325,3 +327,31 @@
     height: 450px;
 }
 }
+
+
+
+@media only screen
+    and (min-device-width: 1560px)
+    and (min-height: 900px) {
+
+        .firstCategoryCard {
+            height: 480px
+        }
+
+        .secondCategoryCard {
+            height: 480px
+        }
+        .thirdCategoryCard {
+            height: 480px
+        }
+        .rightCategoryCard {
+            height: 480px   
+        }
+
+        .landingPageBigImageAndButtonContainer {
+            height: 680px;
+        }
+        .formAndNextButtonContainer {
+                min-height: 80vh;
+        }
+    }

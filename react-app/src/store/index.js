@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session'
 import spotReducer from './spotReducer';
 import reservationsReducer from './reservationsReducer';
+import loginAndSignUpModalReducer from './LoginAndRegisterModals';
 
 const rootReducer = combineReducers({
   session,
   spotReducer,
-  reservationsReducer
+  reservationsReducer,
+  modals: loginAndSignUpModalReducer
 });
 
 

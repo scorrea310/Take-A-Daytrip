@@ -6,7 +6,8 @@ class Reservation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     spot_id = db.Column(db.Integer, db.ForeignKey("spots.id"), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    reservation = db.Column(db.DateTime, nullable=False)
+    check_in = db.Column(db.DateTime, nullable=False)
+    check_out = db.Column(db.DateTime, nullable=False)
     number_of_guests = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Numeric(9, 2), nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
@@ -20,7 +21,8 @@ class Reservation(db.Model):
             'id': self.id,
             "spot_id": str(self.spot_id),
             "user_id": str(self.user_id),
-            "reservation": str(self.reservation),
+            "check_in": str(self.check_in),
+            "check_out": str(self.check_out),
             "number_of_guests": str(self.number_of_guests),
             "price": str(self.price),
             "spot_name": self.spot.name,

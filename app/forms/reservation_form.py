@@ -27,7 +27,12 @@ class ReservationForm(FlaskForm):
     )
 
 
-    reservation = DateField(
+    check_in = DateField(
+        "Reservation Date Time",
+        validators=[ DataRequired()],
+    )
+
+    check_out =  DateField(
         "Reservation Date Time",
         validators=[ DataRequired()],
     )

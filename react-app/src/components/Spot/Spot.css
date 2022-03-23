@@ -121,12 +121,55 @@
 
 .editDeleteOrReserveSection {
     display: flex;
-    width: 46%;
-    height: 430px;  
+    width: fit-content;
+    height: 500px; 
     justify-content: center;
     margin-top: 30px;
+    padding-left: 40px;
 }
 
+.logInDivSpot {
+    width: 354px;
+    height: 168px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    position: sticky;
+    top: 100px;
+}
+
+.logInOrSignUpTextContainerSpotPage {
+    display: flex;
+    width: 200px;
+    /* background-color: aqua; */
+    flex-direction: column;
+}
+
+.logInTextSpotPage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.orTextSpotPage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.signUpTextSpotPage {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    cursor: pointer;
+
+}
 
 @media only screen
     and (max-device-width: 428px)

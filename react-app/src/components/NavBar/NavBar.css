@@ -4,6 +4,7 @@
     min-height: 80px;
     background-color: white;
     justify-content: center;
+    position: fixed;
     box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
     
 }
@@ -418,7 +419,7 @@
     z-index: 1000;
     top: 70px;
     right: 40px;
-    position: fixed;
+    position: absolute;
 }
 
 /* @media screen and (max-width: 390px), (max-width: 428px) {
@@ -513,14 +514,14 @@ margin-top: -5px;
     border-radius: 33px;
 }
 .loginButton {
-    height: 33%;
+    height: 100%;
     font-size: 30px;
     color: black;
     justify-content: center;
 }
 
 .loginButton:hover {
-    height: 33%;
+    height: 100%;
     font-size: 30px;
     color: black;
 
@@ -550,6 +551,9 @@ margin-top: -5px;
     width: 100%;
     display: flex;
     justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .logoutButton:hover {
@@ -576,12 +580,12 @@ margin-top: -5px;
     justify-content: center;
 }
 .profileWindowHostYourHomeText {
-    height: 33%;
+    height: 40%;
     font-size: 30px;
 }
 
 .profileWindowDemoUserTextContainer {
-     height: 33%;
+    height: 100%;
     font-size: 30px;
     justify-content: center;
 }
@@ -590,10 +594,13 @@ margin-top: -5px;
     width: 100%;
     display: flex;
     justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .profileWindowDemoUserTextContainer:hover {
-    height: 33%;
+    height: 100%;
     font-size: 30px;
     display: flex;
     width: 100%;
@@ -610,14 +617,14 @@ margin-top: -5px;
     align-items: center;
 }
 .signupButton {
-    height: 33%;
+    height: 100%;
     font-size: 30px;
     color: black;
     justify-content: center;
 }
 
 .signupButton:hover {
-    height: 33%;
+    height: 100%;
     font-size: 30px;
     color: black;
 
@@ -636,7 +643,9 @@ margin-top: -5px;
     font-size: 25px;
 }
 .profileWindow {
-    height: 200px
+    height: 200px;
+    border: none;
+    border-radius: 12px
 }
 .landingPageNavBarContainer {
     display: flex;
@@ -655,7 +664,7 @@ margin-top: -5px;
 .profileModalWindowContainerNavBar {
     width: 100%;
     margin-top: 0px;
-    top: 130px;
+    top: 150px;
     right: 0px;
     height: 200px
 }
@@ -665,9 +674,8 @@ margin-top: -5px;
 }
 
 .profileWindowSignupText:hover {
-    height: 33%;
+    height: 40%;
     font-size: 30px;
-
     display: flex;
     width: 100%;
     justify-content: center;
@@ -675,12 +683,12 @@ margin-top: -5px;
 }
 
 .profileWindowLoginText {
-    height: 33%;
+    height: 40%;
     font-size: 30px;
 }
 
 .profileWindowLogOutContainer {
-    height: 33%;
+    height: 40%;
     font-size: 30px;
 }
 

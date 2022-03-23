@@ -60,7 +60,7 @@
     width: 60%;
     justify-content: space-between;
     margin-top: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 13px;
 }
 
 
@@ -140,8 +140,26 @@
             justify-content: flex-end;
             font-size: 24px;
             flex-direction: row;
-            text-align: right;
+            text-align: center;
             margin-right: 20px;
-            width: 250px;
+            width: fit-content;
+        }
+
+        .checkInDateReservedCArd {
+        width: 90%;
+        }
+
+        .priceReservationCardContainer {
+
+        width: 90%;
+
+        }
+
+        .reservedTripCardContainer {
+            margin-bottom: 150px;
+        }
+
+        .TripsTextTripsPage {
+            font-size: 40px;
         }
     }

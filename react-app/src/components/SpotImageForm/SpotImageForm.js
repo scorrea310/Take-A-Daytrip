@@ -8,7 +8,7 @@ const SpotImageForm = ({ images, setImages, noImagesError, firstSlide, secondSli
     const [_imageLoading, setImageLoading] = useState(false);
 
     const toObjectURL = (file) => {
-        if (file === null || file === undefined) return
+        if (file === null || file === undefined) return;
         return URL.createObjectURL(file)
     };
     const updateImages = (e) => {
@@ -16,13 +16,13 @@ const SpotImageForm = ({ images, setImages, noImagesError, firstSlide, secondSli
         if (e.target.files[0] === undefined || e.target.files[0] === null) return
 
         setImages([...images, e.target.files[0]])
-        console.log(images)
+
     };
     const handleDelete = (e, i) => {
         e.preventDefault();
         e.stopPropagation();
         const filtered = images.filter((_item, index) => i !== index);
-        console.log(images)
+
         setImages(filtered);
     };
 

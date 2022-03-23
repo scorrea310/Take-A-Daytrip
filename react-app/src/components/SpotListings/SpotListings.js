@@ -1,6 +1,6 @@
 import NavBar from "../NavBar/NavBar";
 import "./SpotListings.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import SpotListingCard from "./SpotListingCard";
 import allSpotsImage from "../../images/allSpots.jpeg"
@@ -10,6 +10,10 @@ import outdoorImage from "../../images/outdoorsSpotPage.jpeg"
 import houseImage from "../../images/houseSpotPage.jpeg"
 
 const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
 
     const spots = useSelector((state) => state.spotReducer)
     let imageUrl;
