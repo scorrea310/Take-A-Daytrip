@@ -6,6 +6,8 @@ const SpotListingCard = ({ spot }) => {
 
     const history = useHistory()
 
+    console.log(spot)
+
     return (
         <div className="spotListingCard" onClick={() => history.push(`/spots/${spot.id}`)}>
             <div style={{ width: "30%", height: "200px", backgroundImage: `url(${spot.images[0]})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "12px" }}></div>
@@ -14,7 +16,7 @@ const SpotListingCard = ({ spot }) => {
                 <div className="spotStatsSectionSpotCard">
                     <div style={{ color: "#717171", fontSize: "14px", fontWeight: "400" }}>{spot.total_occupancy} guests · {spot.total_bedrooms} bedrooms · {spot.total_bathrooms} bathrooms </div>
                     <div style={{ color: "#717171", fontSize: "14px", fontWeight: "400" }}>
-                        {spot.pets_allowed === "True" && "Pets Allowed"} {spot.has_ac === "True" && "Wifi"} {spot.has_tv === "True" && "TV"} {spot.has_ac === "True" && "AC"}
+                        {spot.pets_allowed === "True" && "Pets Allowed"} {spot.has_wifi === "True" && "Wifi"} {spot.has_tv === "True" && "TV"} {spot.has_ac === "True" && "AC"}
                     </div>
                 </div>
                 <div className="priceSectionSpotCard">
