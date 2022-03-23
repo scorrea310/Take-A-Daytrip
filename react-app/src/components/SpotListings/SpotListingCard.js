@@ -6,8 +6,6 @@ const SpotListingCard = ({ spot }) => {
 
     const history = useHistory()
 
-    console.log(spot)
-
     return (
         <div className="spotListingCard" onClick={() => history.push(`/spots/${spot.id}`)}>
             <div style={{ width: "30%", height: "200px", backgroundImage: `url(${spot.images[0]})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "12px" }}></div>

@@ -75,8 +75,6 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             history.push("/mytrips")
         })
 
-        console.log(state)
-
     }
 
 
