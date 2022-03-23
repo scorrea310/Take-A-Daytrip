@@ -15,9 +15,12 @@ const MyTrips = ({ reservationsLoaded }) => {
     today.setMinutes(0)
     today.setSeconds(0)
     today.setMilliseconds(0)
-    let valuesArray = Object.values(reservations)
+    const [valuesArray, setValuesArray] = useState(false)
 
     const noReservations = (valuesArray) => {
+
+        console.log(valuesArray)
+        if (valuesArray.length === 0) return true
 
         for (let reservation = 0; reservation < valuesArray.length; reservation++) {
             let startDate = reservation.check_in.split(" ")
@@ -32,9 +35,10 @@ const MyTrips = ({ reservationsLoaded }) => {
 
 
     useEffect(() => {
-        dispatch(loadreservationsthunk(sessionUser.id)).then(() => {
+        dispatch(loadreservationsthunk(sessionUser.id)).then((reservations) => {
 
             setIsloaded(true)
+            setValuesArray(Object.values(reservations))
         })
 
         window.scrollTo(0, 0)
@@ -45,9 +49,6 @@ const MyTrips = ({ reservationsLoaded }) => {
         return null
     }
 
-
-
-    console.log(Object.values(reservations))
     return (
 
         <div className="MyTripsPageContainer">

@@ -76,9 +76,12 @@ export const loadreservationsthunk = (userId) => async (dispatch) => {
 
         console.log(usersReservations)
         dispatch(loadResevationsAction(usersReservations.reservations))
+
+        return usersReservations.reservations
     } else {
         console.log("ERROR IN loadreservationsthunk")
     }
+
 }
 
 
