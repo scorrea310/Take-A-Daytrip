@@ -15,6 +15,20 @@ const MyTrips = ({ reservationsLoaded }) => {
     today.setMinutes(0)
     today.setSeconds(0)
     today.setMilliseconds(0)
+    let valuesArray = Object.values(reservations)
+
+    const noReservations = (valuesArray) => {
+
+        for (let reservation = 0; reservation < valuesArray.length; reservation++) {
+            let startDate = reservation.check_in.split(" ")
+            let reservationCheckInDateObject = new Date(startDate[0].replace(/-/g, '\/'));
+            if (reservationCheckInDateObject.getTime() > today.getTime()) {
+                return false
+            }
+        }
+
+        return true;
+    }
 
 
     useEffect(() => {
@@ -30,6 +44,8 @@ const MyTrips = ({ reservationsLoaded }) => {
     if (!isLoaded) {
         return null
     }
+
+
 
     console.log(Object.values(reservations))
     return (
@@ -49,7 +65,7 @@ const MyTrips = ({ reservationsLoaded }) => {
                             return <ReservedSpotCard key={reservation.id} reservation={reservation} />
                         }
                     })}
-                    {Object.values(reservations).length === 0 && <div className="noTripsSection">No trips booked...yet!</div>}
+                    {noReservations(valuesArray) === true && <div className="noTripsSection">No trips booked...yet!</div>}
                 </div>
             </div>
 

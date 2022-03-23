@@ -73,6 +73,8 @@ export const loadreservationsthunk = (userId) => async (dispatch) => {
     const usersReservations = await response.json();
 
     if (response.ok) {
+
+        console.log(usersReservations)
         dispatch(loadResevationsAction(usersReservations.reservations))
     } else {
         console.log("ERROR IN loadreservationsthunk")
