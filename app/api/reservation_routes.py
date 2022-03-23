@@ -2,6 +2,8 @@ from flask import Blueprint, jsonify, request
 from app.models import db, Reservation
 import click
 from app.forms import ReservationForm
+import datetime
+import time
 
 
 reservation_routes = Blueprint("reservation", __name__)
@@ -40,15 +42,23 @@ def add_reservation(id):
 
 @reservation_routes.route("/<int:id>")
 def get_reservations_for_user(id):
-
+    present = datetime.datetime.now().date()
     users_reservations = Reservation.query.filter(Reservation.user_id == id)
 
     all_of_users_reservations = {}
 
     for reservation in users_reservations:
-        all_of_users_reservations[reservation.id] = reservation.to_dict()
+        obj = reservation.to_dict()
+        obj_date_string = obj["check_in"].split(" ")[0]
+        dt = datetime.datetime.strptime(obj_date_string, '%Y-%m-%d').date()
 
-    # click.echo(click.style(str(all_of_users_reservations), bg='red', fg='white'))
+        # click.echo(click.style(str(dt < present), bg='red', fg='white'))
+
+        if(dt >= present):
+            all_of_users_reservations[reservation.id] = reservation.to_dict()
+
+    
+
 
     return {"reservations": all_of_users_reservations}
 

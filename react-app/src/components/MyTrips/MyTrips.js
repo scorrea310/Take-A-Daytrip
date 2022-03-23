@@ -15,33 +15,14 @@ const MyTrips = ({ reservationsLoaded }) => {
     today.setMinutes(0)
     today.setSeconds(0)
     today.setMilliseconds(0)
-    const [valuesArray, setValuesArray] = useState(false)
-
-    const noReservations = (valuesArray) => {
-
-        console.log(valuesArray)
-        if (valuesArray.length === 0 || valuesArray === false) return true
-
-        for (let reservation = 0; reservation < valuesArray.length; reservation++) {
-            let startDate = reservation.check_in.split(" ")
-            let reservationCheckInDateObject = new Date(startDate[0].replace(/-/g, '\/'));
-            if (reservationCheckInDateObject.getTime() > today.getTime()) {
-                return false
-            }
-        }
-
-        return true;
-    }
-
 
     useEffect(() => {
         dispatch(loadreservationsthunk(sessionUser.id)).then((reservations) => {
 
             setIsloaded(true)
-            setValuesArray(Object.values(reservations))
         })
 
-        window.scrollTo(0, 0)
+
     }, [dispatch, sessionUser.id])
 
 
@@ -66,15 +47,13 @@ const MyTrips = ({ reservationsLoaded }) => {
                             return <ReservedSpotCard key={reservation.id} reservation={reservation} />
                         }
                     })}
-                    {noReservations(valuesArray) === true && <div className="noTripsSection">No trips booked...yet!</div>}
+                    {Object.values(reservations).length === 0 && <div className="noTripsSection">No trips booked...yet!</div>}
                 </div>
             </div>
 
         </div>
     )
 }
-
-
 
 
 export default MyTrips
