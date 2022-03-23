@@ -87,10 +87,29 @@
 }
 
 .signupErrorsContainer {
-    height: 60px;
+    height: 80px;
     width: 100%;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 20px;
+    color: hsl(357deg 91% 59%);
+    
 }
+
+.welcomeToTakeAText {
+    text-align: center;
+}
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+
+        .signupErrorsContainer {
+    color: hsl(357deg 91% 59%);
+    font-size: 20px;
+   
+}
+    }

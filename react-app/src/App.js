@@ -17,17 +17,10 @@ import SpotListings from './components/SpotListings/SpotListings';
 
 function App() {
 
-  const sessionUser = useSelector((state) => state.session.user);
   const [loaded, setLoaded] = useState(false);
   const [spotsLoaded, setSpotsLoaded] = useState(false)
   const dispatch = useDispatch();
   const [reservationsLoaded, setReservationsLoaded] = useState(false)
-
-  // useEffect(() => {
-
-  //   dispatch(loadreservationsthunk(sessionUser?.id)).then(() => setReservationsLoaded(true))
-
-  // }, [dispatch])
 
   useEffect(() => {
     (async () => {
@@ -43,23 +36,15 @@ function App() {
   }, [dispatch])
 
 
-
-
   if (!loaded) {
     return null;
   }
-  //outdoors, apartments, house, unique
+
   return (
     <BrowserRouter>
       <Switch>
         <Route path='/' exact={true}>
           <LandingPage />
-        </Route>
-        <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
         </Route>
         <Route path='/allspots' exact={true}>
           <SpotListings allSpots={true} />

@@ -1,14 +1,13 @@
 .editSpotContainer {
     display: flex;
-    height: 40%;
+    height: 150px;
     flex-direction: column;
     border: 1px solid rgb(221, 221, 221);
     border-radius: 12px;
-    width: 70%;
+    width: 300px;
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
-    position:sticky;
-	top: 80px;
-    
+    position: sticky;
+    top: 80px;
     
 }
 
@@ -26,7 +25,7 @@
 .editOrDeleteSpotContainer {
     display: flex;
     flex-direction: column;
-    height: 90%;
+    height: 100%;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -46,8 +45,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 100%;
     cursor: pointer;
+   
 }
 
 .editIconAndText:hover {
@@ -55,7 +55,7 @@
     background-color: #f7f7f7;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 100%;
     cursor: pointer;
 }
 
@@ -63,8 +63,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 100%;
     cursor: pointer;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .deleteIconAndText:hover {
@@ -72,7 +74,7 @@
     background-color: #f7f7f7;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 100%;
     cursor: pointer;
 }
 
@@ -206,3 +208,20 @@ margin-top: 20px;
     border: none;
 }
 
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+
+    #editModal {
+ 
+    height: 800px;
+    width: 700px;
+
+    }
+
+    .editSelectSpotType {
+        color: black
+    }
+
+    }

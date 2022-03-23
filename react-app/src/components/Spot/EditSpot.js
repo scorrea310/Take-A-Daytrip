@@ -15,7 +15,6 @@ const EditSpot = ({ spot, spotId }) => {
     const history = useHistory()
     const [showEditModal, setShowEditModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
-    const [images, setImages] = useState([]);
     const [address, setAddress] = useState(spot[`${spotId}`].address)
     const [petsAllowed, setpetsAllowed] = useState(spot[`${spotId}`].pets_allowed)
     const [totalOccupancy, setTotalOccupancy] = useState(parseInt(spot[`${spotId}`].total_occupancy, 10))
@@ -26,19 +25,12 @@ const EditSpot = ({ spot, spotId }) => {
     const [hasTv, setHasTv] = useState(spot[`${spotId}`].has_tv)
     const [hasAc, setHasAc] = useState(spot[`${spotId}`].has_ac)
     const [price, setPrice] = useState(parseFloat(spot[`${spotId}`].price_per_day))
-    const [addSpotLoader, setAddSpotLoader] = useState(false)
     const [name, setName] = useState(spot[`${spotId}`].name)
     const [type, setType] = useState(spot[`${spotId}`].type)
 
-    //
     const setAddressFunction = (e) => {
         setAddress(e.target.value);
     }
-
-
-    /*
-    images: (2) ['http://take-a-daytrip.s3.amazonaws.com/4e75a7776f3342eea8991f3d6b9afc28.jpeg', 'http://take-a-daytrip.s3.amazonaws.com/5efea98abf0040f8984213b21b56cc4d.jpeg']
-    */
 
     const SubmitEdit = (e) => {
         e.preventDefault()
@@ -264,7 +256,7 @@ const EditSpot = ({ spot, spotId }) => {
                             >
                             </input>
                             <label style={{ marginTop: "10px" }}>Type:</label>
-                            <select value={type} onChange={(e) => {
+                            <select className="editSelectSpotType" value={type} onChange={(e) => {
                                 setType(e.target.value)
                             }}>
                                 <option value="Apartment">Apartment</option>

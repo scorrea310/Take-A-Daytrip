@@ -1,7 +1,7 @@
 import NavBar from "../NavBar/NavBar";
 import "./AddSpot.css"
 import SpotCard from "./SpotCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SpotImageForm from "../SpotImageForm/SpotImageForm";
 import gradientBackground from "../../images/Wiretap.jpeg"
 import { useHistory } from "react-router-dom";
@@ -32,6 +32,9 @@ const AddSpot = () => {
     const [addSpotLoader, setAddSpotLoader] = useState(false)
     const [name, setName] = useState('')
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
 
     const toObjectURL = (file) => {
