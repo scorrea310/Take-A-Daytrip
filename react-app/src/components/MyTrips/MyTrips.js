@@ -31,6 +31,7 @@ const MyTrips = ({ reservationsLoaded }) => {
         return null
     }
 
+    console.log(Object.values(reservations))
     return (
 
         <div className="MyTripsPageContainer">
