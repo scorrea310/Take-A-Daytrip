@@ -77,6 +77,9 @@ function App() {
         <ProtectedRoute path='/account' exact={true} >
           <AccountPage />
         </ProtectedRoute>
+        <ProtectedRoute path='/account/personal-info' exact={true} >
+          <h1>Personal Info</h1>
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
