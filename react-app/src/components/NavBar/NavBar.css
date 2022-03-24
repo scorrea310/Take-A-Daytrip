@@ -253,6 +253,12 @@
     margin-right: 10px;
 }
 
+.accountTextProfileWindow {
+    width: 100%;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
 .profileWindowLoginText {
     display: flex;
     width: 100%;
@@ -263,6 +269,9 @@
     border-top-right-radius: 10px;
     border-bottom: 1px solid #e4e2e2;
 }
+
+/* border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
 
 .profileWindowLogOutContainer {
     display: flex;
@@ -277,6 +286,14 @@
 
 .profileWindowHostYourHomeText {
     display: flex;
+    width: 100%;
+    height:40px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profileWindowAccountDiv {
+     display: flex;
     width: 100%;
     height:40px;
     align-items: center;
@@ -310,8 +327,15 @@
     align-items: center;
     background-color: #f7f7f7;
     cursor: pointer;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+}
+
+.profileWindowAccountDiv:hover {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    background-color: #f7f7f7;
+    cursor: pointer;
 }
 
 .logoutButton {
@@ -324,8 +348,6 @@
     width: 100%;
     height: 40px;
     align-items: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     cursor: pointer;
     padding-left: 10px;
 }
@@ -341,9 +363,8 @@
     height: 40px;
     padding-left: 10px;
     align-items: center;
-    
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     cursor: pointer;
     background-color: #f7f7f7;
 }
@@ -556,6 +577,15 @@ margin-top: -5px;
     align-items: center;
 }
 
+.accountTextProfileWindow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .logoutButton:hover {
     height: 100%;
     font-size: 30px;
@@ -583,6 +613,13 @@ margin-top: -5px;
     height: 40%;
     font-size: 30px;
 }
+
+.profileWindowAccountDiv {
+    height: 40%;
+    font-size: 30px;
+}
+
+
 
 .profileWindowDemoUserTextContainer {
     height: 100%;
@@ -616,6 +653,17 @@ margin-top: -5px;
     justify-content: center;
     align-items: center;
 }
+
+.profileWindowAccountDiv:hover {
+    height: 33%;
+    font-size: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .signupButton {
     height: 100%;
     font-size: 30px;

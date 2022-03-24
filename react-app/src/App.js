@@ -14,6 +14,7 @@ import { loadSpotsFunc } from './store/spotReducer';
 import MyTrips from './components/MyTrips/MyTrips';
 import { loadreservationsthunk } from './store/reservationsReducer';
 import SpotListings from './components/SpotListings/SpotListings';
+import AccountPage from './components/AccountPage/AccountPage';
 
 function App() {
 
@@ -72,6 +73,9 @@ function App() {
         </Route>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
+        </ProtectedRoute>
+        <ProtectedRoute path='/account' exact={true} >
+          <AccountPage />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
