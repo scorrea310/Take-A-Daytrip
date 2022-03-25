@@ -15,9 +15,9 @@
 
 .personalInfoContainer {
     width: 70%;
-    height: 500px;
+    height: fit-content;
     margin-top: 50px;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
 }
@@ -32,6 +32,7 @@
 #account-text-personal-info-page {
     font-size: 14px;
 }
+
 #account-text-personal-info-page:hover{
     cursor: pointer;
     text-decoration: underline;
@@ -51,4 +52,96 @@
     color: rgb(72, 72, 72);
     font-weight: 600;
     margin-top: 10px;
+}
+
+.profileTextandPhotoContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.edit-personal-item-card {
+    display: flex;
+    flex-direction: row;
+    width: 58%;
+    /* background-color: brown; */
+    border-bottom: 1px solid rgb(235, 235, 235);
+    padding-top: 30px;
+}
+
+.label-and-initial-value-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#label-container {
+    font-size: 16px;
+    color: rgb(34, 34, 34);
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    font-weight: 300;
+    align-items: flex-end;
+}
+
+#edit-text-personal-info {
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 450;
+}
+
+#cancel-text-personal-info {
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#value-text-personal-info {
+    color: rgb(113, 113, 113);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#name-description-label {
+    margin-bottom: 20px;
+    color: rgb(113, 113, 113);
+    font-size: 14px;
+}
+
+.value-input-personal-info {
+    height: 52px;
+    border-radius: 8px;
+    border: 1px solid #DDDDDD;
+    padding-left: 10px; 
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.value-input-personal-info:focus {
+    outline: none;
+     border: 2px solid black;
+}
+
+.save-button-personal-info {
+    background-color: black;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.save-button-profile-picture {
+    background-color: black;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }

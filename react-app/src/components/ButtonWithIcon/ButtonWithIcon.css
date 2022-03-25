@@ -39,3 +39,12 @@
   z-index: 10000;
   cursor: pointer;
 }
+.square-btn-small-avatar {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 800;
+  cursor: pointer;
+}
