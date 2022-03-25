@@ -29,7 +29,7 @@
 
 #account-text {
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 40;
     line-height: 36px
 }
 
@@ -57,7 +57,7 @@
     flex-direction: column;
     padding: 20px 18px;
     width: 32%;
-    height: 200px;
+    height: 250px;
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     border-radius: 12px;
     cursor: pointer;
@@ -73,15 +73,15 @@
 }
 
 #places-youve-been-icon {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 #your-listings-icon {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 #personal-info-icon{
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .account-card-description{

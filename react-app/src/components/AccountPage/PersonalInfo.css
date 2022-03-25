@@ -1,0 +1,54 @@
+.personalInfoPage {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.personalInfoMainContent {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.personalInfoContainer {
+    width: 70%;
+    height: 500px;
+    margin-top: 50px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-path-personal-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 160px;
+}
+
+#account-text-personal-info-page {
+    font-size: 14px;
+}
+#account-text-personal-info-page:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#right-arrow {
+    font-size: 10px;
+    color: rgb(118, 118, 118)
+}
+
+#personal-info-text-personal-page {
+    font-size: 14px;
+}
+
+#personal-info-text-personal-info-page {
+    font-size: 32px;
+    color: rgb(72, 72, 72);
+    font-weight: 600;
+    margin-top: 10px;
+}
