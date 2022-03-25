@@ -15,8 +15,6 @@ def add_spot():
     form = SpotListingForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
 
-    
-
     if form.validate_on_submit():
         click.echo(click.style("steveveve", bg='red', fg='white'))
         new_spot = Spot(
@@ -75,7 +73,6 @@ def upload_spot_images(id):
             # so we send back that error message
             click.echo(click.style(str(upload), bg='red', fg='white'))
             return upload, 400
-
 
         image_url = upload["url"]
         new_image = Image(spot_id=id, image_url=image_url)
