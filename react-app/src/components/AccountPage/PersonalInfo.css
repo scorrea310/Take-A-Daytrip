@@ -99,6 +99,7 @@
     font-size: 16px;
     text-decoration: underline;
     cursor: pointer;
+    font-weight: 450;
 }
 
 #value-text-personal-info {
@@ -134,6 +135,7 @@
     border-radius: 8px;
     width: fit-content;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .save-button-profile-picture {
@@ -144,4 +146,5 @@
     width: fit-content;
     margin-bottom: 20px;
     margin-top: 20px;
+    cursor: pointer;
 }
