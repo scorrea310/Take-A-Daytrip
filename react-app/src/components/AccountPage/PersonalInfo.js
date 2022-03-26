@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom"
 import FileInputWithPreview from "../SpotImageForm/FileInputWithPreview"
 import { useState } from "react"
 import EditPersonalItemCard from "./EditPersonalItemCard"
+import { MdOutlinePrivateConnectivity } from "react-icons/md"
 
 const PersonalInfo = () => {
 
@@ -36,6 +37,11 @@ const PersonalInfo = () => {
         <div className="personalInfoPage">
             <NavBar />
             <div className="personalInfoMainContent">
+                <div className="noteOnPrivacy">
+                    <div><MdOutlinePrivateConnectivity id="privacyEye" /></div>
+                    <div className="aQuickNoteText">A quick note on Privacy.</div>
+                    <div>We don't share any of your info because we are not a real company. If we were, we would only release contact information for Hosts and guests after a reservation is confirmed.</div>
+                </div>
                 <div className="personalInfoContainer">
                     <div className="page-path-personal-info">
                         <div onClick={() => history.push("/account")} id="account-text-personal-info-page">Account</div>
