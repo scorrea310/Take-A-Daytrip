@@ -57,29 +57,53 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
             <div className="listingsAndImageMainContainer">
                 <div className="listingsContainer">
                     {allSpots && Object.values(spots).map((spot) => {
-                        console.log(spot)
-                        if (+spot.host_id !== sessionUser.id) {
-                            return <SpotListingCard key={spot.id} spot={spot} />
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
 
+                            }
+                        } else {
+                            return <SpotListingCard key={spot.id} spot={spot} />
                         }
+
                     })}
                     {apartments && Object.values(spots).map((spot) => {
-                        if (spot.type === "Apartment" && +spot.host_id !== sessionUser.id) {
-                            return <SpotListingCard key={spot.id} spot={spot} />;
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
+
+                            }
+                        } else {
+                            return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
                     {outdoors && Object.values(spots).map((spot) => {
-                        if (spot.type === "Outdoor" && +spot.host_id !== sessionUser.id) {
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
+
+                            }
+                        } else {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
                     {houses && Object.values(spots).map((spot) => {
-                        if (spot.type === "House" && +spot.host_id !== sessionUser.id) {
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
+
+                            }
+                        } else {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
                     {unique && Object.values(spots).map((spot) => {
-                        if (spot.type === "Unique Experience" && +spot.host_id !== sessionUser.id) {
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
+
+                            }
+                        } else {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
