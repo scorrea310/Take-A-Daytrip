@@ -7,16 +7,19 @@ import FileInputWithPreview from "../SpotImageForm/FileInputWithPreview"
 import { useState } from "react"
 import EditPersonalItemCard from "./EditPersonalItemCard"
 import { MdOutlinePrivateConnectivity } from "react-icons/md"
+import { useSelector } from "react-redux"
 
 const PersonalInfo = () => {
 
     const history = useHistory()
-    const [images, setImages] = useState([]);
+    const sessionUser = useSelector((state) => state.session.user);
+    const [images, setImages] = useState(sessionUser.profile_image !== null ? [sessionUser.profile_image] : []);
 
     const toObjectURL = (file) => {
         if (file === null || file === undefined) return;
         return URL.createObjectURL(file)
     };
+
     const updateImages = (e) => {
 
         if (e.target.files[0] === undefined || e.target.files[0] === null) return
@@ -24,6 +27,7 @@ const PersonalInfo = () => {
         setImages([...images, e.target.files[0]])
         e.target.value = ''
     };
+
     const handleDelete = (e, i) => {
         e.preventDefault();
         e.stopPropagation();
@@ -32,6 +36,15 @@ const PersonalInfo = () => {
         setImages(filtered);
     };
 
+    console.log(sessionUser)
+
+    const onSaveProfilePic = () => {
+        const imageData = new FormData();
+
+        if (images && images.length) {
+            imageData.append('image', images[0])
+        }
+    }
 
     return (
         <div className="personalInfoPage">
@@ -40,7 +53,7 @@ const PersonalInfo = () => {
                 <div className="noteOnPrivacy">
                     <div><MdOutlinePrivateConnectivity id="privacyEye" /></div>
                     <div className="aQuickNoteText">A quick note on Privacy.</div>
-                    <div>We don't share any of your info because we are not a real company. If we were, we would only release contact information for Hosts and guests after a reservation is confirmed.</div>
+                    <div id="main-privacy-text">We don't share any of your info because we are not a real company. If we were, we would only release contact information for Hosts and guests after a reservation is confirmed.</div>
                 </div>
                 <div className="personalInfoContainer">
                     <div className="page-path-personal-info">
@@ -53,7 +66,7 @@ const PersonalInfo = () => {
                         <div>Profile Photo</div>
                         <FileInputWithPreview
                             index={0}
-                            src={images.length > 0 ? toObjectURL(images[0]) : null}
+                            src={images[0] !== null ? toObjectURL(images[0]) : null}
                             onChange={updateImages}
                             onClick={handleDelete}
                             avatar={true}
