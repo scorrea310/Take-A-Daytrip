@@ -141,10 +141,13 @@
 .save-button-profile-picture {
     background-color: black;
     color: white;
-    padding: 14px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 14px 24px; */
     border-radius: 8px;
-    width: fit-content;
-    height:fit-content;
+    width: 82.961px;
+    height: 48px;
     margin-bottom: 20px;
     margin-top: 20px;
     cursor: pointer;

@@ -9,7 +9,7 @@ import EditPersonalItemCard from "./EditPersonalItemCard"
 import { MdOutlinePrivateConnectivity } from "react-icons/md"
 import { useDispatch, useSelector } from "react-redux"
 import { updateProfileImageThunk } from "../../store/session"
-
+import FadingBalls from "react-cssfx-loading/lib/FadingBalls";
 const PersonalInfo = () => {
 
     const history = useHistory()
@@ -56,7 +56,10 @@ const PersonalInfo = () => {
         dispatch updateProfileImageThunk
         */
 
-        dispatch(updateProfileImageThunk(imageData, +sessionUser.id))
+        dispatch(updateProfileImageThunk(imageData, +sessionUser.id)).then((imageUrl) => {
+            setLoadingImage(false)
+            setImages([imageUrl])
+        })
     }
 
 
@@ -87,7 +90,7 @@ const PersonalInfo = () => {
                             avatar={true}
                         />
 
-                        {images.length > 0 && images[0] !== sessionUser.profile_image && typeof images[0] === "object" && <div onClick={() => onSaveProfilePic()} className="save-button-profile-picture">save</div>}
+                        {typeof images[0] === "object" && <div onClick={() => onSaveProfilePic()} className="save-button-profile-picture">{loadingImage ? <FadingBalls color="white" width="10px" height="10px" /> : "Save"}</div>}
                     </div>
                     <EditPersonalItemCard label={"Name"} value={"Steve"} />
                     <EditPersonalItemCard label={"Name"} value={"Steve"} />

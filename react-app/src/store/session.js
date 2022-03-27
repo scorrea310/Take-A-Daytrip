@@ -33,7 +33,7 @@ export const updateProfileImageThunk = (imageData, userId) => async (dispatch) =
   if (response.ok) {
     dispatch(updateImageAction(image.image_urls[0]))
 
-    return image
+    return image.image_urls[0]
   } else {
     console.log("ERROR IN updateProfileImageThunk")
   }
