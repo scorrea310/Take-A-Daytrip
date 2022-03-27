@@ -144,6 +144,7 @@
     padding: 14px 24px;
     border-radius: 8px;
     width: fit-content;
+    height:fit-content;
     margin-bottom: 20px;
     margin-top: 20px;
     cursor: pointer;
@@ -178,4 +179,6 @@
 #main-privacy-text {
     font-size: 16px;
     color: rgb(113, 113, 113);
+    font-weight: 300;
+    line-height: 1.3;
 }

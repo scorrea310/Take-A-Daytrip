@@ -7,16 +7,20 @@ import FileInputWithPreview from "../SpotImageForm/FileInputWithPreview"
 import { useState } from "react"
 import EditPersonalItemCard from "./EditPersonalItemCard"
 import { MdOutlinePrivateConnectivity } from "react-icons/md"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { updateProfileImageThunk } from "../../store/session"
 
 const PersonalInfo = () => {
 
     const history = useHistory()
+    const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     const [images, setImages] = useState(sessionUser.profile_image !== null ? [sessionUser.profile_image] : []);
+    const [loadingImage, setLoadingImage] = useState(false)
 
     const toObjectURL = (file) => {
         if (file === null || file === undefined) return;
+        if (typeof file === "string") return file
         return URL.createObjectURL(file)
     };
 
@@ -36,22 +40,27 @@ const PersonalInfo = () => {
         setImages(filtered);
     };
 
-    console.log(sessionUser)
+    // console.log(sessionUser)
 
     const onSaveProfilePic = () => {
+        setLoadingImage(true)
         const imageData = new FormData();
 
+        console.log(images[0])
+
         if (images && images.length) {
-            imageData.append('image', images[0])
+            imageData.append('images', images[0])
         }
 
         /*
         dispatch updateProfileImageThunk
         */
 
-
+        dispatch(updateProfileImageThunk(imageData, +sessionUser.id))
     }
 
+
+    console.log(images[0])
     return (
         <div className="personalInfoPage">
             <NavBar />
@@ -78,7 +87,7 @@ const PersonalInfo = () => {
                             avatar={true}
                         />
 
-                        {images.length > 0 && <div className="save-button-profile-picture">save</div>}
+                        {images.length > 0 && images[0] !== sessionUser.profile_image && typeof images[0] === "object" && <div onClick={() => onSaveProfilePic()} className="save-button-profile-picture">save</div>}
                     </div>
                     <EditPersonalItemCard label={"Name"} value={"Steve"} />
                     <EditPersonalItemCard label={"Name"} value={"Steve"} />

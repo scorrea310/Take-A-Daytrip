@@ -20,21 +20,18 @@ const updateImageAction = (image) => ({
 const initialState = { user: null };
 
 
-export const updateProfileImageThunk = (imageForm, userId) => async (dispatch) => {
+export const updateProfileImageThunk = (imageData, userId) => async (dispatch) => {
 
-  const response = await fetch(`/api/auth/${userId}`, {
+  const response = await fetch(`/api/users/${userId}`, {
     method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(imageForm),
+    body: imageData
   });
 
   const image = await response.json()
 
 
   if (response.ok) {
-    dispatch(updateImageAction(image))
+    dispatch(updateImageAction(image.image_urls[0]))
 
     return image
   } else {
@@ -135,7 +132,11 @@ export default function reducer(state = initialState, action) {
       return { user: null }
 
     case UPDATE_PROFILE_IMAGE:
-      let newState = { user: { ...state.user } }
+      let newState = { user: { ...state.user, profile_image: state.user.profile_image } }
+
+      newState.user.profile_image = action.payload;
+
+      return newState;
     default:
       return state;
   }

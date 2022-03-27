@@ -15,11 +15,13 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
 
-    const history = useHistory()
+    const history = useHistory();
     const dispatch = useDispatch();
-    const [profileModal, setProfileModal] = useState(false)
+    const [profileModal, setProfileModal] = useState(false);
+    const profile_image = useSelector((state) => state.session?.user?.profile_image);
+    const session = useSelector((state) => state.session.user);
     const [showLoginModal, setShowLoginModal] = useState(false);
-    const [showSignUpModal, setShowSignupModal] = useState(false)
+    const [showSignUpModal, setShowSignupModal] = useState(false);
 
     let centerNavBarClassName;
     let navBarContainerClassName;
@@ -72,7 +74,7 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
                         }}>
                             <div className="navBarProfileButton" onClick={() => setProfileModal(!profileModal)} >
                                 <BiMenu style={{ fontSize: "25px", marginRight: "10px" }} />
-                                <FaRegUserCircle style={{ fontSize: "25px" }} />
+                                {session?.profile_image === null || session === null ? <FaRegUserCircle style={{ fontSize: "25px" }} /> : <div style={{ backgroundImage: `url(${profile_image})`, height: "30px", width: "30px", backgroundSize: "cover", backgroundPosition: "center", borderRadius: "50%" }} ></div>}
 
                             </div>
                             {profileModal ? <ProfileModal profileModal={profileModal} setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} setProfileModal={setProfileModal} /> : null}

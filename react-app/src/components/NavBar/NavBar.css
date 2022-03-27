@@ -19,6 +19,12 @@
     background-color: white;
 }
 
+#profile-picture-navbar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 .spotPageNavBarContainer {
     display: flex;
     width: 100%;
