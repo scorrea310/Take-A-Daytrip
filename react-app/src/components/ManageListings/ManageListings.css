@@ -1,0 +1,9 @@
+.manageListingsPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.myListingsContainer {
+    width: 89%;
+    height: fit-content;
+}

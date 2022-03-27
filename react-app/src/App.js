@@ -12,6 +12,8 @@ import MyTrips from './components/MyTrips/MyTrips';
 import SpotListings from './components/SpotListings/SpotListings';
 import AccountPage from './components/AccountPage/AccountPage';
 import PersonalInfo from './components/AccountPage/PersonalInfo';
+import ManageListings from './components/ManageListings/ManageListings';
+
 
 function App() {
 
@@ -76,6 +78,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/account/personal-info' exact={true} >
           <PersonalInfo />
+        </ProtectedRoute>
+        <ProtectedRoute path='/account/manage-listings' exact={true} >
+          <ManageListings />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
