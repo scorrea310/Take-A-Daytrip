@@ -63,7 +63,7 @@ const PersonalInfo = () => {
     }
 
 
-    console.log(images[0])
+    // console.log(images[0])
     return (
         <div className="personalInfoPage">
             <NavBar />
@@ -92,9 +92,9 @@ const PersonalInfo = () => {
 
                         {typeof images[0] === "object" && <div onClick={() => onSaveProfilePic()} className="save-button-profile-picture">{loadingImage ? <FadingBalls color="white" width="10px" height="10px" /> : "Save"}</div>}
                     </div>
-                    <EditPersonalItemCard label={"Name"} value={"Steve"} />
-                    <EditPersonalItemCard label={"Name"} value={"Steve"} />
-                    <EditPersonalItemCard label={"Name"} value={"Steve"} />
+                    <EditPersonalItemCard label={"Name"} value={sessionUser.name} />
+                    <EditPersonalItemCard label={"Username"} value={sessionUser.username} />
+                    {sessionUser.id !== 1 ? <EditPersonalItemCard label={"Email"} value={sessionUser.email} /> : null}
                 </div>
             </div>
             <Footer />

@@ -3,9 +3,19 @@ from flask_login import login_required
 from app.models import User, db
 import click
 from app.s3_helpers import upload_file_to_s3, allowed_file, get_unique_filename
+from app.forms import UpdateNameForm, UpdateUserName, UpdateUserEmail
 
 user_routes = Blueprint('users', __name__)
 
+def validation_errors_to_error_messages(validation_errors):
+    """
+    Simple function that turns the WTForms validation errors into a simple list
+    """
+    errorMessages = []
+    for field in validation_errors:
+        for error in validation_errors[field]:
+            errorMessages.append(f'{field} : {error}')
+    return errorMessages
 
 @user_routes.route('/')
 @login_required
@@ -21,7 +31,7 @@ def user(id):
     return user.to_dict()
 
 
-@user_routes.route('/<int:id>', methods=["PATCH"])
+@user_routes.route('/<int:id>/images', methods=["PATCH"])
 def update_user_image(id):
     
     image_urls = []
@@ -65,3 +75,73 @@ def update_user_image(id):
     click.echo(click.style(str("2"), bg='red', fg='white'))
 
     return {"image_urls": image_urls}
+
+
+@user_routes.route('/<int:id>/name', methods=["PATCH"])
+def update_name_of_user(id):
+    
+    form = UpdateNameForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        click.echo(click.style("it worked!!!!!!", bg='red', fg='white'))
+
+        user = User.query.get(id)
+
+        user.name = form.data["name"]
+
+        db.session.add(user)
+        db.session.commit()
+
+
+    user = User.query.get(id)
+
+    return user.to_dict()
+
+
+
+@user_routes.route('/<int:id>/username', methods=["PATCH"])
+def update_username(id):
+    
+    form = UpdateUserName()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        click.echo(click.style("it worked!!!!!!", bg='red', fg='white'))
+
+        user = User.query.get(id)
+
+        user.username= form.data["username"]
+
+        db.session.add(user)
+        db.session.commit()
+
+
+    user = User.query.get(id)
+
+    return user.to_dict()
+
+
+@user_routes.route('/<int:id>/email', methods=["PATCH"])
+def update_user_email(id):
+    
+    form = UpdateUserEmail()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        click.echo(click.style("it worked!!!!!!", bg='red', fg='white'))
+
+        user = User.query.get(id)
+
+        user.email= form.data["email"]
+
+        db.session.add(user)
+        db.session.commit()
+
+
+        user = User.query.get(id)
+
+        return user.to_dict()
+
+    click.echo(click.style(str(validation_errors_to_error_messages(form.errors)), bg='red', fg='white'))
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401

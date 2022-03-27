@@ -3,6 +3,9 @@ const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
 const UPDATE_PROFILE_IMAGE = 'session/UPDATE_PROFILE_IMAGE';
 
+
+/*--------------------------------------------------------------------*/
+//Action Creators
 const setUser = (user) => ({
   type: SET_USER,
   payload: user
@@ -17,12 +20,80 @@ const updateImageAction = (image) => ({
   payload: image,
 })
 
-const initialState = { user: null };
 
+/*--------------------------------------------------------------------*/
+// Thunks
+
+export const updateNameThunk = (nameOfUser, userId) => async (dispatch) => {
+
+  const response = await fetch(`/api/users/${userId}/name`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: nameOfUser
+    })
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    await dispatch(setUser(data))
+
+    return data
+  }
+
+
+}
+
+export const updateUserName = (username, userId) => async (dispatch) => {
+
+  const response = await fetch(`/api/users/${userId}/username`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username
+    })
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    await dispatch(setUser(data))
+    return data
+  }
+}
+
+export const updateEmail = (email, userId) => async (dispatch) => {
+
+  const response = await fetch(`/api/users/${userId}/email`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email
+    })
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    await dispatch(setUser(data))
+
+    return data
+  } else {
+    const data = await response.json();
+    console.log("something went wrong with updating email.")
+    console.log(data.errors)
+    return data
+  }
+
+}
 
 export const updateProfileImageThunk = (imageData, userId) => async (dispatch) => {
 
-  const response = await fetch(`/api/users/${userId}`, {
+  const response = await fetch(`/api/users/${userId}/images`, {
     method: 'PATCH',
     body: imageData
   });
@@ -31,13 +102,14 @@ export const updateProfileImageThunk = (imageData, userId) => async (dispatch) =
 
 
   if (response.ok) {
-    dispatch(updateImageAction(image.image_urls[0]))
+    await dispatch(updateImageAction(image.image_urls[0]))
 
     return image.image_urls[0]
   } else {
     console.log("ERROR IN updateProfileImageThunk")
   }
 }
+
 
 export const authenticate = () => async (dispatch) => {
   const response = await fetch('/api/auth/', {
@@ -54,6 +126,7 @@ export const authenticate = () => async (dispatch) => {
     dispatch(setUser(data));
   }
 }
+
 
 export const login = (email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/login', {
@@ -123,6 +196,12 @@ export const signUp = (name, username, email, password) => async (dispatch) => {
     return ['An error occurred. Please try again.']
   }
 }
+
+
+/*--------------------------------------------------------------------*/
+//REDUCER
+
+const initialState = { user: null };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
