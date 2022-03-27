@@ -1,6 +1,7 @@
 // constants
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
+const UPDATE_PROFILE_IMAGE = 'session/UPDATE_PROFILE_IMAGE';
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -11,7 +12,35 @@ const removeUser = () => ({
   type: REMOVE_USER,
 })
 
+const updateImageAction = (image) => ({
+  type: UPDATE_PROFILE_IMAGE,
+  payload: image,
+})
+
 const initialState = { user: null };
+
+
+export const updateProfileImageThunk = (imageForm, userId) => async (dispatch) => {
+
+  const response = await fetch(`/api/auth/${userId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(imageForm),
+  });
+
+  const image = await response.json()
+
+
+  if (response.ok) {
+    dispatch(updateImageAction(image))
+
+    return image
+  } else {
+    console.log("ERROR IN updateProfileImageThunk")
+  }
+}
 
 export const authenticate = () => async (dispatch) => {
   const response = await fetch('/api/auth/', {
@@ -104,6 +133,9 @@ export default function reducer(state = initialState, action) {
       return { user: action.payload }
     case REMOVE_USER:
       return { user: null }
+
+    case UPDATE_PROFILE_IMAGE:
+      let newState = { user: { ...state.user } }
     default:
       return state;
   }

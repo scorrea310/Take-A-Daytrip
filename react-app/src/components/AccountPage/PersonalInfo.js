@@ -44,6 +44,12 @@ const PersonalInfo = () => {
         if (images && images.length) {
             imageData.append('image', images[0])
         }
+
+        /*
+        dispatch updateProfileImageThunk
+        */
+
+
     }
 
     return (
