@@ -16,7 +16,7 @@ const SpotImageForm = ({ images, setImages, noImagesError, firstSlide, secondSli
         if (e.target.files[0] === undefined || e.target.files[0] === null) return
 
         setImages([...images, e.target.files[0]])
-
+        e.target.value = ''
     };
     const handleDelete = (e, i) => {
         e.preventDefault();

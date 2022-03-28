@@ -8,10 +8,12 @@ import apartmentsImage from "../../images/apartmentSpots.jpeg"
 import uniqueImage from "../../images/uniqueSpotPage.jpeg"
 import outdoorImage from "../../images/outdoorsSpotPage.jpeg"
 import houseImage from "../../images/houseSpotPage.jpeg"
-
+import Footer from "../Footer/Footer";
 const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
 
     const sessionUser = useSelector((state) => state.session.user);
+
+
     useEffect(() => {
         window.scrollTo(0, 0)
     })

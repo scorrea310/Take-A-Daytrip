@@ -1,0 +1,130 @@
+.accountPage {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContentAccountPage {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    /* background-color: blue; */
+}
+
+.mainContentContaner {
+    width: 70%;
+    /* background-color: aqua; */
+    height: 500px;
+    margin-top: 60px;
+}
+
+.accountTextAndUsernameEmailContainer {
+    display: flex;
+    flex-direction: column;
+    height: 150px
+}
+
+#account-text {
+    font-size: 32px;
+    font-weight: 40;
+    line-height: 36px
+}
+
+#usersNameAccountPage {
+    font-size: 18px;
+    font-weight: 600
+}
+
+.userNameAndEmailTitleAccountPage {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    align-items: flex-end;
+}
+
+#userEmailAccountPage {
+    font-size: 18px;
+    font-weight: 350;
+    /* line-height: 24px */
+    margin-left: 5px;
+}
+
+.AccountCardContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px;
+    width: 30%;
+    height: 250px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.accountCardContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#places-youve-been-icon {
+    font-size: 35px;
+}
+
+#your-listings-icon {
+    font-size: 35px;
+}
+
+#personal-info-icon{
+    font-size: 35px;
+}
+
+.account-card-description{
+    margin-top: 5px;
+    font-size: 16px !important;
+    line-height: 18px !important;
+    color: rgb(113, 113, 113) !important;
+    font-weight: 400
+}
+
+.account-card-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+
+.accountCardContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.AccountCardContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px;
+    width: 60%;
+    height: 250px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.mainContentAccountPage {
+   margin-bottom: 600px;
+   margin-top: 150px;
+}
+
+    }

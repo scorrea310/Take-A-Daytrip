@@ -64,14 +64,14 @@ const EditSpot = ({ spot, spotId }) => {
 
     return (
         <div className="editSpotContainer">
-            <div className="editDaytripText">Edit/Delete Daytrip</div>
+            <div className="editDaytripText">Edit/Delete Listing</div>
             <div className="editOrDeleteSpotContainer">
-                <div className="editIconAndText" onClick={() => setShowEditModal(true)}><AiFillEdit id="editIcon" /> Edit Daytrip</div>
-                <div className="deleteIconAndText" onClick={() => setShowDeleteModal(true)}><AiFillDelete id="deleteIcon" /> Delete Daytrip</div>
+                <div className="editIconAndText" onClick={() => setShowEditModal(true)}><AiFillEdit id="editIcon" /> Edit Listing</div>
+                <div className="deleteIconAndText" onClick={() => setShowDeleteModal(true)}><AiFillDelete id="deleteIcon" /> Delete Listing</div>
                 {showDeleteModal && <Modal onClose={() => setShowDeleteModal(false)}>
 
                     <div className="deleteModalContentContainer">
-                        <div>Are you sure you want to delete this Daytrip?</div>
+                        <div>Are you sure you want to delete this Listing?</div>
                         <div className="confirmOrCancelDeletButtons">
 
                             <Button label={"Delete"} type={"button"} className={"confirmDeleteSpotButton"} onClick={handleDelete} />

@@ -216,7 +216,6 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
                 <div className="calendarError">{calendarErrors}</div>
                 {isOpened ? <Button type={"submit"} label={"Reserve"} className={"addReserveationButton"} /> : <div className="checkAvailabilityButton" onClick={() => {
                     setIsOpened(true)
-                    scrollBy({ top: 400, left: 0, behavior: "smooth" })
                 }
                 }>Check Availability</div>}
             </form >

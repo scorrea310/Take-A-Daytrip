@@ -1,0 +1,227 @@
+.personalInfoPage {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.personalInfoMainContent {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.personalInfoContainer {
+    width: 70%;
+    height: fit-content;
+    margin-top: 50px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+}
+
+.page-path-personal-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 160px;
+}
+
+#account-text-personal-info-page {
+    font-size: 14px;
+}
+
+#account-text-personal-info-page:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#right-arrow {
+    font-size: 10px;
+    color: rgb(118, 118, 118)
+}
+
+#personal-info-text-personal-page {
+    font-size: 14px;
+}
+
+#personal-info-text-personal-info-page {
+    font-size: 32px;
+    color: rgb(72, 72, 72);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.profileTextandPhotoContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.edit-personal-item-card {
+    display: flex;
+    flex-direction: row;
+    width: 58%;
+    /* background-color: brown; */
+    border-bottom: 1px solid rgb(235, 235, 235);
+    padding-top: 30px;
+}
+
+.label-and-initial-value-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#label-container {
+    font-size: 16px;
+    color: rgb(34, 34, 34);
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    font-weight: 300;
+    align-items: flex-end;
+}
+
+#edit-text-personal-info {
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 450;
+}
+
+#cancel-text-personal-info {
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 450;
+}
+
+#value-text-personal-info {
+    color: rgb(113, 113, 113);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#name-description-label {
+    margin-bottom: 20px;
+    color: rgb(113, 113, 113);
+    font-size: 14px;
+}
+
+.value-input-personal-info {
+    height: 52px;
+    border-radius: 8px;
+    border: 1px solid #DDDDDD;
+    padding-left: 10px; 
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.value-input-personal-info:focus {
+    outline: none;
+     border: 2px solid black;
+}
+
+.save-button-personal-info {
+    background-color: black;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.save-button-profile-picture {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 14px 24px; */
+    border-radius: 8px;
+    width: 82.961px;
+    height: 48px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.noteOnPrivacy {
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    height: 300px;
+    width: 280px;
+    top: 200px;
+    right: 200px;
+    border: 1px solid rgb(221, 221, 221);
+    padding: 24px;
+    border-radius: 12px
+}
+
+#privacyEye {
+    height: 48px;
+    width: 48px;
+    fill: rgb(227, 28, 95);
+    margin-bottom: 20px;
+}
+
+.aQuickNoteText {
+    font-size: 20px !important;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+#main-privacy-text {
+    font-size: 16px;
+    color: rgb(113, 113, 113);
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.saveButtonAndErrorsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: aqua; */
+}
+
+.updateInfoErrorContainer {
+    width: 80%;
+    color: red;
+}
+
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+
+
+
+.personalInfoMainContent {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+
+.noteOnPrivacy {
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    height: 300px;
+    width: 280px;
+    top: 300px;
+    right: 50px;
+    border: 1px solid rgb(221, 221, 221);
+    padding: 24px;
+    border-radius: 12px
+}
+
+    }

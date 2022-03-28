@@ -341,7 +341,6 @@ const AddSpot = () => {
         <div className="addSpotPageContainer">
             <NavBar addspotPage={true} />
             <div className="addSpotMainContent">
-
                 {firstSlide ? slide1 : null}
                 {secondSlide && slide2}
                 {thirdSlide && slide3}
