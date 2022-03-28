@@ -17,12 +17,12 @@ const buttonReducer = (action) => {
     }
 };
 
-const ButtonWithIcon = ({ className, size, action, shape, onClick = null }) => {
+const ButtonWithIcon = ({ className, size, action, shape, onClick = null, avatar }) => {
     const icon = buttonReducer(action);
 
     return (
         <button
-            className={`${shape}-btn ${shape}-btn-${size} ${className}`}
+            className={!avatar ? `${shape}-btn ${shape}-btn-${size} ${className}` : "square-btn-small-avatar"}
             onClick={onClick}
         >
             {icon}

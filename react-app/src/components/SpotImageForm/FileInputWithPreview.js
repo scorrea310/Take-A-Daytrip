@@ -10,8 +10,8 @@ const FileInputWithPreview = ({
     onChange,
     onClick,
     error = null,
+    avatar
 }) => {
-    const [isVisible, setIsVisible] = useState(false);
 
     const hiddenInput = useRef(null);
     const handleClick = (e) => {
@@ -24,17 +24,15 @@ const FileInputWithPreview = ({
 
     return (
         <div
-            className={`grid-block grid-block-${index}`}
+            className={!avatar ? `grid-block grid-block-${index}` : "grid-circle"}
             style={src && gridBlockStyle}
-        // onMouseEnter={() => setIsVisible(true)}
-        // onMouseLeave={() => setIsVisible(false)}
         >
             {!src && (
                 <div className="icon-container" onClick={handleClick}>
                     <div className="icon file-upload-icon">
                         <FaCamera />
                     </div>
-                    <p className="form-label">Add a photo</p>
+                    <p className="form-label">{!avatar ? "Add a photo" : "Add a profile image"}</p>
                 </div>
             )}
             {/* {isVisible && ( */}
@@ -44,6 +42,7 @@ const FileInputWithPreview = ({
                     size="small"
                     action="delete"
                     shape="square"
+                    avatar={avatar ? true : false}
                     onClick={(e) => onClick(e, +index)}
                 />
                 {error && <p className="validation-error">{error}</p>}

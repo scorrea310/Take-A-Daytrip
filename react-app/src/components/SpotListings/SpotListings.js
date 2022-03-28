@@ -8,8 +8,10 @@ import apartmentsImage from "../../images/apartmentSpots.jpeg"
 import uniqueImage from "../../images/uniqueSpotPage.jpeg"
 import outdoorImage from "../../images/outdoorsSpotPage.jpeg"
 import houseImage from "../../images/houseSpotPage.jpeg"
-
+import Footer from "../Footer/Footer";
 const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
+
+    const sessionUser = useSelector((state) => state.session.user);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -54,25 +56,53 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
             <div className="listingsAndImageMainContainer">
                 <div className="listingsContainer">
                     {allSpots && Object.values(spots).map((spot) => {
-                        return <SpotListingCard key={spot.id} spot={spot} />
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
+
+                            }
+                        } else {
+                            return <SpotListingCard key={spot.id} spot={spot} />
+                        }
+
                     })}
                     {apartments && Object.values(spots).map((spot) => {
-                        if (spot.type === "Apartment") {
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
+
+                            }
+                        } else {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
                     {outdoors && Object.values(spots).map((spot) => {
-                        if (spot.type === "Outdoor") {
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
+
+                            }
+                        } else {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
                     {houses && Object.values(spots).map((spot) => {
-                        if (spot.type === "House") {
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
+
+                            }
+                        } else {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
                     {unique && Object.values(spots).map((spot) => {
-                        if (spot.type === "Unique Experience") {
+                        if (sessionUser) {
+                            if (+spot.host_id !== sessionUser?.id) {
+                                return <SpotListingCard key={spot.id} spot={spot} />
+
+                            }
+                        } else {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}

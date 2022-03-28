@@ -74,7 +74,6 @@ export const loadreservationsthunk = (userId) => async (dispatch) => {
 
     if (response.ok) {
 
-        console.log(usersReservations)
         dispatch(loadResevationsAction(usersReservations.reservations))
 
         return usersReservations.reservations

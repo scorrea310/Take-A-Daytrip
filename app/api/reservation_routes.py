@@ -57,8 +57,6 @@ def get_reservations_for_user(id):
         if(dt >= present):
             all_of_users_reservations[reservation.id] = reservation.to_dict()
 
-    
-
 
     return {"reservations": all_of_users_reservations}
 
@@ -105,3 +103,24 @@ def delete_reservation(id):
     db.session.commit()
 
     return {"message": "deleted"}
+
+
+
+@reservation_routes.route("/<int:id>/past-trips")
+def get_past_reservations(id):
+    present = datetime.datetime.now().date()
+    users_reservations = Reservation.query.filter(Reservation.user_id == id)
+
+    past_users_reservations = {}
+
+    for reservation in users_reservations:
+        obj = reservation.to_dict()
+        obj_date_string = obj["check_out"].split(" ")[0]
+        past_trip = datetime.datetime.strptime(obj_date_string, '%Y-%m-%d').date()
+
+
+        if(past_trip < present):
+            past_users_reservations[reservation.id] = reservation.to_dict()
+
+
+    return {"past_reservations": past_users_reservations}
