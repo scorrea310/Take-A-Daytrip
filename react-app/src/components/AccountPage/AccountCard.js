@@ -9,7 +9,7 @@ const AccountCard = ({ placesYouBeen, yourListings, personalInfo }) => {
 
     return (
         <div onClick={() => {
-            if (placesYouBeen) history.push("/account/places-youve-been")
+            if (placesYouBeen) history.push("/account/places-you've-been")
 
             if (personalInfo) history.push("/account/personal-info")
 

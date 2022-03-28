@@ -1,0 +1,12 @@
+.pasTripsPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.pastTripsMainContainer {
+    width: 100%;
+    height: fit-content;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
