@@ -197,3 +197,31 @@
     width: 80%;
     color: red;
 }
+
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+
+
+
+.personalInfoMainContent {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+
+.noteOnPrivacy {
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    height: 300px;
+    width: 280px;
+    top: 300px;
+    right: 50px;
+    border: 1px solid rgb(221, 221, 221);
+    padding: 24px;
+    border-radius: 12px
+}
+
+    }

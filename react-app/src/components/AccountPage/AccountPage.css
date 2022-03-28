@@ -96,3 +96,35 @@
     font-size: 20px;
     font-weight: 500;
 }
+
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+
+.accountCardContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.AccountCardContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px;
+    width: 60%;
+    height: 250px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.mainContentAccountPage {
+   margin-bottom: 600px;
+   margin-top: 150px;
+}
+
+    }

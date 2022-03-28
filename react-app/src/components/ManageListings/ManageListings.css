@@ -12,7 +12,7 @@
 }
 
 .listingsMainContent {
-    width: 70%;
+    width: 89%;
     height: fit-content;
     margin-top: 30px;
     flex-direction: column;
@@ -43,7 +43,7 @@
 .yourlistingsContainer {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: repeat(3,minmax(181px,300px));
+    grid-template-columns: repeat(4,minmax(181px,300px));
     grid-row-gap: 50px;
     row-gap: 50px;
     grid-column-gap: 20px;
@@ -83,3 +83,31 @@
     justify-content: space-between;
     width: 180px;
 }
+
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+.yourlistingsContainer {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2,minmax(181px,300px));
+    grid-row-gap: 50px;
+    row-gap: 50px;
+    grid-column-gap: 20px;
+    -webkit-column-gap: 18px;
+    column-gap: 30px;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+    margin-top: 40px;
+    min-height: 500px;
+}
+
+
+.myListingsContainer {
+    margin-top: 180px;
+    margin-bottom: 100px;
+}
+
+    }

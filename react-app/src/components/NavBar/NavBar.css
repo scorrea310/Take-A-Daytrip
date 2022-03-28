@@ -700,7 +700,8 @@ margin-top: -5px;
 .profileWindow {
     height: 200px;
     border: none;
-    border-radius: 12px
+    border-radius: 12px;
+    border: 1px solid #c1bebe;
 }
 .landingPageNavBarContainer {
     display: flex;

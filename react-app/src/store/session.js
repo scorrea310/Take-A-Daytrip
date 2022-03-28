@@ -85,7 +85,6 @@ export const updateEmail = (email, userId) => async (dispatch) => {
   } else {
     const data = await response.json();
     console.log("something went wrong with updating email.")
-    console.log(data.errors)
     return data
   }
 

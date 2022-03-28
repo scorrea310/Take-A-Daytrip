@@ -56,3 +56,37 @@
     font-weight: 500;
     margin-top: 50px;
 }
+
+
+
+@media only screen
+    and (max-device-width: 428px)
+    and (max-device-height: 926px) {
+
+
+.pastTripsMainContainer {
+    width: 100%;
+    height: fit-content;
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+}
+
+.placesYouBeenGallery {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3,minmax(181px,300px));
+    grid-row-gap: 50px;
+    row-gap: 50px;
+    grid-column-gap: 20px;
+    -webkit-column-gap: 18px;
+    column-gap: 30px;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+    margin-top: 40px;
+    min-height: 500px;
+    margin-bottom: 100px;
+}
+
+    }

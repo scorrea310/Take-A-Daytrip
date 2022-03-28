@@ -42,7 +42,6 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
     type: "Apartment"
     */
 
-    console.log(sessionUser)
 
     return (
         <div className="spotListingsPage">

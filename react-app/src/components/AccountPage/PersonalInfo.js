@@ -40,13 +40,11 @@ const PersonalInfo = () => {
         setImages(filtered);
     };
 
-    // console.log(sessionUser)
 
     const onSaveProfilePic = () => {
         setLoadingImage(true)
         const imageData = new FormData();
 
-        console.log(images[0])
 
         if (images && images.length) {
             imageData.append('images', images[0])
@@ -63,7 +61,6 @@ const PersonalInfo = () => {
     }
 
 
-    // console.log(images[0])
     return (
         <div className="personalInfoPage">
             <NavBar />
