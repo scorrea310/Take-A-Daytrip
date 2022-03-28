@@ -13,6 +13,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
 
     const sessionUser = useSelector((state) => state.session.user);
 
+
     useEffect(() => {
         window.scrollTo(0, 0)
     })
