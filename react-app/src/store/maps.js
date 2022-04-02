@@ -8,8 +8,15 @@ const loadApiKey = (key) => ({
 export const getKey = () => async (dispatch) => {
     const res = await fetch('/api/maps', {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ key: "key" }),
     });
+
     const data = await res.json();
+
+    console.log(data.key)
     dispatch(loadApiKey(data.key));
 };
 

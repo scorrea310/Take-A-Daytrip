@@ -1,7 +1,7 @@
 import NavBar from "../NavBar/NavBar";
 import "./SpotListings.css"
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SpotListingCard from "./SpotListingCard";
 import allSpotsImage from "../../images/allSpots.jpeg"
 import apartmentsImage from "../../images/apartmentSpots.jpeg"
@@ -9,10 +9,19 @@ import uniqueImage from "../../images/uniqueSpotPage.jpeg"
 import outdoorImage from "../../images/outdoorsSpotPage.jpeg"
 import houseImage from "../../images/houseSpotPage.jpeg"
 import Footer from "../Footer/Footer";
-const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
+import { getKey } from '../../store/maps';
+import Maps from "../Maps/Maps";
 
+const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
+    const key = useSelector((state) => state.mapsReducer.key);
+    const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
 
+    useEffect(() => {
+        if (!key) {
+            dispatch(getKey());
+        }
+    }, [dispatch, key]);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -43,6 +52,9 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
     type: "Apartment"
     */
 
+    if (!key) {
+        return null;
+    }
 
     return (
         <div className="spotListingsPage">
@@ -109,7 +121,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                     })}
                 </div>
                 <div className="listingsImageContainer">
-                    <div style={{ width: "100%", height: "90%", backgroundImage: `url(${imageUrl})`, backgroundSize: "cover", borderRadius: "12px", backgroundPosition: "center" }}></div>
+                    <Maps apiKey={key} />
                 </div>
             </div>
         </div>
