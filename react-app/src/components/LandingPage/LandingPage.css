@@ -42,7 +42,7 @@
     margin-top: 50px;
     margin-left: 100px;
     flex-direction: column;
-    width: 250px
+    width: 300px
 }
 
 .createListingButtonLandingPage {
@@ -65,8 +65,8 @@
 
 .earnIncomeText {
     color: white;
-    margin-bottom: 25px;
-    font-size: 16px;
+    margin-bottom: 30px;
+    font-size: 20px;
 }
 
 .tryHostingCard {
