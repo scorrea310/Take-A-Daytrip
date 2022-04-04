@@ -15,10 +15,68 @@
     height: 480px;
     background-image: url("../../images/houseWoodsLandingPage.jpeg");
     background-size: cover;
-    background-position:center;
+    background-position: center;
     margin-top: 80px;
     margin-bottom: 80px;
-    
+
+}
+
+.tryHostingContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.becomeAHostBigText {
+    display: flex;
+    justify-content: flex-start;
+    width: 89%;
+    font-size: 40px;
+}
+
+.tryHostingContentCardMain {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 100px;
+    flex-direction: column;
+    width: 250px
+}
+
+.createListingButtonLandingPage {
+    width: 180px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E61E4D;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+}
+
+.tryHostingLargeText {
+    font-size: 35px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.earnIncomeText {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.tryHostingCard {
+    width: 89%;
+    height: 450px;
+    background-image: url("../../images/try\ hosting.jpeg");
+    background-size: cover;
+    border-radius: 12px;
+    margin-top: 50px;
+    font-weight: 600;
 }
 
 .landingPageBigImageContainer {
@@ -48,7 +106,7 @@
     color: white;
     margin-bottom: 20px;
     font-weight: 400;
-    
+
 }
 
 .landingPageCategorySection {
@@ -59,7 +117,7 @@
     align-items: center;
 }
 
-.categorySectionContainer{
+.categorySectionContainer {
     width: 89%;
     /* background-color: rgb(247, 80, 80); */
     height: fit-content;
@@ -70,7 +128,8 @@
 .inspritationForYourText {
     margin-top: 100px;
     font-size: 40px;
-    font-weight: 600;;
+    font-weight: 600;
+    ;
 }
 
 .landingPageCardSection {
@@ -102,6 +161,7 @@
     margin-right: 30px;
     cursor: pointer;
 }
+
 .thirdCategoryCard {
     display: flex;
     flex-direction: column;
@@ -178,180 +238,179 @@
 } */
 
 
-@media only screen
-    and (max-device-width: 428px)
-    and (max-device-height: 926px)
-    and (-webkit-min-device-pixel-ratio: 3) 
-    {
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-min-device-pixel-ratio: 3) {
 
- .landingPageBigImageAndButtonContainer {
-    width: 89%;
-    padding: 0;
-    height: 850px;
-}
-
-.btn.imFlexibleButton {
-    height: 90px;
-    width: 180px;
-    font-size: 23px;
-    border-radius: 44px;
-}
-.inspritationForYourText {
-    font-size: 40px;
-}
-
-.landingPageBigImageContainer {
-    margin-top: 170px;
-    height:fit-content;
-    margin-top: 140px;
-;
-}
-
-.notSureWhereText {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 55px;
-}
-.categorySectionContainer {
-    overflow: hidden;
-}
-
-.landingPageCategorySection {
-    height: fit-content
-}
-
-.landingPageCardSection {
-    flex-direction: row;
-    align-items: center;
-    overflow-x: scroll;
-    width: 100%;
-    
-}
-
-.firstCategoryCard {
-    min-width: 40%;
-    margin-right: 20px;
-    height: 450px;
-}
-
-.secondCategoryCard  {
-    min-width: 40%;
-    margin-right: 20px;
-    height: 450px;
-}
-
-.thirdCategoryCard {
-    min-width: 40%;
-    margin-right: 20px;
-    height: 450px;
-}    
-
-.rightCategoryCard {
-    min-width: 40%;
-    margin-right: 20px;
-    height: 450px;
-}
-    } 
-
-@media only screen 
-        and (max-width: 1245px)
-        and (max-height: 1085px) {
     .landingPageBigImageAndButtonContainer {
-    width: 89%;
-    padding: 0;
-    height: 530px;
-    
-}
-
-.btn.imFlexibleButton {
-    border-radius: 24px;
-    height: 48px;
-    cursor: pointer;
-    border: none;
-    margin-bottom: 60px;
-}
-.inspritationForYourText {
-    font-size: 40px;
-}
-
-.landingPageBigImageContainer {
-    margin-top: 60px;
-    height:fit-content
-}
-
-.notSureWhereText {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    font-size: 40px;
-    /* background-color: blue; */
-}
-.categorySectionContainer {
-    overflow: hidden;
-}
-
-.landingPageCategorySection {
-    height: fit-content
-}
-
-.landingPageCardSection {
-    flex-direction: row;
-    align-items: center;
-    overflow-x: scroll;
-    width: 100%;
-    
-}
-
-.firstCategoryCard {
-    min-width: 305px;
-    margin-right: 20px;
-    height: 450px;
-}
-
-.secondCategoryCard  {
-    min-width: 305px;
-    margin-right: 20px;
-    height: 450px;
-}
-
-.thirdCategoryCard {
-    min-width: 305px;
-    margin-right: 20px;
-    height: 450px;
-}    
-
-.rightCategoryCard {
-    min-width: 305px;
-    margin-right: 20px;
-    height: 450px;
-}
-}
-
-
-
-@media only screen
-    and (min-device-width: 1560px)
-    and (min-height: 900px) {
-
-        .firstCategoryCard {
-            height: 480px
-        }
-
-        .secondCategoryCard {
-            height: 480px
-        }
-        .thirdCategoryCard {
-            height: 480px
-        }
-        .rightCategoryCard {
-            height: 480px   
-        }
-
-        .landingPageBigImageAndButtonContainer {
-            height: 680px;
-        }
-        .formAndNextButtonContainer {
-                min-height: 80vh;
-        }
+        width: 89%;
+        padding: 0;
+        height: 850px;
     }
+
+    .btn.imFlexibleButton {
+        height: 90px;
+        width: 180px;
+        font-size: 23px;
+        border-radius: 44px;
+    }
+
+    .inspritationForYourText {
+        font-size: 40px;
+    }
+
+    .landingPageBigImageContainer {
+        margin-top: 170px;
+        height: fit-content;
+        margin-top: 140px;
+        ;
+    }
+
+    .notSureWhereText {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 55px;
+    }
+
+    .categorySectionContainer {
+        overflow: hidden;
+    }
+
+    .landingPageCategorySection {
+        height: fit-content
+    }
+
+    .landingPageCardSection {
+        flex-direction: row;
+        align-items: center;
+        overflow-x: scroll;
+        width: 100%;
+
+    }
+
+    .firstCategoryCard {
+        min-width: 40%;
+        margin-right: 20px;
+        height: 450px;
+    }
+
+    .secondCategoryCard {
+        min-width: 40%;
+        margin-right: 20px;
+        height: 450px;
+    }
+
+    .thirdCategoryCard {
+        min-width: 40%;
+        margin-right: 20px;
+        height: 450px;
+    }
+
+    .rightCategoryCard {
+        min-width: 40%;
+        margin-right: 20px;
+        height: 450px;
+    }
+}
+
+@media only screen and (max-width: 1245px) and (max-height: 1085px) {
+    .landingPageBigImageAndButtonContainer {
+        width: 89%;
+        padding: 0;
+        height: 530px;
+
+    }
+
+    .btn.imFlexibleButton {
+        border-radius: 24px;
+        height: 48px;
+        cursor: pointer;
+        border: none;
+        margin-bottom: 60px;
+    }
+
+    .inspritationForYourText {
+        font-size: 40px;
+    }
+
+    .landingPageBigImageContainer {
+        margin-top: 60px;
+        height: fit-content
+    }
+
+    .notSureWhereText {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        font-size: 40px;
+        /* background-color: blue; */
+    }
+
+    .categorySectionContainer {
+        overflow: hidden;
+    }
+
+    .landingPageCategorySection {
+        height: fit-content
+    }
+
+    .landingPageCardSection {
+        flex-direction: row;
+        align-items: center;
+        overflow-x: scroll;
+        width: 100%;
+
+    }
+
+    .firstCategoryCard {
+        min-width: 305px;
+        margin-right: 20px;
+        height: 450px;
+    }
+
+    .secondCategoryCard {
+        min-width: 305px;
+        margin-right: 20px;
+        height: 450px;
+    }
+
+    .thirdCategoryCard {
+        min-width: 305px;
+        margin-right: 20px;
+        height: 450px;
+    }
+
+    .rightCategoryCard {
+        min-width: 305px;
+        margin-right: 20px;
+        height: 450px;
+    }
+}
+
+
+
+@media only screen and (min-device-width: 1560px) and (min-height: 900px) {
+
+    .firstCategoryCard {
+        height: 480px
+    }
+
+    .secondCategoryCard {
+        height: 480px
+    }
+
+    .thirdCategoryCard {
+        height: 480px
+    }
+
+    .rightCategoryCard {
+        height: 480px
+    }
+
+    .landingPageBigImageAndButtonContainer {
+        height: 680px;
+    }
+
+    .formAndNextButtonContainer {
+        min-height: 80vh;
+    }
+}
