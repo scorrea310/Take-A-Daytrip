@@ -6,9 +6,11 @@ import Footer from "../Footer/Footer"
 import { useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 
+
 const LandingPage = () => {
 
     const sessionUser = useSelector((state) => state.session.user);
+    const loginModal = useSelector((state) => state.modals.loginModal)
 
     //outdoors, apartments, house, unique 
     const history = useHistory()
@@ -38,9 +40,18 @@ const LandingPage = () => {
                     <div className="tryHostingContentCardMain">
                         <div className="tryHostingLargeText">Try Hosting</div>
                         <div className="earnIncomeText">Earn extra income and unlock new opportunities by sharing your space</div>
-                        <div className="createListingButtonLandingPage">Create Listing</div>
+                        <div onClick={() => {
+                            if (sessionUser) {
+                                history.push("/spots/new")
+                            } else {
+                                loginModal(true)
+                            }
+                        }} className="createListingButtonLandingPage">Create Listing</div>
                     </div>
                 </div>
+            </div>
+            <div className="discoverExperiencesContainer">
+                <div className="discoverExperiencesBigText">Discover Experiences</div>
             </div>
             <Footer />
         </div>

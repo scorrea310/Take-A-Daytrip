@@ -13,67 +13,65 @@
 }
 
 .btn.loginButtonInmodal {
-  width: 70%;
-  border-radius: 24px;
+  width: 80%;
+  border-radius: 12px;
   height: 48px;
+  background-color: #E61E4D;
+  border: none;
 }
 
 .btn.demoButtonInmodal {
-   width: 70%;
-  border-radius: 24px;
+  width: 70%;
+  border-radius: 12px;
   height: 48px;
-  background-color: white;
-  border: 2px solid #222;
-  color: black;
+  background-color: #E61E4D;
+  color: white;
+  border: none;
 }
 
 .btn.loginButtonInmodal:hover {
-  width: 70%;
-  border-radius: 24px;
+  width: 80%;
   height: 48px;
   cursor: pointer;
 }
 
 .btn.demoButtonInmodal:hover {
-   width: 70%;
-  border-radius: 24px;
+  width: 70%;
   height: 48px;
-  background-color: white;
-  border: 2px solid #222;
-  color: black;
   cursor: pointer;
 }
 
 
 .btn.signUpmodal {
   width: 70%;
-  border-radius: 24px;
+  border-radius: 12px;
   height: 48px;
+  background-color: #E61E4D;
+  border: none;
 }
 
 .btn.signUpmodal:hover {
   width: 70%;
-  border-radius: 24px;
   height: 48px;
   cursor: pointer;
 }
 
 .btn.cancelReservationButton {
-   border-radius: 24px;
-    height: 48px;
-    cursor: pointer;
-    background-color: red;
-    border: none;
-    margin-right: 20px;
-    width: 70px;
+  border-radius: 24px;
+  height: 48px;
+  cursor: pointer;
+  background-color: red;
+  border: none;
+  margin-right: 20px;
+  width: 70px;
 }
 
 .btn.noCancelReservationButton {
-   border-radius: 24px;
-    height: 48px;
-    cursor: pointer;
-    background-color: black;
-    border: none;
-    margin-right: 20px;
-    width: 70px;
+  border-radius: 24px;
+  height: 48px;
+  cursor: pointer;
+  background-color: black;
+  border: none;
+  margin-right: 20px;
+  width: 70px;
 }
