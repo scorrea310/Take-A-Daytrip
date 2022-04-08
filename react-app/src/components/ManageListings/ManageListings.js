@@ -18,6 +18,13 @@ const ManageListings = () => {
     const mySpots = spotValues.filter((spot) => +spot.host_id === sessionUser.id)
     const [loaded, setLoaded] = useState(false);
 
+    /*
+    here, instead of dispatching loadSpots again, we dispatch
+    load users_listings thunk.
+
+    1. create users_listings reducer
+    2. create api routes to get those listings.
+    */
     useEffect(() => {
         dispatch(loadSpotsFunc()).then(() => setLoaded(true))
     }, [dispatch])

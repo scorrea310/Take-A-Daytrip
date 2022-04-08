@@ -56,13 +56,13 @@ const LandingPage = () => {
                     <div className="bigOutdoorCard">
                         <div className="thingsToDoOutsideContainer">
                             <div className="thingsToDoOutsideText">Things to do Outside</div>
-                            <div className="outdoorExperiencesButton">Outdoor Experiences</div>
+                            <div onClick={() => history.push("/outdoors")} className="outdoorExperiencesButton">Outdoor Experiences</div>
                         </div>
                     </div>
                     <div className="bigUniqueCard">
                         <div className="uniqueThingsToDo">
                             <div className="uniqueThingstoDoText">Unique things to do</div>
-                            <div className="uniqueExperencesButtonBigCard">Unique Experiences</div>
+                            <div onClick={() => history.push("/unique")} className="uniqueExperencesButtonBigCard">Unique Experiences</div>
                         </div>
                     </div>
                 </div>
