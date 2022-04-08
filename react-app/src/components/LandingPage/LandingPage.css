@@ -92,11 +92,17 @@
 }
 
 .uniqueAndOutdoorCardContainer {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 620px 620px;
+    grid-column-gap: 10px;
+    -webkit-column-gap: 18px;
+    column-gap: 18px;
+    justify-items: stretch;
+    grid-auto-flow: row;
     width: 89%;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    max-width: 89%;
+    overflow-x: auto;
 }
 
 .bigOutdoorCard {
@@ -106,6 +112,62 @@
     background-size: cover;
     background-position: 15%;
     border-radius: 12px;
+    display: flex;
+}
+
+.thingsToDoOutsideContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    margin-top: 60px;
+    width: 300px
+}
+
+.uniqueThingsToDo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    margin-top: 60px;
+    width: 300px
+}
+
+.outdoorExperiencesButton {
+    width: 180px;
+    height: 48px;
+    font-size: 17px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.uniqueExperencesButtonBigCard {
+    width: 180px;
+    height: 48px;
+    font-size: 17px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+}
+
+.thingsToDoOutsideText {
+    font-size: 53px;
+    color: white;
+    font-weight: 450;
+    margin-bottom: 30px;
+}
+
+.uniqueThingstoDoText {
+    font-size: 53px;
+    color: white;
+    font-weight: 450;
+    margin-bottom: 30px;
 }
 
 .bigUniqueCard {
@@ -281,7 +343,7 @@
 } */
 
 
-@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
 
     .landingPageBigImageAndButtonContainer {
         width: 89%;
@@ -353,12 +415,40 @@
         height: fit-content
     }
 
+    .uniqueAndOutdoorCardContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .landingPageCardSection {
         flex-direction: row;
         align-items: center;
         overflow-x: scroll;
         width: 100%;
+    }
 
+    .bigOutdoorCard {
+        height: 728px;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .bigUniqueCard {
+        height: 728px;
+        width: 100%;
+    }
+
+    .outdoorExperiencesButton {
+        width: 280px;
+        height: 68px;
+        font-size: 23px;
+    }
+
+    .uniqueExperencesButtonBigCard {
+        width: 280px;
+        height: 68px;
+        font-size: 23px;
     }
 
     .firstCategoryCard {
@@ -486,5 +576,19 @@
 
     .formAndNextButtonContainer {
         min-height: 80vh;
+    }
+
+    .uniqueAndOutdoorCardContainer {
+        grid-template-columns: 828px 828px;
+    }
+
+    .bigOutdoorCard {
+        width: 828px;
+        height: 728px;
+    }
+
+    .bigUniqueCard {
+        width: 828px;
+        height: 728px;
     }
 }
