@@ -72,7 +72,7 @@ const LoginForm = ({ setShowLoginModal }) => {
                         placeholder="Email"
                         value={email}
                         onChange={updateEmail}
-                        className="loginInputBar"
+                        className="emailLoginInputBar"
                         required={true}
                     />
                 </div>
@@ -83,7 +83,7 @@ const LoginForm = ({ setShowLoginModal }) => {
                         placeholder="Password"
                         value={password}
                         onChange={updatePassword}
-                        className="loginInputBar"
+                        className="passwordInputBarLogin"
                         required={true}
                     />
                 </div>

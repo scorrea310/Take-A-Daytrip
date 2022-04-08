@@ -71,6 +71,11 @@
     font-size: 18px;
 }
 
+.signupInput:focus {
+    outline: none !important;
+    border: 2px solid black;
+}
+
 .signupButtonContainer {
     display: flex;
     width: 100%;

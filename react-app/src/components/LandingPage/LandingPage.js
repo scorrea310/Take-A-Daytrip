@@ -52,6 +52,10 @@ const LandingPage = () => {
             </div>
             <div className="discoverExperiencesContainer">
                 <div className="discoverExperiencesBigText">Discover Experiences</div>
+                <div className="uniqueAndOutdoorCardContainer">
+                    <div className="bigOutdoorCard"></div>
+                    <div className="bigUniqueCard"></div>
+                </div>
             </div>
             <Footer />
         </div>
