@@ -69,41 +69,41 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                     })}
                     {apartments && Object.values(spots).map((spot) => {
                         if (sessionUser) {
-                            if (+spot.host_id !== sessionUser?.id) {
+                            if (+spot.host_id !== sessionUser?.id && spot.type === "Apartment") {
                                 return <SpotListingCard key={spot.id} spot={spot} />
 
                             }
-                        } else {
+                        } else if (spot.type === "Apartment") {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
                     {outdoors && Object.values(spots).map((spot) => {
                         if (sessionUser) {
-                            if (+spot.host_id !== sessionUser?.id) {
+                            if (+spot.host_id !== sessionUser?.id && spot.type === "Outdoor") {
                                 return <SpotListingCard key={spot.id} spot={spot} />
 
                             }
-                        } else {
+                        } else if (spot.type === "Outdoor") {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
                     {houses && Object.values(spots).map((spot) => {
                         if (sessionUser) {
-                            if (+spot.host_id !== sessionUser?.id) {
+                            if (+spot.host_id !== sessionUser?.id && spot.type === "House") {
                                 return <SpotListingCard key={spot.id} spot={spot} />
 
                             }
-                        } else {
+                        } else if (spot.type === "House") {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}
                     {unique && Object.values(spots).map((spot) => {
                         if (sessionUser) {
-                            if (+spot.host_id !== sessionUser?.id) {
+                            if (+spot.host_id !== sessionUser?.id && spot.type === "Unique Experience") {
                                 return <SpotListingCard key={spot.id} spot={spot} />
 
                             }
-                        } else {
+                        } else if (spot.type === "Unique Experience") {
                             return <SpotListingCard key={spot.id} spot={spot} />
                         }
                     })}

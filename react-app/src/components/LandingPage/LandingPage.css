@@ -197,13 +197,15 @@
 
 .btn.imFlexibleButton {
     border-radius: 34px;
-    width: 140px;
+    width: 160px;
     height: 58px;
     cursor: pointer;
     border: none;
-    margin-bottom: 30px;
-    font-size: 16px;
-    font-weight: 650
+    margin-bottom: 60px;
+    font-size: 18px;
+    font-weight: 650;
+    background-color: white;
+    color: #C6017E;
 }
 
 .notSureWhereText {
@@ -348,14 +350,18 @@
     .landingPageBigImageAndButtonContainer {
         width: 89%;
         padding: 0;
-        height: 850px;
+        height: 950px;
     }
 
     .btn.imFlexibleButton {
-        height: 90px;
-        width: 180px;
-        font-size: 23px;
-        border-radius: 44px;
+        height: 100px;
+        width: 300px;
+        font-size: 35px;
+        border-radius: 50px;
+        background-color: white;
+        color: #C6017E;
+        margin-top: 30px;
+        margin-bottom: 80px;
     }
 
     .inspritationForYourText {
@@ -384,6 +390,30 @@
         font-size: 60px;
     }
 
+    .thingsToDoOutsideText {
+        font-size: 63px;
+        width: 350px;
+    }
+
+    .thingsToDoOutsideContainer {
+        margin-left: 90px;
+        margin-top: 60px;
+    }
+
+    .cardTitleLandingPage {
+        font-size: 50px;
+    }
+
+    .uniqueThingsToDo {
+        margin-left: 90px;
+        margin-top: 60px;
+    }
+
+    .uniqueThingstoDoText {
+        font-size: 63px;
+        width: 350px;
+    }
+
     .tryHostingContentCardMain {
         width: 500px
     }
@@ -398,13 +428,15 @@
         margin-top: 170px;
         height: fit-content;
         margin-top: 140px;
+        background-color: white;
     }
 
     .notSureWhereText {
         width: 100%;
         display: flex;
         justify-content: center;
-        font-size: 55px;
+        font-size: 70px;
+        text-align: center;
     }
 
     .categorySectionContainer {
@@ -429,26 +461,27 @@
     }
 
     .bigOutdoorCard {
-        height: 728px;
+        height: 928px;
         width: 100%;
         margin-bottom: 50px;
+
     }
 
     .bigUniqueCard {
-        height: 728px;
+        height: 928px;
         width: 100%;
     }
 
     .outdoorExperiencesButton {
-        width: 280px;
-        height: 68px;
-        font-size: 23px;
+        width: 330px;
+        height: 78px;
+        font-size: 30px;
     }
 
     .uniqueExperencesButtonBigCard {
-        width: 280px;
-        height: 68px;
-        font-size: 23px;
+        width: 330px;
+        height: 78px;
+        font-size: 30px;
     }
 
     .firstCategoryCard {
