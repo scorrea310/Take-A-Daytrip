@@ -5,8 +5,8 @@
     flex-direction: column;
 }
 
-.closeIconAndCreateAccountText{
-     display: flex;
+.closeIconAndCreateAccountText {
+    display: flex;
     flex-direction: row;
     width: 100%;
     height: 64px;
@@ -15,7 +15,7 @@
 }
 
 .closeSignUpContainer {
-     width: 15%;
+    width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,6 @@
     background-color: #DDDDDD;
     width: 30px;
     height: 30px
-    
 }
 
 .closeSignUpModalIcon {
@@ -68,8 +67,13 @@
 
 .signupInput {
     width: 90%;
-    height: 35px;  
+    height: 35px;
     font-size: 18px;
+}
+
+.signupInput:focus {
+    outline: none !important;
+    border: 2px solid black;
 }
 
 .signupButtonContainer {
@@ -95,21 +99,20 @@
     align-items: center;
     flex-direction: column;
     font-size: 20px;
-    color: hsl(357deg 91% 59%);
-    
+    color: #E61E4D;
+
 }
 
 .welcomeToTakeAText {
     text-align: center;
+
 }
 
-@media only screen
-    and (max-device-width: 428px)
-    and (max-device-height: 926px) {
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
 
-        .signupErrorsContainer {
-    color: hsl(357deg 91% 59%);
-    font-size: 20px;
-   
-}
+    .signupErrorsContainer {
+        color: hsl(357deg 91% 59%);
+        font-size: 20px;
+
     }
+}

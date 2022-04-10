@@ -21,8 +21,6 @@ const MyTrips = ({ reservationsLoaded }) => {
 
             setIsloaded(true)
         })
-
-
     }, [dispatch, sessionUser.id])
 
 
@@ -38,14 +36,7 @@ const MyTrips = ({ reservationsLoaded }) => {
                 <div className="TripsTextTripsPage"> Upcoming Trips</div>
                 <div className="tripsSpotCardSection">
                     {Object.values(reservations).length > 0 && Object.values(reservations).map((reservation) => {
-                        let startDate = reservation.check_in.split(" ")
-                        let reservationCheckInDateObject = new Date(startDate[0].replace(/-/g, '\/'));
-                        reservationCheckInDateObject.setMilliseconds(0)
-
-                        if (reservationCheckInDateObject.getTime() >= today.getTime()) {
-
-                            return <ReservedSpotCard key={reservation.id} reservation={reservation} />
-                        }
+                        return <ReservedSpotCard key={reservation.id} reservation={reservation} />
                     })}
                     {Object.values(reservations).length === 0 && <div className="noTripsSection">No trips booked...yet!</div>}
                 </div>

@@ -65,9 +65,6 @@ const LoginForm = ({ setShowLoginModal }) => {
 
             </div>
             <div id="loginContainer">
-                <div className="loginLabelTextContainer">
-                    <label htmlFor="email">Email address</label>
-                </div>
                 <div>
                     <input
                         name="email"
@@ -75,12 +72,9 @@ const LoginForm = ({ setShowLoginModal }) => {
                         placeholder="Email"
                         value={email}
                         onChange={updateEmail}
-                        className="loginInputBar"
+                        className="emailLoginInputBar"
                         required={true}
                     />
-                </div>
-                <div className="loginLabelTextContainer">
-                    <label htmlFor="password">Password</label>
                 </div>
                 <div>
                     <input
@@ -89,7 +83,7 @@ const LoginForm = ({ setShowLoginModal }) => {
                         placeholder="Password"
                         value={password}
                         onChange={updatePassword}
-                        className="loginInputBar"
+                        className="passwordInputBarLogin"
                         required={true}
                     />
                 </div>
