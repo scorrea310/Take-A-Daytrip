@@ -4,12 +4,14 @@ import session from './session'
 import spotReducer from './spotReducer';
 import reservationsReducer from './reservationsReducer';
 import loginAndSignUpModalReducer from './LoginAndRegisterModals';
+import myListingsReducer from './myListings';
 
 const rootReducer = combineReducers({
   session,
   spotReducer,
   reservationsReducer,
-  modals: loginAndSignUpModalReducer
+  modals: loginAndSignUpModalReducer,
+  myListings: myListingsReducer
 });
 
 
