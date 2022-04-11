@@ -4,6 +4,7 @@ import ReservedSpotCard from "./ReservedSpotCard"
 import { loadreservationsthunk } from "../../store/reservationsReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { formatDistanceToNow, isPast, isToday, compareAsc } from "date-fns";
 
 const MyTrips = ({ reservationsLoaded }) => {
     const dispatch = useDispatch();
@@ -15,13 +16,20 @@ const MyTrips = ({ reservationsLoaded }) => {
     today.setMinutes(0)
     today.setSeconds(0)
     today.setMilliseconds(0)
+    const [upcomingReservations, setUpcomingReservations] = useState(false)
 
     useEffect(() => {
         dispatch(loadreservationsthunk(sessionUser.id)).then((reservations) => {
+            let upcomingReservationsArray = Object.values(reservations).filter((reservation) => {
+                if (!isPast(new Date(reservation.check_in)) || isToday(new Date(reservation.check_in))) {
+                    return reservation;
+                }
+            })
 
+            setUpcomingReservations(upcomingReservationsArray)
             setIsloaded(true)
         })
-    }, [dispatch, sessionUser.id])
+    }, [dispatch, sessionUser.id, upcomingReservations])
 
 
     if (!isLoaded) {
@@ -35,10 +43,10 @@ const MyTrips = ({ reservationsLoaded }) => {
             <div className="mainContentTripsPage">
                 <div className="TripsTextTripsPage"> Upcoming Trips</div>
                 <div className="tripsSpotCardSection">
-                    {Object.values(reservations).length > 0 && Object.values(reservations).map((reservation) => {
+                    {upcomingReservations.length > 0 && upcomingReservations.map((reservation) => {
                         return <ReservedSpotCard key={reservation.id} reservation={reservation} />
                     })}
-                    {Object.values(reservations).length === 0 && <div className="noTripsSection">No trips booked...yet!</div>}
+                    {upcomingReservations.length === 0 && <div className="noTripsSection">No trips booked...yet!</div>}
                 </div>
             </div>
 
