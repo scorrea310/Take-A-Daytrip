@@ -97,9 +97,6 @@ def get_spots():
     for spot in all_spots:
         return_spots[spot.id] = spot.to_dict()
 
-
-    # click.echo(click.style(str(return_spots), bg='red', fg='white'))
-
     return {"spots": return_spots}
 
 
@@ -129,7 +126,6 @@ def update_spot(id):
 
         return old_spot.to_dict()
 
-    # click.echo(click.style(str(form.errors), bg='red', fg='white'))
     return {"errors": form.errors}, 400
 
 
@@ -143,3 +139,20 @@ def delete_cart_item(id):
     db.session.commit()
 
     return {"message": "deleted"}
+
+
+@spot_routes.route("/users_listings/<int:id>")
+def get_a_users_listings(id):
+    """
+    GETS listings belonging to a user
+    """ 
+
+    users_listings = Spot.query.filter(Spot.host_id == id)
+
+    listings_under_user= {}
+
+    for listing in users_listings:
+        listings_under_user[listing.id] = listing.to_dict()
+
+    return {"my_listings": listings_under_user}
+    
