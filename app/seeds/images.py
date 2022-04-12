@@ -33,6 +33,10 @@ def seed_images():
     image30 = Image(spot_id=15, image_url="https://take-a-daytrip.s3.amazonaws.com/uniqueCooking2.jpeg")
     image31 = Image(spot_id=16, image_url="https://take-a-daytrip.s3.amazonaws.com/uniquePlane.jpeg")
     image32 = Image(spot_id=16, image_url="https://take-a-daytrip.s3.amazonaws.com/uniquePlane2.jpeg")
+    image33 = Image(spot_id=17, image_url="https://take-a-daytrip.s3.amazonaws.com/rockClimbing1.jpeg")
+    image34 = Image(spot_id=17, image_url="https://take-a-daytrip.s3.amazonaws.com/rockClimbing2.jpeg")
+    image35 = Image(spot_id=18, image_url="https://take-a-daytrip.s3.amazonaws.com/house18.jpeg")
+    image36 = Image(spot_id=18, image_url="https://take-a-daytrip.s3.amazonaws.com/house19.jpeg")
 
     db.session.add(image1)
     db.session.add(image2)
@@ -66,6 +70,10 @@ def seed_images():
     db.session.add(image30)
     db.session.add(image31)
     db.session.add(image32)
+    db.session.add(image33)
+    db.session.add(image34)
+    db.session.add(image35)
+    db.session.add(image36)
 
     db.session.commit()
 
