@@ -12,7 +12,6 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import { setModals } from "../../store/LoginAndRegisterModals"
 import { useDispatch, useSelector } from 'react-redux';
 import MobileNav from "./MobileNav"
-import { debounce } from "../utilities/helpers"
 
 const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
 
@@ -55,13 +54,7 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
         centerNavBarClassName = "centerNavBarContainer"
     }
 
-    const handleScroll = debounce(() => {
-        const currentScrollPos = window.pageYOffset;
 
-        setVisible((prevScrollPos > currentScrollPos))
-
-        setPrevScrollPos(currentScrollPos);
-    }, 100);
 
     useEffect(() => {
 
@@ -69,11 +62,32 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
     }, [dispatch])
 
     useEffect(() => {
+
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+
+            if (currentScrollPos === 0) {
+                setVisible(true)
+
+            } else {
+                if (prevScrollPos - currentScrollPos > 8) {
+                    setVisible(true)
+                    setPrevScrollPos(currentScrollPos + 8);
+                } else {
+                    setVisible(false)
+                    setPrevScrollPos(currentScrollPos);
+                }
+
+            }
+
+
+
+        };
         window.addEventListener('scroll', handleScroll);
 
         return () => window.removeEventListener('scroll', handleScroll);
 
-    }, [prevScrollPos, visible, handleScroll]);
+    }, [prevScrollPos, visible]);
 
     return (
         <>
