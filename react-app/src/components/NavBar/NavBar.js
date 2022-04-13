@@ -22,11 +22,10 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
     const session = useSelector((state) => state.session.user);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showSignUpModal, setShowSignupModal] = useState(false);
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
-    const [visible, setVisible] = useState(true);
 
     let centerNavBarClassName;
     let navBarContainerClassName;
+
     //spotPageNavBarContainer
     if (spotPage === true) {
         centerNavBarClassName = "spotPageNavBar"
@@ -61,40 +60,11 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
         dispatch(setModals(setShowLoginModal, setShowSignupModal))
     }, [dispatch])
 
-    useEffect(() => {
-
-        const handleScroll = () => {
-            const currentScrollPos = window.pageYOffset;
-
-            if (currentScrollPos === 0) {
-                setVisible(true)
-
-            } else {
-                if (prevScrollPos - currentScrollPos > 8) {
-                    setVisible(true)
-                    setPrevScrollPos(currentScrollPos + 8);
-                } else {
-                    setVisible(false)
-                    setPrevScrollPos(currentScrollPos);
-                }
-
-            }
-
-
-
-        };
-        window.addEventListener('scroll', handleScroll);
-
-        return () => window.removeEventListener('scroll', handleScroll);
-
-    }, [prevScrollPos, visible]);
-
     return (
         <>
             <div className={navBarContainerClassName}>
                 <div className={centerNavBarClassName}>
                     <div className="navLogoContainer">
-                        <div id="navLogo" ></div>
                         <NavLink to="/" className="takeADayTripText">Take A Daytrip</NavLink>
                     </div>
                     <div className="placesToStayTextContainer"> <div className="placesToStayButtonContainer" onClick={() => history.push("/allspots")}>Places to Stay</div>
@@ -125,7 +95,7 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
                     </div>
                 </div>
             </div>
-            {visible && <MobileNav />}
+            <MobileNav />
 
         </>
     )
