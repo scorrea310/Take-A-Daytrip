@@ -1,0 +1,18 @@
+.mobileNav {
+    position: fixed;
+    bottom: 0;
+    display: none;
+    width: 100vw;
+    height: 130px;
+    background-color: white;
+    border-top: 1px solid #DDDDDD;
+    margin-bottom: -5px;
+}
+
+
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
+    .mobileNav {
+        display: flex;
+        justify-content: center;
+    }
+}

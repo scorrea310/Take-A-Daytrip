@@ -9,9 +9,10 @@ import SignUpForm from "../SignUpForm/SignUpForm"
 import { NavLink } from "react-router-dom"
 import { useHistory } from "react-router-dom"
 import OutsideClickHandler from 'react-outside-click-handler';
-import { useLayoutEffect } from "react"
 import { setModals } from "../../store/LoginAndRegisterModals"
 import { useDispatch, useSelector } from 'react-redux';
+import MobileNav from "./MobileNav"
+import { debounce } from "../utilities/helpers"
 
 const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
 
@@ -22,6 +23,8 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
     const session = useSelector((state) => state.session.user);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showSignUpModal, setShowSignupModal] = useState(false);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
 
     let centerNavBarClassName;
     let navBarContainerClassName;
@@ -52,10 +55,25 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
         centerNavBarClassName = "centerNavBarContainer"
     }
 
+    const handleScroll = debounce(() => {
+        const currentScrollPos = window.pageYOffset;
+
+        setVisible((prevScrollPos > currentScrollPos))
+
+        setPrevScrollPos(currentScrollPos);
+    }, 100);
+
     useEffect(() => {
 
         dispatch(setModals(setShowLoginModal, setShowSignupModal))
     }, [dispatch])
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+
+    }, [prevScrollPos, visible, handleScroll]);
 
     return (
         <>
@@ -91,10 +109,10 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
                             )}
                         </OutsideClickHandler>
                     </div>
-
                 </div>
-
             </div>
+            {visible && <MobileNav />}
+
         </>
     )
 }
