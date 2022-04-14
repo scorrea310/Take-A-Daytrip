@@ -452,6 +452,7 @@
 
     .NavBarContainer {
         height: 185px;
+        box-shadow: rgb(0 0 0 / 25%) 0 1px 12px;
     }
 
     .addSpotSlidesNavBar {
@@ -668,7 +669,7 @@
         justify-content: center;
         position: fixed;
         top: 0;
-        box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+        box-shadow: rgb(0 0 0 / 25%) 0 1px 12px;
         /* padding-left: 4px;
     padding-right: 5px; */
         margin-top: -5px;
@@ -709,11 +710,11 @@
 
 
     .navLogoContainer {
-        width: 35%;
+        width: fit-content;
     }
 
     .takeADayTripText {
-        font-size: 45px;
+        font-size: 50px;
         display: block;
         height: fit-content
     }
