@@ -134,8 +134,10 @@
 
 @media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
     .reserveASpotContainer {
-        height: 650px;
-        width: 650px;
+        height: fit-content;
+        width: fit-content;
+        position: relative;
+        top: 0;
     }
 
     .reservePricePerDayContainer {
@@ -145,6 +147,11 @@
     .makeReservationMainContent {
         width: 500px;
         height: fit-content;
+    }
+
+    .btn.addReserveationButton {
+        font-size: 20px;
+        height: 55px;
     }
 
     .reserveMainBox {

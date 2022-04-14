@@ -7,7 +7,8 @@
     background-color: white;
     border-top: 1px solid #DDDDDD;
     margin-bottom: -5px;
-    transition: 'top 0.2s'
+    transition: 'top 0.2s';
+    z-index: 900;
 }
 
 .signedOutMobileNavMainContent {
