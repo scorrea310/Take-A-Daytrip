@@ -42,8 +42,8 @@ const ReservedSpotCard = ({ reservation }) => {
                 <div className="yourGoingToTextAndEditContainer">
                     <div className="yourGoingToText">You're going to {reservation.spot_name}</div>
                     <div className="editAndDeleteReservationIconAndText">
-                        <div className="editIconAndDeleteReserveCard" onClick={() => setShowEditModal(true)} ><FiEdit style={{ marginRight: "5px" }} /> Edit </div>
-                        <div className="deleteIconAndTextReserveCard" onClick={() => setCancelReservation(true)} ><MdOutlineCancelPresentation style={{ color: "red", marginRight: "5px" }} /> Cancel</div>
+                        <div className="editIconAndDeleteReserveCard" onClick={() => setShowEditModal(true)} ><FiEdit id="editReservationIcon" /> Edit </div>
+                        <div className="deleteIconAndTextReserveCard" onClick={() => setCancelReservation(true)} ><MdOutlineCancelPresentation id="cancelReservationIcon" /> Cancel</div>
                         {showEditModal && <Modal idName={"edit-Reservation-Modal"} onClose={() => setShowEditModal(false)}>
                             <ReserveSpot editStartDate={reservation.check_in} editEndDate={reservation.check_out} reservationDate={reservation.reservation} setShowEditModal={setShowEditModal} totalOccupantsAllowed={reservation.total_occupants_allowed} price={reservation.price} editModal={true} currentReservation={reservation} />
                         </Modal>}

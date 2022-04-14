@@ -29,7 +29,7 @@ const MyTrips = ({ reservationsLoaded }) => {
             setUpcomingReservations(upcomingReservationsArray)
             setIsloaded(true)
         })
-    }, [dispatch, sessionUser.id, upcomingReservations])
+    }, [dispatch, sessionUser.id])
 
 
     if (!isLoaded) {

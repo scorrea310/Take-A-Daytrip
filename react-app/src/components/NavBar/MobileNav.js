@@ -8,8 +8,11 @@ import { BiBuildingHouse } from "react-icons/bi"
 import { MdCardTravel } from "react-icons/md"
 import { RiAccountCircleLine } from "react-icons/ri"
 import { RiLogoutBoxRLine } from "react-icons/ri"
+import { AiOutlineHome } from "react-icons/ai"
+import { useHistory } from "react-router-dom"
 
 const MobileNav = ({ setShowLoginModal, setShowSignupModal }) => {
+    const history = useHistory()
     const dispatch = useDispatch()
     const session = useSelector((state) => state.session.user);
 
@@ -23,15 +26,19 @@ const MobileNav = ({ setShowLoginModal, setShowSignupModal }) => {
 
     const signedInOptions = (
         <div className="signedInMobileNavMainContent">
-            <div className="mobileNavUnit host">
+            <div onClick={() => history.push("/spots/new")} className="mobileNavUnit host">
                 <BiBuildingHouse className="signedInMobileNavIcon" />
                 <div className="mobileNavUnitText">Host a Trip</div>
             </div>
-            <div className="mobileNavUnit upcomingTrips">
+            <div onClick={() => history.push('/mytrips')} className="mobileNavUnit upcomingTrips">
                 <MdCardTravel className="signedInMobileNavIcon" />
                 <div className="mobileNavUnitText">Upcoming Trips</div>
             </div>
-            <div className="mobileNavUnit profile">
+            <div onClick={() => history.push("/")} className="mobileNavUnit home">
+                <AiOutlineHome className="signedInMobileNavIcon" />
+                <div className="mobileNavUnitText">Home</div>
+            </div>
+            <div onClick={() => history.push('/account')} className="mobileNavUnit profile">
                 <RiAccountCircleLine className="signedInMobileNavIcon" />
                 <div className="mobileNavUnitText">Profile</div>
             </div>

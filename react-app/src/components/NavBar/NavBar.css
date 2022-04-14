@@ -453,10 +453,14 @@
     .NavBarContainer {
         height: 185px;
         box-shadow: rgb(0 0 0 / 25%) 0 1px 12px;
+        margin-top: -5px;
     }
 
     .addSpotSlidesNavBar {
-        height: 150px
+        height: 190px;
+        justify-content: center;
+        align-items: center;
+        margin-top: -5px;
     }
 
 
