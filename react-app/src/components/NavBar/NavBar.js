@@ -95,7 +95,7 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
                     </div>
                 </div>
             </div>
-            <MobileNav />
+            <MobileNav setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} />
 
         </>
     )
