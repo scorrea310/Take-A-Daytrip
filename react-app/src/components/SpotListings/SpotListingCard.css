@@ -10,6 +10,12 @@
     cursor: pointer;
 }
 
+.spotListingCardStats {
+    color: #717171;
+    font-size: 14px;
+    font-weight: 400;
+}
+
 .titleSectionSpotCard {
     display: flex;
     height: 20%;
@@ -46,5 +52,9 @@
 
     .spotListingCard {
         height: 350px
+    }
+
+    .spotListingCardStats {
+        font-size: 20px;
     }
 }

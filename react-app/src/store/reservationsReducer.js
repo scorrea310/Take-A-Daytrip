@@ -1,3 +1,5 @@
+import { formatDistanceToNow, isPast, isToday, compareAsc } from "date-fns";
+
 //constants
 const CREATE_RESERVATION = "reservation/CREATE_RESERVATION"
 const LOAD_RESERVATIONS = "reservation/LOAD_RESERVATIONS"
@@ -74,7 +76,19 @@ export const loadreservationsthunk = (userId) => async (dispatch) => {
 
     if (response.ok) {
 
-        dispatch(loadResevationsAction(usersReservations.reservations))
+        let upcomingReservationsArray = Object.values(usersReservations.reservations).filter((reservation) => {
+            if (!isPast(new Date(reservation.check_in)) || isToday(new Date(reservation.check_in))) {
+                return reservation;
+            }
+        })
+
+        const reservationsObject = {}
+
+        for (let i = 0; i < upcomingReservationsArray.length; i++) {
+            reservationsObject[upcomingReservationsArray[i].id] = upcomingReservationsArray[i]
+        }
+
+        dispatch(loadResevationsAction(reservationsObject))
 
         return usersReservations.reservations
     } else {

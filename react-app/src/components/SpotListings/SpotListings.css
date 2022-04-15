@@ -44,7 +44,7 @@
 }
 
 
-@media only screen and (max-device-width: 1145px) and (max-device-height: 926px)  {
+@media only screen and (max-device-width: 1145px) and (max-device-height: 926px) {
 
     .spotCategoryTitle {
         margin-top: 220px;
@@ -65,7 +65,8 @@
     }
 
     .listingsContainer {
-        width: 100%
+        width: 100%;
+        margin-bottom: 160px;
     }
 
 }

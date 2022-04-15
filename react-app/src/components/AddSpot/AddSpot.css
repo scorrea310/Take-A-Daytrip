@@ -396,7 +396,37 @@
     }
 
     .leftHalf {
-        height: 500px;
+        height: 450px;
+    }
+
+    .whatKindOfText {
+        font-size: 60px;
+        color: white;
+        width: 60%;
+    }
+
+    .apartmentImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .houseImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .outdoorsImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .uniqueExperience {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tripTypeTextSpotCard {
+        font-size: 25px;
     }
 
     .formAndNextButtonContainer {
@@ -412,10 +442,12 @@
     }
 
     .nextButton {
-        width: 110px;
-        height: 60px;
-        border-radius: 33px;
+        width: 180px;
+        height: 80px;
+        border-radius: 53px;
+        font-size: 25px;
     }
+
 }
 
 

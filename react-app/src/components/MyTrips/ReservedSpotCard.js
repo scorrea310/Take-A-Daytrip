@@ -80,10 +80,6 @@ const ReservedSpotCard = ({ reservation }) => {
                         <div>Price</div>
                         <div>${priceState}</div>
                     </div>
-                    {/* <div className="seeMoreDetailsIconAndTextContainerReserveCard">
-                        <CgDetailsMore style={{ fontSize: "24px", marginRight: "5px" }} />
-                        <div>Details</div>
-                    </div> */}
                 </div>
             </div>
         </div >
