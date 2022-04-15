@@ -19,9 +19,9 @@
     font-size: 30px;
     width: 96%;
     display: flex;
-    justify-content: flex-start; 
-    height: 100px;  
-    align-items: center; 
+    justify-content: flex-start;
+    height: 100px;
+    align-items: center;
     margin-top: 80px;
 }
 
@@ -29,7 +29,7 @@
     width: 59%;
     min-height: fit-content;
     /* background-color: blueviolet; */
-    overflow:auto;
+    overflow: auto;
 }
 
 /* .listingsContainer::-webkit-scrollbar {
@@ -44,53 +44,51 @@
 }
 
 
-@media only screen
-    and (max-device-width: 1145px)
-    and (max-device-height: 926px)
-    and (-webkit-min-device-pixel-ratio: 3) 
-    { 
+@media only screen and (max-device-width: 1145px) and (max-device-height: 926px) {
 
-        .spotCategoryTitle {
-    margin-top: 150px;
-}
-
-.listingsAndImageMainContainer {
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    height: fit-content;
-}
-
-.listingsImageContainer {
-    height: 400px;
-    width: 100%;
-    justify-content: flex-start;
-}
-.listingsContainer {
-    width: 100%
-}
-
+    .spotCategoryTitle {
+        margin-top: 220px;
+        font-size: 50px;
+        margin-bottom: 30px;
     }
 
-@media only screen 
-        and (max-width: 1145px)
-        and (max-height: 1000px)
-{
     .listingsAndImageMainContainer {
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    height: fit-content;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        height: fit-content;
+    }
+
+    .listingsImageContainer {
+        height: 400px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .listingsContainer {
+        width: 100%;
+        margin-bottom: 160px;
+    }
+
 }
 
-.listingsImageContainer {
-    height: 400px;
-    width: 100%;
-    justify-content: flex-start;
-}
-.listingsContainer {
-    width: 100%
-}
+@media only screen and (max-width: 1145px) and (max-height: 1000px) {
+    .listingsAndImageMainContainer {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        height: fit-content;
+    }
 
-.spotCategoryTitle {
-    margin-top: 80px;
-}
+    .listingsImageContainer {
+        height: 400px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .listingsContainer {
+        width: 100%
+    }
+
+    .spotCategoryTitle {
+        margin-top: 80px;
+    }
 }

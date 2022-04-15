@@ -3,11 +3,15 @@ import "./AccountPage.css"
 import { useDispatch, useSelector } from "react-redux";
 import AccountCard from "./AccountCard";
 import Footer from "../Footer/Footer"
+import { useEffect } from "react";
 
 const AccountPage = () => {
 
     const sessionUser = useSelector((state) => state.session.user);
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div className="accountPage">

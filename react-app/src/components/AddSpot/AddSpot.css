@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px 
+    font-size: 40px
 }
 
 .rightHalf {
@@ -107,7 +107,7 @@
     border-radius: 24px;
     box-shadow: 0 0 0 2px #222222;
     margin-top: 35px;
-    background-color: #222222 ;
+    background-color: #222222;
     color: white;
     cursor: pointer;
 }
@@ -121,7 +121,7 @@
     height: 40px;
     border-radius: 24px;
     box-shadow: 0 0 0 2px #222222;
-    background-color: #222222 ;
+    background-color: #222222;
     color: white;
     border: none;
     cursor: pointer;
@@ -172,14 +172,14 @@
 }
 
 .addSpotTextFormSlide3 {
-     display: flex;
+    display: flex;
     flex-direction: column;
     /* background-color: aqua; */
     width: 70%;
     /* min-height:auto; */
     justify-content: center;
     margin-top: 150px;
-   
+
 }
 
 .pertsAllowedDivForm {
@@ -218,17 +218,17 @@
 
 #priceInputAddSpotFomr::-webkit-inner-spin-button,
 #priceInputAddSpotFomr::-webkit-outer-spin-button {
- -webkit-appearance: none; 
+    -webkit-appearance: none;
 }
 
 .submitSpotButtonContainer {
     display: flex;
     justify-content: flex-end;
-    
+
 }
 
-.addSpotTextFormSlide3 > input{
-   margin-bottom: 20px;
+.addSpotTextFormSlide3>input {
+    margin-bottom: 20px;
 }
 
 .tellUsAboutDaytripContainer {
@@ -244,7 +244,7 @@
     flex-direction: row;
 }
 
-.progressBarSlide1  > div {
+.progressBarSlide1>div {
     margin-right: 5px;
 }
 
@@ -255,8 +255,8 @@
 }
 
 .graySlide {
-   border: 1px solid #DDDDDD;
-   width: 80px;
+    border: 1px solid #DDDDDD;
+    width: 80px;
 }
 
 .progressBarSlide3 {
@@ -266,7 +266,7 @@
     margin-right: 100px;
 }
 
-.progressBarSlide3  > div {
+.progressBarSlide3>div {
     margin-right: 5px;
 }
 
@@ -283,39 +283,40 @@
 }
 
 .lds-dual-ring {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
 
 }
+
 .lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
-@media only screen 
-        and (max-width: 1200px)
-    {
+@media only screen and (max-width: 1200px) {
     .addSpotMainContent {
-    flex-direction: column;
-    margin-top: 80px;
-    align-items: center;
+        flex-direction: column;
+        margin-top: 80px;
+        align-items: center;
     }
 
     .spotToAddImageContainer {
@@ -334,7 +335,8 @@
         width: 100%;
         height: 300px;
     }
-     .rightHalf {
+
+    .rightHalf {
         width: 100%;
         height: fit-content;
         overflow-y: unset;
@@ -342,15 +344,15 @@
     }
 
     .selected {
-    width: 100%;
-    height: 100px;
-    height: 150px;
+        width: 100%;
+        height: 100px;
+        height: 150px;
     }
 
     .selected:hover {
-    width: 100%;
-    height: 100px;
-    height: 150px;
+        width: 100%;
+        height: 100px;
+        height: 150px;
     }
 
     .whatKindOfText {
@@ -373,65 +375,94 @@
         height: 150px;
     }
 
-    .spotCard:hover{
+    .spotCard:hover {
         width: 100%;
         height: 150px;
     }
 
 
     .photosContainer {
-    margin-top: 30px;
-    }
-
-    
-
+        margin-top: 30px;
     }
 
 
-    @media only screen
-    and (max-device-width: 428px)
-    {
-        .addSpotMainContent {
-            margin-top: 150px;
-        }
 
-        .leftHalf {
-                height: 500px;
-        }
+}
 
-        .formAndNextButtonContainer {
-            min-height: fit-content;
-        }
 
-         .rightHalf {
+@media only screen and (max-device-width: 428px) {
+    .addSpotMainContent {
+        margin-top: 180px;
+    }
+
+    .leftHalf {
+        height: 450px;
+    }
+
+    .whatKindOfText {
+        font-size: 60px;
+        color: white;
+        width: 60%;
+    }
+
+    .apartmentImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .houseImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .outdoorsImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .uniqueExperience {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tripTypeTextSpotCard {
+        font-size: 25px;
+    }
+
+    .formAndNextButtonContainer {
+        min-height: fit-content;
+    }
+
+    .rightHalf {
         width: 100%;
         height: fit-content;
         overflow-y: unset;
         flex-direction: column;
+        margin-bottom: 300px;
     }
 
-        .nextButton {
-        width: 110px;
-        height: 60px;
-        border-radius: 33px;
+    .nextButton {
+        width: 180px;
+        height: 80px;
+        border-radius: 53px;
+        font-size: 25px;
     }
+
+}
+
+
+@media only screen and (min-device-width: 1560px) and (min-height: 900px) {
+
+    .formAndNextButtonContainer {
+        min-height: fit-content;
+        height: 80vh;
     }
 
-
-    @media only screen
-    and (min-device-width: 1560px)
-    and (min-height: 900px) {
-
-        .formAndNextButtonContainer {
-                min-height: fit-content;
-                height: 80vh;
-        }
-
-        .addSpotTextFormSlide3 {
-            margin-top: 0px;
-        }
-
-        .rightHalf {
-            margin-top: 0px;
-        }
+    .addSpotTextFormSlide3 {
+        margin-top: 0px;
     }
+
+    .rightHalf {
+        margin-top: 0px;
+    }
+}

@@ -9,6 +9,15 @@
     align-items: flex-end;
 }
 
+#editReservationIcon {
+    margin-right: 5px;
+}
+
+#cancelReservationIcon {
+    margin-right: 5px;
+    color: red;
+}
+
 .reservesSpotCardInfo {
     display: flex;
     width: 70%;
@@ -27,6 +36,7 @@
     justify-content: center;
     flex-direction: row;
 }
+
 .yourGoingToText {
     /* height: 50px; */
     /* background-color: brown; */
@@ -44,7 +54,7 @@
     width: 80%;
     /* background-color: brown; */
     /* height: 120px; */
-    height:fit-content;
+    height: fit-content;
     flex-direction: column;
     align-items: center;
     border-top: 1px solid #ddd;
@@ -132,34 +142,64 @@
     justify-content: center;
 }
 
-@media only screen
-    and (max-device-width: 428px)
-    and (max-device-height: 926px) {
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
 
-        .yourGoingToText {
-            justify-content: flex-end;
-            font-size: 24px;
-            flex-direction: row;
-            text-align: center;
-            margin-right: 20px;
-            width: fit-content;
-        }
-
-        .checkInDateReservedCArd {
-        width: 90%;
-        }
-
-        .priceReservationCardContainer {
-
-        width: 90%;
-
-        }
-
-        .reservedTripCardContainer {
-            margin-bottom: 150px;
-        }
-
-        .TripsTextTripsPage {
-            font-size: 40px;
-        }
+    .yourGoingToTextAndEditContainer {
+        width: 80%;
     }
+
+    .reservesSpotCardInfo {
+        justify-content: center;
+    }
+
+    #editReservationIcon {
+        font-size: 25px;
+    }
+
+    #cancelReservationIcon {
+        font-size: 25px;
+    }
+
+    .editIconAndDeleteReserveCard {
+        font-size: 20px;
+    }
+
+    .deleteIconAndTextReserveCard {
+        font-size: 20px;
+    }
+
+    .yourGoingToText {
+        justify-content: flex-end;
+        font-size: 28px;
+        flex-direction: row;
+        text-align: center;
+        /* margin-right: 20px; */
+        width: fit-content;
+    }
+
+    .checkInDateReservedCArd {
+        width: 90%;
+        font-size: 20px;
+    }
+
+    .priceReservationCardContainer {
+        font-size: 20px;
+        width: 90%;
+
+    }
+
+    .reservedTripCardContainer {
+        margin-bottom: 200px;
+        height: 350px;
+    }
+
+    .TripsTextTripsPage {
+        font-size: 50px;
+        margin-bottom: 80px;
+    }
+
+    .noTripsSection {
+        font-size: 40px;
+        font-weight: 500;
+    }
+}

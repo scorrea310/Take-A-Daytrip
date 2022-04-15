@@ -301,50 +301,6 @@
     font-weight: 400;
 }
 
-/* @media screen 
-    and (width: 390px) 
-    and (height: 844px) 
-    and (-webkit-device-pixel-ratio: 3) {
-    .landingPageBigImageAndButtonContainer {
-    width: 100%;
-    padding: 0
-}
-
-.notSureWhereText {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-}
-
-.landingPageCategorySection {
-    height: fit-content
-}
-
-.landingPageCardSection {
-    flex-direction: column;
-}
-
-.firstCategoryCard {
-    width: 100%;
-}
-
-.secondCategoryCard  {
-    width: 100%;
-    margin-top: 30px;
-}
-
-.thirdCategoryCard {
-    width: 100%;
-     margin-top: 30px;
-}
-
-.rightCategoryCard {
-    width: 100%;
-     margin-top: 30px;
-}
-} */
-
-
 @media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
 
     .landingPageBigImageAndButtonContainer {
@@ -427,7 +383,7 @@
     .landingPageBigImageContainer {
         margin-top: 170px;
         height: fit-content;
-        margin-top: 140px;
+        margin-top: 150px;
         background-color: white;
     }
 

@@ -33,7 +33,7 @@
     font-size: 14px;
 }
 
-#account-text-personal-info-page:hover{
+#account-text-personal-info-page:hover {
     cursor: pointer;
     text-decoration: underline;
 }
@@ -118,14 +118,14 @@
     height: 52px;
     border-radius: 8px;
     border: 1px solid #DDDDDD;
-    padding-left: 10px; 
+    padding-left: 10px;
     font-size: 16px;
     margin-bottom: 20px;
 }
 
 .value-input-personal-info:focus {
     outline: none;
-     border: 2px solid black;
+    border: 2px solid black;
 }
 
 .save-button-personal-info {
@@ -154,7 +154,7 @@
 }
 
 .noteOnPrivacy {
-    display:flex;
+    display: flex;
     flex-direction: column;
     position: absolute;
     height: 300px;
@@ -199,29 +199,38 @@
 }
 
 
-@media only screen
-    and (max-device-width: 428px)
-    and (max-device-height: 926px) {
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
 
-
-
-.personalInfoMainContent {
-    margin-top: 200px;
-    margin-bottom: 200px;
-}
-
-
-.noteOnPrivacy {
-    display:flex;
-    flex-direction: column;
-    position: absolute;
-    height: 300px;
-    width: 280px;
-    top: 300px;
-    right: 50px;
-    border: 1px solid rgb(221, 221, 221);
-    padding: 24px;
-    border-radius: 12px
-}
-
+    #account-text-personal-info-page {
+        font-size: 23px;
     }
+
+    .page-path-personal-info {
+        width: 250px;
+        margin-bottom: 30px;
+    }
+
+    #personal-info-text-personal-page {
+        font-size: 23px;
+    }
+
+    .personalInfoMainContent {
+        margin-top: 200px;
+        margin-bottom: 200px;
+    }
+
+
+    .noteOnPrivacy {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        height: 300px;
+        width: 280px;
+        top: 300px;
+        right: 50px;
+        border: 1px solid rgb(221, 221, 221);
+        padding: 24px;
+        border-radius: 12px
+    }
+
+}
