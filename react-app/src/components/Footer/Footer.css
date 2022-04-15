@@ -163,6 +163,7 @@
 
     .englishAndUSDTextContainer {
         margin-right: 0px;
+        font-size: 25px;
     }
 
     .bottomSectionFooter {
@@ -177,40 +178,44 @@
         justify-content: center;
         align-items: center;
         margin-top: 20px;
-        font-size: 30px;
+        font-size: 35px;
     }
 
 
     .aboutCategoryTextFooter {
-        font-size: 30px;
+        font-size: 40px;
         color: rgb(34, 34, 34);
         font-weight: 700;
     }
 
     .technologyText {
         margin-top: 5px;
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .projectsText {
-        font-size: 30px;
+        font-size: 40px;
         color: rgb(34, 34, 34);
         font-weight: 700;
     }
 
     .contactText {
-        font-size: 30px;
+        font-size: 40px;
         color: rgb(34, 34, 34);
         font-weight: 700;
     }
 
+    .bottomFooterText {
+        font-size: 25px;
+    }
+
     .javascriptText {
         margin-top: 20px;
-        font-size: 30px;
+        font-size: 35px;
     }
 
     #builtWithTextFooter {
-        font-size: 30px;
+        font-size: 40px;
         color: rgb(34, 34, 34);
         font-weight: 700;
     }

@@ -17,12 +17,15 @@ const MyTrips = ({ reservationsLoaded }) => {
 
     }, [dispatch, sessionUser.id])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     if (!isLoaded) {
         return null
     }
 
-    console.log(reservations)
+
     return (
 
         <div className="MyTripsPageContainer">
