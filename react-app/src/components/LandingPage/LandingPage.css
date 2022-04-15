@@ -347,8 +347,9 @@
     }
 
     .thingsToDoOutsideText {
-        font-size: 63px;
-        width: 350px;
+        font-size: 85px;
+        width: 450px;
+        font-weight: 500;
     }
 
     .thingsToDoOutsideContainer {
@@ -366,8 +367,9 @@
     }
 
     .uniqueThingstoDoText {
-        font-size: 63px;
-        width: 350px;
+        font-size: 85px;
+        width: 450px;
+        font-weight: 500;
     }
 
     .tryHostingContentCardMain {
@@ -429,15 +431,19 @@
     }
 
     .outdoorExperiencesButton {
-        width: 330px;
-        height: 78px;
-        font-size: 30px;
+        width: 400px;
+        height: 100px;
+        font-size: 35px;
+        border-radius: 20px;
+        font-weight: 501;
     }
 
     .uniqueExperencesButtonBigCard {
-        width: 330px;
-        height: 78px;
-        font-size: 30px;
+        width: 400px;
+        height: 100px;
+        font-size: 35px;
+        border-radius: 20px;
+        font-weight: 501;
     }
 
     .firstCategoryCard {
