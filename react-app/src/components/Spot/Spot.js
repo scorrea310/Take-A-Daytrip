@@ -78,7 +78,7 @@ const Spot = ({ spotsLoaded }) => {
                 <NavBar spotPage={true} />
             </div>
             <div className='spotNameAndImageSection'>
-                <h2>{spot[`${spotId}`]?.name}</h2>
+                <div id="spotNameSpotPage">{spot[`${spotId}`]?.name}</div>
                 <div className='spotPageImagesSection'>
                     <div style={{ width: "49%", height: "357px", backgroundImage: `url(${spot[`${spotId}`]?.images[0]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", borderRadius: "12px" }}></div>
                     <div style={{ width: "49%", height: "357px", backgroundImage: `url(${spot[`${spotId}`]?.images[1]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", borderRadius: "12px" }}></div>

@@ -15,7 +15,7 @@ const SpotCard = ({ name, selected, onClick, imageClassName }) => {
     return (
         <div className={nameOfClass} onClick={onClick}>
             <div className="spotNameAndImageContainer">
-                <div>{name}</div>
+                <div className="tripTypeTextSpotCard">{name}</div>
                 <div className={imageClassName}></div>
             </div>
         </div>

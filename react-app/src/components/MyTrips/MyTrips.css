@@ -43,16 +43,14 @@
     font-weight: 600;
 }
 
-@media only screen
-    and (max-device-width: 428px)
-    and (max-device-height: 926px) {
-.tripsSpotCardSection {
-    margin-top: 20px;
-}
-
-.mainContentTripsPage {
-    margin-top: 170px;
-}
-
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
+    .tripsSpotCardSection {
+        margin-top: 20px;
     }
 
+    .mainContentTripsPage {
+        margin-top: 230px;
+        margin-bottom: 154px;
+    }
+
+}

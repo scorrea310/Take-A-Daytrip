@@ -1,0 +1,142 @@
+.mobileNav {
+    position: fixed;
+    bottom: 0;
+    display: none;
+    width: 100vw;
+    height: 155px;
+    background-color: white;
+    border-top: 1px solid #DDDDDD;
+    margin-bottom: -5px;
+    transition: 'top 0.2s';
+    z-index: 900;
+}
+
+.signedOutMobileNavMainContent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.signedInMobileNavMainContent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobileNavUnit.demo {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mobileNavUnit.login {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 50px
+}
+
+.mobileNavUnit.register {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mobileNavUnit.host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.mobileNavUnit.upcomingTrips {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.mobileNavUnit.home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.mobileNavUnit.profile {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.mobileNavUnit.logout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+#demoUserIcon {
+    font-size: 70px;
+}
+
+#loginIconMobileNav {
+    font-size: 70px;
+}
+
+#registerIconMobileNav {
+    font-size: 70px;
+}
+
+.signedInMobileNavIcon {
+    font-size: 70px;
+}
+
+.mobileNavUnitText {
+    font-size: 25px;
+}
+
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
+    .mobileNav {
+        display: flex;
+        justify-content: center;
+        /* background-color: aqua; */
+    }
+}
