@@ -471,9 +471,10 @@
     }
 
     .centerNavBarContainerListingsPage {
-        height: 185px;
+        height: 190px;
         justify-content: center;
         align-items: center;
+        margin-top: -5px;
     }
 
     .centerNavBarContainer {

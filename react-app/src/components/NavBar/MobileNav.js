@@ -10,6 +10,7 @@ import { RiAccountCircleLine } from "react-icons/ri"
 import { RiLogoutBoxRLine } from "react-icons/ri"
 import { AiOutlineHome } from "react-icons/ai"
 import { useHistory } from "react-router-dom"
+import { logout } from '../../store/session';
 
 const MobileNav = ({ setShowLoginModal, setShowSignupModal }) => {
     const history = useHistory()
@@ -19,10 +20,12 @@ const MobileNav = ({ setShowLoginModal, setShowSignupModal }) => {
     const demoUserLogin = async (e) => {
         e.preventDefault();
         const data = await dispatch(login('demo@aa.io', 'password'));
-
-
         setShowLoginModal(false)
     }
+
+    const onLogout = async (e) => {
+        await dispatch(logout());
+    };
 
     const signedInOptions = (
         <div className="signedInMobileNavMainContent">
@@ -42,7 +45,7 @@ const MobileNav = ({ setShowLoginModal, setShowSignupModal }) => {
                 <RiAccountCircleLine className="signedInMobileNavIcon" />
                 <div className="mobileNavUnitText">Profile</div>
             </div>
-            <div className="mobileNavUnit logout">
+            <div onClick={onLogout} className="mobileNavUnit logout">
                 <RiLogoutBoxRLine className="signedInMobileNavIcon" />
                 <div className="mobileNavUnitText">Logout</div>
             </div>

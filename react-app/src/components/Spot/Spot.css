@@ -7,7 +7,10 @@
 }
 
 #spotNameSpotPage {
-    font-size: 24px;
+    font-size: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
 }
 
 .spotPageNavBArContainerParent {
@@ -186,9 +189,17 @@
         height: 150px;
     }
 
+    .spotPageNavBar {
+        height: 190px;
+        justify-content: center;
+        margin-top: -5px;
+    }
+
     .spotPageNavBarContainer {
-        height: 150px;
+        height: 185px;
         align-items: center;
+        margin-top: -5px;
+        box-shadow: rgb(0 0 0 / 25%) 0 1px 12px;
     }
 
     .spotNameAndImageSection {
