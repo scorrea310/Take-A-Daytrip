@@ -108,4 +108,19 @@
         margin-bottom: 100px;
     }
 
+    .page-path-manage-listings {
+        width: 280px;
+        display: flex;
+        align-items: center;
+    }
+
+    #YourListingsText {
+        margin-top: 40px;
+        font-size: 40px;
+    }
+
+    .listingsMainContent {
+        margin-top: 50px;
+    }
+
 }
