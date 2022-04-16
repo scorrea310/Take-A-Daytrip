@@ -9,9 +9,9 @@ import SignUpForm from "../SignUpForm/SignUpForm"
 import { NavLink } from "react-router-dom"
 import { useHistory } from "react-router-dom"
 import OutsideClickHandler from 'react-outside-click-handler';
-import { useLayoutEffect } from "react"
 import { setModals } from "../../store/LoginAndRegisterModals"
 import { useDispatch, useSelector } from 'react-redux';
+import MobileNav from "./MobileNav"
 
 const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
 
@@ -25,6 +25,7 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
 
     let centerNavBarClassName;
     let navBarContainerClassName;
+
     //spotPageNavBarContainer
     if (spotPage === true) {
         centerNavBarClassName = "spotPageNavBar"
@@ -52,6 +53,8 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
         centerNavBarClassName = "centerNavBarContainer"
     }
 
+
+
     useEffect(() => {
 
         dispatch(setModals(setShowLoginModal, setShowSignupModal))
@@ -62,7 +65,6 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
             <div className={navBarContainerClassName}>
                 <div className={centerNavBarClassName}>
                     <div className="navLogoContainer">
-                        <div id="navLogo" ></div>
                         <NavLink to="/" className="takeADayTripText">Take A Daytrip</NavLink>
                     </div>
                     <div className="placesToStayTextContainer"> <div className="placesToStayButtonContainer" onClick={() => history.push("/allspots")}>Places to Stay</div>
@@ -91,10 +93,10 @@ const NavBar = ({ landingPage, spotPage, addspotPage, spotListingsPage }) => {
                             )}
                         </OutsideClickHandler>
                     </div>
-
                 </div>
-
             </div>
+            <MobileNav setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} />
+
         </>
     )
 }

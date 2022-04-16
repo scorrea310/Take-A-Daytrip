@@ -5,13 +5,15 @@ import spotReducer from './spotReducer';
 import reservationsReducer from './reservationsReducer';
 import loginAndSignUpModalReducer from './LoginAndRegisterModals';
 import mapsReducer from "./maps"
+import myListingsReducer from './myListings';
 
 const rootReducer = combineReducers({
   session,
   spotReducer,
   reservationsReducer,
   modals: loginAndSignUpModalReducer,
-  mapsReducer
+  mapsReducer,
+  myListings: myListingsReducer
 });
 
 

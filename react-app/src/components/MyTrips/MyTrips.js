@@ -10,25 +10,21 @@ const MyTrips = ({ reservationsLoaded }) => {
     const sessionUser = useSelector((state) => state.session.user);
     const [isLoaded, setIsloaded] = useState(false)
     const reservations = useSelector((state) => state.reservationsReducer);
-    const today = new Date()
-    today.setHours(0)
-    today.setMinutes(0)
-    today.setSeconds(0)
-    today.setMilliseconds(0)
 
     useEffect(() => {
-        dispatch(loadreservationsthunk(sessionUser.id)).then((reservations) => {
-
-            setIsloaded(true)
-        })
-
+        dispatch(loadreservationsthunk(sessionUser.id))
+        setIsloaded(true)
 
     }, [dispatch, sessionUser.id])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     if (!isLoaded) {
         return null
     }
+
 
     return (
 
@@ -38,14 +34,8 @@ const MyTrips = ({ reservationsLoaded }) => {
                 <div className="TripsTextTripsPage"> Upcoming Trips</div>
                 <div className="tripsSpotCardSection">
                     {Object.values(reservations).length > 0 && Object.values(reservations).map((reservation) => {
-                        let startDate = reservation.check_in.split(" ")
-                        let reservationCheckInDateObject = new Date(startDate[0].replace(/-/g, '\/'));
-                        reservationCheckInDateObject.setMilliseconds(0)
-
-                        if (reservationCheckInDateObject.getTime() >= today.getTime()) {
-
-                            return <ReservedSpotCard key={reservation.id} reservation={reservation} />
-                        }
+                        console.log(reservation)
+                        return <ReservedSpotCard key={reservation.id} reservation={reservation} />
                     })}
                     {Object.values(reservations).length === 0 && <div className="noTripsSection">No trips booked...yet!</div>}
                 </div>

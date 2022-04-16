@@ -10,6 +10,12 @@
     cursor: pointer;
 }
 
+.spotListingCardStats {
+    color: #717171;
+    font-size: 14px;
+    font-weight: 400;
+}
+
 .titleSectionSpotCard {
     display: flex;
     height: 20%;
@@ -31,4 +37,23 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+}
+
+@media only screen and (max-device-width: 1145px) and (max-device-height: 926px) {
+
+    .titleSectionSpotCard {
+        font-size: 30px;
+    }
+
+    .priceSectionSpotCard {
+        font-size: 30px;
+    }
+
+    .spotListingCard {
+        height: 350px
+    }
+
+    .spotListingCardStats {
+        font-size: 20px;
+    }
 }

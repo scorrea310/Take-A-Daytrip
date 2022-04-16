@@ -80,16 +80,16 @@
     font-size: 35px;
 }
 
-#personal-info-icon{
+#personal-info-icon {
     font-size: 35px;
 }
 
-.account-card-description{
+.account-card-description {
     margin-top: 5px;
-    font-size: 16px !important;
-    line-height: 18px !important;
-    color: rgb(113, 113, 113) !important;
-    font-weight: 400
+    font-size: 16px;
+    line-height: 18px;
+    color: rgb(113, 113, 113);
+    font-weight: 400;
 }
 
 .account-card-title {
@@ -98,33 +98,64 @@
 }
 
 
-@media only screen
-    and (max-device-width: 428px)
-    and (max-device-height: 926px) {
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
 
-.accountCardContainer {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-}
-
-.AccountCardContainer {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 18px;
-    width: 60%;
-    height: 250px;
-    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
-    border-radius: 12px;
-    cursor: pointer;
-    justify-content: space-between;
-    margin-bottom: 80px;
-}
-
-.mainContentAccountPage {
-   margin-bottom: 600px;
-   margin-top: 150px;
-}
-
+    .accountCardContainer {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
     }
+
+    .AccountCardContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 18px;
+        width: 60%;
+        height: 280px;
+        box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+        border-radius: 12px;
+        cursor: pointer;
+        justify-content: space-between;
+        margin-bottom: 80px;
+    }
+
+    #personal-info-icon {
+        font-size: 60px;
+    }
+
+    #your-listings-icon {
+        font-size: 60px;
+    }
+
+    #places-youve-been-icon {
+        font-size: 60px;
+    }
+
+    .account-card-title {
+        font-size: 30px;
+    }
+
+    .account-card-description {
+        font-size: 20px;
+    }
+
+    .mainContentAccountPage {
+        margin-bottom: 650px;
+        margin-top: 200px;
+    }
+
+    #account-text {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+
+    #usersNameAccountPage {
+        font-size: 25px;
+    }
+
+    #userEmailAccountPage {
+        font-size: 25px;
+    }
+
+}

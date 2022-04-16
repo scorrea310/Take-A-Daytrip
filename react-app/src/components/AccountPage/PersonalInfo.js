@@ -10,6 +10,7 @@ import { MdOutlinePrivateConnectivity } from "react-icons/md"
 import { useDispatch, useSelector } from "react-redux"
 import { updateProfileImageThunk } from "../../store/session"
 import FadingBalls from "react-cssfx-loading/lib/FadingBalls";
+import { useEffect } from "react"
 const PersonalInfo = () => {
 
     const history = useHistory()
@@ -17,6 +18,10 @@ const PersonalInfo = () => {
     const sessionUser = useSelector((state) => state.session.user);
     const [images, setImages] = useState(sessionUser.profile_image !== null ? [sessionUser.profile_image] : []);
     const [loadingImage, setLoadingImage] = useState(false)
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const toObjectURL = (file) => {
         if (file === null || file === undefined) return;

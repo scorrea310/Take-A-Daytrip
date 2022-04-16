@@ -87,7 +87,7 @@ const AddSpot = () => {
     let slide1 = (
         <>
             <div className="leftHalf">
-                <div className="whatKindOfText">What kind of Daytrip are you hosting?</div>
+                <div className="whatKindOfText">What kind of trip are you hosting?</div>
             </div>
             <div className="rightHalf">
 
