@@ -16,7 +16,6 @@ export const getKey = () => async (dispatch) => {
 
     const data = await res.json();
 
-    console.log(data.key)
     dispatch(loadApiKey(data.key));
 };
 
