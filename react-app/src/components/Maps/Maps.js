@@ -26,6 +26,10 @@ const Maps = ({ apiKey }) => {
     const options = { closeBoxURL: '', enableEventPropagation: true };
 
 
+    function handleZoomChanged() {
+        console.log(this.getZoom()) //this refers to Google Map instance
+    }
+
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: apiKey,
@@ -38,27 +42,29 @@ const Maps = ({ apiKey }) => {
                     mapContainerStyle={containerStyle}
                     center={center}
                     zoom={8}
+                    onZoomChanged={handleZoomChanged}
                 >
                     <OverlayView
                         position={center}
                         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
                     >
                         <div onClick={() => setShowMarker(true)} className='mapMarker'>
-                            <div id="priceMapMarker">$300</div>
+                            <div id="priceMapMarker">$300.00</div>
 
                         </div>
                     </OverlayView>
 
-                    {/* {showMarker && <InfoBox
+                    {showMarker && <InfoBox
                         options={options}
                         position={center}
+                        alignBottom={true}
                     >
                         <div style={{ backgroundColor: 'yellow', opacity: 0.75, padding: 12 }}>
                             <div style={{ fontSize: 16, fontColor: `#08233B` }}>
                                 Hello, World!
                             </div>
                         </div>
-                    </InfoBox>} */}
+                    </InfoBox>}
                 </GoogleMap>
             )}
         </>
