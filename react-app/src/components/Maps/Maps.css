@@ -1,4 +1,25 @@
 .mapMarker {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    border-radius: 28px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 23%),
+        0 4px 12px rgb(0 0 0 / 23%);
+    height: 28px;
+    padding: 0px 8px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    transition: all .2s ease-in-out;
+}
+
+.mapMarker:hover {
+    transform: scale(1.1);
+}
+
+#priceMapMarker {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-weight: 600;
 }
