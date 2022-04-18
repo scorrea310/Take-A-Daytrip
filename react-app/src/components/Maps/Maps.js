@@ -14,21 +14,10 @@ const center = {
     lng: -118.2437,
 };
 
-const rightOfCenter = {
-    lat: 34.20,
-    lng: -118.2437,
-}
-
 const Maps = ({ apiKey }) => {
 
+
     const [showMarker, setShowMarker] = useState(false)
-
-    const options = { closeBoxURL: '', enableEventPropagation: true };
-
-
-    function handleZoomChanged() {
-        console.log(this.getZoom()) //this refers to Google Map instance
-    }
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -42,31 +31,40 @@ const Maps = ({ apiKey }) => {
                     mapContainerStyle={containerStyle}
                     center={center}
                     zoom={8}
-                    onZoomChanged={handleZoomChanged}
+                    options={
+                        {
+                            mapId: "3c1f96260c437762"
+                        }
+                    }
                 >
                     <OverlayView
                         position={center}
                         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
                     >
-                        <div onClick={() => setShowMarker(true)} className='mapMarker'>
+                        <div onClick={() => setShowMarker({ id: 4 })} className='mapMarker'>
                             <div id="priceMapMarker">$300.00</div>
 
                         </div>
                     </OverlayView>
 
-                    {showMarker && <InfoBox
-                        options={options}
+                    {showMarker.id === 4 && <InfoBox
+                        options={{
+                            enableEventPropagation: true,
+                            pixelOffset: new window.google.maps.Size(80, 0),
+                            closeBoxURL: ``,
+                        }}
                         position={center}
-                        alignBottom={true}
+
                     >
-                        <div style={{ backgroundColor: 'yellow', opacity: 0.75, padding: 12 }}>
+                        <div onClick={() => setShowMarker(false)} style={{ backgroundColor: 'white', padding: 12 }}>
                             <div style={{ fontSize: 16, fontColor: `#08233B` }}>
                                 Hello, World!
                             </div>
                         </div>
                     </InfoBox>}
                 </GoogleMap>
-            )}
+            )
+            }
         </>
     );
 };

@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import { addSpot } from "../../store/spotReducer";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { Autocomplete, verify, AddressForm } from '@lob/react-address-autocomplete'
 
 const AddSpot = () => {
     const sessionUser = useSelector((state) => state.session.user);
@@ -31,6 +32,20 @@ const AddSpot = () => {
     const [price, setPrice] = useState('')
     const [addSpotLoader, setAddSpotLoader] = useState(false)
     const [name, setName] = useState('')
+
+    const [selectedAddress, setSelectedAddress] = useState({})
+    const [verificationResult, setVerificationResult] = useState(null)
+
+    const verifyAddress = (e) =>
+        e.preventDefault()
+    verify("", selectedAddress)
+        .then((result) => {
+            // Simplify response into something readable to the user
+            console.log(result)
+            const summary = `This address is ${result.deliverability}`
+            setVerificationResult(summary)
+        })
+        .catch((errorData) => setVerificationResult(errorData.message))
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -56,6 +71,7 @@ const AddSpot = () => {
         if (images && images.length) {
             images.forEach((image) => imageData.append('images', image));
         }
+
 
         let formObj = {
             address,
@@ -173,7 +189,7 @@ const AddSpot = () => {
                             required={true}
                         >
                         </input>
-                        <label>Address</label>
+                        {/* <label>Address</label>
                         <input
                             value={address}
                             type="text"
@@ -181,7 +197,18 @@ const AddSpot = () => {
                             placeholder="Address"
                             required={true}
                         >
-                        </input>
+                        </input> */}
+                        <AddressForm
+                            apiKey=""
+                            onSelection={(selected) => setSelectedAddress(selected.value)}
+
+                        />
+                        <p>
+                            <button onClick={verifyAddress}>Verify</button>
+                        </p>
+                        <p>
+                            {verificationResult}
+                        </p>
                         <label>Pets Allowed</label>
                         <div className="pertsAllowedDivForm">
                             <input
