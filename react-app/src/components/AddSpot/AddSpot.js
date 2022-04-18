@@ -38,7 +38,7 @@ const AddSpot = () => {
 
     const verifyAddress = (e) =>
         e.preventDefault()
-    verify("", selectedAddress)
+    verify("API_KEY", selectedAddress)
         .then((result) => {
             // Simplify response into something readable to the user
             console.log(result)
@@ -189,17 +189,8 @@ const AddSpot = () => {
                             required={true}
                         >
                         </input>
-                        {/* <label>Address</label>
-                        <input
-                            value={address}
-                            type="text"
-                            onChange={setAddressFunction}
-                            placeholder="Address"
-                            required={true}
-                        >
-                        </input> */}
                         <AddressForm
-                            apiKey=""
+                            apiKey="API_KEY"
                             onSelection={(selected) => setSelectedAddress(selected.value)}
 
                         />
