@@ -8,7 +8,22 @@ import { useHistory } from "react-router-dom";
 import { addSpot } from "../../store/spotReducer";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Autocomplete, verify, AddressForm } from '@lob/react-address-autocomplete'
+import { verify, AddressForm } from '@lob/react-address-autocomplete'
+
+const customStyles = {
+
+    lob_row: provided => ({
+        ...provided,
+        flexDirection: 'column',
+        alignItems: "flex-start"
+    }),
+    lob_label: provided => ({
+        alignSelf: 'start',
+        minWidth: '5em',
+        marginRight: '1em',
+        textAlign: 'start',
+    })
+}
 
 const AddSpot = () => {
     const sessionUser = useSelector((state) => state.session.user);
@@ -36,16 +51,19 @@ const AddSpot = () => {
     const [selectedAddress, setSelectedAddress] = useState({})
     const [verificationResult, setVerificationResult] = useState(null)
 
-    const verifyAddress = (e) =>
-        e.preventDefault()
-    verify("API_KEY", selectedAddress)
-        .then((result) => {
-            // Simplify response into something readable to the user
-            console.log(result)
-            const summary = `This address is ${result.deliverability}`
-            setVerificationResult(summary)
-        })
-        .catch((errorData) => setVerificationResult(errorData.message))
+    const verifyAddress = (e) => {
+
+        verify("live_c2d5ba0a500bff108871e7b2db613b5ff75", selectedAddress)
+            .then((result) => {
+                // Simplify response into something readable to the user
+                console.log(result)
+                const summary = `This address is ${result.deliverability}`
+                setVerificationResult(summary)
+            })
+            .catch((errorData) => setVerificationResult(errorData.message))
+    }
+
+
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -93,10 +111,6 @@ const AddSpot = () => {
         let newSpot = dispatch(addSpot(formObj, imageData)).then((data) => {
             history.push(`/spots/${data.id}`)
         })
-    }
-
-    const setAddressFunction = (e) => {
-        setAddress(e.target.value);
     }
 
 
@@ -155,9 +169,6 @@ const AddSpot = () => {
     )
 
 
-
-
-
     let slide3 = (
         <>
             <div className="spotToAddImageContainer">
@@ -175,9 +186,9 @@ const AddSpot = () => {
                             <div className={thirdSlide ? "blackSlide" : "graySlide"}> </div>
                         </div>
                         <div className="tellUsAboutDaytripContainer">
-                            <h3>Tell us about your Daytrip</h3>
+                            <h3>Tell us about your listing</h3>
                             <div className="submitSpotButtonContainer">
-                                <button className="submitSpotButton" type="submit"> Add Spot </button>
+                                <button className="submitSpotButton" type="submit"> Submit Listing </button>
                             </div>
                         </div>
                         <label>Name</label>
@@ -190,13 +201,16 @@ const AddSpot = () => {
                         >
                         </input>
                         <AddressForm
-                            apiKey="API_KEY"
-                            onSelection={(selected) => setSelectedAddress(selected.value)}
+                            styles={customStyles}
+                            apiKey="live_c2d5ba0a500bff108871e7b2db613b5ff75"
+                            onSelection={(selected) => {
 
+                                setSelectedAddress(selected.value)
+                            }}
                         />
-                        <p>
-                            <button onClick={verifyAddress}>Verify</button>
-                        </p>
+                        <div>
+                            <div onClick={verifyAddress}>Verify</div>
+                        </div>
                         <p>
                             {verificationResult}
                         </p>
@@ -327,7 +341,7 @@ const AddSpot = () => {
                         <textarea
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
-                            style={{ fontFamily: "Arial" }}
+                            className="addSpotTextArea"
                             required={true}
                         >
                         </textarea>
