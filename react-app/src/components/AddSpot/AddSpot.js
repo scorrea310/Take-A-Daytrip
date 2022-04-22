@@ -53,7 +53,7 @@ const AddSpot = () => {
 
     const verifyAddress = (e) => {
 
-        verify("live_c2d5ba0a500bff108871e7b2db613b5ff75", selectedAddress)
+        verify("API_KEY", selectedAddress)
             .then((result) => {
                 // Simplify response into something readable to the user
                 console.log(result)
@@ -202,7 +202,7 @@ const AddSpot = () => {
                         </input>
                         <AddressForm
                             styles={customStyles}
-                            apiKey="live_c2d5ba0a500bff108871e7b2db613b5ff75"
+                            apiKey="API_Key"
                             onSelection={(selected) => {
 
                                 setSelectedAddress(selected.value)
