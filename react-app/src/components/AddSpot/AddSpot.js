@@ -3,7 +3,6 @@ import "./AddSpot.css"
 import SpotCard from "./SpotCard";
 import { useState, useEffect } from "react";
 import SpotImageForm from "../SpotImageForm/SpotImageForm";
-import gradientBackground from "../../images/Wiretap.jpeg"
 import { useHistory } from "react-router-dom";
 import { addSpot } from "../../store/spotReducer";
 import { useDispatch } from "react-redux";
@@ -202,10 +201,22 @@ const AddSpot = () => {
                         </input>
                         <AddressForm
                             styles={customStyles}
-                            apiKey="API_Key"
+                            apiKey="API_KEY"
                             onSelection={(selected) => {
-
+                                console.log(selected.value)
                                 setSelectedAddress(selected.value)
+                            }}
+                            onInputChange={(e) => {
+                                setSelectedAddress({ ...selectedAddress, primary_line: e })
+                                console.log(e)
+                                console.log(selectedAddress)
+                            }}
+                            onFieldChange={(e) => {
+                                console.log(e.target.id)
+
+                                let objName = e.target.id
+
+                                setSelectedAddress({ ...selectedAddress, objName: e.target.value })
                             }}
                         />
                         <div>
