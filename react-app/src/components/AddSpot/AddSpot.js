@@ -1,397 +1,70 @@
 import NavBar from "../NavBar/NavBar";
-import "./AddSpot.css"
-import SpotCard from "./SpotCard";
+import "./AddSpot.css";
 import { useState, useEffect } from "react";
-import SpotImageForm from "../SpotImageForm/SpotImageForm";
-import { useHistory } from "react-router-dom";
-import { addSpot } from "../../store/spotReducer";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { verify, AddressForm } from '@lob/react-address-autocomplete'
-
-const customStyles = {
-
-    lob_row: provided => ({
-        ...provided,
-        flexDirection: 'column',
-        alignItems: "flex-start"
-    }),
-    lob_label: provided => ({
-        alignSelf: 'start',
-        minWidth: '5em',
-        marginRight: '1em',
-        textAlign: 'start',
-    })
-}
+import SelectTripType from "./SelectTripType";
+import AddSpotImages from "./AddSpotImages";
+import AddSpotMainForm from "./AddSpotMainForm";
 
 const AddSpot = () => {
-    const sessionUser = useSelector((state) => state.session.user);
-    const dispatch = useDispatch();
-    const history = useHistory()
-    const [selected, setSelected] = useState("Apartment")
-    const [firstSlide, setfirstSlide] = useState(true)
-    const [secondSlide, setSecondSlide] = useState(false)
-    const [thirdSlide, setThirdSlide] = useState(false)
-    const [noImagesError, setnoImagesError] = useState([])
-    const [images, setImages] = useState([]);
-    const [address, setAddress] = useState('')
-    const [petsAllowed, setpetsAllowed] = useState("true")
-    const [totalOccupancy, setTotalOccupancy] = useState(1)
-    const [totalBedrooms, setTotalBedrooms] = useState(0)
-    const [totalBathrooms, setTotalBathrooms] = useState(0)
-    const [description, setDescription] = useState('')
-    const [hasWifi, setHasWifi] = useState("true")
-    const [hasTv, setHasTv] = useState("true")
-    const [hasAc, setHasAc] = useState("true")
-    const [price, setPrice] = useState('')
-    const [addSpotLoader, setAddSpotLoader] = useState(false)
-    const [name, setName] = useState('')
+  const [selected, setSelected] = useState("Apartment");
+  const [firstSlide, setfirstSlide] = useState(true);
+  const [secondSlide, setSecondSlide] = useState(false);
+  const [thirdSlide, setThirdSlide] = useState(false);
+  const [noImagesError, setnoImagesError] = useState([]);
+  const [images, setImages] = useState([]);
+  const [addSpotLoader, setAddSpotLoader] = useState(false);
 
-    const [selectedAddress, setSelectedAddress] = useState({})
-    const [verificationResult, setVerificationResult] = useState(null)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-    const verifyAddress = (e) => {
-
-        verify("API_KEY", selectedAddress)
-            .then((result) => {
-                // Simplify response into something readable to the user
-                console.log(result)
-                const summary = `This address is ${result.deliverability}`
-                setVerificationResult(summary)
-            })
-            .catch((errorData) => setVerificationResult(errorData.message))
-    }
-
-
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
-
-
-    const toObjectURL = (file) => {
-
-        if (file === null || file === undefined) {
-            return
-        }
-        return URL.createObjectURL(file);
-    }
-
-
-    const onSubmit = async (e) => {
-
-        e.preventDefault();
-
-        setAddSpotLoader(true)
-
-        const imageData = new FormData();
-        if (images && images.length) {
-            images.forEach((image) => imageData.append('images', image));
-        }
-
-
-        let formObj = {
-            address,
-            petsAllowed,
-            totalOccupancy,
-            totalBedrooms,
-            totalBathrooms,
-            description,
-            hasWifi,
-            hasTv,
-            hasAc,
-            price,
-            userId: sessionUser.id,
-            type: selected,
-            name
-
-        }
-
-        let newSpot = dispatch(addSpot(formObj, imageData)).then((data) => {
-            history.push(`/spots/${data.id}`)
-        })
-    }
-
-
-    let slide1 = (
-        <>
-            <div className="leftHalf">
-                <div className="whatKindOfText">What kind of trip are you hosting?</div>
-            </div>
-            <div className="rightHalf">
-
-                <div className="spotCardCategorySelectionDiv">
-                    <div className="progressBarSlide1">
-                        <div className={firstSlide ? "blackSlide" : "graySlide"}></div>
-                        <div className={secondSlide ? "blackSlide" : "graySlide"}></div>
-                        <div className={thirdSlide ? "blackSlide" : "graySlide"}> </div>
-                    </div>
-                    <SpotCard imageClassName={"apartmentImage"} name={"Apartment"} selected={selected === "Apartment" ? "selected" : null} onClick={() => setSelected("Apartment")} />
-                    <SpotCard imageClassName={"houseImage"} name={"House"} selected={selected === "House" ? "selected" : null} onClick={() => setSelected("House")} />
-                    <SpotCard imageClassName={"outdoorsImage"} name={"Outdoors"} selected={selected === "Outdoor" ? "selected" : null} onClick={() => setSelected("Outdoor")} />
-                    <SpotCard imageClassName={"uniqueExperience"} name={"Unique Experience"} selected={selected === "Unique Experience" ? "selected" : null} onClick={() => setSelected("Unique Experience")} />
-                </div>
-                <div className="nextButton" onClick={() => {
-                    setfirstSlide(false)
-                    setSecondSlide(true)
-
-                }}>Next</div>
-            </div>
-
-        </>
-    )
-
-    let slide2 = (
-        <>
-            <div className="leftHalf">
-                <div className="whatKindOfText">What does your spot look like?</div>
-            </div>
-            <div className="rightHalf">
-
-
-                <SpotImageForm firstSlide={firstSlide} secondSlide={secondSlide} thirdSlide={thirdSlide} images={images} setImages={setImages} noImagesError={noImagesError} />
-
-                <div className="nextButton" onClick={() => {
-
-                    if (images.length < 2) {
-                        setnoImagesError(["You have to include at least two images"])
-                    } else {
-                        setfirstSlide(false)
-                        setSecondSlide(false)
-                        setThirdSlide(true)
-                    }
-
-                }}>Next </div>
-            </div>
-
-        </>
-    )
-
-
-    let slide3 = (
-        <>
-            <div className="spotToAddImageContainer">
-                <img src={images.length > 0 ? toObjectURL(images[0]) : null} style={{ width: "80%", height: "80%", borderRadius: "24px" }} alt="backgroundImage" />
-            </div>
-
-            <div className="rightHalf">
-
-                <div className="formAndNextButtonContainer">
-
-                    <form onSubmit={onSubmit} className="addSpotTextFormSlide3">
-                        <div className="progressBarSlide3">
-                            <div className={firstSlide ? "blackSlide" : "graySlide"}></div>
-                            <div className={secondSlide ? "blackSlide" : "graySlide"}></div>
-                            <div className={thirdSlide ? "blackSlide" : "graySlide"}> </div>
-                        </div>
-                        <div className="tellUsAboutDaytripContainer">
-                            <h3>Tell us about your listing</h3>
-                            <div className="submitSpotButtonContainer">
-                                <button className="submitSpotButton" type="submit"> Submit Listing </button>
-                            </div>
-                        </div>
-                        <label>Name</label>
-                        <input
-                            value={name}
-                            type="text"
-                            onChange={(e) => setName(e.target.value)}
-                            placeholder="Name"
-                            required={true}
-                        >
-                        </input>
-                        <AddressForm
-                            styles={customStyles}
-                            apiKey="API_KEY"
-                            onSelection={(selected) => {
-                                console.log(selected.value)
-                                setSelectedAddress(selected.value)
-                            }}
-                            onInputChange={(e) => {
-                                setSelectedAddress({ ...selectedAddress, primary_line: e })
-                                console.log(e)
-                                console.log(selectedAddress)
-                            }}
-                            onFieldChange={(e) => {
-                                console.log(e.target.id)
-
-                                let objName = e.target.id
-
-                                setSelectedAddress({ ...selectedAddress, objName: e.target.value })
-                            }}
-                        />
-                        <div>
-                            <div onClick={verifyAddress}>Verify</div>
-                        </div>
-                        <p>
-                            {verificationResult}
-                        </p>
-                        <label>Pets Allowed</label>
-                        <div className="pertsAllowedDivForm">
-                            <input
-                                value={"true"}
-                                type="checkbox"
-                                onChange={() => {
-                                    setpetsAllowed("true")
-                                }}
-                                id="Yes"
-                                checked={petsAllowed === "true"}
-                            >
-                            </input>
-                            <label htmlFor="Yes"> Yes</label>
-                            <input
-                                value={"false"}
-                                type="checkbox"
-                                onChange={() => setpetsAllowed("false")}
-                                id="No"
-                                checked={petsAllowed === "false"}
-                            >
-                            </input>
-                            <label htmlFor="No"> No</label>
-
-                        </div>
-                        <label>Has Wifi?</label>
-                        <div className="pertsAllowedDivForm">
-                            <input
-                                value={"true"}
-                                type="checkbox"
-                                onChange={() => {
-                                    setHasWifi("true")
-                                }}
-                                id="Yes"
-                                checked={hasWifi === "true"}
-                            >
-                            </input>
-                            <label htmlFor="Yes"> Yes</label>
-                            <input
-                                value={"false"}
-                                type="checkbox"
-                                onChange={() => setHasWifi("false")}
-                                id="No"
-                                checked={hasWifi === "false"}
-                            >
-                            </input>
-                            <label htmlFor="No"> No</label>
-
-                        </div>
-                        <label>Has Tv?</label>
-                        <div className="pertsAllowedDivForm">
-                            <input
-                                value={"true"}
-                                type="checkbox"
-                                onChange={() => {
-                                    setHasTv("true")
-                                }}
-                                id="Yes"
-                                checked={hasTv === "true"}
-                            >
-                            </input>
-                            <label htmlFor="Yes"> Yes</label>
-                            <input
-                                value={"false"}
-                                type="checkbox"
-                                onChange={() => setHasTv("false")}
-                                id="No"
-                                checked={hasTv === "false"}
-                            >
-                            </input>
-                            <label htmlFor="No"> No</label>
-
-                        </div>
-                        <label>Has AC?</label>
-                        <div className="hasAcContainer">
-                            <input
-                                value={"true"}
-                                type="checkbox"
-                                onChange={() => {
-                                    setHasAc("true")
-                                }}
-                                id="Yes"
-                                checked={hasAc === "true"}
-                            >
-                            </input>
-                            <label htmlFor="Yes"> Yes</label>
-                            <input
-                                value={"false"}
-                                type="checkbox"
-                                onChange={() => setHasAc("false")}
-                                id="No"
-                                checked={hasAc === "false"}
-                            >
-                            </input>
-                            <label htmlFor="No"> No</label>
-
-                        </div>
-                        <label>Total Occupancy</label>
-                        <input
-                            value={totalOccupancy}
-                            type="number"
-                            onChange={(e) => setTotalOccupancy(e.target.value)}
-                            required={true}
-                            min="1"
-                        >
-                        </input>
-                        <label>Total Bedrooms</label>
-                        <input
-                            value={totalBedrooms}
-                            type="number"
-                            onChange={(e) => setTotalBedrooms(e.target.value)}
-                            required={true}
-                            min="0"
-                        >
-                        </input>
-                        <label>Total Bathrooms</label>
-                        <input
-                            value={totalBathrooms}
-                            type="number"
-                            onChange={(e) => setTotalBathrooms(e.target.value)}
-                            required={true}
-                            min="0"
-                        >
-                        </input>
-                        <label>Description</label>
-                        <textarea
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
-                            className="addSpotTextArea"
-                            required={true}
-                        >
-                        </textarea>
-                        <label>Price</label>
-                        <input
-                            type="number"
-                            id="priceInputAddSpotFomr"
-                            value={price}
-                            onChange={(e) => {
-                                setPrice(e.target.value)
-                            }}
-                            required={true}
-                            min="0"
-                            step="any"
-                            max="9999.99"
-                        >
-
-                        </input>
-                    </form>
-                </div>
-            </div >
-
-        </>
-    )
-
-
-
-    return (
-        <div className="addSpotPageContainer">
-            <NavBar addspotPage={true} />
-            <div className="addSpotMainContent">
-                {firstSlide ? slide1 : null}
-                {secondSlide && slide2}
-                {thirdSlide && slide3}
-            </div>
-            {addSpotLoader ? <div className="addSpotLoaderBackground"><div className="lds-dual-ring"></div></div> : null}
-        </div >
-    )
-
-}
+  return (
+    <div className="addSpotPageContainer">
+      <NavBar addspotPage={true} />
+      <div className="addSpotMainContent">
+        {firstSlide ? (
+          <SelectTripType
+            firstSlide={firstSlide}
+            secondSlide={secondSlide}
+            thirdSlide={thirdSlide}
+            selected={selected}
+            setSelected={setSelected}
+            setfirstSlide={setfirstSlide}
+            setSecondSlide={setSecondSlide}
+          />
+        ) : null}
+        {secondSlide && (
+          <AddSpotImages
+            firstSlide={firstSlide}
+            secondSlide={secondSlide}
+            thirdSlide={thirdSlide}
+            images={images}
+            setImages={setImages}
+            noImagesError={noImagesError}
+            setnoImagesError={setnoImagesError}
+            setfirstSlide={setfirstSlide}
+            setSecondSlide={setSecondSlide}
+            setThirdSlide={setThirdSlide}
+          />
+        )}
+        {thirdSlide && (
+          <AddSpotMainForm
+            images={images}
+            firstSlide={firstSlide}
+            secondSlide={secondSlide}
+            thirdSlide={thirdSlide}
+            setAddSpotLoader={setAddSpotLoader}
+            selected={selected}
+          />
+        )}
+      </div>
+      {addSpotLoader ? (
+        <div className="addSpotLoaderBackground">
+          <div className="lds-dual-ring"></div>
+        </div>
+      ) : null}
+    </div>
+  );
+};
 
 export default AddSpot;
