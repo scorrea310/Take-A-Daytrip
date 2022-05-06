@@ -53,22 +53,49 @@ const AddSpotMainForm = ({
   const [price, setPrice] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  const [addressError, setAddressError] = useState(false);
 
   //Verify address via Lob API
-  const verifyAddress = (e) => {
-    verify("API_KEY", selectedAddress)
+  // const verifyAddress = (e) => {
+  //   verify("API_KEY", selectedAddress)
+  //     .then((result) => {
+  //       // Simplify response into something readable to the user
+  //       console.log(result);
+  //       const summary = `This address is ${result.deliverability}`;
+  //       setVerificationResult(summary);
+  //     })
+  //     .catch((errorData) => {
+  //       console.log("error");
+  //       setVerificationResult(errorData.message);
+  //     });
+  // };
+
+  //Submits new listing
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    let verification = verify("API_KEY", selectedAddress)
       .then((result) => {
         // Simplify response into something readable to the user
         console.log(result);
         const summary = `This address is ${result.deliverability}`;
         setVerificationResult(summary);
       })
-      .catch((errorData) => setVerificationResult(errorData.message));
-  };
+      .catch((errorData) => {
+        setAddressError(true);
+        setVerificationResult(errorData.message);
+        return { error: true };
+      });
 
-  //Submits new listing
-  const onSubmit = async (e) => {
-    e.preventDefault();
+    const result = await verification;
+
+    console.log(result);
+
+    if (result.error) {
+      console.log("hello");
+      return;
+    }
+
+    console.log("should not run");
 
     setAddSpotLoader(true);
 
@@ -137,28 +164,23 @@ const AddSpotMainForm = ({
               styles={customStyles}
               apiKey="API_KEY"
               onSelection={(selected) => {
-                console.log(selected.value);
+                console.log(selected.value, "line 152");
                 setSelectedAddress(selected.value);
               }}
               onInputChange={(e) => {
                 setSelectedAddress({ ...selectedAddress, primary_line: e });
-                console.log(e);
+                console.log(e, "line 157");
                 console.log(selectedAddress);
               }}
               onFieldChange={(e) => {
-                console.log(e.target.id);
+                let obj = { ...selectedAddress };
+                obj[`${e.target.id}`] = e.target.value;
+                console.log(obj, "line 161");
 
-                let objName = e.target.id;
-
-                setSelectedAddress({
-                  ...selectedAddress,
-                  objName: e.target.value,
-                });
+                setSelectedAddress(obj);
               }}
             />
-            <div>
-              <div onClick={verifyAddress}>Verify</div>
-            </div>
+            <div>{/* <div onClick={verifyAddress}>Verify</div> */}</div>
             <p>{verificationResult}</p>
             <label>Pets Allowed</label>
             <div className="pertsAllowedDivForm">
