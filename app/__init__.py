@@ -1,4 +1,6 @@
 import os
+import json
+
 from flask import Flask, render_template, request, session, redirect
 from flask_cors import CORS
 from flask_migrate import Migrate
@@ -26,6 +28,10 @@ def create_app(flask_config=Config):
     @login.user_loader
     def load_user(id):
         return User.query.get(int(id))
+
+    @login.unauthorized_handler
+    def unauthorized():
+        return {'error': 'Unauthorized to make this request.'}, 401
 
     # Tell flask about our seed commands
     app.cli.add_command(seed_commands)
