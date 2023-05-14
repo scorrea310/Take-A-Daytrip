@@ -24,9 +24,10 @@ def client(app):
     return app.test_client()
 
 @pytest.fixture()
-def client_log_in_required(app):
+def client_logged_in(app):
+    user = User.query.get(1)
     app.test_client_class = FlaskLoginClient
-    return app
+    return app.test_client(user=user)
 
 
 
