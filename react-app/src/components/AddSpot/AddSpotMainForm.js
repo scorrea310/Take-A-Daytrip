@@ -39,7 +39,6 @@ const AddSpotMainForm = ({
   const dispatch = useDispatch();
   const history = useHistory();
 
-  //component states
   const [selectedAddress, setSelectedAddress] = useState({});
   const [verificationResult, setVerificationResult] = useState(null);
   const [petsAllowed, setpetsAllowed] = useState("true");
@@ -73,28 +72,30 @@ const AddSpotMainForm = ({
   //Submits new listing
   const onSubmit = async (e) => {
     e.preventDefault();
+    console.log(selectedAddress, 'MY SELECTED ADDRESS IS!!!!!!')
     let verification = verify("API_KEY", selectedAddress)
       .then((result) => {
         // Simplify response into something readable to the user
-        console.log(result);
+        console.log(result, 'Should be a success heree');
         const summary = `This address is ${result.deliverability}`;
         setVerificationResult(summary);
       })
       .catch((errorData) => {
+        console.log(errorData, 'ERROR RESULT OF SUBMIT ADDRESS VERIFICATION!!!!');
         setAddressError(true);
         setVerificationResult(errorData.message);
         return { error: true };
       });
 
-    const result = await verification;
+    // const result = await verification;
 
-    console.log(result);
+    // console.log(result, "RESULT OF SUBMIT ADDRESS VERIFICATION!!!!");
 
-    if (result.error) {
-      console.log("hello");
-      return;
-    }
-
+    // if (result.error) {
+    //   console.log("hello");
+    //   return;
+    // }
+    return;
     console.log("should not run");
 
     setAddSpotLoader(true);
@@ -147,8 +148,7 @@ const AddSpotMainForm = ({
               <h3>Tell us about your listing</h3>
               <div className="submitSpotButtonContainer">
                 <button className="submitSpotButton" type="submit">
-                  {" "}
-                  Submit Listing{" "}
+                  Submit Listing
                 </button>
               </div>
             </div>
