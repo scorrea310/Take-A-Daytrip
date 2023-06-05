@@ -36,6 +36,14 @@
 
 }
 
+.addressError {
+    color: red;
+    font-size: medium;
+}
+.noAdressError {
+    display: none;
+}
+
 .whatKindOfText {
     font-size: 40px;
     color: white;

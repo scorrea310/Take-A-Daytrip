@@ -40,7 +40,6 @@ const AddSpotMainForm = ({
   const history = useHistory();
 
   const [selectedAddress, setSelectedAddress] = useState({});
-  const [verificationResult, setVerificationResult] = useState(null);
   const [petsAllowed, setpetsAllowed] = useState("true");
   const [totalOccupancy, setTotalOccupancy] = useState(1);
   const [totalBedrooms, setTotalBedrooms] = useState(0);
@@ -54,50 +53,30 @@ const AddSpotMainForm = ({
   const [address, setAddress] = useState("");
   const [addressError, setAddressError] = useState(false);
 
-  //Verify address via Lob API
-  // const verifyAddress = (e) => {
-  //   verify("API_KEY", selectedAddress)
-  //     .then((result) => {
-  //       // Simplify response into something readable to the user
-  //       console.log(result);
-  //       const summary = `This address is ${result.deliverability}`;
-  //       setVerificationResult(summary);
-  //     })
-  //     .catch((errorData) => {
-  //       console.log("error");
-  //       setVerificationResult(errorData.message);
-  //     });
-  // };
-
   //Submits new listing
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(selectedAddress, 'MY SELECTED ADDRESS IS!!!!!!')
-    let verification = verify("API_KEY", selectedAddress)
+    console.log(selectedAddress, "this is my select address!!!!!!")
+    let isAddressValid = verify("live_pub_9da3ed9989b61b909e8301c1b3f718f", selectedAddress)
       .then((result) => {
-        // Simplify response into something readable to the user
-        console.log(result, 'Should be a success heree');
-        const summary = `This address is ${result.deliverability}`;
-        setVerificationResult(summary);
+        if(result.deliverability === 'undeliverable') {
+          console.log("Should Failll!!!")
+          setAddressError(true)
+          return false
+        } else {
+          console.log(result, "This should have passed")
+          return true
+        }
       })
       .catch((errorData) => {
-        console.log(errorData, 'ERROR RESULT OF SUBMIT ADDRESS VERIFICATION!!!!');
-        setAddressError(true);
-        setVerificationResult(errorData.message);
-        return { error: true };
+        console.log(errorData, "FAILURE!!!!")
+        setAddressError(errorData.message);
+        return false
       });
-
-    // const result = await verification;
-
-    // console.log(result, "RESULT OF SUBMIT ADDRESS VERIFICATION!!!!");
-
-    // if (result.error) {
-    //   console.log("hello");
-    //   return;
-    // }
+    
+    if(!isAddressValid) return;
+    console.log(selectedAddress);
     return;
-    console.log("should not run");
-
     setAddSpotLoader(true);
 
     const imageData = new FormData();
@@ -135,7 +114,6 @@ const AddSpotMainForm = ({
           alt="backgroundImage"
         />
       </div>
-
       <div className="rightHalf">
         <div className="formAndNextButtonContainer">
           <form onSubmit={onSubmit} className="addSpotTextFormSlide3">
@@ -160,28 +138,22 @@ const AddSpotMainForm = ({
               placeholder="Name"
               required={true}
             ></input>
+            <p className={addressError ? "addressError" : "noAdressError"}>Address is not deliverable</p>
             <AddressForm
               styles={customStyles}
-              apiKey="API_KEY"
+              apiKey="live_pub_9da3ed9989b61b909e8301c1b3f718f"
               onSelection={(selected) => {
-                console.log(selected.value, "line 152");
                 setSelectedAddress(selected.value);
               }}
               onInputChange={(e) => {
                 setSelectedAddress({ ...selectedAddress, primary_line: e });
-                console.log(e, "line 157");
-                console.log(selectedAddress);
               }}
               onFieldChange={(e) => {
                 let obj = { ...selectedAddress };
                 obj[`${e.target.id}`] = e.target.value;
-                console.log(obj, "line 161");
-
                 setSelectedAddress(obj);
               }}
             />
-            <div>{/* <div onClick={verifyAddress}>Verify</div> */}</div>
-            <p>{verificationResult}</p>
             <label>Pets Allowed</label>
             <div className="pertsAllowedDivForm">
               <input

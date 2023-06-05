@@ -6,9 +6,7 @@ import Footer from "../Footer/Footer"
 import { useEffect } from "react";
 
 const AccountPage = () => {
-
-    const sessionUser = useSelector((state) => state.session.user);
-
+    const sessionUser = useSelector((state) => state.session.user)
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
