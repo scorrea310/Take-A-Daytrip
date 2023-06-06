@@ -3,6 +3,7 @@ import { addSpot } from "../../store/spotReducer";
 import { useHistory } from "react-router-dom";
 import { verify, AddressForm } from "@lob/react-address-autocomplete";
 import { useState } from "react";
+import "./AddSpot.css"
 
 //Coverts image object to usable url
 const toObjectURL = (file) => {
@@ -52,30 +53,28 @@ const AddSpotMainForm = ({
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [addressError, setAddressError] = useState(false);
+  const [undeliverable, setUndeliverable] = useState(false);
 
   //Submits new listing
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log(selectedAddress, "this is my select address!!!!!!")
-    let isAddressValid = verify("API_KEY", selectedAddress)
-      .then((result) => {
-        if(result.deliverability === 'undeliverable') {
-          console.log("Should Failll!!!")
-          setAddressError(true)
-          return false
-        } else {
-          console.log(result, "This should have passed")
-          return true
-        }
-      })
-      .catch((errorData) => {
-        console.log(errorData, "FAILURE!!!!")
-        setAddressError(errorData.message);
-        return false
-      });
-    
-    if(!isAddressValid) return;
-    console.log(selectedAddress);
+    try {
+      let isAddressValid = await verify("API_KEY", selectedAddress)
+
+      if(isAddressValid.deliverability === 'undeliverable') {
+        setAddressError(false)
+        setUndeliverable(true)
+        return;
+      } 
+      setAddressError(false)
+    } catch (error){
+      setUndeliverable(false)
+      setAddressError(error.message)
+      console.log(error.message, typeof error)
+      return;
+    }
+    // READY on logic below.
     return;
     setAddSpotLoader(true);
 
@@ -134,11 +133,13 @@ const AddSpotMainForm = ({
             <input
               value={name}
               type="text"
+              id="slideFormNameInput"
               onChange={(e) => setName(e.target.value)}
               placeholder="Name"
               required={true}
             ></input>
-            <p className={addressError ? "addressError" : "noAdressError"}>Address is not deliverable</p>
+            <p className={addressError ? "addressError" : "noAdressError"}>Error: {addressError}</p>
+            <p className={undeliverable ? "addressError" : "noAdressError"}>Address is not deliverable. Please fix or enter a new address.</p>
             <AddressForm
               styles={customStyles}
               apiKey="API_KEY"
