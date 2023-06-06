@@ -8,6 +8,8 @@ class Spot(db.Model):
     type = db.Column(db.String(255), nullable=False)
     name = db.Column(db.String(500), nullable=False)
     address = db.Column(db.String(1000), nullable=False)
+    longitude = db.Column(db.Numeric(10, 7), nullable=False)
+    latitude = db.Column(db.Numeric(10, 7), nullable=False)
     pets = db.Column(db.Boolean, nullable=False)
     total_occupancy = db.Column(db.Integer, nullable=False)
     total_bedrooms = db.Column(db.Integer, nullable=False)
@@ -44,5 +46,7 @@ class Spot(db.Model):
             "host_id": str(self.host_id),
             "images": [image.image_url for image in self.images],
             "host_name": self.user.name,
-            "address": self.address
+            "address": self.address,
+            "longitude": str(self.longitude),
+            "latitude": str(self.latitude),
         }
