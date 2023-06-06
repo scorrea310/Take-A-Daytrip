@@ -57,7 +57,7 @@ const AddSpotMainForm = ({
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log(selectedAddress, "this is my select address!!!!!!")
-    let isAddressValid = verify("live_pub_9da3ed9989b61b909e8301c1b3f718f", selectedAddress)
+    let isAddressValid = verify("API_KEY", selectedAddress)
       .then((result) => {
         if(result.deliverability === 'undeliverable') {
           console.log("Should Failll!!!")
@@ -141,7 +141,7 @@ const AddSpotMainForm = ({
             <p className={addressError ? "addressError" : "noAdressError"}>Address is not deliverable</p>
             <AddressForm
               styles={customStyles}
-              apiKey="live_pub_9da3ed9989b61b909e8301c1b3f718f"
+              apiKey="API_KEY"
               onSelection={(selected) => {
                 setSelectedAddress(selected.value);
               }}
