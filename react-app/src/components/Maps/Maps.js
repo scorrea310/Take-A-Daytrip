@@ -9,20 +9,14 @@ const containerStyle = {
     height: '100%',
 };
 
-const center = {
-    lat: 33.9368,
-    lng: -118.379,
-};
-
-const Maps = ({ apiKey }) => {
-
-
+const Maps = ({ apiKey, center }) => {
     const [showMarker, setShowMarker] = useState(false)
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: apiKey,
     });
+    console.log(center, isLoaded)
 
     return (
         <>

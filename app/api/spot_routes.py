@@ -21,6 +21,8 @@ def add_spot():
             type=form.data["type"],
             name=form.data["name"],
             address=form.data["address"],
+            longitude=form.data["longitude"],
+            latitude=form.data["latitude"],
             pets=form.data["petsAllowed"],
             total_occupancy=form.data["totalOccupancy"],
             total_bedrooms=form.data["totalBedrooms"],

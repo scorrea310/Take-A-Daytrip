@@ -47,6 +47,6 @@ class Spot(db.Model):
             "images": [image.image_url for image in self.images],
             "host_name": self.user.name,
             "address": self.address,
-            "longitude": str(self.longitude),
-            "latitude": str(self.latitude),
+            "longitude": float(self.longitude),
+            "latitude": float(self.latitude),
         }

@@ -9,9 +9,11 @@ import EditSpot from './EditSpot';
 import ReserveSpot from './ReserveSpot';
 import { GiVacuumCleaner } from "react-icons/gi"
 import { FaAddressCard } from "react-icons/fa"
+import { getKey } from '../../store/maps';
+import Maps from '../Maps/Maps';
 
 const Spot = ({ spotsLoaded }) => {
-
+    const googleMapsKey = useSelector((state) => state.mapsReducer.key);
     const user = useSelector((state) => state.session.user)
     const [isLoading, setIsLoading] = useState(true);
     const dispatch = useDispatch();
@@ -21,6 +23,11 @@ const Spot = ({ spotsLoaded }) => {
     const loginModal = useSelector((state) => state.modals.loginModal)
     const signupModal = useSelector((state) => state.modals.signUpModal)
 
+    useEffect(() => {
+        if (!googleMapsKey) {
+            dispatch(getKey());
+        }
+    }, [dispatch, googleMapsKey]);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -70,9 +77,7 @@ const Spot = ({ spotsLoaded }) => {
         hasWifi = "No"
     }
 
-
-
-    let spotDiv = (
+    let spotDiv = !spot[`${spotId}`] ? null : (
         <div className='spotPageContainer'>
             <div className='spotPageNavBArContainerParent'>
                 <NavBar spotPage={true} />
@@ -113,22 +118,26 @@ const Spot = ({ spotsLoaded }) => {
                     {user?.id === parseInt(spot[`${spotId}`]?.host_id, 10) ? <EditSpot spot={spot} spotId={spotId} /> : isUserLoggedIn()}
                 </div>
             </div>
+            <div style={{width: '79%', height: '70vh', display: "flex", marginBottom: "50px"}}>
+                <div style={{width: '100%', height: '100%'}}>
+                  <Maps apiKey={googleMapsKey} center={{lng: spot[`${spotId}`].longitude, lat: spot[`${spotId}`].latitude}}/>
+                </div>
+            </div>
         </div>
     )
-    /*
-    font-size: 25px;
-    margin-right: 15px;
     
-    */
-
-
     if (!spotsLoaded) {
         return null;
     }
-
+    if(!spot[`${spotId}`]) {
+        return null
+    }
+    if (!googleMapsKey) {
+        return null;
+    }
     return (
         <>
-            {spot[`${spotId}`] === undefined ? <div>Spot Does not Exist</div> : spotDiv}
+            {spot[`${spotId}`] === undefined ? <div>Spot Does not Exist</div> : spotDiv}  
         </>
     )
 }

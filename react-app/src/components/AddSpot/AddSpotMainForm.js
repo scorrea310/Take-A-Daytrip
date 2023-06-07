@@ -58,24 +58,25 @@ const AddSpotMainForm = ({
   //Submits new listing
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(selectedAddress, "this is my select address!!!!!!")
+    let latitude;
+    let longitude;
     try {
-      let isAddressValid = await verify("API_KEY", selectedAddress)
+      let verifiedAddress = await verify("API_key", selectedAddress)
 
-      if(isAddressValid.deliverability === 'undeliverable') {
+      if(verifiedAddress.deliverability === 'undeliverable') {
         setAddressError(false)
         setUndeliverable(true)
         return;
       } 
+      console.log(verifiedAddress.components.longitude, verifiedAddress.components.latitude)
       setAddressError(false)
+      longitude = verifiedAddress.components.longitude
+      latitude = verifiedAddress.components.latitude
     } catch (error){
       setUndeliverable(false)
       setAddressError(error.message)
-      console.log(error.message, typeof error)
       return;
     }
-    // READY on logic below.
-    return;
     setAddSpotLoader(true);
 
     const imageData = new FormData();
@@ -84,7 +85,9 @@ const AddSpotMainForm = ({
     }
 
     let formObj = {
-      address,
+      address: `${selectedAddress.primary_line} ${selectedAddress.city}, ${selectedAddress.state} ${selectedAddress.zip_code}`,
+      longitude,
+      latitude,
       petsAllowed,
       totalOccupancy,
       totalBedrooms,
@@ -98,7 +101,7 @@ const AddSpotMainForm = ({
       type: selected,
       name,
     };
-
+    console.log(formObj, "THIS IS MY FORM OBJECT!!!")
     dispatch(addSpot(formObj, imageData)).then((data) => {
       history.push(`/spots/${data.id}`);
     });
@@ -142,7 +145,7 @@ const AddSpotMainForm = ({
             <p className={undeliverable ? "addressError" : "noAdressError"}>Address is not deliverable. Please fix or enter a new address.</p>
             <AddressForm
               styles={customStyles}
-              apiKey="API_KEY"
+              apiKey="API_key"
               onSelection={(selected) => {
                 setSelectedAddress(selected.value);
               }}

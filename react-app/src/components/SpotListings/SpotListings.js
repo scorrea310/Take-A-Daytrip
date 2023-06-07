@@ -121,7 +121,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                     })}
                 </div>
                 <div className="listingsImageContainer">
-                    <Maps apiKey={key} />
+                    {/* <Maps apiKey={key} /> */}
                 </div>
             </div>
         </div>

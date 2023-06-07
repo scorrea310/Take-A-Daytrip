@@ -46,11 +46,11 @@
 .spotInfoAndReserveOrEditContainer {
     display: flex;
     flex-direction: row;
-    height: 539px;
     /* background-color: aqua; */
     width: 79%;
     margin-top: 30px;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgb(221, 221, 221);
 }
 
 .spotDescriptionAndInfoDiv {
@@ -123,7 +123,6 @@
     font-size: 16px;
     padding-top: 32px;
     padding-bottom: 32px;
-    border-bottom: 1px solid rgb(221, 221, 221);
 }
 
 .editDeleteOrReserveSection {

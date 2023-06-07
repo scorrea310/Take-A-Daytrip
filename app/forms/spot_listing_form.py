@@ -23,6 +23,20 @@ class SpotListingForm(FlaskForm):
             ),
         ]
     )
+    
+    longitude = DecimalField(
+        "Longitude",
+        validators=[
+            DataRequired(),
+        ],
+    )
+
+    latitude = DecimalField(
+        "Latitude",
+        validators=[
+            DataRequired(),
+        ],
+    )
 
     name = StringField(
         "Name",
