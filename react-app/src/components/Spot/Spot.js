@@ -11,7 +11,7 @@ import { GiVacuumCleaner } from "react-icons/gi"
 import { FaAddressCard } from "react-icons/fa"
 import { getKey } from '../../store/maps';
 import Maps from '../Maps/Maps';
-
+import Footer from '../Footer/Footer';
 const Spot = ({ spotsLoaded }) => {
     const googleMapsKey = useSelector((state) => state.mapsReducer.key);
     const user = useSelector((state) => state.session.user)
@@ -138,9 +138,11 @@ const Spot = ({ spotsLoaded }) => {
     if (!googleMapsKey) {
         return null;
     }
+
     return (
         <>
-            {spot[`${spotId}`] === undefined ? <div>Spot Does not Exist</div> : spotDiv}  
+            {spot[`${spotId}`] === undefined ? <div>Spot Does not Exist</div> : spotDiv}
+            {spot[`${spotId}`] !== undefined && <Footer />}
         </>
     )
 }

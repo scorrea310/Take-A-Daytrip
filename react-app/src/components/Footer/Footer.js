@@ -32,9 +32,8 @@ const Footer = () => {
                 </div>
                 <div className="aboutCategory">
                     <div className="projectsText" >Projects</div>
-                    <a className="aboutText" href="http://udderly-forgetful.herokuapp.com/">Udderly ForgetFul </a>
                     <a className="aboutText" href="https://song-cloud-clone.herokuapp.com/">SongCloud</a>
-                    <a className="aboutText" href="https://qwerty2022.herokuapp.com/">Qwerty </a>
+                    <a className="aboutText" href="https://shop-qwerty.herokuapp.com/">Qwerty </a>
                 </div>
             </div>
 
