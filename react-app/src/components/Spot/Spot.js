@@ -20,7 +20,7 @@ const Spot = ({ spotsLoaded }) => {
     const [noProduct, setNoProduct] = useState(false)
     const loginModal = useSelector((state) => state.modals.loginModal)
     const signupModal = useSelector((state) => state.modals.signUpModal)
-
+    let secretAPiKey = process.env.REACT_APP_SECRET
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -125,7 +125,7 @@ const Spot = ({ spotsLoaded }) => {
     if (!spotsLoaded) {
         return null;
     }
-
+    console.log(secretAPiKey, "IS THIS UNDEFINED????")
     return (
         <>
             {spot[`${spotId}`] === undefined ? <div>Spot Does not Exist</div> : spotDiv}
