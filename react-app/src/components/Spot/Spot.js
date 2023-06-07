@@ -118,9 +118,12 @@ const Spot = ({ spotsLoaded }) => {
                     {user?.id === parseInt(spot[`${spotId}`]?.host_id, 10) ? <EditSpot spot={spot} spotId={spotId} /> : isUserLoggedIn()}
                 </div>
             </div>
-            <div style={{width: '79%', height: '70vh', display: "flex", marginBottom: "50px"}}>
-                <div style={{width: '100%', height: '100%'}}>
-                  <Maps apiKey={googleMapsKey} center={{lng: spot[`${spotId}`].longitude, lat: spot[`${spotId}`].latitude}}/>
+            <div id="locationParentContainer">
+                <h2 id="locationHeader">Location</h2>
+            </div>
+            <div id="mapsParentContainerSpotPage">
+                <div id="mapsContainerSpotPage">
+                  <Maps apiKey={googleMapsKey} center={{lng: spot[`${spotId}`].longitude, lat: spot[`${spotId}`].latitude}} singleSpot={true}/>
                 </div>
             </div>
         </div>

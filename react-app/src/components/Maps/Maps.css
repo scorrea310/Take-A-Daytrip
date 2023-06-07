@@ -12,6 +12,11 @@
     transition: all .2s ease-in-out;
 }
 
+#locationMarker {
+    font-size: 40px;
+    color: #E61E4D;
+}
+
 .mapMarker:hover {
     transform: scale(1.1);
 }

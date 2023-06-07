@@ -43,6 +43,11 @@
     justify-content: space-between;
 }
 
+#locationParentContainer {
+    width: 79%;
+    margin-bottom: 20px;
+}
+
 .spotInfoAndReserveOrEditContainer {
     display: flex;
     flex-direction: row;
@@ -51,6 +56,25 @@
     margin-top: 30px;
     margin-bottom: 50px;
     border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+#mapsParentContainerSpotPage {
+    width: 79%;
+    height: 70vh;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+#mapsContainerSpotPage {
+    margin-bottom: 50px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 70px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+#locationHeader {
+    margin: 0px;
 }
 
 .spotDescriptionAndInfoDiv {
