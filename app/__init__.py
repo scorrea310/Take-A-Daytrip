@@ -78,3 +78,8 @@ def create_app(flask_config=Config):
         return app.send_static_file('index.html')
 
     return app
+
+app = create_app()  # Assign the result of create_app() to the 'app' variable
+
+if __name__ == '__main__':
+    app.run()  # Run the app directly when executed as the main module
