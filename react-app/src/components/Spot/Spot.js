@@ -123,7 +123,7 @@ const Spot = ({ spotsLoaded }) => {
             </div>
             <div id="mapsParentContainerSpotPage">
                 <div id="mapsContainerSpotPage">
-                  <Maps apiKey={googleMapsKey} center={{lng: spot[`${spotId}`].longitude, lat: spot[`${spotId}`].latitude}} singleSpot={true}/>
+                  <Maps apiKey={googleMapsKey} center={{lng: spot[`${spotId}`].longitude, lat: spot[`${spotId}`].latitude}} singleSpot={true} zoom={12}/>
                 </div>
             </div>
         </div>

@@ -28,6 +28,38 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
     })
 
     const spots = useSelector((state) => state.spotReducer)
+    const apartmentsList = useSelector((state)=> {
+        return Object.values(state.spotReducer).filter((spot)=> {
+            if (sessionUser) {
+                return +spot.host_id !== sessionUser?.id && spot.type === "Apartment"
+            } 
+            return spot.type === "Apartment"
+        })
+    })
+    const outdoorList = useSelector((state)=> {
+        return Object.values(state.spotReducer).filter((spot)=> {
+            if (sessionUser) {
+                return +spot.host_id !== sessionUser?.id && spot.type === "Outdoor"
+            } 
+            return spot.type === "Outdoor"
+        })
+    })
+    const housesList = useSelector((state)=> {
+        return Object.values(state.spotReducer).filter((spot)=> {
+            if (sessionUser) {
+                return +spot.host_id !== sessionUser?.id && spot.type === "House"
+            } 
+            return spot.type === "House"
+        })
+    })
+    const uniqueList = useSelector((state)=> {
+        return Object.values(state.spotReducer).filter((spot)=> {
+            if (sessionUser) {
+                return +spot.host_id !== sessionUser?.id && spot.type === "Unique Experience"
+            } 
+            return spot.type === "Unique Experience"
+        })
+    })
     let imageUrl;
 
     if (allSpots) {
@@ -41,16 +73,6 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
     } else if (houses) {
         imageUrl = houseImage
     }
-
-
-    /*
-    go through redux store and get spot based on category. 
-    import uniqueExperience from "../../images/theoneSkydiving.jpeg"
-    import houseUrlImage from "../../images/houseImage.jpeg"
-    import apartmentUrlImage from "../../images/logan_apartments.6.jpg"
-
-    type: "Apartment"
-    */
 
     if (!key) {
         return null;
@@ -121,7 +143,11 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                     })}
                 </div>
                 <div className="listingsImageContainer">
-                    {/* <Maps apiKey={key} /> */}
+                    {allSpots && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={Object.values(spots)} zoom={8}/>}
+                    {apartments && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={apartmentsList} zoom={8}/>}
+                    {outdoors && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={outdoorList} zoom={8}/>}
+                    {houses && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={housesList} zoom={8}/>}
+                    {unique && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={uniqueList} zoom={7}/>}
                 </div>
             </div>
         </div>

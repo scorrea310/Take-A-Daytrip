@@ -10,8 +10,8 @@ const containerStyle = {
     height: '100%',
 };
 
-const Maps = ({ apiKey, center, singleSpot }) => {
-    const [showMarker, setShowMarker] = useState(false)
+const Maps = ({ apiKey, center, singleSpot, spotListingsPage, spots, zoom }) => {
+    const [focusedSpotMark, setFocusedSpotMark] = useState(false)
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -24,7 +24,7 @@ const Maps = ({ apiKey, center, singleSpot }) => {
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
-                    zoom={12}
+                    zoom={zoom}
                     options={
                         {
                           mapId: "3c1f96260c437762"
@@ -40,16 +40,30 @@ const Maps = ({ apiKey, center, singleSpot }) => {
                    </OverlayView>
                     )}
 
-                    {showMarker.id === 4 && <InfoBox
+                    {spotListingsPage && spots.map((spot) => {
+                        return (
+                          <OverlayView
+                            key={spot.id}
+                            position={{lat: spot.latitude, lng: spot.longitude}}
+                            mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+                          >
+                            <div onClick={() => setFocusedSpotMark(spot)} className='mapMarker'>
+                              <div id="priceMapMarker">${spot.price_per_day}</div>
+                           </div>
+                          </OverlayView>
+                        )
+                    })}
+                     
+                    {focusedSpotMark && <InfoBox
                         options={{
                             enableEventPropagation: true,
                             pixelOffset: new window.google.maps.Size(80, 0),
                             closeBoxURL: ``,
                         }}
-                        position={center}
+                        position={{lng: focusedSpotMark.longitude, lat: focusedSpotMark.latitude}}
 
                     >
-                        <div onClick={() => setShowMarker(false)} style={{ backgroundColor: 'white', padding: 12 }}>
+                        <div onClick={() => setFocusedSpotMark(false)} style={{ backgroundColor: 'white', padding: 12 }}>
                             <div style={{ fontSize: 16, fontColor: `#08233B` }}>
                                 Hello, World!
                             </div>
