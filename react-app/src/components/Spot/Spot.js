@@ -125,7 +125,6 @@ const Spot = ({ spotsLoaded }) => {
     if (!spotsLoaded) {
         return null;
     }
-    console.log(secretAPiKey, "IS THIS UNDEFINED????")
     return (
         <>
             {spot[`${spotId}`] === undefined ? <div>Spot Does not Exist</div> : spotDiv}
