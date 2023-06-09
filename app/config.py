@@ -12,6 +12,7 @@ class Config:
         'DATABASE_URL').replace('postgres://', 'postgresql://')
     SQLALCHEMY_ECHO = True
     GOOGLE_API_KEY = os.environ.get('MAPS_API_KEY')
+    LOB_ADDRESS_VERIFICATION_API_KEY=os.environ.get('LOB_ADDRESS_VERIFICATION_API_KEY')
 
 
 

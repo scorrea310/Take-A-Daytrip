@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addSpot } from "../../store/spotReducer";
 import { useHistory } from "react-router-dom";
 import { verify, AddressForm } from "@lob/react-address-autocomplete";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./AddSpot.css"
 
 //Coverts image object to usable url
@@ -54,6 +54,26 @@ const AddSpotMainForm = ({
   const [address, setAddress] = useState("");
   const [addressError, setAddressError] = useState(false);
   const [undeliverable, setUndeliverable] = useState(false);
+  const [lobApiKey, setLobApiKey] = useState(false);
+
+    useEffect(() => {
+        if (lobApiKey) {
+          return;
+        }
+        (async () => {
+            const res = await fetch('/api/lob_api_key', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ key: "key" }),
+            });
+        
+            const data = await res.json();
+        
+            setLobApiKey(data.key)
+        })();
+    }, []);
 
   //Submits new listing
   const onSubmit = async (e) => {
@@ -61,7 +81,7 @@ const AddSpotMainForm = ({
     let latitude;
     let longitude;
     try {
-      let verifiedAddress = await verify("API_key", selectedAddress)
+      let verifiedAddress = await verify(lobApiKey, selectedAddress)
 
       if(verifiedAddress.deliverability === 'undeliverable') {
         setAddressError(false)
@@ -106,7 +126,10 @@ const AddSpotMainForm = ({
       history.push(`/spots/${data.id}`);
     });
   };
-
+ 
+  if(!lobApiKey) {
+    return null
+  }
   return (
     <>
       <div className="spotToAddImageContainer">
@@ -145,7 +168,7 @@ const AddSpotMainForm = ({
             <p className={undeliverable ? "addressError" : "noAdressError"}>Address is not deliverable. Please fix or enter a new address.</p>
             <AddressForm
               styles={customStyles}
-              apiKey="API_key"
+              apiKey={lobApiKey}
               onSelection={(selected) => {
                 setSelectedAddress(selected.value);
               }}

@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify, request
 from app.config import Config
-import click
 from app.forms import MapsForm
 
 maps = Blueprint("maps", __name__)

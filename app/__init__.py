@@ -7,6 +7,7 @@ from flask_login import LoginManager
 
 from .models import db, User
 from .api.user_routes import user_routes
+from .api.lob_address import lob_address_routes
 from .api.auth_routes import auth_routes
 from .api.spot_routes import spot_routes
 from .api.reservation_routes import reservation_routes
@@ -36,6 +37,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(spot_routes, url_prefix='/api/spots')
 app.register_blueprint(reservation_routes, url_prefix='/api/reservations')
 app.register_blueprint(maps, url_prefix='/api/maps')
+app.register_blueprint(lob_address_routes, url_prefix='/api/lob_api_key')
 db.init_app(app)
 Migrate(app, db)
 
