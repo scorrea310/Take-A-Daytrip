@@ -9,17 +9,12 @@ import EditSpot from './EditSpot';
 import ReserveSpot from './ReserveSpot';
 import { GiVacuumCleaner } from "react-icons/gi"
 import { FaAddressCard } from "react-icons/fa"
-import { getKey } from '../../store/maps';
 import Maps from '../Maps/Maps';
 import Footer from '../Footer/Footer';
 const Spot = ({ spotsLoaded }) => {
-    const googleMapsKey = useSelector((state) => state.mapsReducer.key);
     const user = useSelector((state) => state.session.user)
-    const [isLoading, setIsLoading] = useState(true);
-    const dispatch = useDispatch();
     const spot = useSelector((state) => state.spotReducer)
     const { spotId } = useParams();
-    const [noProduct, setNoProduct] = useState(false)
     const loginModal = useSelector((state) => state.modals.loginModal)
     const signupModal = useSelector((state) => state.modals.signUpModal)
 
@@ -134,7 +129,7 @@ const Spot = ({ spotsLoaded }) => {
             </div>
             <div id="mapsParentContainerSpotPage">
                 <div id="mapsContainerSpotPage">
-                  <Maps apiKey={googleMapsKey} center={{lng: spot[`${spotId}`].longitude, lat: spot[`${spotId}`].latitude}} singleSpot={true} zoom={12}/>
+                  <Maps apiKey={googleMapsApiKey} center={{lng: spot[`${spotId}`].longitude, lat: spot[`${spotId}`].latitude}} singleSpot={true} zoom={12}/>
                 </div>
             </div>
         </div>
@@ -146,7 +141,7 @@ const Spot = ({ spotsLoaded }) => {
     if(!spot[`${spotId}`]) {
         return null
     }
-    if (!googleMapsKey) {
+    if (!googleMapsApiKey) {
         return null;
     }
 
