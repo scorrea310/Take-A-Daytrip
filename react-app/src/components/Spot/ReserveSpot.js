@@ -175,13 +175,9 @@ const ReserveSpot = ({ price, totalOccupantsAllowed, spotId, editModal, currentR
             <div className="reservePricePerDayContainer"> <div style={{ fontSize: "20px", marginRight: "5px" }}>${price} / day</div> {isOpened && <div onClick={() => setIsOpened(false)} className="close-calendar-text">close calendar</div>}</div>
 
             <form className="makeReservationMainContent" onSubmit={editModal ? editReservation : handleReservation}>
-
-
                 <div className="reserveMainBox">
-
                     <Collapse isOpened={isOpened}>
                         <div className="reservationDateAndDatePickerContainer">
-
                             <DateRange
                                 ranges={[selectionRange]}
                                 showPreview={editModal}

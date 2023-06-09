@@ -82,7 +82,6 @@ def update_name_of_user(id):
     
     form = UpdateNameForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
-
     if form.validate_on_submit():
         click.echo(click.style("it worked!!!!!!", bg='red', fg='white'))
 

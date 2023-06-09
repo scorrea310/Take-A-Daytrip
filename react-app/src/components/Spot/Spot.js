@@ -17,7 +17,6 @@ const Spot = ({ spotsLoaded }) => {
     const { spotId } = useParams();
     const loginModal = useSelector((state) => state.modals.loginModal)
     const signupModal = useSelector((state) => state.modals.signUpModal)
-
     const [googleMapsApiKey, setGoogleMapsApiKey] = useState(false);
 
     useEffect(() => {
