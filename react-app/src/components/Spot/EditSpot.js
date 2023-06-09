@@ -15,7 +15,6 @@ const EditSpot = ({ spot, spotId }) => {
     const history = useHistory()
     const [showEditModal, setShowEditModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
-    const [address, setAddress] = useState(spot[`${spotId}`].address)
     const [petsAllowed, setpetsAllowed] = useState(spot[`${spotId}`].pets_allowed)
     const [totalOccupancy, setTotalOccupancy] = useState(parseInt(spot[`${spotId}`].total_occupancy, 10))
     const [totalBedrooms, setTotalBedrooms] = useState(parseInt(spot[`${spotId}`].total_bedrooms), 10)
@@ -28,15 +27,13 @@ const EditSpot = ({ spot, spotId }) => {
     const [name, setName] = useState(spot[`${spotId}`].name)
     const [type, setType] = useState(spot[`${spotId}`].type)
 
-    const setAddressFunction = (e) => {
-        setAddress(e.target.value);
-    }
-
     const SubmitEdit = (e) => {
         e.preventDefault()
 
         let formObj = {
-            address,
+            address: spot[`${spotId}`].address,
+            longitude: spot[`${spotId}`].longitude,
+            latitude: spot[`${spotId}`].latitude,
             petsAllowed,
             totalOccupancy,
             totalBedrooms,
@@ -60,7 +57,6 @@ const EditSpot = ({ spot, spotId }) => {
             history.push("/")
         })
     }
-
 
     return (
         <div className="editSpotContainer">
@@ -99,15 +95,6 @@ const EditSpot = ({ spot, spotId }) => {
                                 type="text"
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="Name"
-                                required={true}
-                            >
-                            </input>
-                            <label>Address</label>
-                            <input
-                                value={address}
-                                type="text"
-                                onChange={setAddressFunction}
-                                placeholder="Address"
                                 required={true}
                             >
                             </input>
