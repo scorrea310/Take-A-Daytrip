@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addSpot } from "../../store/spotReducer";
 import { useHistory } from "react-router-dom";
 import { verify, AddressForm } from "@lob/react-address-autocomplete";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import "./AddSpot.css"
 
 //Coverts image object to usable url
@@ -55,7 +55,7 @@ const AddSpotMainForm = ({
   const [addressError, setAddressError] = useState(false);
   const [undeliverable, setUndeliverable] = useState(false);
   const [lobApiKey, setLobApiKey] = useState(false);
-
+  const [file, setFile] = useState(images[0])
     useEffect(() => {
         if (lobApiKey) {
           return;
@@ -74,6 +74,12 @@ const AddSpotMainForm = ({
             setLobApiKey(data.key)
         })();
     }, []);
+
+    useEffect(()=> {
+      (() => {
+        setFile(URL.createObjectURL(file))
+      })();
+    }, [])
 
   //Submits new listing
   const onSubmit = async (e) => {
@@ -134,7 +140,7 @@ const AddSpotMainForm = ({
     <>
       <div className="spotToAddImageContainer">
         <img
-          src={images.length > 0 ? toObjectURL(images[0]) : null}
+          src={images.length > 0 ? file : null}
           style={{ width: "80%", height: "80%", borderRadius: "24px" }}
           alt="backgroundImage"
         />
@@ -316,4 +322,4 @@ const AddSpotMainForm = ({
   );
 };
 
-export default AddSpotMainForm;
+export default React.memo(AddSpotMainForm);

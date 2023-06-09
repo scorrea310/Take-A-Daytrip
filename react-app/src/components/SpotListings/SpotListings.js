@@ -87,7 +87,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
     if (!googleMapsApiKey) {
         return null;
     }
-    console.log(googleMapsApiKey, "apikeyyyyyyy")
+    
     return (
         <div className="spotListingsPage">
             <NavBar spotListingsPage={true} />
