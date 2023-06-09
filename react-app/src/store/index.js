@@ -4,7 +4,6 @@ import session from './session'
 import spotReducer from './spotReducer';
 import reservationsReducer from './reservationsReducer';
 import loginAndSignUpModalReducer from './LoginAndRegisterModals';
-import mapsReducer from "./maps"
 import myListingsReducer from './myListings';
 
 const rootReducer = combineReducers({
@@ -12,7 +11,6 @@ const rootReducer = combineReducers({
   spotReducer,
   reservationsReducer,
   modals: loginAndSignUpModalReducer,
-  mapsReducer,
   myListings: myListingsReducer
 });
 

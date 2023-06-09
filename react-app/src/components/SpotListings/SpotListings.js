@@ -8,20 +8,30 @@ import apartmentsImage from "../../images/apartmentSpots.jpeg"
 import uniqueImage from "../../images/uniqueSpotPage.jpeg"
 import outdoorImage from "../../images/outdoorsSpotPage.jpeg"
 import houseImage from "../../images/houseSpotPage.jpeg"
-import Footer from "../Footer/Footer";
-import { getKey } from '../../store/maps';
 import Maps from "../Maps/Maps";
 
 const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
-    const key = useSelector((state) => state.mapsReducer.key);
-    const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
+    const [googleMapsApiKey, setGoogleMapsApiKey] = useState(false);
 
     useEffect(() => {
-        if (!key) {
-            dispatch(getKey());
+        if (googleMapsApiKey) {
+        return;
         }
-    }, [dispatch, key]);
+        (async () => {
+            const res = await fetch('/api/maps', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ key: "key" }),
+            });
+        
+            const data = await res.json();
+        
+            setGoogleMapsApiKey(data.key)
+        })();
+    }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -74,10 +84,10 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
         imageUrl = houseImage
     }
 
-    if (!key) {
+    if (!googleMapsApiKey) {
         return null;
     }
-
+    console.log(googleMapsApiKey, "apikeyyyyyyy")
     return (
         <div className="spotListingsPage">
             <NavBar spotListingsPage={true} />
@@ -143,11 +153,11 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                     })}
                 </div>
                 <div className="listingsImageContainer">
-                    {allSpots && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={Object.values(spots)} zoom={8}/>}
-                    {apartments && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={apartmentsList} zoom={8}/>}
-                    {outdoors && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={outdoorList} zoom={8}/>}
-                    {houses && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={housesList} zoom={8}/>}
-                    {unique && <Maps apiKey={key} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={uniqueList} zoom={7}/>}
+                    {allSpots && <Maps apiKey={googleMapsApiKey} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={Object.values(spots)} zoom={8}/>}
+                    {apartments && <Maps apiKey={googleMapsApiKey} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={apartmentsList} zoom={8}/>}
+                    {outdoors && <Maps apiKey={googleMapsApiKey} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={outdoorList} zoom={8}/>}
+                    {houses && <Maps apiKey={googleMapsApiKey} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={housesList} zoom={8}/>}
+                    {unique && <Maps apiKey={googleMapsApiKey} center={{lat: 33.90831, lng: -118.2581}} spotListingsPage={true} spots={uniqueList} zoom={7}/>}
                 </div>
             </div>
         </div>

@@ -23,15 +23,26 @@ const Spot = ({ spotsLoaded }) => {
     const loginModal = useSelector((state) => state.modals.loginModal)
     const signupModal = useSelector((state) => state.modals.signUpModal)
 
-    useEffect(() => {
-        if (!googleMapsKey) {
-            dispatch(getKey());
-        }
-    }, [dispatch, googleMapsKey]);
+    const [googleMapsApiKey, setGoogleMapsApiKey] = useState(false);
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-    })
+        if (googleMapsApiKey) {
+        return;
+        }
+        (async () => {
+            const res = await fetch('/api/maps', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ key: "key" }),
+            });
+        
+            const data = await res.json();
+        
+            setGoogleMapsApiKey(data.key)
+        })();
+    }, []);
 
     const isUserLoggedIn = () => {
         if (user === null) {
