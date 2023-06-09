@@ -4,6 +4,7 @@ import { GoogleMap, useJsApiLoader, InfoBox, OverlayView } from '@react-google-m
 import "./Maps.css"
 import { useState } from 'react';
 import { HiLocationMarker } from "react-icons/hi"
+import SpotMapCard from '../SpotMapCard/SpotMapCard';
 
 const containerStyle = {
     width: '100%',
@@ -12,7 +13,6 @@ const containerStyle = {
 
 const Maps = ({ apiKey, center, singleSpot, spotListingsPage, spots, zoom }) => {
     const [focusedSpotMark, setFocusedSpotMark] = useState(false)
-
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: apiKey,
@@ -47,8 +47,8 @@ const Maps = ({ apiKey, center, singleSpot, spotListingsPage, spots, zoom }) => 
                             position={{lat: spot.latitude, lng: spot.longitude}}
                             mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
                           >
-                            <div onClick={() => setFocusedSpotMark(spot)} className='mapMarker'>
-                              <div id="priceMapMarker">${spot.price_per_day}</div>
+                            <div onClick={() => setFocusedSpotMark(spot)} className={focusedSpotMark.id === spot.id ? 'selectedMapMarker' : 'mapMarker'}>
+                              <div id={focusedSpotMark.id === spot.id ? "selectedPriceMapMarker" :"priceMapMarker"}>${spot.price_per_day}</div>
                            </div>
                           </OverlayView>
                         )
@@ -59,15 +59,18 @@ const Maps = ({ apiKey, center, singleSpot, spotListingsPage, spots, zoom }) => 
                             enableEventPropagation: true,
                             pixelOffset: new window.google.maps.Size(80, 0),
                             closeBoxURL: ``,
+                            boxStyle: {
+                                overflow: "hidden",
+                                boxShadow: '0 6px 20px rgba(0,0,0,0.3)',
+                                borderRadius: '12px',
+                                cursor: 'pointer',
+                            },
+                            
                         }}
                         position={{lng: focusedSpotMark.longitude, lat: focusedSpotMark.latitude}}
 
                     >
-                        <div onClick={() => setFocusedSpotMark(false)} style={{ backgroundColor: 'white', padding: 12 }}>
-                            <div style={{ fontSize: 16, fontColor: `#08233B` }}>
-                                Hello, World!
-                            </div>
-                        </div>
+                        <SpotMapCard setFocusedSpotMark={setFocusedSpotMark} spot={focusedSpotMark}/>
                     </InfoBox>}
                 </GoogleMap>
             )
