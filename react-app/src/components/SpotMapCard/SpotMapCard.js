@@ -1,6 +1,5 @@
 import "./SpotMapCard.css";
 import { IoIosClose } from "react-icons/io";
-import { GrFormNext, GrUserSettings } from "react-icons/gr";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
 import { useState, useEffect } from "react";
@@ -15,7 +14,7 @@ const SpotMapCard = ({ setFocusedSpotMark, spot }) => {
       const image = new Image();
       image.src = imageUrl;
     });
-  }, []);
+  }, [spot.images]);
 
   const handlePageChange = (e) => {
     if (

@@ -1,12 +1,8 @@
 import "./NavBar.css";
-import React, { useEffect, useState } from "react";
-import { Modal } from "../../context/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/session";
 import { login } from "../../store/session";
 import { useHistory } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import OutsideClickHandler from "react-outside-click-handler";
 
 const ProfileModal = ({
   setProfileModal,
@@ -20,7 +16,7 @@ const ProfileModal = ({
 
   const demoUserLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login("demo@aa.io", "password"));
+    await dispatch(login("demo@aa.io", "password"));
 
     setShowLoginModal(false);
   };
@@ -68,10 +64,6 @@ const ProfileModal = ({
 
   let signedOutProfileWindow = (
     <>
-      {/* <OutsideClickHandler onOutsideClick={() => {
-                setProfileModal(false)
-            }}> */}
-
       <div className="profileWindow">
         <div className="profileWindowLoginText">
           <div className="welcomeUserTextProfileModal">

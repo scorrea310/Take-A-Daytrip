@@ -1,7 +1,4 @@
 import "./Footer.css";
-import { AiFillLinkedin } from "react-icons/ai";
-import { AiFillGithub } from "react-icons/ai";
-import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
   return (

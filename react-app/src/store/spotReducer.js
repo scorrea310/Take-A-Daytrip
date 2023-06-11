@@ -95,7 +95,7 @@ export const deleteSpotThunk = (spotId) => async (dispatch) => {
     method: "DELETE",
   });
 
-  let data = await response.json();
+  await response.json();
 
   if (response.ok) {
     dispatch(deleteSpot(spotId));

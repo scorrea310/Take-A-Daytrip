@@ -1,4 +1,4 @@
-import { formatDistanceToNow, isPast, isToday, compareAsc } from "date-fns";
+import { isPast, isToday } from "date-fns";
 
 //constants
 const CREATE_RESERVATION = "reservation/CREATE_RESERVATION";
@@ -72,6 +72,7 @@ export const loadreservationsthunk = (userId) => async (dispatch) => {
       ) {
         return reservation;
       }
+      return false;
     });
 
     const reservationsObject = {};

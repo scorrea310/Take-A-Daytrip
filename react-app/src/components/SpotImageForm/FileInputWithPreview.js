@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { FaCamera } from "react-icons/fa";
 import "./FileInputWithPreview.css";
 import ButtonWithIcon from "../ButtonWithIcon";

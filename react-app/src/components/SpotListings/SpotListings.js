@@ -1,13 +1,8 @@
 import NavBar from "../NavBar/NavBar";
 import "./SpotListings.css";
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import SpotListingCard from "./SpotListingCard";
-import allSpotsImage from "../../images/allSpots.jpeg";
-import apartmentsImage from "../../images/apartmentSpots.jpeg";
-import uniqueImage from "../../images/uniqueSpotPage.jpeg";
-import outdoorImage from "../../images/outdoorsSpotPage.jpeg";
-import houseImage from "../../images/houseSpotPage.jpeg";
 import Maps from "../Maps/Maps";
 
 const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
@@ -31,7 +26,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
 
       setGoogleMapsApiKey(data.key);
     })();
-  }, []);
+  }, [googleMapsApiKey]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -72,19 +67,6 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
       return spot.type === "Unique Experience";
     });
   });
-  let imageUrl;
-
-  if (allSpots) {
-    imageUrl = allSpotsImage;
-  } else if (apartments) {
-    imageUrl = apartmentsImage;
-  } else if (unique) {
-    imageUrl = uniqueImage;
-  } else if (outdoors) {
-    imageUrl = outdoorImage;
-  } else if (houses) {
-    imageUrl = houseImage;
-  }
 
   if (!googleMapsApiKey) {
     return null;
@@ -108,6 +90,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                 if (+spot.host_id !== sessionUser?.id) {
                   return <SpotListingCard key={spot.id} spot={spot} />;
                 }
+                return false;
               } else {
                 return <SpotListingCard key={spot.id} spot={spot} />;
               }
@@ -121,9 +104,11 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                 ) {
                   return <SpotListingCard key={spot.id} spot={spot} />;
                 }
+                return false;
               } else if (spot.type === "Apartment") {
                 return <SpotListingCard key={spot.id} spot={spot} />;
               }
+              return false;
             })}
           {outdoors &&
             Object.values(spots).map((spot) => {
@@ -134,9 +119,11 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                 ) {
                   return <SpotListingCard key={spot.id} spot={spot} />;
                 }
+                return false;
               } else if (spot.type === "Outdoor") {
                 return <SpotListingCard key={spot.id} spot={spot} />;
               }
+              return false;
             })}
           {houses &&
             Object.values(spots).map((spot) => {
@@ -147,9 +134,11 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                 ) {
                   return <SpotListingCard key={spot.id} spot={spot} />;
                 }
+                return false;
               } else if (spot.type === "House") {
                 return <SpotListingCard key={spot.id} spot={spot} />;
               }
+              return false;
             })}
           {unique &&
             Object.values(spots).map((spot) => {
@@ -160,9 +149,11 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
                 ) {
                   return <SpotListingCard key={spot.id} spot={spot} />;
                 }
+                return false;
               } else if (spot.type === "Unique Experience") {
                 return <SpotListingCard key={spot.id} spot={spot} />;
               }
+              return false;
             })}
         </div>
         <div className="listingsImageContainer">

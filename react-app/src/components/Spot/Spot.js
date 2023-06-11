@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import "./Spot.css";
 import { BsDoorOpen } from "react-icons/bs";
@@ -36,7 +36,7 @@ const Spot = ({ spotsLoaded }) => {
 
       setGoogleMapsApiKey(data.key);
     })();
-  }, []);
+  }, [googleMapsApiKey]);
 
   const isUserLoggedIn = () => {
     if (user === null) {

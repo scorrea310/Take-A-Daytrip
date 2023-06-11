@@ -10,8 +10,6 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { Collapse } from "react-collapse";
-import { useScrollBy } from "react-use-window-scroll";
-import { CgEditExposure } from "react-icons/cg";
 
 const ReserveSpot = ({
   price,
@@ -32,7 +30,6 @@ const ReserveSpot = ({
   const [priceState, setPriceState] = useState("");
   const [calendarErrors, setCalendarErrors] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
-  const scrollBy = useScrollBy();
 
   const setTotalCost = (startDate, endDate) => {
     if (startDate.getTime() < endDate.getTime()) {

@@ -2,7 +2,7 @@ import "./EditSpot.css";
 import { AiFillEdit } from "react-icons/ai";
 import { AiFillDelete } from "react-icons/ai";
 import { Modal } from "../../context/Modal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../common/Button/Button";
 import { useDispatch } from "react-redux";
@@ -59,7 +59,7 @@ const EditSpot = ({ spot, spotId }) => {
       type,
     };
 
-    let newSpot = dispatch(updateSpotFunc(formObj, spotId)).then((data) =>
+    dispatch(updateSpotFunc(formObj, spotId)).then((data) =>
       setShowEditModal(false)
     );
   };

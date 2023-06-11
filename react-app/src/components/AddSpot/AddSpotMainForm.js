@@ -5,14 +5,6 @@ import { verify, AddressForm } from "@lob/react-address-autocomplete";
 import React, { useState, useEffect } from "react";
 import "./AddSpot.css";
 
-//Coverts image object to usable url
-const toObjectURL = (file) => {
-  if (file === null || file === undefined) {
-    return;
-  }
-  return URL.createObjectURL(file);
-};
-
 // Custom styles for AddressForm Lob component
 const customStyles = {
   lob_row: (provided) => ({
@@ -21,6 +13,7 @@ const customStyles = {
     alignItems: "flex-start",
   }),
   lob_label: (provided) => ({
+    ...provided,
     alignSelf: "start",
     minWidth: "5em",
     marginRight: "1em",
@@ -51,7 +44,6 @@ const AddSpotMainForm = ({
   const [hasAc, setHasAc] = useState("true");
   const [price, setPrice] = useState("");
   const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
   const [addressError, setAddressError] = useState(false);
   const [undeliverable, setUndeliverable] = useState(false);
   const [lobApiKey, setLobApiKey] = useState(false);
@@ -73,13 +65,13 @@ const AddSpotMainForm = ({
 
       setLobApiKey(data.key);
     })();
-  }, []);
+  }, [lobApiKey]);
 
   useEffect(() => {
     (() => {
       setFile(URL.createObjectURL(file));
     })();
-  }, []);
+  }, [file]);
 
   //Submits new listing
   const onSubmit = async (e) => {

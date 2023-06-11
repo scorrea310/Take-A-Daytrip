@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import User from "./components/User";
 import { authenticate } from "./store/session";
@@ -19,7 +19,6 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const [spotsLoaded, setSpotsLoaded] = useState(false);
   const dispatch = useDispatch();
-  const [reservationsLoaded, setReservationsLoaded] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -61,7 +60,7 @@ function App() {
           <AddSpot />
         </ProtectedRoute>
         <ProtectedRoute path="/mytrips" exact={true}>
-          <MyTrips reservationsLoaded={reservationsLoaded} />
+          <MyTrips />
         </ProtectedRoute>
         <Route path="/spots/:spotId" exact={true}>
           <Spot spotsLoaded={spotsLoaded} />

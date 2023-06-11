@@ -5,7 +5,7 @@ import { loadreservationsthunk } from "../../store/reservationsReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
-const MyTrips = ({ reservationsLoaded }) => {
+const MyTrips = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [isLoaded, setIsloaded] = useState(false);

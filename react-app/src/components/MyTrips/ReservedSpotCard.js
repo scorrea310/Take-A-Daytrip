@@ -1,19 +1,15 @@
 import "./ReservationSpotCard.css";
 import { FiEdit } from "react-icons/fi";
-import { RiDeleteBinLine } from "react-icons/ri";
 import { MdOutlineCancelPresentation } from "react-icons/md";
-import { CgDetailsMore } from "react-icons/cg";
 import { useState } from "react";
 import { Modal } from "../../context/Modal";
 import ReserveSpot from "../Spot/ReserveSpot";
 import Button from "../common/Button/Button";
 import { deleteReservationThunk } from "../../store/reservationsReducer";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 
 const ReservedSpotCard = ({ reservation }) => {
-  const history = useHistory();
   const dispatch = useDispatch();
   const [showEditModal, setShowEditModal] = useState(false);
   const [showCancelReservationModal, setCancelReservation] = useState(false);

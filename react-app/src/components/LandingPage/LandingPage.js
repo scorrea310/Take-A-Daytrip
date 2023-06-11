@@ -4,7 +4,7 @@ import Button from "../common/Button/Button";
 import CategoryCard from "./CategoryCard";
 import Footer from "../Footer/Footer";
 import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const LandingPage = () => {
   const sessionUser = useSelector((state) => state.session.user);

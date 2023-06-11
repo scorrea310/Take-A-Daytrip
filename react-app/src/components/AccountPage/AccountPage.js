@@ -1,6 +1,6 @@
 import NavBar from "../NavBar/NavBar";
 import "./AccountPage.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import AccountCard from "./AccountCard";
 import Footer from "../Footer/Footer";
 import { useEffect } from "react";

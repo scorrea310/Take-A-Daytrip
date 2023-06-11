@@ -1,4 +1,3 @@
-import { useState } from "react";
 import FileInputWithPreview from "./FileInputWithPreview";
 import "./SpotImageForm.css";
 
@@ -10,9 +9,6 @@ const SpotImageForm = ({
   secondSlide,
   thirdSlide,
 }) => {
-  const [errors, setErrors] = useState([]);
-  const [_imageLoading, setImageLoading] = useState(false);
-
   const toObjectURL = (file) => {
     if (file === null || file === undefined) return;
     return URL.createObjectURL(file);
@@ -78,7 +74,6 @@ const SpotImageForm = ({
           />
         </div>
       </div>
-      {errors.length > 0 && errors.map((e) => e)}
     </div>
   );
 };

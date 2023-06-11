@@ -19,7 +19,7 @@ const MobileNav = ({ setShowLoginModal, setShowSignupModal }) => {
 
   const demoUserLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login("demo@aa.io", "password"));
+    await dispatch(login("demo@aa.io", "password"));
     setShowLoginModal(false);
   };
 

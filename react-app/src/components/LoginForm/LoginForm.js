@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
 import { useDispatch } from "react-redux";
-import { login, signUp } from "../../store/session";
+import { login } from "../../store/session";
 import { IoMdClose } from "react-icons/io";
 import Button from "../common/Button/Button";
 

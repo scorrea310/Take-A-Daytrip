@@ -110,9 +110,6 @@ def get_past_reservations(id):
         obj_date_string = obj["check_out"].split(" ")[0]
         past_trip = datetime.datetime.strptime(obj_date_string, '%Y-%m-%d').date()
 
-
         if(past_trip < present):
             past_users_reservations[reservation.id] = reservation.to_dict()
-
-
     return {"past_reservations": past_users_reservations}
