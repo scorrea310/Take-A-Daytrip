@@ -1,3 +1,3 @@
-import ButtonWithIcon from './ButtonWithIcon';
+import ButtonWithIcon from "./ButtonWithIcon";
 
 export default ButtonWithIcon;

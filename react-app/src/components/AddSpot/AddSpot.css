@@ -1,497 +1,480 @@
 .addSpotPageContainer {
-    display: flex;
-    flex-direction: column;
-    height: 100vh
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .addSpotMainContent {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: row;
-    overflow: hidden;
-    margin-top: 80px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  overflow: hidden;
+  margin-top: 80px;
 }
 
 .leftHalf {
-    width: 50%;
-    height: 100%;
-    background-image: url("../../images/Wiretap.jpeg");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px
+  width: 50%;
+  height: 100%;
+  background-image: url("../../images/Wiretap.jpeg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
 }
 
 .rightHalf {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin-bottom: 20px;
-    overflow-y: scroll;
-    min-height: fit-content;
-    align-items: center;
-
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 20px;
+  overflow-y: scroll;
+  min-height: fit-content;
+  align-items: center;
 }
 
 .addressError {
-    color: red;
-    font-size: medium;
-    margin-top: 0px;
-    margin-bottom: 10px;
+  color: red;
+  font-size: medium;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 .noAdressError {
-    display: none;
+  display: none;
 }
 
 .whatKindOfText {
-    font-size: 40px;
-    color: white;
-    width: 60%;
+  font-size: 40px;
+  color: white;
+  width: 60%;
 }
 
 .spotCard {
-    width: 464px;
-    height: 100px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    border: 1px solid #DDDDDD
+  width: 464px;
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  border: 1px solid #dddddd;
 }
 
 .spotCard:hover {
-    width: 464px;
-    height: 100px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 0 2px #222222;
-    margin-top: 30px;
-    cursor: pointer;
+  width: 464px;
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 2px #222222;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .selected {
-    width: 464px;
-    height: 100px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 0 2px #222222;
-    margin-top: 30px;
+  width: 464px;
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 2px #222222;
+  margin-top: 30px;
 }
 
 .selected:hover {
-    width: 464px;
-    height: 100px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 0 2px #222222;
-    margin-top: 30px;
-    cursor: pointer;
+  width: 464px;
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 2px #222222;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .spotNameAndImageContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 90%;
 }
 
 .nextButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 30px;
-    width: 75px;
-    height: 40px;
-    border-radius: 24px;
-    box-shadow: 0 0 0 2px #222222;
-    margin-top: 35px;
-    background-color: #222222;
-    color: white;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  width: 75px;
+  height: 40px;
+  border-radius: 24px;
+  box-shadow: 0 0 0 2px #222222;
+  margin-top: 35px;
+  background-color: #222222;
+  color: white;
+  cursor: pointer;
 }
 
 .submitSpotButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 30px;
-    width: 120px;
-    height: 40px;
-    border-radius: 24px;
-    box-shadow: 0 0 0 2px #222222;
-    background-color: #222222;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  width: 120px;
+  height: 40px;
+  border-radius: 24px;
+  box-shadow: 0 0 0 2px #222222;
+  background-color: #222222;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .apartmentImage {
-    width: 56px;
-    height: 56px;
-    background-image: url("../../images/logan_apartments.6.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 4px;
+  width: 56px;
+  height: 56px;
+  background-image: url("../../images/logan_apartments.6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
 }
 
 .houseImage {
-    width: 56px;
-    height: 56px;
-    background-image: url("../../images/houseImage.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 4px;
+  width: 56px;
+  height: 56px;
+  background-image: url("../../images/houseImage.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
 }
 
 .uniqueExperience {
-    width: 56px;
-    height: 56px;
-    background-image: url("../../images/theoneSkydiving.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 4px;
+  width: 56px;
+  height: 56px;
+  background-image: url("../../images/theoneSkydiving.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
 }
 
 .outdoorsImage {
-    width: 56px;
-    height: 56px;
-    background-image: url("../../images/beachimage.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 4px;
+  width: 56px;
+  height: 56px;
+  background-image: url("../../images/beachimage.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
 }
 
 .addSpotTextForm {
-    display: flex;
-    flex-direction: column;
-    /* background-color: aqua; */
-    width: 70%;
-    margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+  width: 70%;
+  margin-top: 30px;
 }
 
 .addSpotTextFormSlide3 {
-    display: flex;
-    flex-direction: column;
-    /* background-color: aqua; */
-    width: 70%;
-    /* min-height:auto; */
-    justify-content: center;
-    margin-top: 670px;
-
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+  width: 70%;
+  /* min-height:auto; */
+  justify-content: center;
+  margin-top: 670px;
 }
 
 .pertsAllowedDivForm {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
 }
 
-
-
 .hasAcContainer {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
 }
 
 .formAndNextButtonContainer {
-    display: flex;
-    width: 100%;
-    /* background-color: brown; */
-    height: 100%;
-    justify-content: center;
-    min-height: 100vh;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  /* background-color: brown; */
+  height: 100%;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
 }
 
-
 .spotToAddImageContainer {
-    width: 50%;
-    max-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../../images/Wiretap.jpeg");
+  width: 50%;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../images/Wiretap.jpeg");
 }
 
 #priceInputAddSpotFomr::-webkit-inner-spin-button,
 #priceInputAddSpotFomr::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 .submitSpotButtonContainer {
-    display: flex;
-    justify-content: flex-end;
-
+  display: flex;
+  justify-content: flex-end;
 }
 
-.addSpotTextFormSlide3>input {
-    margin-bottom: 20px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: 4px;
-    box-sizing: border-box;
-    min-height: 38px;
-    outline: 0px;
-    padding: 0px 8px;
-    width: 100%;
+.addSpotTextFormSlide3 > input {
+  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-height: 38px;
+  outline: 0px;
+  padding: 0px 8px;
+  width: 100%;
 }
 
 .tellUsAboutDaytripContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .progressBarSlide1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .addSpotTextArea {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 20px;
-    min-height: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+  min-height: 100px;
 }
 
-.progressBarSlide1>div {
-    margin-right: 5px;
+.progressBarSlide1 > div {
+  margin-right: 5px;
 }
-
 
 .blackSlide {
-    border: 1px solid black;
-    width: 80px;
+  border: 1px solid black;
+  width: 80px;
 }
 
 .graySlide {
-    border: 1px solid #DDDDDD;
-    width: 80px;
+  border: 1px solid #dddddd;
+  width: 80px;
 }
 
 .progressBarSlide3 {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin-right: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-right: 100px;
 }
 
-.progressBarSlide3>div {
-    margin-right: 5px;
+.progressBarSlide3 > div {
+  margin-right: 5px;
 }
 
 .addSpotLoaderBackground {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .lds-dual-ring {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-
+  display: inline-block;
+  width: 80px;
+  height: 80px;
 }
 
 .lds-dual-ring:after {
-    content: " ";
-    display: block;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border-radius: 50%;
-    border: 6px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
 }
 
 @keyframes lds-dual-ring {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 
 @media only screen and (max-width: 1200px) {
-    .addSpotMainContent {
-        flex-direction: column;
-        margin-top: 80px;
-        align-items: center;
-    }
+  .addSpotMainContent {
+    flex-direction: column;
+    margin-top: 80px;
+    align-items: center;
+  }
 
-    .spotToAddImageContainer {
-        width: 89%;
-        height: 50%;
-        padding-top: 30px;
-        height: fit-content;
-        padding-bottom: 30px;
-    }
+  .spotToAddImageContainer {
+    width: 89%;
+    height: 50%;
+    padding-top: 30px;
+    height: fit-content;
+    padding-bottom: 30px;
+  }
 
-    .addSpotTextFormSlide3 {
-        margin-top: 0px;
-    }
+  .addSpotTextFormSlide3 {
+    margin-top: 0px;
+  }
 
-    .leftHalf {
-        width: 100%;
-        height: 300px;
-    }
+  .leftHalf {
+    width: 100%;
+    height: 300px;
+  }
 
-    .rightHalf {
-        width: 100%;
-        height: fit-content;
-        overflow-y: unset;
-        margin-top: 50px;
-    }
+  .rightHalf {
+    width: 100%;
+    height: fit-content;
+    overflow-y: unset;
+    margin-top: 50px;
+  }
 
-    .selected {
-        width: 100%;
-        height: 100px;
-        height: 150px;
-    }
+  .selected {
+    width: 100%;
+    height: 100px;
+    height: 150px;
+  }
 
-    .selected:hover {
-        width: 100%;
-        height: 100px;
-        height: 150px;
-    }
+  .selected:hover {
+    width: 100%;
+    height: 100px;
+    height: 150px;
+  }
 
-    .whatKindOfText {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+  .whatKindOfText {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-    .addSpotPageContainer {
-        height: fit-content
-    }
+  .addSpotPageContainer {
+    height: fit-content;
+  }
 
-    .spotCardCategorySelectionDiv {
-        margin-top: 30px;
-        width: 70%;
-    }
+  .spotCardCategorySelectionDiv {
+    margin-top: 30px;
+    width: 70%;
+  }
 
-    .spotCard {
-        width: 100%;
-        height: 150px;
-    }
+  .spotCard {
+    width: 100%;
+    height: 150px;
+  }
 
-    .spotCard:hover {
-        width: 100%;
-        height: 150px;
-    }
+  .spotCard:hover {
+    width: 100%;
+    height: 150px;
+  }
 
-
-    .photosContainer {
-        margin-top: 30px;
-    }
-
-
-
+  .photosContainer {
+    margin-top: 30px;
+  }
 }
-
 
 @media only screen and (max-device-width: 428px) {
-    .addSpotMainContent {
-        margin-top: 180px;
-    }
+  .addSpotMainContent {
+    margin-top: 180px;
+  }
 
-    .leftHalf {
-        height: 450px;
-    }
+  .leftHalf {
+    height: 450px;
+  }
 
-    .whatKindOfText {
-        font-size: 60px;
-        color: white;
-        width: 60%;
-    }
+  .whatKindOfText {
+    font-size: 60px;
+    color: white;
+    width: 60%;
+  }
 
-    .apartmentImage {
-        width: 100px;
-        height: 100px;
-    }
+  .apartmentImage {
+    width: 100px;
+    height: 100px;
+  }
 
-    .houseImage {
-        width: 100px;
-        height: 100px;
-    }
+  .houseImage {
+    width: 100px;
+    height: 100px;
+  }
 
-    .outdoorsImage {
-        width: 100px;
-        height: 100px;
-    }
+  .outdoorsImage {
+    width: 100px;
+    height: 100px;
+  }
 
-    .uniqueExperience {
-        width: 100px;
-        height: 100px;
-    }
+  .uniqueExperience {
+    width: 100px;
+    height: 100px;
+  }
 
-    .tripTypeTextSpotCard {
-        font-size: 25px;
-    }
+  .tripTypeTextSpotCard {
+    font-size: 25px;
+  }
 
-    .formAndNextButtonContainer {
-        min-height: fit-content;
-    }
+  .formAndNextButtonContainer {
+    min-height: fit-content;
+  }
 
-    .rightHalf {
-        width: 100%;
-        height: fit-content;
-        overflow-y: unset;
-        flex-direction: column;
-        margin-bottom: 300px;
-    }
+  .rightHalf {
+    width: 100%;
+    height: fit-content;
+    overflow-y: unset;
+    flex-direction: column;
+    margin-bottom: 300px;
+  }
 
-    .nextButton {
-        width: 180px;
-        height: 80px;
-        border-radius: 53px;
-        font-size: 25px;
-    }
-
+  .nextButton {
+    width: 180px;
+    height: 80px;
+    border-radius: 53px;
+    font-size: 25px;
+  }
 }
 
-
 @media only screen and (min-device-width: 1560px) and (min-height: 900px) {
+  .formAndNextButtonContainer {
+    min-height: fit-content;
+    height: 80vh;
+  }
 
-    .formAndNextButtonContainer {
-        min-height: fit-content;
-        height: 80vh;
-    }
+  .submitSpotButton {
+    width: 120px;
+  }
 
-    .submitSpotButton {
-        width: 120px
-    }
+  .addSpotTextFormSlide3 {
+    margin-top: 500px;
+  }
 
-    .addSpotTextFormSlide3 {
-        margin-top: 500px;
-    }
-
-    .rightHalf {
-        margin-top: 0px;
-    }
+  .rightHalf {
+    margin-top: 0px;
+  }
 }

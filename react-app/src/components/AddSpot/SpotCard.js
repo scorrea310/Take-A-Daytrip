@@ -1,25 +1,22 @@
-import "./AddSpot.css"
-
+import "./AddSpot.css";
 
 const SpotCard = ({ name, selected, onClick, imageClassName }) => {
+  let nameOfClass;
 
-    let nameOfClass;
+  if (selected) {
+    nameOfClass = selected;
+  } else {
+    nameOfClass = "spotCard";
+  }
 
-
-    if (selected) {
-        nameOfClass = selected
-    } else {
-        nameOfClass = "spotCard"
-    }
-
-    return (
-        <div className={nameOfClass} onClick={onClick}>
-            <div className="spotNameAndImageContainer">
-                <div className="tripTypeTextSpotCard">{name}</div>
-                <div className={imageClassName}></div>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className={nameOfClass} onClick={onClick}>
+      <div className="spotNameAndImageContainer">
+        <div className="tripTypeTextSpotCard">{name}</div>
+        <div className={imageClassName}></div>
+      </div>
+    </div>
+  );
+};
 
 export default SpotCard;

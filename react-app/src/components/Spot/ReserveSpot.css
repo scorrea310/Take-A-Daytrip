@@ -1,166 +1,163 @@
 .reserveASpotContainer {
-    display: flex;
-    height: fit-content;
-    flex-direction: column;
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 12px;
-    width: fit-content;
-    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 100px;
-    padding: 30px 40px;
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  width: fit-content;
+  box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 100px;
+  padding: 30px 40px;
 }
 
 .close-calendar-text {
-    text-decoration: underline;
-    cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .makeReservationMainContent {
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    flex-direction: column;
-    /* background-color: aqua; */
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  flex-direction: column;
+  /* background-color: aqua; */
 }
 
 .reservePricePerDayContainer {
-    display: flex;
-    flex-direction: row;
-    /* background-color: blueviolet; */
-    height: fit-content;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* background-color: blueviolet; */
+  height: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .reserveMainBox {
-    display: flex;
-    flex-direction: column;
-    /* background-color: aqua; */
-    height: fit-content;
-    width: fit-content;
-    border: 1px solid rgb(176, 176, 176);
-    border-radius: 8px;
-    margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+  height: fit-content;
+  width: fit-content;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 8px;
+  margin-top: 15px;
 }
 
 .reservationDateAndDatePickerContainer {
-    /* background-color: blueviolet; */
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    border-bottom: 1px solid rgb(176, 176, 176);
-    ;
+  /* background-color: blueviolet; */
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px solid rgb(176, 176, 176);
 }
 
 .btn.addReserveationButton {
-    width: 100%;
-    border-radius: 8px;
-    height: 48px;
-    cursor: pointer;
-    background-color: #E61E4D;
-    border: none;
+  width: 100%;
+  border-radius: 8px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #e61e4d;
+  border: none;
 }
 
 .checkAvailabilityButton {
-    width: 100%;
-    border-radius: 12px;
-    height: 48px;
-    cursor: pointer;
-    background-color: #E61E4D;
-    border: none;
-    padding: 8px 12px;
-    color: #fff;
-    border-radius: 8px;
-    border-width: 1px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  border-radius: 12px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #e61e4d;
+  border: none;
+  padding: 8px 12px;
+  color: #fff;
+  border-radius: 8px;
+  border-width: 1px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .addReservationNumberofGuestsText {
-    display: flex;
-    /* background-color: aqua; */
-    height: 50px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    align-items: center;
-    margin-left: 10px;
-    flex-direction: row;
+  display: flex;
+  /* background-color: aqua; */
+  height: 50px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  align-items: center;
+  margin-left: 10px;
+  flex-direction: row;
 }
 
 .totalPriceCalculated {
-    display: flex;
-    /* background-color: aqua; */
-    height: 40px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    align-items: center;
-    margin-left: 10px;
-    flex-direction: row;
-    /* background-color: aqua; */
+  display: flex;
+  /* background-color: aqua; */
+  height: 40px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  align-items: center;
+  margin-left: 10px;
+  flex-direction: row;
+  /* background-color: aqua; */
 }
 
 .numberOfGuestsReserve {
-    margin-left: 10px;
-    width: 50%
+  margin-left: 10px;
+  width: 50%;
 }
 
 .calendar {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .calendarError {
-    font-size: 14px;
-    color: red;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    /* background-color: aquamarine; */
+  font-size: 14px;
+  color: red;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  /* background-color: aquamarine; */
 }
 
 .ReactCollapse--collapse {
-    transition: height 600ms;
+  transition: height 600ms;
 }
 
-
-
 @media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
-    .reserveASpotContainer {
-        height: fit-content;
-        width: fit-content;
-        position: relative;
-        top: 0;
-    }
+  .reserveASpotContainer {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    top: 0;
+  }
 
-    .reservePricePerDayContainer {
-        width: 90%
-    }
+  .reservePricePerDayContainer {
+    width: 90%;
+  }
 
-    .makeReservationMainContent {
-        width: 500px;
-        height: fit-content;
-    }
+  .makeReservationMainContent {
+    width: 500px;
+    height: fit-content;
+  }
 
-    .btn.addReserveationButton {
-        font-size: 20px;
-        height: 55px;
-    }
+  .btn.addReserveationButton {
+    font-size: 20px;
+    height: 55px;
+  }
 
-    .reserveMainBox {
-        width: 100%;
-        height: fit-content;
-    }
+  .reserveMainBox {
+    width: 100%;
+    height: fit-content;
+  }
 
-    .checkAvailabilityButton {
-        height: 55px;
-        font-size: 20px;
-    }
+  .checkAvailabilityButton {
+    height: 55px;
+    font-size: 20px;
+  }
 }

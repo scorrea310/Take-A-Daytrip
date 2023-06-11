@@ -16,7 +16,7 @@
   width: 80%;
   border-radius: 12px;
   height: 48px;
-  background-color: #E61E4D;
+  background-color: #e61e4d;
   border: none;
 }
 
@@ -24,7 +24,7 @@
   width: 70%;
   border-radius: 12px;
   height: 48px;
-  background-color: #E61E4D;
+  background-color: #e61e4d;
   color: white;
   border: none;
 }
@@ -41,12 +41,11 @@
   cursor: pointer;
 }
 
-
 .btn.signUpmodal {
   width: 70%;
   border-radius: 12px;
   height: 48px;
-  background-color: #E61E4D;
+  background-color: #e61e4d;
   border: none;
 }
 

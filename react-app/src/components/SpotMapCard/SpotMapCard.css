@@ -1,57 +1,57 @@
 #spotMapCard {
-    display: flex;
-    flex-direction: column;
-    width: 22vw;
-    height: 40vh;
-    border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  height: 40vh;
+  border-radius: 12px;
 }
 
 #spotMapCardImageContainer {
-    width: 100%;
-    height: 55%;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    background-color: blue;
+  width: 100%;
+  height: 55%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background-color: blue;
 }
 
-#spotMapCardTextContentArea{
-    width: 100%;
-    height: 45%;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    background-color: white;
-    padding-left: 20px;
-    padding-top: 20px;
-    min-width: fit-content;
+#spotMapCardTextContentArea {
+  width: 100%;
+  height: 45%;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: white;
+  padding-left: 20px;
+  padding-top: 20px;
+  min-width: fit-content;
 }
 
 #closeMapBoxIcon {
-    font-size: 1.5pc;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,0.4);
-    margin-left: 15px;
-    margin-top: 15px;
-    color: white;
-    border-style: solid;
-    border: none;
-    cursor: pointer;
+  font-size: 1.5pc;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: 15px;
+  margin-top: 15px;
+  color: white;
+  border-style: solid;
+  border: none;
+  cursor: pointer;
 }
 
 .spotTextMapCardName {
-    font-size: 15px;
-    padding-bottom: 10px;
-    font-weight: 500;
+  font-size: 15px;
+  padding-bottom: 10px;
+  font-weight: 500;
 }
 
-#spotTextMapCardPricePerDayContainer{
-    display: flex;
-    flex-direction: row;
+#spotTextMapCardPricePerDayContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 #spotTextMapCardPricePerDay {
-    font-size: 16px;
-    font-weight: 500;
-    margin-right: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 5px;
 }
 
 #spotTextMapCardNightText {
@@ -60,56 +60,53 @@
 }
 
 #spotMapCardCloseAndArrowsMainContent {
-    height:63%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 63%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #spotMapCardArrowsParentContainer {
-    display: flex;
-    width: 100%;
-    height: fit-content;
-    justify-content: center;
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
 }
 
 #spotMapCardArrowsMainContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 90%;
-    height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  height: fit-content;
 }
 
 .spotMapCardNextArrow {
-    font-size: 25px;
-    border-radius: 50%;
-    padding: 5px;
-    border-style: solid;
-    border: none;
-    background-color: rgb(231, 229, 229);
+  font-size: 25px;
+  border-radius: 50%;
+  padding: 5px;
+  border-style: solid;
+  border: none;
+  background-color: rgb(231, 229, 229);
 }
 
 .spotMapCardNextArrow:hover {
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 #spotMapCardArrowsMainContainerRight {
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    width: 90%;
-    height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 90%;
+  height: fit-content;
 }
 
 #spotMapCardArrowsMainContainerLeft {
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    width: 90%;
-    height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 90%;
+  height: fit-content;
 }
-
-
-

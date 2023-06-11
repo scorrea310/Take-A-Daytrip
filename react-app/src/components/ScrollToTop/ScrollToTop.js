@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 /**
  * A component that scrolls the window up on every navigation
@@ -7,13 +7,13 @@ import { useLocation } from 'react-router-dom';
  */
 
 const ScrollToTop = () => {
-    const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
-    return null;
+  return null;
 };
 
 export default ScrollToTop;

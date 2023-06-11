@@ -1,42 +1,36 @@
 .photosContainer {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* color: red */
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* color: red */
 }
 
 .image-preview-grid {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .imageErrorsDiv {
-    height: 20px;
-    margin-bottom: 0px;
+  height: 20px;
+  margin-bottom: 0px;
 }
 
 .progressBarSlide2 {
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .progressBarSlide2 > div {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
-
-@media only screen 
-        and (max-width: 1200px)
-    {
-
-.progressBarSlide2 {
+@media only screen and (max-width: 1200px) {
+  .progressBarSlide2 {
     margin-top: 0px;
-    
+  }
 }
-
-    }

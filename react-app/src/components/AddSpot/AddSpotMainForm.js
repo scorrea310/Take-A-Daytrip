@@ -2,8 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { addSpot } from "../../store/spotReducer";
 import { useHistory } from "react-router-dom";
 import { verify, AddressForm } from "@lob/react-address-autocomplete";
-import React,{ useState, useEffect } from "react";
-import "./AddSpot.css"
+import React, { useState, useEffect } from "react";
+import "./AddSpot.css";
 
 //Coverts image object to usable url
 const toObjectURL = (file) => {
@@ -55,31 +55,31 @@ const AddSpotMainForm = ({
   const [addressError, setAddressError] = useState(false);
   const [undeliverable, setUndeliverable] = useState(false);
   const [lobApiKey, setLobApiKey] = useState(false);
-  const [file, setFile] = useState(images[0])
-    useEffect(() => {
-        if (lobApiKey) {
-          return;
-        }
-        (async () => {
-            const res = await fetch('/api/lob_api_key', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ key: "key" }),
-            });
-        
-            const data = await res.json();
-        
-            setLobApiKey(data.key)
-        })();
-    }, []);
+  const [file, setFile] = useState(images[0]);
+  useEffect(() => {
+    if (lobApiKey) {
+      return;
+    }
+    (async () => {
+      const res = await fetch("/api/lob_api_key", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ key: "key" }),
+      });
 
-    useEffect(()=> {
-      (() => {
-        setFile(URL.createObjectURL(file))
-      })();
-    }, [])
+      const data = await res.json();
+
+      setLobApiKey(data.key);
+    })();
+  }, []);
+
+  useEffect(() => {
+    (() => {
+      setFile(URL.createObjectURL(file));
+    })();
+  }, []);
 
   //Submits new listing
   const onSubmit = async (e) => {
@@ -87,20 +87,23 @@ const AddSpotMainForm = ({
     let latitude;
     let longitude;
     try {
-      let verifiedAddress = await verify(lobApiKey, selectedAddress)
+      let verifiedAddress = await verify(lobApiKey, selectedAddress);
 
-      if(verifiedAddress.deliverability === 'undeliverable') {
-        setAddressError(false)
-        setUndeliverable(true)
+      if (verifiedAddress.deliverability === "undeliverable") {
+        setAddressError(false);
+        setUndeliverable(true);
         return;
-      } 
-      console.log(verifiedAddress.components.longitude, verifiedAddress.components.latitude)
-      setAddressError(false)
-      longitude = verifiedAddress.components.longitude
-      latitude = verifiedAddress.components.latitude
-    } catch (error){
-      setUndeliverable(false)
-      setAddressError(error.message)
+      }
+      console.log(
+        verifiedAddress.components.longitude,
+        verifiedAddress.components.latitude
+      );
+      setAddressError(false);
+      longitude = verifiedAddress.components.longitude;
+      latitude = verifiedAddress.components.latitude;
+    } catch (error) {
+      setUndeliverable(false);
+      setAddressError(error.message);
       return;
     }
     setAddSpotLoader(true);
@@ -127,14 +130,14 @@ const AddSpotMainForm = ({
       type: selected,
       name,
     };
-    console.log(formObj, "THIS IS MY FORM OBJECT!!!")
+    console.log(formObj, "THIS IS MY FORM OBJECT!!!");
     dispatch(addSpot(formObj, imageData)).then((data) => {
       history.push(`/spots/${data.id}`);
     });
   };
- 
-  if(!lobApiKey) {
-    return null
+
+  if (!lobApiKey) {
+    return null;
   }
   return (
     <>
@@ -170,8 +173,12 @@ const AddSpotMainForm = ({
               placeholder="Name"
               required={true}
             ></input>
-            <p className={addressError ? "addressError" : "noAdressError"}>Error: {addressError}</p>
-            <p className={undeliverable ? "addressError" : "noAdressError"}>Address is not deliverable. Please fix or enter a new address.</p>
+            <p className={addressError ? "addressError" : "noAdressError"}>
+              Error: {addressError}
+            </p>
+            <p className={undeliverable ? "addressError" : "noAdressError"}>
+              Address is not deliverable. Please fix or enter a new address.
+            </p>
             <AddressForm
               styles={customStyles}
               apiKey={lobApiKey}

@@ -27,7 +27,7 @@
   height: 175px;
   max-width: 175px;
   max-height: 175px;
-  border-radius:  3px;
+  border-radius: 3px;
   border: 1px solid #e1e3df;
   background-position: center;
   background-size: cover;
@@ -40,12 +40,12 @@
 }
 
 .grid-circle:hover {
-  border-color: hsl(357deg 91% 59%)
+  border-color: hsl(357deg 91% 59%);
 }
 
 .grid-block:hover {
   cursor: pointer;
-  border-color: hsl(357deg 91% 59%)
+  border-color: hsl(357deg 91% 59%);
 }
 
 .icon-container {

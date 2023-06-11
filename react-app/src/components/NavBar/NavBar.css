@@ -1,735 +1,725 @@
 .NavBarContainer {
-    display: flex;
-    width: 100%;
-    min-height: 80px;
-    background-color: white;
-    justify-content: center;
-    position: fixed;
-    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
-    z-index: 900;
+  display: flex;
+  width: 100%;
+  min-height: 80px;
+  background-color: white;
+  justify-content: center;
+  position: fixed;
+  box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+  z-index: 900;
 }
 
 .landingPageNavBarContainer {
-    display: flex;
-    width: 100%;
-    height: 80px;
-    justify-content: center;
-    position: fixed;
-    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
-    background-color: white;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  position: fixed;
+  box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+  background-color: white;
 }
 
 #profile-picture-navbar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .spotPageNavBarContainer {
-    display: flex;
-    width: 100%;
-    height: 80px;
-    justify-content: center;
-    box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
-    background-color: white;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  box-shadow: rgb(0 0 0 / 8%) 0 1px 12px;
+  background-color: white;
 }
 
 .navLogoContainer {
-    display: flex;
-    width: 33%;
-    /* background-color: blueviolet; */
-    flex-shrink: 2;
-    flex-direction: row;
-    align-items: center;
-
+  display: flex;
+  width: 33%;
+  /* background-color: blueviolet; */
+  flex-shrink: 2;
+  flex-direction: row;
+  align-items: center;
 }
 
 .centerNavBarContainer {
-    display: flex;
-    width: 89%;
-    height: 80px;
-    flex-direction: row;
-    position: fixed;
-    background-color: white;
-    /* background-color: brown; */
-    /* flex: 1 0 140px */
+  display: flex;
+  width: 89%;
+  height: 80px;
+  flex-direction: row;
+  position: fixed;
+  background-color: white;
+  /* background-color: brown; */
+  /* flex: 1 0 140px */
 }
-
-
 
 .centerNavBarContainerListingsPage {
-    display: flex;
-    width: 97%;
-    height: 80px;
-    flex-direction: row;
-    position: fixed;
-    background-color: white;
-    /* background-color: brown; */
-    /* flex: 1 0 140px */
+  display: flex;
+  width: 97%;
+  height: 80px;
+  flex-direction: row;
+  position: fixed;
+  background-color: white;
+  /* background-color: brown; */
+  /* flex: 1 0 140px */
 }
 
-
 .addSpotSlidesNavBar {
-    display: flex;
-    width: 89%;
-    height: 80px;
-    flex-direction: row;
-    position: fixed;
+  display: flex;
+  width: 89%;
+  height: 80px;
+  flex-direction: row;
+  position: fixed;
 }
 
 #navLogo {
-    width: 50px;
-    height: 50px;
-    background-image: url("../../images/Screen\ Shot\ 2022-02-14\ at\ 9.03.44\ PM.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-right: 10px;
-    display: none;
-    border-radius: 50%;
-
-
+  width: 50px;
+  height: 50px;
+  background-image: url("../../images/Screen\ Shot\ 2022-02-14\ at\ 9.03.44\ PM.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  display: none;
+  border-radius: 50%;
 }
 
 .takeADayTripText {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    -webkit-background: -webkit-linear-gradient(45deg,
-            rgb(1, 1, 164) 0%,
-            rgb(116, 1, 142) 11%,
-            hsl(315deg 100% 27%) 22%,
-            hsl(329deg 100% 36%) 33%,
-            hsl(337deg 100% 43%) 44%,
-            hsl(357deg 91% 59%) 56%,
-            hsl(17deg 100% 59%) 67%,
-            hsl(34deg 100% 53%) 78%,
-            hsl(45deg 100% 50%) 89%,
-            hsl(55deg 100% 50%) 100%);
-    background-clip: text;
-    background: linear-gradient(45deg,
-            rgb(1, 1, 164) 0%,
-            rgb(116, 1, 142) 11%,
-            hsl(315deg 100% 27%) 22%,
-            hsl(329deg 100% 36%) 33%,
-            hsl(337deg 100% 43%) 44%,
-            hsl(357deg 91% 59%) 56%,
-            hsl(17deg 100% 59%) 67%,
-            hsl(34deg 100% 53%) 78%,
-            hsl(45deg 100% 50%) 89%,
-            hsl(55deg 100% 50%) 100%);
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  -webkit-background: -webkit-linear-gradient(
+    45deg,
+    rgb(1, 1, 164) 0%,
+    rgb(116, 1, 142) 11%,
+    hsl(315deg 100% 27%) 22%,
+    hsl(329deg 100% 36%) 33%,
+    hsl(337deg 100% 43%) 44%,
+    hsl(357deg 91% 59%) 56%,
+    hsl(17deg 100% 59%) 67%,
+    hsl(34deg 100% 53%) 78%,
+    hsl(45deg 100% 50%) 89%,
+    hsl(55deg 100% 50%) 100%
+  );
+  background-clip: text;
+  background: linear-gradient(
+    45deg,
+    rgb(1, 1, 164) 0%,
+    rgb(116, 1, 142) 11%,
+    hsl(315deg 100% 27%) 22%,
+    hsl(329deg 100% 36%) 33%,
+    hsl(337deg 100% 43%) 44%,
+    hsl(357deg 91% 59%) 56%,
+    hsl(17deg 100% 59%) 67%,
+    hsl(34deg 100% 53%) 78%,
+    hsl(45deg 100% 50%) 89%,
+    hsl(55deg 100% 50%) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
 }
 
 /* padding: 20px;
     border-radius: 34px; */
 
 .placesToStayTextContainer {
-    display: flex;
-    width: 33%;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
+  display: flex;
+  width: 33%;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
 }
 
 .placesToStayButtonContainer {
-    width: fit-content;
-    background-color: white;
-    padding: 12px;
-    border-radius: 24px;
-    border: 1px solid #e4e2e2;
-    cursor: pointer;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 1%);
-    font-size: 14px;
+  width: fit-content;
+  background-color: white;
+  padding: 12px;
+  border-radius: 24px;
+  border: 1px solid #e4e2e2;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 1%);
+  font-size: 14px;
 }
 
 .placesToStayButtonContainer:hover {
-    width: fit-content;
-    border-radius: 24px;
-    cursor: pointer;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 6%)
+  width: fit-content;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 6%);
 }
 
-
 #placesToStayBottomBorder {
-    width: 20px;
-    /* height: 10px; */
-    border-bottom: 1px solid gray;
-    margin-top: 10px;
+  width: 20px;
+  /* height: 10px; */
+  border-bottom: 1px solid gray;
+  margin-top: 10px;
 }
 
 .profileButtonContainer {
-    display: flex;
-    /* background-color: aqua; */
-    width: fit-content;
-    height: 100%;
-    width: 33%;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
+  display: flex;
+  /* background-color: aqua; */
+  width: fit-content;
+  height: 100%;
+  width: 33%;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
 .navBarProfileButton {
-    width: 77px;
-    height: 42px;
-    border-radius: 21px;
-    background-color: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  width: 77px;
+  height: 42px;
+  border-radius: 21px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .navBarProfileButton:hover {
-    width: 77px;
-    height: 42px;
-    border-radius: 21px;
-    background-color: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 4%)
+  width: 77px;
+  height: 42px;
+  border-radius: 21px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 4%);
 }
 
 .searchStayContainer {
-    display: flex;
-    width: 100%;
-    height: 64px;
-    background-color: aqua;
-    justify-content: center;
-    margin-top: 10px;
+  display: flex;
+  width: 100%;
+  height: 64px;
+  background-color: aqua;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .searchStayForm {
-    display: flex;
-    width: 50%;
-    height: 64px;
-    background-color: rgb(247, 247, 247);
-    justify-content: center;
-    border-radius: 32px;
-    border: 1px solid rgb(221, 221, 221);
+  display: flex;
+  width: 50%;
+  height: 64px;
+  background-color: rgb(247, 247, 247);
+  justify-content: center;
+  border-radius: 32px;
+  border: 1px solid rgb(221, 221, 221);
 }
 
 .profileWindow {
-    display: flex;
-    flex-direction: column;
-    min-width: 220px;
-    height: fit-content;
-    margin-top: 10px;
-    border-radius: 10px;
-    border: 1px solid #DDDDDD;
-    z-index: 2000;
-    background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  height: fit-content;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+  z-index: 2000;
+  background-color: #ffffff;
 }
 
 .profileWindowSignupText {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    justify-content: flex-start;
-    align-items: center;
-
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .profileWindowSignupText:hover {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7f7f7;
-    cursor: pointer;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  cursor: pointer;
 }
 
 .welcomeUserTextProfileModal {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 10px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 10px;
 }
 
 .upcomingTripsTextProfileWindow {
-    width: 100%;
-    padding-left: 15px;
-    margin-right: 10px;
+  width: 100%;
+  padding-left: 15px;
+  margin-right: 10px;
 }
 
 .accountTextProfileWindow {
-    width: 100%;
-    padding-left: 15px;
-    margin-right: 10px;
+  width: 100%;
+  padding-left: 15px;
+  margin-right: 10px;
 }
 
 .profileWindowLoginText {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    justify-content: flex-start;
-    align-items: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: 1px solid #e4e2e2;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: flex-start;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 1px solid #e4e2e2;
 }
 
 /* border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px; */
 
 .profileWindowLogOutContainer {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    justify-content: flex-start;
-    align-items: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: flex-start;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-
 .profileWindowHostYourHomeText {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
 }
 
 .profileWindowAccountDiv {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
 }
 
 .profileWindowDemoUserTextContainer {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-    cursor: pointer;
-    padding-left: 15px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 15px;
 }
 
 .profileWindowDemoUserTextContainer:hover {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-    background-color: #f7f7f7;
-    cursor: pointer;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .profileWindowHostYourHomeText:hover {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-    background-color: #f7f7f7;
-    cursor: pointer;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  background-color: #f7f7f7;
+  cursor: pointer;
 }
 
 .profileWindowAccountDiv:hover {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-    background-color: #f7f7f7;
-    cursor: pointer;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  background-color: #f7f7f7;
+  cursor: pointer;
 }
 
 .logoutButton {
-    text-decoration: none;
-    border: none;
-    background: none;
-    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-    font-size: 16px;
-    display: flex;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-    cursor: pointer;
-    padding-left: 15px;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+    "Segoe UI", "Helvetica", Arial, sans-serif;
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 15px;
 }
 
 .logoutButton:hover {
-    text-decoration: none;
-    border: none;
-    background: none;
-    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-    font-size: 16px;
-    display: flex;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    cursor: pointer;
-    background-color: #f7f7f7;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+    "Segoe UI", "Helvetica", Arial, sans-serif;
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  background-color: #f7f7f7;
 }
 
 .loginButton {
-    text-decoration: none;
-    border: none;
-    background: none;
-    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-    font-size: 16px;
-    display: flex;
-    width: 100%;
-    height: 40px;
-    padding-left: 15px;
-    align-items: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    cursor: pointer;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+    "Segoe UI", "Helvetica", Arial, sans-serif;
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  padding-left: 15px;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
 }
 
 .loginButton:hover {
-    text-decoration: none;
-    border: none;
-    background: none;
-    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-    font-size: 16px;
-    display: flex;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    cursor: pointer;
-    background-color: #f7f7f7;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+    "Segoe UI", "Helvetica", Arial, sans-serif;
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+  background-color: #f7f7f7;
 }
 
-
-
-
 .signupButton {
-    text-decoration: none;
-    border: none;
-    background: none;
-    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-    font-size: 16px;
-    display: flex;
-    width: 100%;
-    height: 40px;
-    justify-content: flex-start;
-    align-items: center;
-    cursor: pointer;
-    padding-left: 15px;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+    "Segoe UI", "Helvetica", Arial, sans-serif;
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 15px;
 }
 
 .signupButton:hover {
-    text-decoration: none;
-    border: none;
-    background: none;
-    font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    width: 100%;
-    height: 40px;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #f7f7f7;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+    "Segoe UI", "Helvetica", Arial, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f7f7f7;
 }
 
 .profileModalWindowContainerNavBar {
-    z-index: 1000;
-    top: 70px;
-    right: 40px;
-    position: absolute;
+  z-index: 1000;
+  top: 70px;
+  right: 40px;
+  position: absolute;
 }
 
 @media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
+  .NavBarContainer {
+    height: 185px;
+    box-shadow: rgb(0 0 0 / 25%) 0 1px 12px;
+    margin-top: -5px;
+  }
 
-    .NavBarContainer {
-        height: 185px;
-        box-shadow: rgb(0 0 0 / 25%) 0 1px 12px;
-        margin-top: -5px;
-    }
+  .addSpotSlidesNavBar {
+    height: 190px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5px;
+  }
 
-    .addSpotSlidesNavBar {
-        height: 190px;
-        justify-content: center;
-        align-items: center;
-        margin-top: -5px;
-    }
+  .placesToStayButtonContainer {
+    padding: 20px;
+    border-radius: 34px;
+    font-size: 20px;
+  }
 
+  .centerNavBarContainerListingsPage {
+    height: 190px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5px;
+  }
 
-    .placesToStayButtonContainer {
-        padding: 20px;
-        border-radius: 34px;
-        font-size: 20px;
-    }
+  .centerNavBarContainer {
+    display: flex;
+    width: 89%;
+    height: 190px;
+    flex-direction: row;
+    position: fixed;
+    background-color: white;
+    justify-content: center;
+    margin-top: -5px;
+  }
 
-    .centerNavBarContainerListingsPage {
-        height: 190px;
-        justify-content: center;
-        align-items: center;
-        margin-top: -5px;
-    }
+  .navBarProfileButton {
+    width: 130px;
+    height: 72px;
+    border-radius: 40px;
+  }
 
-    .centerNavBarContainer {
-        display: flex;
-        width: 89%;
-        height: 190px;
-        flex-direction: row;
-        position: fixed;
-        background-color: white;
-        justify-content: center;
-        margin-top: -5px;
-    }
+  .navBarProfileButton:hover {
+    width: 120px;
+    height: 62px;
+    border-radius: 33px;
+  }
 
-    .navBarProfileButton {
-        width: 130px;
-        height: 72px;
-        border-radius: 40px;
-    }
+  .loginButton {
+    height: 100%;
+    font-size: 30px;
+    color: black;
+    justify-content: center;
+  }
 
-    .navBarProfileButton:hover {
-        width: 120px;
-        height: 62px;
-        border-radius: 33px;
-    }
+  .loginButton:hover {
+    height: 100%;
+    font-size: 30px;
+    color: black;
 
-    .loginButton {
-        height: 100%;
-        font-size: 30px;
-        color: black;
-        justify-content: center;
-    }
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+      "Segoe UI", "Helvetica", Arial, sans-serif;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 
-    .loginButton:hover {
-        height: 100%;
-        font-size: 30px;
-        color: black;
+  .logoutButton {
+    height: 100%;
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+    border: none;
+    background: none;
+    justify-content: center;
+  }
 
-        text-decoration: none;
-        border: none;
-        background: none;
-        font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
+  .upcomingTripsTextProfileWindow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 
-    .logoutButton {
-        height: 100%;
-        font-size: 30px;
-        color: black;
-        text-decoration: none;
-        border: none;
-        background: none;
-        justify-content: center;
-    }
+  .accountTextProfileWindow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 
-    .upcomingTripsTextProfileWindow {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
+  .logoutButton:hover {
+    height: 100%;
+    font-size: 30px;
+    font-size: 30px;
+    color: black;
 
-    .accountTextProfileWindow {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+      "Segoe UI", "Helvetica", Arial, sans-serif;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 
-    .logoutButton:hover {
-        height: 100%;
-        font-size: 30px;
-        font-size: 30px;
-        color: black;
+  .profileButtonContainer {
+    min-height: 100px;
+    justify-content: center;
+    display: none;
+  }
 
-        text-decoration: none;
-        border: none;
-        background: none;
-        font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
+  .profileWindowHostYourHomeText {
+    height: 40%;
+    font-size: 30px;
+  }
 
+  .profileWindowAccountDiv {
+    height: 40%;
+    font-size: 30px;
+  }
 
-    .profileButtonContainer {
-        min-height: 100px;
-        justify-content: center;
-        display: none;
-    }
+  .profileWindowDemoUserTextContainer {
+    height: 100%;
+    font-size: 30px;
+    justify-content: center;
+  }
 
-    .profileWindowHostYourHomeText {
-        height: 40%;
-        font-size: 30px;
-    }
+  .welcomeUserTextProfileModal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 
-    .profileWindowAccountDiv {
-        height: 40%;
-        font-size: 30px;
-    }
+  .profileWindowDemoUserTextContainer:hover {
+    height: 100%;
+    font-size: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .profileWindowHostYourHomeText:hover {
+    height: 33%;
+    font-size: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .profileWindowAccountDiv:hover {
+    height: 33%;
+    font-size: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .profileWindowDemoUserTextContainer {
-        height: 100%;
-        font-size: 30px;
-        justify-content: center;
-    }
+  .signupButton {
+    height: 100%;
+    font-size: 30px;
+    color: black;
+    justify-content: center;
+  }
 
-    .welcomeUserTextProfileModal {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
+  .signupButton:hover {
+    height: 100%;
+    font-size: 30px;
+    color: black;
 
-    .profileWindowDemoUserTextContainer:hover {
-        height: 100%;
-        font-size: 30px;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+      "Segoe UI", "Helvetica", Arial, sans-serif;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .profileWindowHostYourHomeText:hover {
-        height: 33%;
-        font-size: 30px;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
+  .placesToStayTextContainer {
+    font-size: 25px;
+    display: none;
+  }
 
-    .profileWindowAccountDiv:hover {
-        height: 33%;
-        font-size: 30px;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
+  .profileWindow {
+    height: 200px;
+    border: none;
+    border-radius: 12px;
+    border: 1px solid #c1bebe;
+  }
 
-
-    .signupButton {
-        height: 100%;
-        font-size: 30px;
-        color: black;
-        justify-content: center;
-    }
-
-    .signupButton:hover {
-        height: 100%;
-        font-size: 30px;
-        color: black;
-
-        text-decoration: none;
-        border: none;
-        background: none;
-        font-family: apple-system, BlinkMacSystemFont, 'Roboto', 'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    .placesToStayTextContainer {
-        font-size: 25px;
-        display: none;
-    }
-
-    .profileWindow {
-        height: 200px;
-        border: none;
-        border-radius: 12px;
-        border: 1px solid #c1bebe;
-    }
-
-    .landingPageNavBarContainer {
-        display: flex;
-        width: 100%;
-        height: 185px;
-        justify-content: center;
-        position: fixed;
-        top: 0;
-        box-shadow: rgb(0 0 0 / 25%) 0 1px 12px;
-        /* padding-left: 4px;
+  .landingPageNavBarContainer {
+    display: flex;
+    width: 100%;
+    height: 185px;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    box-shadow: rgb(0 0 0 / 25%) 0 1px 12px;
+    /* padding-left: 4px;
     padding-right: 5px; */
-        margin-top: -5px;
-        background-color: white;
-    }
+    margin-top: -5px;
+    background-color: white;
+  }
 
-    .profileModalWindowContainerNavBar {
-        width: 100%;
-        margin-top: 0px;
-        top: 150px;
-        right: 0px;
-        height: 200px
-    }
+  .profileModalWindowContainerNavBar {
+    width: 100%;
+    margin-top: 0px;
+    top: 150px;
+    right: 0px;
+    height: 200px;
+  }
 
-    .profileWindowSignupText {
-        height: 33%;
-        font-size: 30px;
-    }
+  .profileWindowSignupText {
+    height: 33%;
+    font-size: 30px;
+  }
 
-    .profileWindowSignupText:hover {
-        height: 40%;
-        font-size: 30px;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
+  .profileWindowSignupText:hover {
+    height: 40%;
+    font-size: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .profileWindowLoginText {
-        height: 40%;
-        font-size: 30px;
-    }
+  .profileWindowLoginText {
+    height: 40%;
+    font-size: 30px;
+  }
 
-    .profileWindowLogOutContainer {
-        height: 40%;
-        font-size: 30px;
-    }
+  .profileWindowLogOutContainer {
+    height: 40%;
+    font-size: 30px;
+  }
 
+  .navLogoContainer {
+    width: fit-content;
+  }
 
-    .navLogoContainer {
-        width: fit-content;
-    }
-
-    .takeADayTripText {
-        font-size: 50px;
-        display: block;
-        height: fit-content
-    }
+  .takeADayTripText {
+    font-size: 50px;
+    display: block;
+    height: fit-content;
+  }
 }
 
-
 @media only screen and (max-width: 1200px) {
-
-    .NavBarContainer {
-        position: fixed;
-    }
-
+  .NavBarContainer {
+    position: fixed;
+  }
 }

@@ -1,205 +1,201 @@
 .reservedTripCardContainer {
-    display: flex;
-    width: 100%;
-    border-radius: 24px;
-    height: 300px;
-    /* background-color: aqua; */
-    margin-bottom: 60px;
-    flex-direction: row;
-    align-items: flex-end;
+  display: flex;
+  width: 100%;
+  border-radius: 24px;
+  height: 300px;
+  /* background-color: aqua; */
+  margin-bottom: 60px;
+  flex-direction: row;
+  align-items: flex-end;
 }
 
 #editReservationIcon {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 #cancelReservationIcon {
-    margin-right: 5px;
-    color: red;
+  margin-right: 5px;
+  color: red;
 }
 
 .reservesSpotCardInfo {
-    display: flex;
-    width: 70%;
-    /* background-color: blue; */
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  width: 70%;
+  /* background-color: blue; */
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .yourGoingToTextAndEditContainer {
-    height: fit-content;
-    /* background-color: brown; */
-    align-items: center;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-direction: row;
+  height: fit-content;
+  /* background-color: brown; */
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .yourGoingToText {
-    /* height: 50px; */
-    /* background-color: brown; */
-    align-items: center;
-    display: flex;
-    width: fit-content;
-    margin-right: 30px;
-    justify-content: center;
-    font-size: 24px;
-    flex-direction: row;
+  /* height: 50px; */
+  /* background-color: brown; */
+  align-items: center;
+  display: flex;
+  width: fit-content;
+  margin-right: 30px;
+  justify-content: center;
+  font-size: 24px;
+  flex-direction: row;
 }
 
 .reservedSpotCardMainInfo {
-    display: flex;
-    width: 80%;
-    /* background-color: brown; */
-    /* height: 120px; */
-    height: fit-content;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin-top: 10px;
-    justify-content: center;
+  display: flex;
+  width: 80%;
+  /* background-color: brown; */
+  /* height: 120px; */
+  height: fit-content;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-top: 10px;
+  justify-content: center;
 }
 
 .checkInDateReservedCArd {
-    display: flex;
-    flex-direction: row;
-    /* background-color: aqua; */
-    width: 60%;
-    justify-content: space-between;
-    margin-top: 15px;
-    margin-bottom: 13px;
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
+  width: 60%;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 13px;
 }
 
-
 .priceReservationCardContainer {
-    display: flex;
-    flex-direction: row;
-    /* background-color: aqua; */
-    width: 60%;
-    justify-content: space-between;
-    margin-top: 15px;
-    margin-bottom: 28px;
-
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
+  width: 60%;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 28px;
 }
 
 .editAndDeleteReservationIconAndText {
-    display: flex;
-    flex-direction: row;
-    width: 200px;
-    height: 30px;
-    /* background-color: aqua; */
-    align-items: center;
-    margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  height: 30px;
+  /* background-color: aqua; */
+  align-items: center;
+  margin-top: 5px;
 }
 
 .editIconAndDeleteReserveCard {
-    display: flex;
-    flex-direction: row;
-    cursor: pointer;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  align-items: center;
 }
 
 .deleteIconAndTextReserveCard {
-    display: flex;
-    flex-direction: row;
-    color: red;
-    cursor: pointer;
-    margin-left: 20px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  color: red;
+  cursor: pointer;
+  margin-left: 20px;
+  align-items: center;
 }
 
 .seeMoreDetailsIconAndTextContainerReserveCard {
-    display: flex;
-    flex-direction: row;
-    /* background-color: aqua; */
-    width: 60%;
-    height: 70px;
-    justify-content: center;
-    /* margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
+  width: 60%;
+  height: 70px;
+  justify-content: center;
+  /* margin-top: 20px;
     margin-bottom: 30px; */
-    /* background-color: aqua; */
-    align-items: center;
-    cursor: pointer;
+  /* background-color: aqua; */
+  align-items: center;
+  cursor: pointer;
 }
 
 .cancelReservationInModalContainer {
-    display: flex;
-    width: 400px;
-    height: 400px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cancelReservationInModalButtonContainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-    width: 100%;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  width: 100%;
+  justify-content: center;
 }
 
 @media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
+  .yourGoingToTextAndEditContainer {
+    width: 80%;
+  }
 
-    .yourGoingToTextAndEditContainer {
-        width: 80%;
-    }
+  .reservesSpotCardInfo {
+    justify-content: center;
+  }
 
-    .reservesSpotCardInfo {
-        justify-content: center;
-    }
+  #editReservationIcon {
+    font-size: 25px;
+  }
 
-    #editReservationIcon {
-        font-size: 25px;
-    }
+  #cancelReservationIcon {
+    font-size: 25px;
+  }
 
-    #cancelReservationIcon {
-        font-size: 25px;
-    }
+  .editIconAndDeleteReserveCard {
+    font-size: 20px;
+  }
 
-    .editIconAndDeleteReserveCard {
-        font-size: 20px;
-    }
+  .deleteIconAndTextReserveCard {
+    font-size: 20px;
+  }
 
-    .deleteIconAndTextReserveCard {
-        font-size: 20px;
-    }
+  .yourGoingToText {
+    justify-content: flex-end;
+    font-size: 28px;
+    flex-direction: row;
+    text-align: center;
+    /* margin-right: 20px; */
+    width: fit-content;
+  }
 
-    .yourGoingToText {
-        justify-content: flex-end;
-        font-size: 28px;
-        flex-direction: row;
-        text-align: center;
-        /* margin-right: 20px; */
-        width: fit-content;
-    }
+  .checkInDateReservedCArd {
+    width: 90%;
+    font-size: 20px;
+  }
 
-    .checkInDateReservedCArd {
-        width: 90%;
-        font-size: 20px;
-    }
+  .priceReservationCardContainer {
+    font-size: 20px;
+    width: 90%;
+  }
 
-    .priceReservationCardContainer {
-        font-size: 20px;
-        width: 90%;
+  .reservedTripCardContainer {
+    margin-bottom: 200px;
+    height: 350px;
+  }
 
-    }
+  .TripsTextTripsPage {
+    font-size: 50px;
+    margin-bottom: 80px;
+  }
 
-    .reservedTripCardContainer {
-        margin-bottom: 200px;
-        height: 350px;
-    }
-
-    .TripsTextTripsPage {
-        font-size: 50px;
-        margin-bottom: 80px;
-    }
-
-    .noTripsSection {
-        font-size: 40px;
-        font-weight: 500;
-    }
+  .noTripsSection {
+    font-size: 40px;
+    font-weight: 500;
+  }
 }

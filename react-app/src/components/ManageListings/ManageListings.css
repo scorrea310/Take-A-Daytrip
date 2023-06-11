@@ -1,49 +1,94 @@
 .manageListingsPage {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .myListingsContainer {
-    width: 100%;
-    height: fit-content;
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  height: fit-content;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
 }
 
 .listingsMainContent {
-    width: 89%;
-    height: fit-content;
-    margin-top: 30px;
-    flex-direction: column;
+  width: 89%;
+  height: fit-content;
+  margin-top: 30px;
+  flex-direction: column;
 }
 
 #YourListingsText {
-    font-size: 32px;
-    border-bottom: 1px solid #DDDDDD;
-    padding-bottom: 15px;
-    margin-top: 15px;
+  font-size: 32px;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 15px;
+  margin-top: 15px;
 }
 
 .listingCard {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    height: fit-content;
-    cursor: pointer;
-    /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  /* background-color: brown; */
 }
 
 #yourListingImageCard {
-    width: 280px;
-    height: 280px;
-    border-radius: 12px;
+  width: 280px;
+  height: 280px;
+  border-radius: 12px;
 }
 
 .yourlistingsContainer {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(4, minmax(181px, 300px));
+  grid-row-gap: 50px;
+  row-gap: 50px;
+  grid-column-gap: 20px;
+  -webkit-column-gap: 18px;
+  column-gap: 30px;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+  margin-top: 40px;
+  min-height: 500px;
+}
+
+.listingNameAndPriceContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* background-color: aqua; */
+  margin-top: 10px;
+}
+
+#listingAddress {
+  font-weight: 600;
+}
+
+#listingPriceYourListings {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#listingNameListingCard {
+  margin-bottom: 15px;
+}
+
+.page-path-manage-listings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 180px;
+}
+
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
+  .yourlistingsContainer {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: repeat(4, minmax(181px, 300px));
+    grid-template-columns: repeat(2, minmax(181px, 300px));
     grid-row-gap: 50px;
     row-gap: 50px;
     grid-column-gap: 20px;
@@ -54,73 +99,25 @@
     justify-content: space-between;
     margin-top: 40px;
     min-height: 500px;
-}
+  }
 
-.listingNameAndPriceContainer {
+  .myListingsContainer {
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+
+  .page-path-manage-listings {
+    width: 280px;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    /* background-color: aqua; */
-    margin-top: 10px;
-}
+    align-items: center;
+  }
 
-#listingAddress {
-    font-weight: 600;
-}
+  #YourListingsText {
+    margin-top: 40px;
+    font-size: 40px;
+  }
 
-#listingPriceYourListings {
-    font-size: 16px;
-    font-weight: 300;
-}
-
-#listingNameListingCard {
-    margin-bottom: 15px;
-}
-
-.page-path-manage-listings {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 180px;
-}
-
-
-@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
-    .yourlistingsContainer {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: repeat(2, minmax(181px, 300px));
-        grid-row-gap: 50px;
-        row-gap: 50px;
-        grid-column-gap: 20px;
-        -webkit-column-gap: 18px;
-        column-gap: 30px;
-        width: 100%;
-        height: fit-content;
-        justify-content: space-between;
-        margin-top: 40px;
-        min-height: 500px;
-    }
-
-
-    .myListingsContainer {
-        margin-top: 200px;
-        margin-bottom: 100px;
-    }
-
-    .page-path-manage-listings {
-        width: 280px;
-        display: flex;
-        align-items: center;
-    }
-
-    #YourListingsText {
-        margin-top: 40px;
-        font-size: 40px;
-    }
-
-    .listingsMainContent {
-        margin-top: 50px;
-    }
-
+  .listingsMainContent {
+    margin-top: 50px;
+  }
 }
