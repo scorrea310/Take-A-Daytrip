@@ -40,7 +40,7 @@ const ReservedSpotCard = ({ reservation }) => {
             <div style={{ width: "400px", height: "100%", backgroundImage: `url(${reservation.spot_images[0]})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "24px" }} ></div>
             <div className="reservesSpotCardInfo">
                 <div className="yourGoingToTextAndEditContainer">
-                    <div className="yourGoingToText">You're going to {reservation.spot_name}</div>
+                    <div className="yourGoingToText">{reservation.spot_name}</div>
                     <div className="editAndDeleteReservationIconAndText">
                         <div className="editIconAndDeleteReserveCard" onClick={() => setShowEditModal(true)} ><FiEdit id="editReservationIcon" /> Edit </div>
                         <div className="deleteIconAndTextReserveCard" onClick={() => setCancelReservation(true)} ><MdOutlineCancelPresentation id="cancelReservationIcon" /> Cancel</div>
