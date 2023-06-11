@@ -32,7 +32,14 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
     window.scrollTo(0, 0);
   });
 
-  const spots = useSelector((state) => state.spotReducer);
+  const spots = useSelector((state) => {
+    return Object.values(state.spotReducer).filter((spot) => {
+      if (sessionUser) {
+        return +spot.host_id !== sessionUser?.id;
+      }
+      return true;
+    });
+  });
   const apartmentsList = useSelector((state) => {
     return Object.values(state.spotReducer).filter((spot) => {
       if (sessionUser) {
@@ -85,75 +92,24 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
       <div className="listingsAndImageMainContainer">
         <div className="listingsContainer">
           {allSpots &&
-            Object.values(spots).map((spot) => {
-              if (sessionUser) {
-                if (+spot.host_id !== sessionUser?.id) {
-                  return <SpotListingCard key={spot.id} spot={spot} />;
-                }
-                return false;
-              } else {
-                return <SpotListingCard key={spot.id} spot={spot} />;
-              }
+            spots.map((spot) => {
+              return <SpotListingCard key={spot.id} spot={spot} />;
             })}
           {apartments &&
-            Object.values(spots).map((spot) => {
-              if (sessionUser) {
-                if (
-                  +spot.host_id !== sessionUser?.id &&
-                  spot.type === "Apartment"
-                ) {
-                  return <SpotListingCard key={spot.id} spot={spot} />;
-                }
-                return false;
-              } else if (spot.type === "Apartment") {
-                return <SpotListingCard key={spot.id} spot={spot} />;
-              }
-              return false;
+            apartmentsList.map((spot) => {
+              return <SpotListingCard key={spot.id} spot={spot} />;
             })}
           {outdoors &&
-            Object.values(spots).map((spot) => {
-              if (sessionUser) {
-                if (
-                  +spot.host_id !== sessionUser?.id &&
-                  spot.type === "Outdoor"
-                ) {
-                  return <SpotListingCard key={spot.id} spot={spot} />;
-                }
-                return false;
-              } else if (spot.type === "Outdoor") {
-                return <SpotListingCard key={spot.id} spot={spot} />;
-              }
-              return false;
+            outdoorList.map((spot) => {
+              return <SpotListingCard key={spot.id} spot={spot} />;
             })}
           {houses &&
-            Object.values(spots).map((spot) => {
-              if (sessionUser) {
-                if (
-                  +spot.host_id !== sessionUser?.id &&
-                  spot.type === "House"
-                ) {
-                  return <SpotListingCard key={spot.id} spot={spot} />;
-                }
-                return false;
-              } else if (spot.type === "House") {
-                return <SpotListingCard key={spot.id} spot={spot} />;
-              }
-              return false;
+            housesList.map((spot) => {
+              return <SpotListingCard key={spot.id} spot={spot} />;
             })}
           {unique &&
-            Object.values(spots).map((spot) => {
-              if (sessionUser) {
-                if (
-                  +spot.host_id !== sessionUser?.id &&
-                  spot.type === "Unique Experience"
-                ) {
-                  return <SpotListingCard key={spot.id} spot={spot} />;
-                }
-                return false;
-              } else if (spot.type === "Unique Experience") {
-                return <SpotListingCard key={spot.id} spot={spot} />;
-              }
-              return false;
+            uniqueList.map((spot) => {
+              return <SpotListingCard key={spot.id} spot={spot} />;
             })}
         </div>
         <div className="listingsImageContainer">
@@ -162,7 +118,7 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
               apiKey={googleMapsApiKey}
               center={{ lat: 33.90831, lng: -118.2581 }}
               spotListingsPage={true}
-              spots={Object.values(spots)}
+              spots={spots}
               zoom={8}
             />
           )}
