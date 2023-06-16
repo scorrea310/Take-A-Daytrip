@@ -47,15 +47,10 @@ class ReviewsForm(FlaskForm):
         "Rating",
         validators=[
             DataRequired(),
-            Length(
-                min=50,
-                max=1000,
-                message="Review must be between %(min)s and %(max)s characters long.",
-            ),
             NumberRange(
                 min=1,
                 max=5,
-                message="Rating must be a minimum 1 or any number between up to 5, including 5. ",
+                message="Rating must be a minimum of 1 or any number between up to 5, including 5. ",
             ),
         ],
     )
