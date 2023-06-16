@@ -7,3 +7,4 @@ from .update_username_form import UpdateUserName
 from .update_email_form import UpdateUserEmail
 from .maps_form import MapsForm
 from .lob_address_verification_form import LobAddressVerificationForm
+from .reviews import ReviewsForm

@@ -26,7 +26,7 @@ def does_spot_exist(form, field):
 
 
 class ReviewsForm(FlaskForm):
-    user_id = IntegerField(
+    userId = IntegerField(
         "User ID",
         validators=[DataRequired()],
     )
@@ -55,7 +55,7 @@ class ReviewsForm(FlaskForm):
         ],
     )
 
-    spot_id = IntegerField(
+    spotId = IntegerField(
         "Spot ID",
         validators=[DataRequired(), does_spot_exist],
     )
