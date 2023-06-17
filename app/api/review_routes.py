@@ -30,7 +30,11 @@ def add_review():
     return {"errors": form.errors}, 400
 
 
+# Move this logic to get spots api route. Also, when spot is deleted,
+# Make sure to delete it's reviews
+# When Spot is deleted make sure to delete its Reservations
 @review_routes.route("/<int:spot_id>")
 def get_reviews(spot_id):
     reviews = Review.query.filter(Review.spot_id == spot_id)
+
     return {"reviews": [review.to_dict() for review in reviews]}
