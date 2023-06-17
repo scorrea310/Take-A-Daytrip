@@ -30,6 +30,7 @@ def add_review():
     return {"errors": form.errors}, 400
 
 
-@review_routes.route("/")
-def get_reviews():
-    return
+@review_routes.route("/<int:spot_id>")
+def get_reviews(spot_id):
+    reviews = Review.query.filter(Review.spot_id == spot_id)
+    return {"reviews": [review.to_dict() for review in reviews]}
