@@ -17,20 +17,26 @@ class Spot(db.Model):
     description = db.Column(db.Text, nullable=False)
     has_wifi = db.Column(db.Boolean, nullable=False)
     has_tv = db.Column(db.Boolean, nullable=False)
-    has_ac= db.Column(db.Boolean, nullable=False)
+    has_ac = db.Column(db.Boolean, nullable=False)
     price_per_day = db.Column(db.Numeric(9, 2), nullable=False)
     host_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
     updated_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
 
     user = db.relationship("User", back_populates="spots")
-    images = db.relationship("Image", back_populates="spot", cascade="all, delete-orphan")
-    reservations = db.relationship("Reservation", back_populates="spot", cascade="all, delete-orphan")
-    reviews = db.relationship("Review", back_populates="spot", cascade="all, delete-orphan")
+    images = db.relationship(
+        "Image", back_populates="spot", cascade="all, delete-orphan"
+    )
+    reservations = db.relationship(
+        "Reservation", back_populates="spot", cascade="all, delete-orphan"
+    )
+    reviews = db.relationship(
+        "Review", back_populates="spot", cascade="all, delete-orphan"
+    )
 
     def to_dict(self):
         return {
-            'id': self.id,
+            "id": self.id,
             "type": self.type,
             "name": self.name,
             "user_id": str(self.user.id),
@@ -49,4 +55,5 @@ class Spot(db.Model):
             "address": self.address,
             "longitude": float(self.longitude),
             "latitude": float(self.latitude),
+            "reviews": [review.to_dict() for review in self.reviews],
         }

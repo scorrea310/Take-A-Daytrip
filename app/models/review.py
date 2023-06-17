@@ -1,5 +1,6 @@
 from .db import db
 
+
 class Review(db.Model):
     __tablename__ = "reviews"
 
@@ -16,9 +17,10 @@ class Review(db.Model):
 
     def to_dict(self):
         return {
-            'id': self.id,
+            "id": self.id,
             "spot_id": str(self.spot_id),
             "rating": str(self.rating),
             "user_id": str(self.user_id),
-            "description": self.description
+            "description": self.description,
+            "user_info": self.user.to_dict(),
         }

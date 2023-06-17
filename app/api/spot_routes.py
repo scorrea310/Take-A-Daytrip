@@ -89,9 +89,7 @@ def get_spots():
     """
     GETS all spots
     """
-
     all_spots = Spot.query.all()
-
     return_spots = {}
 
     for spot in all_spots:
