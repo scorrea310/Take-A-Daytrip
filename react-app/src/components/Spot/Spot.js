@@ -190,7 +190,7 @@ const Spot = ({ spotsLoaded }) => {
         </div>
       </div>
       <div id="locationParentContainer">
-        <h2 id="locationHeader">Location</h2>
+        <div id="locationHeader">Where you'll be</div>
       </div>
       <div id="mapsParentContainerSpotPage">
         <div id="mapsContainerSpotPage">
