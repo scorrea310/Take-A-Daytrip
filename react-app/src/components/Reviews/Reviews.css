@@ -1,0 +1,27 @@
+#reviewsSectionParentContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    height: fit-content;
+    width: 79%;
+}
+
+#numberOfReviews {
+    font-size: 25px;
+    font-weight: 450;
+}
+
+#two-columns-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#reviewCardParentContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.sampleColumns {
+    background-color: red;
+}
+

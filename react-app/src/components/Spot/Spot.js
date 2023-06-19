@@ -11,6 +11,8 @@ import { GiVacuumCleaner } from "react-icons/gi";
 import { FaAddressCard } from "react-icons/fa";
 import Maps from "../Maps/Maps";
 import Footer from "../Footer/Footer";
+import Reviews from "../Reviews/Reviews";
+
 const Spot = ({ spotsLoaded }) => {
   const user = useSelector((state) => state.session.user);
   const spot = useSelector((state) => state.spotReducer);
@@ -205,6 +207,7 @@ const Spot = ({ spotsLoaded }) => {
           />
         </div>
       </div>
+      <Reviews reviews={spot[`${spotId}`].reviews} />
     </div>
   );
 
