@@ -53,3 +53,19 @@
     color: #717171;;
 }
 
+#reviewsShowMoreButton {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #222222;
+    padding: 13px 23px;
+    width: fit-content;
+    font-weight: 500;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+#reviewsShowMoreButton:hover {
+    background: #F7F7F7;
+}
+

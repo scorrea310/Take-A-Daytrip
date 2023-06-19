@@ -41,6 +41,17 @@
   border-radius: 10px;
 }
 
+#reviewsModal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 80vh;
+  width: 60vw;
+  border-radius: 10px;
+}
+
 #edit-Reservation-Modal {
   position: absolute;
   display: flex;
