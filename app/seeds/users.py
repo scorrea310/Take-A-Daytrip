@@ -24,12 +24,23 @@ def seed_users():
         password="password",
         isHost=False,
     )
+
+    david = User(
+        name="David",
+        username="David123",
+        email="david@david.io",
+        password="password",
+        isHost=False,
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_2.png",
+    )
+
     steve = User(
         name="Steve",
         username="scorrea310",
         email="steve@steve.io",
         password="password",
         isHost=False,
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_8.jpeg",
     )
 
     bobby = User(
@@ -38,6 +49,7 @@ def seed_users():
         email="bobby@bobby.io",
         password="password",
         isHost=False,
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_9.jpeg",
     )
 
     karen = User(
@@ -46,14 +58,66 @@ def seed_users():
         email="karen@karen.io",
         password="password",
         isHost=False,
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_2.png",
+    )
+
+    josh = User(
+        name="Josh",
+        username="Josh310",
+        email="josh@josh.io",
+        password="password",
+        isHost=False,
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_3.png",
+    )
+
+    evan = User(
+        name="Evan",
+        username="Evan310",
+        email="evan@evan.io",
+        password="password",
+        isHost=False,
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_4.jpeg",
+    )
+
+    sarah = User(
+        name="Sarah",
+        username="Sarah310",
+        email="sarah@sarah.io",
+        password="password",
+        isHost=False,
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_7.jpeg",
+    )
+
+    veronica = User(
+        name="Veronica",
+        username="Veronica310",
+        email="veronica@veronica.io",
+        password="password",
+        isHost=False,
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_5.jpeg",
+    )
+
+    isabella = User(
+        name="Isabella",
+        username="Isabella310",
+        email="isabella@isabella.io",
+        password="password",
+        isHost=False,
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_6.png",
     )
 
     db.session.add(demo)
     db.session.add(marnie)
     db.session.add(bobbie)
+    db.session.add(david)
     db.session.add(steve)
     db.session.add(bobby)
     db.session.add(karen)
+    db.session.add(josh)
+    db.session.add(evan)
+    db.session.add(sarah)
+    db.session.add(veronica)
+    db.session.add(isabella)
 
     db.session.commit()
 
