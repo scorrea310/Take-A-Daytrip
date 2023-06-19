@@ -31,7 +31,7 @@ def seed_users():
         email="david@david.io",
         password="password",
         isHost=False,
-        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_2.png",
+        profile_image="https://take-a-daytrip.s3.amazonaws.com/user_pic_1.jpeg",
     )
 
     steve = User(

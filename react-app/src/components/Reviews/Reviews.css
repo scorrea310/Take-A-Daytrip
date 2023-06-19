@@ -1,7 +1,6 @@
 #reviewsSectionParentContainer {
     display: flex;
     flex-direction: column;
-    background-color: aqua;
     height: fit-content;
     width: 79%;
 }
@@ -9,6 +8,7 @@
 #numberOfReviews {
     font-size: 25px;
     font-weight: 450;
+    margin-bottom: 45px;
 }
 
 #two-columns-grid {
@@ -19,9 +19,17 @@
 #reviewCardParentContainer {
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
+    margin-right: 80px;
 }
 
-.sampleColumns {
-    background-color: red;
+#reviewCardUserInfoParentContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#usersNameAndUserName {
+    display: flex;
+    flex-direction: column;
 }
 

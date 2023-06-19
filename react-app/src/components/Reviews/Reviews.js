@@ -1,13 +1,14 @@
 import React from "react";
 import "./Reviews.css";
+import ReviewCard from "./ReviewCard";
 const Reviews = ({ reviews }) => {
   return (
     <div id="reviewsSectionParentContainer">
       <div id="numberOfReviews">{reviews.length} reviews</div>
       <div id="two-columns-grid">
-        <div className="sampleColumns">1jhsbdcjhsdbcjhsbchjsbdcjhsbdcsdc</div>
-        <div className="sampleColumns">2</div>
-        <div className="sampleColumns">2skjdcbkjsdbcjksdbckjsbdc</div>
+        {reviews.map((review) => {
+          return <ReviewCard key={review.id} review={review} />;
+        })}
       </div>
     </div>
   );
