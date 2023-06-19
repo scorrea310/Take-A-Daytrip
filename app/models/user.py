@@ -4,7 +4,7 @@ from flask_login import UserMixin
 
 
 class User(db.Model, UserMixin):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
@@ -17,7 +17,6 @@ class User(db.Model, UserMixin):
     spots = db.relationship("Spot", back_populates="user")
     reservations = db.relationship("Reservation", back_populates="user")
     reviews = db.relationship("Review", back_populates="user")
-
 
     @property
     def password(self):
@@ -32,9 +31,9 @@ class User(db.Model, UserMixin):
 
     def to_dict(self):
         return {
-            'id': self.id,
-            'username': self.username,
-            'email': self.email,
-            'name': self.name,
-            "profile_image": self.profile_image
+            "id": self.id,
+            "username": self.username,
+            "email": self.email,
+            "name": self.name,
+            "profile_image": self.profile_image,
         }

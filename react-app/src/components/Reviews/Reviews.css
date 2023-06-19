@@ -8,7 +8,7 @@
 #numberOfReviews {
     font-size: 25px;
     font-weight: 450;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 }
 
 #two-columns-grid {
@@ -19,17 +19,37 @@
 #reviewCardParentContainer {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     margin-right: 80px;
 }
 
 #reviewCardUserInfoParentContainer {
     display: flex;
     flex-direction: row;
+    margin-bottom: 10px;
 }
 
 #usersNameAndUserName {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+#reviewDescription {
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 340;
+    color: #222222
+}
+
+#reviewCardName {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+#reviewCardReviewDate {
+    font-size: 14px;
+    font-weight: 400;
+    color: #717171;;
 }
 

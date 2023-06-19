@@ -23,4 +23,5 @@ class Review(db.Model):
             "user_id": str(self.user_id),
             "description": self.description,
             "user_info": self.user.to_dict(),
+            "created": self.created_at.strftime("%B %Y"),
         }

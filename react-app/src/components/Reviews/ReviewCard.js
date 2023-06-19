@@ -8,19 +8,20 @@ const ReviewCard = ({ review }) => {
         <div
           style={{
             backgroundImage: `url(${review.user_info.profile_image})`,
-            height: "30px",
-            width: "30px",
+            height: "40px",
+            width: "40px",
             backgroundSize: "cover",
             backgroundPosition: "center",
             borderRadius: "50%",
+            marginRight: "12px",
           }}
         ></div>
         <div id="usersNameAndUserName">
-          <div>{review.user_info.name}</div>
-          <div>{review.user_info.username}</div>
+          <div id="reviewCardName">{review.user_info.name}</div>
+          <div id="reviewCardReviewDate">{review.created}</div>
         </div>
       </div>
-      <div>{review.description}</div>
+      <div id="reviewDescription">{review.description}</div>
     </div>
   );
 };
