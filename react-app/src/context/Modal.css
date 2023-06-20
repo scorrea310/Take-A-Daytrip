@@ -53,6 +53,18 @@
   overflow: scroll;
 }
 
+#writeReviewModal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 80vh;
+  width: 40vw;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
 #edit-Reservation-Modal {
   position: absolute;
   display: flex;
