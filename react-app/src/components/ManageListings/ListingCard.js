@@ -28,7 +28,7 @@ const ListingCard = ({ listing, PastTrip }) => {
         <div id="listingPriceYourListings">
           ${listing ? listing.price_per_day : PastTrip.price}/ day
         </div>
-        <div id="writeAReviewButton">Write a review</div>
+        {!listing && <div id="writeAReviewButton">Write a review</div>}
       </div>
     </div>
   );
