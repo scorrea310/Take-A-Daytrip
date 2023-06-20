@@ -20,7 +20,10 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 35px;
-    margin-right: 80px;
+    padding-right: 50px;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
 }
 
 #reviewCardUserInfoParentContainer {
@@ -67,5 +70,50 @@
 
 #reviewsShowMoreButton:hover {
     background: #F7F7F7;
+}
+
+#reviewsModalMainContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#reviewsModalTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+    /* margin-top: 20px; */
+    padding-bottom: 10px;
+    align-content: center;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+#reviewsModalReviewsMainContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+#closeIconAndReviewsTitleContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#closeReviewsModal {
+    font-size: 1.5pc;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-top: 15px;
+    color: black;
+    border-style: solid;
+    border: none;
+    cursor: pointer;
 }
 

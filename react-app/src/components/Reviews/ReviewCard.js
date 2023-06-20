@@ -1,7 +1,7 @@
 import React from "react";
 import "./Reviews.css";
 
-const ReviewCard = ({ review }) => {
+const ReviewCard = ({ review, modal }) => {
   return (
     <div id="reviewCardParentContainer">
       <div id="reviewCardUserInfoParentContainer">

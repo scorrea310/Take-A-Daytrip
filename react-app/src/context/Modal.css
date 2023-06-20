@@ -48,8 +48,9 @@
   align-items: center;
   background-color: white;
   height: 80vh;
-  width: 60vw;
+  width: 40vw;
   border-radius: 10px;
+  overflow: scroll;
 }
 
 #edit-Reservation-Modal {

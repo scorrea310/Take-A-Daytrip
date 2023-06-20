@@ -3,6 +3,7 @@ import "./Reviews.css";
 import ReviewCard from "./ReviewCard";
 import { Modal } from "../../context/Modal";
 import { useState, useEffect } from "react";
+import { IoIosClose } from "react-icons/io";
 
 const Reviews = ({ reviews }) => {
   const first4Reviews = reviews.slice(0, 4);
@@ -24,7 +25,22 @@ const Reviews = ({ reviews }) => {
           idName={"reviewsModal"}
           onClose={() => setShowReviewsModal(false)}
         >
-          <div>Yo what's up motherFuckers!!!!!!</div>
+          <div id="reviewsModalMainContent">
+            <div id="closeIconAndReviewsTitleContainer">
+              <IoIosClose
+                id="closeReviewsModal"
+                onClick={() => setShowReviewsModal(false)}
+              />
+              <div id="reviewsModalTitle">{reviews.length} reviews</div>
+            </div>
+            <div id="reviewsModalReviewsMainContainer">
+              {reviews.map((review) => {
+                return (
+                  <ReviewCard modal={true} key={review.id} review={review} />
+                );
+              })}
+            </div>
+          </div>
         </Modal>
       )}
     </div>
