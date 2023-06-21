@@ -254,6 +254,20 @@ def seed_reviews():
         user_id=9,
     )
 
+    review_37 = Review(
+        spot_id=1,
+        rating=5,
+        description="I really enjoyed staying in this lovely apartment. I had a great time and loved the scenery in the area. Lots of things to do around here! I will come again next year with my friend.",
+        user_id=1,
+    )
+
+    review_38 = Review(
+        spot_id=2,
+        rating=4,
+        description="Stayed here with my girl Leann while on a road trip. We were really exhausted but the hosts were really nice and were fast to respond to messages. I would stay here again for sure.",
+        user_id=1,
+    )
+
     db.session.add(review_1)
     db.session.add(review_2)
     db.session.add(review_3)
@@ -290,6 +304,8 @@ def seed_reviews():
     db.session.add(review_34)
     db.session.add(review_35)
     db.session.add(review_36)
+    db.session.add(review_37)
+    db.session.add(review_38)
     db.session.commit()
 
 

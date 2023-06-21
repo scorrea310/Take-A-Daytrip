@@ -38,3 +38,14 @@ def get_reviews(spot_id):
     reviews = Review.query.filter(Review.spot_id == spot_id)
 
     return {"reviews": [review.to_dict() for review in reviews]}
+
+
+@review_routes.route("/user/<int:user_id>")
+def get_user_review(user_id):
+    my_reviews = {}
+    reviews = Review.query.filter(Review.user_id == user_id)
+
+    for review in reviews:
+        my_reviews[review.spot_id] = review.to_dict()
+
+    return {"my_reviews": my_reviews}

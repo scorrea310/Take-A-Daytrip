@@ -1,5 +1,6 @@
 from .db import db
 
+
 class Reservation(db.Model):
     __tablename__ = "reservations"
 
@@ -14,11 +15,11 @@ class Reservation(db.Model):
     updated_at = db.Column(db.DateTime, default=db.func.now(), nullable=False)
 
     user = db.relationship("User", back_populates="reservations")
-    spot = db.relationship("Spot", back_populates="reservations") 
+    spot = db.relationship("Spot", back_populates="reservations")
 
     def to_dict(self):
         return {
-            'id': self.id,
+            "id": self.id,
             "spot_id": str(self.spot_id),
             "user_id": str(self.user_id),
             "check_in": str(self.check_in),
@@ -29,5 +30,6 @@ class Reservation(db.Model):
             "spot_address": self.spot.address,
             "spot_description": self.spot.description,
             "spot_images": [image.image_url for image in self.spot.images],
-            "total_occupants_allowed": str(self.spot.total_occupancy)
+            "total_occupants_allowed": str(self.spot.total_occupancy),
+            "host_name": self.spot.user.name,
         }

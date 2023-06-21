@@ -2,19 +2,23 @@ import NavBar from "../NavBar/NavBar";
 import "./PastTrips.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { BsChevronRight } from "react-icons/bs";
 import { useHistory } from "react-router-dom";
 import ListingCard from "../ManageListings/ListingCard";
 import Footer from "../Footer/Footer";
+import { loadMyReviewsThunk } from "../../store/myReviews";
 
 const PastTrips = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const [pastTrips, setPastTrips] = useState(false);
   const sessionUser = useSelector((state) => state.session.user);
 
   useEffect(() => {
     (async () => {
+      dispatch(loadMyReviewsThunk(sessionUser.id));
+
       const response = await fetch(
         `/api/reservations/${sessionUser.id}/past-trips`
       );
@@ -25,7 +29,7 @@ const PastTrips = () => {
         setPastTrips(pastTripsArray);
       }
     })();
-  }, [sessionUser?.id]);
+  }, [dispatch, sessionUser?.id]);
 
   useEffect(() => {
     window.scrollTo(0, 0);

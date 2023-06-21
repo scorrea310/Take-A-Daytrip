@@ -5,6 +5,7 @@ import spotReducer from "./spotReducer";
 import reservationsReducer from "./reservationsReducer";
 import loginAndSignUpModalReducer from "./LoginAndRegisterModals";
 import myListingsReducer from "./myListings";
+import myReviewsReducer from "./myReviews";
 
 const rootReducer = combineReducers({
   session,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   reservationsReducer,
   modals: loginAndSignUpModalReducer,
   myListings: myListingsReducer,
+  myReviews: myReviewsReducer,
 });
 
 let enhancer;
