@@ -143,7 +143,7 @@
 #writeReviewSubmitReviewContainer {
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
@@ -154,6 +154,12 @@
   border-radius: 8px;
   cursor: pointer;
   border: none;
+}
+
+#editReviewAndDeleteReviewButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
 }
 
 #submitReviewButton:hover {
@@ -192,6 +198,8 @@
   flex-direction: column;
   width: 230px;
   margin-top: 10px;
+  min-height: 60px;
+  justify-content: space-between;
 }
 
 #listingAddress {
@@ -212,7 +220,23 @@
   padding: 5px 5px;
   width: fit-content;
   cursor: pointer;
-  margin-top: 10px;
+}
+
+#deleteReviewButton {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: red;
+  color: red;
+  background-color: white;
+  padding: 5px 5px;
+  width: fit-content;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#deleteReviewButton:hover {
+  background: #F7F7F7;
 }
 
 #writeAReviewButton:hover {

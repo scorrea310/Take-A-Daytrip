@@ -4,8 +4,9 @@ import { Modal } from "../../context/Modal";
 import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
-import { addReviewThunk } from "../../store/myReviews";
+import { addReviewThunk, editReviewThunk } from "../../store/myReviews";
 import ReactStars from "react-rating-stars-component";
+import { Truncate } from "@primer/react";
 
 const ListingCard = ({ listing, PastTrip }) => {
   const history = useHistory();
@@ -13,7 +14,7 @@ const ListingCard = ({ listing, PastTrip }) => {
   const [showWriteReviewModal, setShowWriteReviewModal] = useState(false);
   const sessionUserId = useSelector((state) => state.session.user.id);
   const myReview = useSelector(
-    (state) => state.myReviews[`${PastTrip.spot_id}`]
+    (state) => state.myReviews[`${PastTrip?.spot_id}`]
   );
   const [review, setReview] = useState(myReview ? myReview.description : "");
   const [error, setError] = useState(false);
@@ -41,7 +42,28 @@ const ListingCard = ({ listing, PastTrip }) => {
         spotId: parseInt(PastTrip.spot_id),
         userId: sessionUserId,
       };
-      dispatch(addReviewThunk(reviewObj));
+      let newReview = dispatch(addReviewThunk(reviewObj)).then(
+        (isSuccess) => isSuccess
+      );
+      if (newReview) {
+        setShowWriteReviewModal(false);
+        return;
+      }
+    } else {
+      let editedReview = {
+        rating,
+        description: review,
+        spotId: parseInt(PastTrip.spot_id),
+        userId: sessionUserId,
+      };
+      let updatedReview = dispatch(
+        editReviewThunk(editedReview, myReview.id)
+      ).then((isSuccess) => isSuccess);
+
+      if (updatedReview) {
+        setShowWriteReviewModal(false);
+        return;
+      }
     }
   };
 
@@ -65,19 +87,28 @@ const ListingCard = ({ listing, PastTrip }) => {
       </div>
       <div className="listingNameAndPriceContainer">
         <div id="listingAddress">
-          {listing ? listing.address : PastTrip.spot_name}
+          {listing ? (
+            listing.address
+          ) : (
+            <Truncate maxWidth={230}>{PastTrip.spot_name}</Truncate>
+          )}
         </div>
-        <div id="listingPriceYourListings">
+        {/* <div id="listingPriceYourListings">
           ${listing ? listing.price_per_day : PastTrip.price}/ day
+        </div> */}
+        <div id="editReviewAndDeleteReviewButtonsContainer">
+          {!listing && (
+            <>
+              <div
+                onClick={() => setShowWriteReviewModal(true)}
+                id="writeAReviewButton"
+              >
+                {myReview ? "Edit review" : "Write a review"}
+              </div>
+              {myReview && <div id="deleteReviewButton">Delete Review</div>}
+            </>
+          )}
         </div>
-        {!listing && (
-          <div
-            onClick={() => setShowWriteReviewModal(true)}
-            id="writeAReviewButton"
-          >
-            {myReview ? "Edit review" : "Write a review"}
-          </div>
-        )}
       </div>
       {showWriteReviewModal && (
         <Modal
