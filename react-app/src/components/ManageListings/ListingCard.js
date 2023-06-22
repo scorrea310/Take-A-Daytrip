@@ -4,7 +4,11 @@ import { Modal } from "../../context/Modal";
 import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
-import { addReviewThunk, editReviewThunk } from "../../store/myReviews";
+import {
+  addReviewThunk,
+  editReviewThunk,
+  deleteReviewThunk,
+} from "../../store/myReviews";
 import ReactStars from "react-rating-stars-component";
 import { Truncate } from "@primer/react";
 
@@ -22,8 +26,9 @@ const ListingCard = ({ listing, PastTrip }) => {
     myReview ? parseInt(myReview.rating) : 0
   );
   const [ratingError, setRatingError] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  const submitReview = async (e) => {
+  const submitReview = (e) => {
     e.preventDefault();
     if (review.length < 50 || review.length > 1000) {
       setError(true);
@@ -67,6 +72,12 @@ const ListingCard = ({ listing, PastTrip }) => {
     }
   };
 
+  const deleteReview = () => {
+    dispatch(deleteReviewThunk(myReview.id, myReview.spot_id));
+    setShowDeleteModal(false);
+    return;
+  };
+
   return (
     <div className="listingCard">
       <div
@@ -93,9 +104,6 @@ const ListingCard = ({ listing, PastTrip }) => {
             <Truncate maxWidth={230}>{PastTrip.spot_name}</Truncate>
           )}
         </div>
-        {/* <div id="listingPriceYourListings">
-          ${listing ? listing.price_per_day : PastTrip.price}/ day
-        </div> */}
         <div id="editReviewAndDeleteReviewButtonsContainer">
           {!listing && (
             <>
@@ -105,10 +113,43 @@ const ListingCard = ({ listing, PastTrip }) => {
               >
                 {myReview ? "Edit review" : "Write a review"}
               </div>
-              {myReview && <div id="deleteReviewButton">Delete Review</div>}
+              {myReview && (
+                <div
+                  onClick={() => setShowDeleteModal(true)}
+                  id="deleteReviewButton"
+                >
+                  Delete Review
+                </div>
+              )}
             </>
           )}
         </div>
+        {showDeleteModal && (
+          <Modal onClose={() => setShowDeleteModal(false)}>
+            <div id="deleteReviewModalContainer">
+              <IoIosClose
+                id="closeDeleteReviewModal"
+                onClick={() => setShowDeleteModal(false)}
+              />
+              <div id="deleteReviewModalMainTextContainer">
+                <div id="deleteReviewModalConfirmQuestion">
+                  Are you sure you want to delete this review?
+                </div>
+                <div id="deleteReviewModalSelectContainer">
+                  <div onClick={deleteReview} id="yesDeleteReviewButton">
+                    Yes
+                  </div>
+                  <div
+                    onClick={() => setShowDeleteModal(false)}
+                    id="noDeleteReviewButton"
+                  >
+                    No
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Modal>
+        )}
       </div>
       {showWriteReviewModal && (
         <Modal
@@ -137,18 +178,22 @@ const ListingCard = ({ listing, PastTrip }) => {
             <div id="writeReviewModalReviewContent">
               <div id="writeReviewModalWriteReviewText">Write a Review</div>
               <div id="writeReviewModalTellUsThoughtsAndTextAreaContainer">
-                {ratingError && (
-                  <div id="missingRatingError">You must provide a rating.</div>
-                )}
                 <div id="writeReviewModalTellUsThoughts">
-                  Rating:{" "}
-                  <ReactStars
-                    value={rating}
-                    onChange={(newRating) => setRating(newRating)}
-                    count={5}
-                    size={24}
-                    activeColor="#ffd700"
-                  />
+                  <div id="writeReviewModalRatingAndStarsParentContainer">
+                    Rating:
+                    <ReactStars
+                      value={rating}
+                      onChange={(newRating) => setRating(newRating)}
+                      count={5}
+                      size={24}
+                      activeColor="#ffd700"
+                    />
+                  </div>
+                  {ratingError && (
+                    <div id="missingRatingError">
+                      You must provide a rating.
+                    </div>
+                  )}
                 </div>
                 <form
                   id="writeReviewCharacterLimitAndTextAreaContainer"

@@ -68,10 +68,10 @@ def edit_review(review_id):
     return {"errors": form.errors}, 400
 
 
-@review_routes.route("/<int:review_id>/delete", methods=["DELETE"])
+@review_routes.route("/<int:review_id>", methods=["DELETE"])
 def delete_cart_item(review_id):
     review_to_delete = Review.query.get(review_id)
     db.session.delete(review_to_delete)
     db.session.commit()
 
-    return {"message": "deleted"}
+    return {"success": "deleted"}

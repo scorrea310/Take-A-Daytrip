@@ -2,6 +2,8 @@
 const LOAD_MY_REVIEWS = "my_reviews/LOAD_MY_REVIEWS";
 const ADD_REVIEW = "my_reviews/ADD_REVIEW";
 const EDIT_REVIEW = "my_reviews/EDIT_REVIEW";
+const DELETE_REVIEW = "my_reviews/DELETE_REVIEW";
+
 //Action creators
 const loadMyReviewsAction = (my_reviews) => ({
   type: LOAD_MY_REVIEWS,
@@ -16,6 +18,11 @@ const addReviewAction = (review) => ({
 const editReviewAction = (review) => ({
   type: EDIT_REVIEW,
   payload: review,
+});
+
+const deleteReviewAction = (spotId) => ({
+  type: DELETE_REVIEW,
+  payload: spotId,
 });
 
 //Thunks
@@ -41,7 +48,7 @@ export const addReviewThunk = (review) => async (dispatch) => {
   if (response.ok) {
     let newReview = await response.json();
 
-    dispatch(addReviewAction(newReview.review));
+    dispatch(addReviewAction(newReview));
     return true;
   }
 
@@ -66,6 +73,21 @@ export const editReviewThunk = (review, reviewId) => async (dispatch) => {
   return false;
 };
 
+export const deleteReviewThunk = (reviewId, spotId) => async (dispatch) => {
+  const response = await fetch(`/api/reviews/${reviewId}`, {
+    method: "DELETE",
+  });
+
+  const deleteReview = await response.json();
+
+  if (response.ok) {
+    dispatch(deleteReviewAction(spotId));
+
+    return deleteReview;
+  } else {
+    console.log("something went wrong!!");
+  }
+};
 const initialState = {};
 
 //Reducer
@@ -81,6 +103,10 @@ const myReviewsReducer = (state = initialState, action) => {
       let copiedReviewsState = { ...state };
       copiedReviewsState[action.payload.spot_id] = action.payload;
       return copiedReviewsState;
+    case DELETE_REVIEW:
+      let oldState = { ...state };
+      delete oldState[`${action.payload}`];
+      return oldState;
     default:
       return state;
   }

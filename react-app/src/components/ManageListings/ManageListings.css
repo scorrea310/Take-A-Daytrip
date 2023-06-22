@@ -11,6 +11,78 @@
   justify-content: center;
 }
 
+#deleteReviewModalContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+#closeDeleteReviewModal {
+  font-size: 1.5pc;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: black;
+  border-style: solid;
+  border: none;
+  cursor: pointer;
+}
+
+#deleteReviewModalMainTextContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+#yesDeleteReviewButton {
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 8px;
+      border-color: red;
+      color: red;
+      background-color: white;
+      padding: 5px 5px;
+      width: fit-content;
+      cursor: pointer;
+}
+
+#yesDeleteReviewButton:hover {
+  background: #F7F7F7;
+}
+
+#noDeleteReviewButton {
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 8px;
+      border-color: #222222;
+      padding: 5px 5px;
+      width: fit-content;
+      cursor: pointer;
+}
+
+#noDeleteReviewButton:hover {
+  background: #F7F7F7;
+}
+#deleteReviewModalSelectContainer {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#deleteReviewModalConfirmQuestion {
+  font-size: 18px;
+}
+
+#closeDeleteReviewModal:hover {
+  background: #F7F7F7;
+}
+
 .listingsMainContent {
   width: 89%;
   height: fit-content;
@@ -78,6 +150,8 @@
 
 #missingRatingError {
   color: red;
+  font-size: 16px;
+  margin-left: 10px;
 }
 
 #writeReviewModalWriteReviewText {
@@ -108,8 +182,13 @@
   width: 80%;
   margin-top: 30px;
   font-size: 18px;
-  justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
+}
+
+#writeReviewModalRatingAndStarsParentContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 #writeReviewCharacterLimitTip {
