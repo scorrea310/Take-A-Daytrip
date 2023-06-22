@@ -20,7 +20,7 @@ from wtforms.fields import (
 
 
 def does_spot_exist(form, field):
-    spot = Spot.query.get(field.spot_id)
+    spot = Spot.query.get(field.data)
     if spot is None:
         raise ValidationError("This Spot does not Exist")
 

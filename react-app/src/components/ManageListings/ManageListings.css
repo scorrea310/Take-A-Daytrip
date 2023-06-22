@@ -76,6 +76,10 @@
   font-weight: 500;
 }
 
+#missingRatingError {
+  color: red;
+}
+
 #writeReviewModalWriteReviewText {
   display: flex;
   width: 100%;
@@ -104,6 +108,8 @@
   width: 80%;
   margin-top: 30px;
   font-size: 18px;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 #writeReviewCharacterLimitTip {
@@ -121,7 +127,7 @@
 #writeReviewCharacterLimitAndTextAreaContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 10px;
   width: 80%;
 }
 

@@ -3,24 +3,46 @@ import { useHistory } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addReviewThunk } from "../../store/myReviews";
+import ReactStars from "react-rating-stars-component";
 
 const ListingCard = ({ listing, PastTrip }) => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const [showWriteReviewModal, setShowWriteReviewModal] = useState(false);
+  const sessionUserId = useSelector((state) => state.session.user.id);
   const myReview = useSelector(
     (state) => state.myReviews[`${PastTrip.spot_id}`]
   );
   const [review, setReview] = useState(myReview ? myReview.description : "");
   const [error, setError] = useState(false);
+  const [rating, setRating] = useState(
+    myReview ? parseInt(myReview.rating) : 0
+  );
+  const [ratingError, setRatingError] = useState(false);
 
   const submitReview = async (e) => {
     e.preventDefault();
     if (review.length < 50 || review.length > 1000) {
       setError(true);
       return;
+    } else if (rating <= 0) {
+      setRatingError(true);
+      return;
     }
+
+    setRatingError(false);
     setError(false);
+    if (!myReview) {
+      let reviewObj = {
+        rating,
+        description: review,
+        spotId: parseInt(PastTrip.spot_id),
+        userId: sessionUserId,
+      };
+      dispatch(addReviewThunk(reviewObj));
+    }
   };
 
   return (
@@ -78,15 +100,24 @@ const ListingCard = ({ listing, PastTrip }) => {
                 onClick={() => setShowWriteReviewModal(false)}
               />
               <div id="writeReviewSpotImageText">
-                You stayed at {PastTrip.host_name}'s place
+                How was your stay at {PastTrip.host_name}'s place?
               </div>
             </div>
             <div id="writeReviewModalReviewContent">
               <div id="writeReviewModalWriteReviewText">Write a Review</div>
               <div id="writeReviewModalTellUsThoughtsAndTextAreaContainer">
+                {ratingError && (
+                  <div id="missingRatingError">You must provide a rating.</div>
+                )}
                 <div id="writeReviewModalTellUsThoughts">
-                  Tell us about how your trip went. What did you like? What
-                  could improve?
+                  Rating:{" "}
+                  <ReactStars
+                    value={rating}
+                    onChange={(newRating) => setRating(newRating)}
+                    count={5}
+                    size={24}
+                    activeColor="#ffd700"
+                  />
                 </div>
                 <form
                   id="writeReviewCharacterLimitAndTextAreaContainer"
