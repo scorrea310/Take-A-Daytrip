@@ -2,7 +2,7 @@ import React from "react";
 import "./Reviews.css";
 import ReviewCard from "./ReviewCard";
 import { Modal } from "../../context/Modal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 
 const Reviews = ({ reviews }) => {

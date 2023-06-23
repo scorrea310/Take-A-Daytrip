@@ -207,8 +207,8 @@ const Spot = ({ spotsLoaded }) => {
           />
         </div>
       </div>
-      {spot[`${spotId}`].reviews.length > 0 && (
-        <Reviews reviews={spot[`${spotId}`].reviews} />
+      {Object.values(spot[`${spotId}`].reviews).length > 0 && (
+        <Reviews reviews={Object.values(spot[`${spotId}`].reviews)} />
       )}
     </div>
   );

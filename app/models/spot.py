@@ -34,6 +34,15 @@ class Spot(db.Model):
         "Review", back_populates="spot", cascade="all, delete-orphan"
     )
 
+    def get_reviews(self):
+        spots_review = {}
+        reviews = self.reviews
+
+        for review in reviews:
+            spots_review[review.id] = review.to_dict()
+
+        return spots_review
+
     def to_dict(self):
         return {
             "id": self.id,
@@ -55,5 +64,5 @@ class Spot(db.Model):
             "address": self.address,
             "longitude": float(self.longitude),
             "latitude": float(self.latitude),
-            "reviews": [review.to_dict() for review in self.reviews],
+            "reviews": self.get_reviews(),
         }

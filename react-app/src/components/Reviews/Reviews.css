@@ -42,7 +42,8 @@
     line-height: 24px;
     font-size: 16px;
     font-weight: 340;
-    color: #222222
+    color: #222222;
+    overflow-wrap: break-word;
 }
 
 #reviewCardName {

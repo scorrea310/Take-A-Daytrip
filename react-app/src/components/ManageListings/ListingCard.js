@@ -11,6 +11,11 @@ import {
 } from "../../store/myReviews";
 import ReactStars from "react-rating-stars-component";
 import { Truncate } from "@primer/react";
+import {
+  addReviewToSpot,
+  deleteReviewFromSpot,
+  editReviewOnSpot,
+} from "../../store/spotReducer";
 
 const ListingCard = ({ listing, PastTrip }) => {
   const history = useHistory();
@@ -28,7 +33,7 @@ const ListingCard = ({ listing, PastTrip }) => {
   const [ratingError, setRatingError] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  const submitReview = (e) => {
+  const submitReview = async (e) => {
     e.preventDefault();
     if (review.length < 50 || review.length > 1000) {
       setError(true);
@@ -47,9 +52,13 @@ const ListingCard = ({ listing, PastTrip }) => {
         spotId: parseInt(PastTrip.spot_id),
         userId: sessionUserId,
       };
-      let newReview = dispatch(addReviewThunk(reviewObj)).then(
+
+      let newReview = await dispatch(addReviewThunk(reviewObj)).then(
         (isSuccess) => isSuccess
       );
+
+      dispatch(addReviewToSpot(newReview));
+
       if (newReview) {
         setShowWriteReviewModal(false);
         return;
@@ -66,6 +75,11 @@ const ListingCard = ({ listing, PastTrip }) => {
       ).then((isSuccess) => isSuccess);
 
       if (updatedReview) {
+        let reviewToUpdate = { ...myReview };
+        console.log(reviewToUpdate, "NEW REVIE!!!!!!");
+        reviewToUpdate.rating = rating;
+        reviewToUpdate.description = review;
+        dispatch(editReviewOnSpot(reviewToUpdate));
         setShowWriteReviewModal(false);
         return;
       }
@@ -73,7 +87,11 @@ const ListingCard = ({ listing, PastTrip }) => {
   };
 
   const deleteReview = () => {
+    let oldReview = { ...myReview };
     dispatch(deleteReviewThunk(myReview.id, myReview.spot_id));
+    setReview("");
+    setRating(0);
+    dispatch(deleteReviewFromSpot(oldReview));
     setShowDeleteModal(false);
     return;
   };

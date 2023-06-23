@@ -91,7 +91,6 @@ def get_spots():
     """
     all_spots = Spot.query.all()
     return_spots = {}
-
     for spot in all_spots:
         return_spots[spot.id] = spot.to_dict()
 

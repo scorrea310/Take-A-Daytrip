@@ -3,7 +3,9 @@ const CREATE_SPOT = "spot/CREATE_SPOT";
 const LOAD_SPOTS = "spot/LOAD_SPOTS";
 const UPDATE_SPOT = "spot/UPDATE_SPOT";
 const DELETE_SPOT = "spot/DELETE_SPOT";
-
+const ADD_REVIEW_TO_SPOT = "spot/ADD_REVIEW_TO_SPOT";
+const DELETE_REVIEW_FROM_SPOT = "spot/DELETE_REVIEW_FROM_SPOT";
+const EDIT_REVIEW_ON_SPOT = "spot/EDIT_REVIEW_ON_SPOT";
 /*--------------------------------------------------------------------*/
 //Action Creators
 
@@ -26,6 +28,21 @@ const deleteSpot = (spotId) => ({
   type: DELETE_SPOT,
   payload: spotId,
 });
+
+export const addReviewToSpot = (review) => ({
+  type: ADD_REVIEW_TO_SPOT,
+  payload: review,
+});
+
+export const deleteReviewFromSpot = (review) => ({
+  type: DELETE_REVIEW_FROM_SPOT,
+  payload: review,
+});
+export const editReviewOnSpot = (editedReview) => ({
+  type: EDIT_REVIEW_ON_SPOT,
+  payload: editedReview,
+});
+
 /*--------------------------------------------------------------------*/
 //Thunks
 
@@ -132,6 +149,25 @@ const spotReducer = (state = initialState, action) => {
       delete oldState[`${action.payload}`];
 
       return oldState;
+    case ADD_REVIEW_TO_SPOT:
+      let oldSpots = { ...state };
+      let newReviews = { ...state[action.payload.spot_id].reviews };
+      newReviews[action.payload.id] = action.payload;
+      oldSpots[action.payload.spot_id].reviews = newReviews;
+      return oldSpots;
+
+    case DELETE_REVIEW_FROM_SPOT:
+      let oldStateSpot = { ...state };
+      delete oldStateSpot[`${action.payload.spot_id}`].reviews[
+        action.payload.id
+      ];
+      return oldStateSpot;
+    case EDIT_REVIEW_ON_SPOT:
+      let oldSpotsWithReviewToEdit = { ...state };
+      oldSpotsWithReviewToEdit[action.payload.spot_id].reviews[
+        action.payload.id
+      ] = action.payload;
+      return oldSpotsWithReviewToEdit;
     default:
       return state;
   }

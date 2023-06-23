@@ -49,7 +49,7 @@ export const addReviewThunk = (review) => async (dispatch) => {
     let newReview = await response.json();
 
     dispatch(addReviewAction(newReview));
-    return true;
+    return newReview;
   }
 
   return false;
