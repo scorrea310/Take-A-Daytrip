@@ -69,6 +69,9 @@ const AddSpotMainForm = ({
 
   useEffect(() => {
     (() => {
+      if (file === null || file === undefined || typeof file === "string") {
+        return;
+      }
       setFile(URL.createObjectURL(file));
     })();
   }, [file]);
@@ -86,10 +89,7 @@ const AddSpotMainForm = ({
         setUndeliverable(true);
         return;
       }
-      console.log(
-        verifiedAddress.components.longitude,
-        verifiedAddress.components.latitude
-      );
+
       setAddressError(false);
       longitude = verifiedAddress.components.longitude;
       latitude = verifiedAddress.components.latitude;
@@ -122,7 +122,7 @@ const AddSpotMainForm = ({
       type: selected,
       name,
     };
-    console.log(formObj, "THIS IS MY FORM OBJECT!!!");
+
     dispatch(addSpot(formObj, imageData)).then((data) => {
       history.push(`/spots/${data.id}`);
     });
@@ -174,6 +174,7 @@ const AddSpotMainForm = ({
             <AddressForm
               styles={customStyles}
               apiKey={lobApiKey}
+              hideSubmitButton={true}
               onSelection={(selected) => {
                 setSelectedAddress(selected.value);
               }}
@@ -181,6 +182,7 @@ const AddSpotMainForm = ({
                 setSelectedAddress({ ...selectedAddress, primary_line: e });
               }}
               onFieldChange={(e) => {
+                console.log(e, "target!!!!!");
                 let obj = { ...selectedAddress };
                 obj[`${e.target.id}`] = e.target.value;
                 setSelectedAddress(obj);

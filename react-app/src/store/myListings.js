@@ -16,8 +16,6 @@ export const loadMyListingsThunk = (userId) => async (dispatch) => {
   if (response.ok) {
     let spots = await response.json();
 
-    console.log(spots, "kjsdnckjsdncjksdnc");
-
     dispatch(loadMyListingsAction(spots.my_listings));
   }
 };

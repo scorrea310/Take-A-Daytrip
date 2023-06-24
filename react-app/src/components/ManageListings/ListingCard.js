@@ -76,7 +76,7 @@ const ListingCard = ({ listing, PastTrip }) => {
 
       if (updatedReview) {
         let reviewToUpdate = { ...myReview };
-        console.log(reviewToUpdate, "NEW REVIE!!!!!!");
+
         reviewToUpdate.rating = rating;
         reviewToUpdate.description = review;
         dispatch(editReviewOnSpot(reviewToUpdate));
@@ -187,7 +187,11 @@ const ListingCard = ({ listing, PastTrip }) => {
               />
               <IoIosClose
                 id="closeWriteReviewModal"
-                onClick={() => setShowWriteReviewModal(false)}
+                onClick={() => {
+                  setError(false);
+                  setRatingError(false);
+                  return setShowWriteReviewModal(false);
+                }}
               />
               <div id="writeReviewSpotImageText">
                 How was your stay at {PastTrip.host_name}'s place?

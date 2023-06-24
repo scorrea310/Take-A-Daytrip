@@ -32,7 +32,6 @@ const MyTrips = () => {
         <div className="tripsSpotCardSection">
           {Object.values(reservations).length > 0 &&
             Object.values(reservations).map((reservation) => {
-              console.log(reservation);
               return (
                 <ReservedSpotCard
                   key={reservation.id}
