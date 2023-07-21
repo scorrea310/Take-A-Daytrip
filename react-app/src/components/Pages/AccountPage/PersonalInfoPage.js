@@ -1,4 +1,4 @@
-import "./PersonalInfo.css";
+import "./PersonalInfoPage.css";
 import NavBar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
 import { BsChevronRight } from "react-icons/bs";
@@ -12,7 +12,7 @@ import { updateProfileImageThunk } from "../../../store/session";
 import FadingBalls from "react-cssfx-loading/lib/FadingBalls";
 import { useEffect } from "react";
 
-const PersonalInfo = () => {
+const PersonalInfoPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
@@ -53,10 +53,6 @@ const PersonalInfo = () => {
     if (images && images.length) {
       imageData.append("images", images[0]);
     }
-
-    /*
-        dispatch updateProfileImageThunk
-        */
 
     dispatch(updateProfileImageThunk(imageData, +sessionUser.id)).then(
       (imageUrl) => {
@@ -133,4 +129,4 @@ const PersonalInfo = () => {
   );
 };
 
-export default PersonalInfo;
+export default PersonalInfoPage;

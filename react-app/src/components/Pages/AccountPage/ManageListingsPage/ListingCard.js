@@ -1,6 +1,6 @@
-import "./ManageListings.css";
+import "./ManageListingsPage.css";
 import { useHistory } from "react-router-dom";
-import { Modal } from "../../context/Modal";
+import { Modal } from "../../../../context/Modal";
 import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,14 +8,14 @@ import {
   addReviewThunk,
   editReviewThunk,
   deleteReviewThunk,
-} from "../../store/myReviews";
+} from "../../../../store/myReviews";
 import ReactStars from "react-rating-stars-component";
 import { Truncate } from "@primer/react";
 import {
   addReviewToSpot,
   deleteReviewFromSpot,
   editReviewOnSpot,
-} from "../../store/spotReducer";
+} from "../../../../store/spotReducer";
 
 const ListingCard = ({ listing, PastTrip }) => {
   const history = useHistory();

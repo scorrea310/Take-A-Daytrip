@@ -1,13 +1,13 @@
-import NavBar from "../NavBar/NavBar";
-import "./PastTrips.css";
+import NavBar from "../../../NavBar/NavBar";
+import "./PastTripsPage.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BsChevronRight } from "react-icons/bs";
 import { useHistory } from "react-router-dom";
-import ListingCard from "../ManageListings/ListingCard";
-import Footer from "../Footer/Footer";
-import { loadMyReviewsThunk } from "../../store/myReviews";
+import ListingCard from "../ManageListingsPage/ListingCard";
+import Footer from "../../../Footer/Footer";
+import { loadMyReviewsThunk } from "../../../../store/myReviews";
 
 const PastTrips = () => {
   const history = useHistory();

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./PersonalInfo.css";
+import "./PersonalInfoPage.css";
 import { updateNameThunk } from "../../../store/session";
 import { updateUserName } from "../../../store/session";
 import { updateEmail } from "../../../store/session";

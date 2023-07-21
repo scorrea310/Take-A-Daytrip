@@ -1,13 +1,13 @@
-import NavBar from "../NavBar/NavBar";
-import "./ManageListings.css";
+import NavBar from "../../../NavBar/NavBar";
+import "./ManageListingsPage.css";
 import ListingCard from "./ListingCard";
 import { useSelector, useDispatch } from "react-redux";
-import Footer from "../Footer/Footer";
+import Footer from "../../../Footer/Footer";
 import { useHistory } from "react-router-dom";
 import { BsChevronRight } from "react-icons/bs";
 import { useEffect } from "react";
 import { useState } from "react";
-import { loadMyListingsThunk } from "../../store/myListings";
+import { loadMyListingsThunk } from "../../../../store/myListings";
 
 const ManageListings = () => {
   const history = useHistory();

@@ -10,9 +10,9 @@ import { loadSpotsFunc } from "./store/spotReducer";
 import MyTripsPage from "./components/Pages/MyTripsPage/MyTripsPage";
 import SpotListingsPage from "./components/Pages/SpotListingsPage/SpotListingsPage";
 import AccountPage from "./components/Pages/AccountPage/AccountPage";
-import PersonalInfo from "./components/Pages/AccountPage/PersonalInfo";
-import ManageListings from "./components/ManageListings/ManageListings";
-import PastTrips from "./components/PastTrips/PastTrips";
+import PersonalInfoPage from "./components/Pages/AccountPage/PersonalInfoPage";
+import ManageListingsPage from "./components/Pages/AccountPage/ManageListingsPage/ManageListingsPage";
+import PastTripsPage from "./components/Pages/AccountPage/PastTripsPage/PastTripsPage";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -68,13 +68,13 @@ function App() {
           <AccountPage />
         </ProtectedRoute>
         <ProtectedRoute path="/account/personal-info" exact={true}>
-          <PersonalInfo />
+          <PersonalInfoPage />
         </ProtectedRoute>
         <ProtectedRoute path="/account/manage-listings" exact={true}>
-          <ManageListings />
+          <ManageListingsPage />
         </ProtectedRoute>
         <ProtectedRoute path="/account/places-you've-been" exact={true}>
-          <PastTrips />
+          <PastTripsPage />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
