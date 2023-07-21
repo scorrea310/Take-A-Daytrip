@@ -53,6 +53,8 @@ User can view, edit, and delete their reservation
 
 1. Spots: Users can create, read, update, and delete a spot.
 2. Reservations: Users can create, read, update, and delete a reservation.
+3. Reviews: Users can create, read, update, and delete reviews.
+4. Google Maps: Users can visualize avaiable spots on Google Maps.
 
 ## Getting started
 
@@ -76,10 +78,16 @@ User can view, edit, and delete their reservation
 
 9. Now go to http://localhost:3000 and enjoy the site.
 
-## Features Coming Soon.
+## Closing Thoughts
 
-1. Reviews: Full CRUD
-2. Search
+This project was one I built during my coding bootcamp. I have learned how to write cleaner code since then. If I was to rewrite this project from scratch these are the things I would do differently: 
+
+1. Make sure my components are not re rendering when they are not supposed to. Use useMemo and useCallback where it makes sense.
+2. Use slugs instead of the actual dB record id in the frontend url. Follow OWASP security best practices.
+3. Refactor some react code and make additional components instead of having one giant component.
+4. Use Pagination on Spot Listings page for example.
+5. Write unit tests for the frontend and backend.
+6. Use Tailwind CSS and Material UI components.
 
 
 
