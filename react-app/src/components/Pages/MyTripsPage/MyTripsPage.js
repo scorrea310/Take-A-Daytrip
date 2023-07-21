@@ -1,11 +1,11 @@
-import NavBar from "../NavBar/NavBar";
-import "./MyTrips.css";
+import NavBar from "../../NavBar/NavBar";
+import "./MyTripsPage.css";
 import ReservedSpotCard from "./ReservedSpotCard";
-import { loadreservationsthunk } from "../../store/reservationsReducer";
+import { loadreservationsthunk } from "../../../store/reservationsReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
-const MyTrips = () => {
+const MyTripsPage = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [isLoaded, setIsloaded] = useState(false);
@@ -48,4 +48,4 @@ const MyTrips = () => {
   );
 };
 
-export default MyTrips;
+export default MyTripsPage;

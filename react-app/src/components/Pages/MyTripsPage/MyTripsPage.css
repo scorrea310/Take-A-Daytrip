@@ -1,5 +1,4 @@
 .MyTripsPageContainer {
-  /* background-color: aqua; */
   display: flex;
   flex-direction: column;
 }
@@ -14,7 +13,6 @@
 
 .TripsTextTripsPage {
   display: flex;
-  /* background-color: aqua; */
   width: 89%;
   height: 97px;
   font-size: 25px;

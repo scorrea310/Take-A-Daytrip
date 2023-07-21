@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import NavBar from "../NavBar/NavBar";
-import "./Spot.css";
+import NavBar from "../../NavBar/NavBar";
+import "./SpotPage.css";
 import { BsDoorOpen } from "react-icons/bs";
 import { BsCalendarDate } from "react-icons/bs";
 import EditSpot from "./EditSpot";
 import ReserveSpot from "./ReserveSpot";
 import { GiVacuumCleaner } from "react-icons/gi";
 import { FaAddressCard } from "react-icons/fa";
-import Maps from "../Maps/Maps";
-import Footer from "../Footer/Footer";
-import Reviews from "../Reviews/Reviews";
+import Maps from "../../Maps/Maps";
+import Footer from "../../Footer/Footer";
+import Reviews from "../../Reviews/Reviews";
 
-const Spot = ({ spotsLoaded }) => {
+const SpotPage = ({ spotsLoaded }) => {
   const user = useSelector((state) => state.session.user);
   const spot = useSelector((state) => state.spotReducer);
   const { spotId } = useParams();
@@ -235,4 +235,4 @@ const Spot = ({ spotsLoaded }) => {
   );
 };
 
-export default Spot;
+export default SpotPage;

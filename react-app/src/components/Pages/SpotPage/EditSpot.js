@@ -1,14 +1,14 @@
 import "./EditSpot.css";
 import { AiFillEdit } from "react-icons/ai";
 import { AiFillDelete } from "react-icons/ai";
-import { Modal } from "../../context/Modal";
+import { Modal } from "../../../context/Modal";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import Button from "../common/Button/Button";
+import Button from "../../common/Button/Button";
 import { useDispatch } from "react-redux";
-import { updateSpotFunc } from "../../store/spotReducer";
+import { updateSpotFunc } from "../../../store/spotReducer";
 import { useHistory } from "react-router-dom";
-import { deleteSpotThunk } from "../../store/spotReducer";
+import { deleteSpotThunk } from "../../../store/spotReducer";
 
 const EditSpot = ({ spot, spotId }) => {
   const dispatch = useDispatch();

@@ -6,9 +6,9 @@ import User from "./components/User";
 import { authenticate } from "./store/session";
 import AddSpotPage from "./components/Pages/AddSpotPage/AddSpotPage";
 import LandingPage from "./components/Pages/LandingPage/LandingPage";
-import Spot from "./components/Spot/Spot";
+import SpotPage from "./components/Pages/SpotPage/SpotPage";
 import { loadSpotsFunc } from "./store/spotReducer";
-import MyTrips from "./components/MyTrips/MyTrips";
+import MyTripsPage from "./components/Pages/MyTripsPage/MyTripsPage";
 import SpotListingsPage from "./components/Pages/SpotListingsPage/SpotListingsPage";
 import AccountPage from "./components/AccountPage/AccountPage";
 import PersonalInfo from "./components/AccountPage/PersonalInfo";
@@ -60,10 +60,10 @@ function App() {
           <AddSpotPage />
         </ProtectedRoute>
         <ProtectedRoute path="/mytrips" exact={true}>
-          <MyTrips />
+          <MyTripsPage />
         </ProtectedRoute>
         <Route path="/spots/:spotId" exact={true}>
-          <Spot spotsLoaded={spotsLoaded} />
+          <SpotPage spotsLoaded={spotsLoaded} />
         </Route>
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />

@@ -50,7 +50,6 @@
 .spotInfoAndReserveOrEditContainer {
   display: flex;
   flex-direction: row;
-  /* background-color: aqua; */
   width: 79%;
   margin-top: 30px;
   margin-bottom: 45px;
@@ -81,7 +80,6 @@
   display: flex;
   width: 66%;
   height: 100%;
-  /* background-color: blue; */
   flex-direction: column;
 }
 
@@ -172,7 +170,6 @@
 .logInOrSignUpTextContainerSpotPage {
   display: flex;
   width: 200px;
-  /* background-color: aqua; */
   flex-direction: column;
 }
 

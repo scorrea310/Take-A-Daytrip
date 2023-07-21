@@ -1,10 +1,10 @@
 import "./ReserveSpot.css";
 import { useEffect, useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import Button from "../common/Button/Button";
+import Button from "../../common/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { creatReservationThunk } from "../../store/reservationsReducer";
-import { updateReservationThunk } from "../../store/reservationsReducer";
+import { creatReservationThunk } from "../../../store/reservationsReducer";
+import { updateReservationThunk } from "../../../store/reservationsReducer";
 import { useHistory } from "react-router-dom";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file

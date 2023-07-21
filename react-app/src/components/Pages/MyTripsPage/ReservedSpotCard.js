@@ -2,10 +2,10 @@ import "./ReservationSpotCard.css";
 import { FiEdit } from "react-icons/fi";
 import { MdOutlineCancelPresentation } from "react-icons/md";
 import { useState } from "react";
-import { Modal } from "../../context/Modal";
-import ReserveSpot from "../Spot/ReserveSpot";
-import Button from "../common/Button/Button";
-import { deleteReservationThunk } from "../../store/reservationsReducer";
+import { Modal } from "../../../context/Modal";
+import ReserveSpot from "../SpotPage/ReserveSpot";
+import Button from "../../common/Button/Button";
+import { deleteReservationThunk } from "../../../store/reservationsReducer";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
