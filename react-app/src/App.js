@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import User from "./components/User";
 import { authenticate } from "./store/session";
 import AddSpotPage from "./components/Pages/AddSpotPage/AddSpotPage";
 import LandingPage from "./components/Pages/LandingPage/LandingPage";
@@ -65,9 +64,6 @@ function App() {
         <Route path="/spots/:spotId" exact={true}>
           <SpotPage spotsLoaded={spotsLoaded} />
         </Route>
-        <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
-        </ProtectedRoute>
         <ProtectedRoute path="/account" exact={true}>
           <AccountPage />
         </ProtectedRoute>
