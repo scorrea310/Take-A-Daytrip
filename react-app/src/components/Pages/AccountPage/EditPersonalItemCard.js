@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./PersonalInfo.css";
-import { updateNameThunk } from "../../store/session";
-import { updateUserName } from "../../store/session";
-import { updateEmail } from "../../store/session";
+import { updateNameThunk } from "../../../store/session";
+import { updateUserName } from "../../../store/session";
+import { updateEmail } from "../../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import FadingBalls from "react-cssfx-loading/lib/FadingBalls";
 

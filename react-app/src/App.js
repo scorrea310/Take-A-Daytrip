@@ -9,8 +9,8 @@ import SpotPage from "./components/Pages/SpotPage/SpotPage";
 import { loadSpotsFunc } from "./store/spotReducer";
 import MyTripsPage from "./components/Pages/MyTripsPage/MyTripsPage";
 import SpotListingsPage from "./components/Pages/SpotListingsPage/SpotListingsPage";
-import AccountPage from "./components/AccountPage/AccountPage";
-import PersonalInfo from "./components/AccountPage/PersonalInfo";
+import AccountPage from "./components/Pages/AccountPage/AccountPage";
+import PersonalInfo from "./components/Pages/AccountPage/PersonalInfo";
 import ManageListings from "./components/ManageListings/ManageListings";
 import PastTrips from "./components/PastTrips/PastTrips";
 

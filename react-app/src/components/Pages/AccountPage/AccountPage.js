@@ -1,8 +1,8 @@
-import NavBar from "../NavBar/NavBar";
+import NavBar from "../../NavBar/NavBar";
 import "./AccountPage.css";
 import { useSelector } from "react-redux";
 import AccountCard from "./AccountCard";
-import Footer from "../Footer/Footer";
+import Footer from "../../Footer/Footer";
 import { useEffect } from "react";
 
 const AccountPage = () => {

@@ -1,16 +1,17 @@
 import "./PersonalInfo.css";
-import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
+import NavBar from "../../NavBar/NavBar";
+import Footer from "../../Footer/Footer";
 import { BsChevronRight } from "react-icons/bs";
 import { useHistory } from "react-router-dom";
-import FileInputWithPreview from "../SpotImageForm/FileInputWithPreview";
+import FileInputWithPreview from "../../SpotImageForm/FileInputWithPreview";
 import { useState } from "react";
 import EditPersonalItemCard from "./EditPersonalItemCard";
 import { MdOutlinePrivateConnectivity } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { updateProfileImageThunk } from "../../store/session";
+import { updateProfileImageThunk } from "../../../store/session";
 import FadingBalls from "react-cssfx-loading/lib/FadingBalls";
 import { useEffect } from "react";
+
 const PersonalInfo = () => {
   const history = useHistory();
   const dispatch = useDispatch();

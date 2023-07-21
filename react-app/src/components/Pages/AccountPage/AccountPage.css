@@ -11,12 +11,10 @@
   display: flex;
   justify-content: center;
   margin-top: 80px;
-  /* background-color: blue; */
 }
 
 .mainContentContaner {
   width: 70%;
-  /* background-color: aqua; */
   height: 500px;
   margin-top: 60px;
 }
@@ -48,7 +46,6 @@
 #userEmailAccountPage {
   font-size: 18px;
   font-weight: 350;
-  /* line-height: 24px */
   margin-left: 5px;
 }
 
