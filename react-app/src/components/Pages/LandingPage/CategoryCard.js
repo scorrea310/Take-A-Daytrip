@@ -1,7 +1,7 @@
-import outdoorUrl from "../../images/outdoor-things-to-do-outside-daytrips-from-houston-2020-enchanted-rock-696x407.jpeg";
-import uniqueExperience from "../../images/theoneSkydiving.jpeg";
-import houseUrlImage from "../../images/houseImage.jpeg";
-import apartmentUrlImage from "../../images/logan_apartments.6.jpg";
+import outdoorUrl from "../../../images/outdoor-things-to-do-outside-daytrips-from-houston-2020-enchanted-rock-696x407.jpeg";
+import uniqueExperience from "../../../images/theoneSkydiving.jpeg";
+import houseUrlImage from "../../../images/houseImage.jpeg";
+import apartmentUrlImage from "../../../images/logan_apartments.6.jpg";
 import { useHistory } from "react-router-dom";
 ///Users/stevecorrea/Desktop/JS_Problem_Sets_and_materials/App-Academy/Mod7/Take-A-Daytrip/react-app/src/images/logan_apartments.6.jpg
 

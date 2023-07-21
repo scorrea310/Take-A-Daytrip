@@ -13,7 +13,7 @@
   width: 89%;
   border-radius: 10px;
   height: 480px;
-  background-image: url("../../images/houseWoodsLandingPage.jpeg");
+  background-image: url("../../../images/houseWoodsLandingPage.jpeg");
   background-size: cover;
   background-position: center;
   margin-top: 80px;
@@ -72,7 +72,7 @@
 .tryHostingCard {
   width: 89%;
   height: 450px;
-  background-image: url("../../images/try\ hosting.jpeg");
+  background-image: url("../../../images/try\ hosting.jpeg");
   background-size: cover;
   border-radius: 12px;
   margin-top: 50px;
@@ -107,7 +107,7 @@
 .bigOutdoorCard {
   width: 615px;
   height: 628px;
-  background-image: url("../../images/canyon-image.jpeg");
+  background-image: url("../../../images/canyon-image.jpeg");
   background-size: cover;
   background-position: 15%;
   border-radius: 12px;
@@ -172,7 +172,7 @@
 .bigUniqueCard {
   width: 615px;
   height: 628px;
-  background-image: url("../../images/big-unique-image.jpeg");
+  background-image: url("../../../images/big-unique-image.jpeg");
   background-size: cover;
   background-position: right;
   border-radius: 12px;

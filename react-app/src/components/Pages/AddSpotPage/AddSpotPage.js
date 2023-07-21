@@ -1,11 +1,11 @@
-import NavBar from "../NavBar/NavBar";
-import "./AddSpot.css";
+import NavBar from "../../NavBar/NavBar";
+import "./AddSpotPage.css";
 import { useState, useEffect } from "react";
 import SelectTripType from "./SelectTripType";
 import AddSpotImages from "./AddSpotImages";
 import AddSpotMainForm from "./AddSpotMainForm";
 
-const AddSpot = () => {
+const AddSpotPage = () => {
   const [selected, setSelected] = useState("Apartment");
   const [firstSlide, setfirstSlide] = useState(true);
   const [secondSlide, setSecondSlide] = useState(false);
@@ -67,4 +67,4 @@ const AddSpot = () => {
   );
 };
 
-export default AddSpot;
+export default AddSpotPage;

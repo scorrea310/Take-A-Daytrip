@@ -1,4 +1,4 @@
-import "./AddSpot.css";
+import "./AddSpotPage.css";
 import SpotCard from "./SpotCard";
 
 const SelectTripType = ({

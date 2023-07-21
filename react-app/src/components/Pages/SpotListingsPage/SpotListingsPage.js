@@ -1,11 +1,17 @@
-import NavBar from "../NavBar/NavBar";
+import NavBar from "../../NavBar/NavBar";
 import "./SpotListings.css";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import SpotListingCard from "./SpotListingCard";
-import Maps from "../Maps/Maps";
+import SpotListingCard from "../SpotListingsPage/SpotListingCard";
+import Maps from "../../Maps/Maps";
 
-const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
+const SpotListingsPage = ({
+  allSpots,
+  outdoors,
+  apartments,
+  houses,
+  unique,
+}) => {
   const sessionUser = useSelector((state) => state.session.user);
   const [googleMapsApiKey, setGoogleMapsApiKey] = useState(false);
 
@@ -164,4 +170,4 @@ const SpotListings = ({ allSpots, outdoors, apartments, houses, unique }) => {
   );
 };
 
-export default SpotListings;
+export default SpotListingsPage;

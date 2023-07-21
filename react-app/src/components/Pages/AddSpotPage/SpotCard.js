@@ -1,4 +1,4 @@
-import "./AddSpot.css";
+import "./AddSpotPage.css";
 
 const SpotCard = ({ name, selected, onClick, imageClassName }) => {
   let nameOfClass;

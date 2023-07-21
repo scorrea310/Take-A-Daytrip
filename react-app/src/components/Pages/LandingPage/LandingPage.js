@@ -1,8 +1,8 @@
-import NavBar from "../NavBar/NavBar";
+import NavBar from "../../NavBar/NavBar";
 import "./LandingPage.css";
-import Button from "../common/Button/Button";
+import Button from "../../common/Button/Button";
 import CategoryCard from "./CategoryCard";
-import Footer from "../Footer/Footer";
+import Footer from "../../Footer/Footer";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 

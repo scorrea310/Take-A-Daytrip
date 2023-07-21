@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addSpot } from "../../store/spotReducer";
+import { addSpot } from "../../../store/spotReducer";
 import { useHistory } from "react-router-dom";
 import { verify, AddressForm } from "@lob/react-address-autocomplete";
 import React, { useState, useEffect } from "react";
-import "./AddSpot.css";
+import "./AddSpotPage.css";
 
 // Custom styles for AddressForm Lob component
 const customStyles = {

@@ -4,12 +4,12 @@ import { useDispatch } from "react-redux";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import User from "./components/User";
 import { authenticate } from "./store/session";
-import LandingPage from "./components/LandingPage/LandingPage";
-import AddSpot from "./components/AddSpot/AddSpot";
+import AddSpotPage from "./components/Pages/AddSpotPage/AddSpotPage";
+import LandingPage from "./components/Pages/LandingPage/LandingPage";
 import Spot from "./components/Spot/Spot";
 import { loadSpotsFunc } from "./store/spotReducer";
 import MyTrips from "./components/MyTrips/MyTrips";
-import SpotListings from "./components/SpotListings/SpotListings";
+import SpotListingsPage from "./components/Pages/SpotListingsPage/SpotListingsPage";
 import AccountPage from "./components/AccountPage/AccountPage";
 import PersonalInfo from "./components/AccountPage/PersonalInfo";
 import ManageListings from "./components/ManageListings/ManageListings";
@@ -42,22 +42,22 @@ function App() {
           <LandingPage />
         </Route>
         <Route path="/allspots" exact={true}>
-          <SpotListings allSpots={true} />
+          <SpotListingsPage allSpots={true} />
         </Route>
         <Route path="/apartments" exact={true}>
-          <SpotListings apartments={true} />
+          <SpotListingsPage apartments={true} />
         </Route>
         <Route path="/outdoors" exact={true}>
-          <SpotListings outdoors={true} />
+          <SpotListingsPage outdoors={true} />
         </Route>
         <Route path="/houses" exact={true}>
-          <SpotListings houses={true} />
+          <SpotListingsPage houses={true} />
         </Route>
         <Route path="/unique" exact={true}>
-          <SpotListings unique={true} />
+          <SpotListingsPage unique={true} />
         </Route>
         <ProtectedRoute path="/spots/new" exact={true}>
-          <AddSpot />
+          <AddSpotPage />
         </ProtectedRoute>
         <ProtectedRoute path="/mytrips" exact={true}>
           <MyTrips />

@@ -1,4 +1,4 @@
-import SpotImageForm from "../SpotImageForm/SpotImageForm";
+import SpotImageForm from "../../SpotImageForm/SpotImageForm";
 
 const AddSpotImages = ({
   firstSlide,
