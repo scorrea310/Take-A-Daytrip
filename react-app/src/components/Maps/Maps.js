@@ -16,6 +16,36 @@ const containerStyle = {
   height: "100%",
 };
 
+// Map price icons still twitch even with this.
+// Porbably something wrong with "@react-google-maps/api"
+const MemoizedOverlayView = React.memo(
+  ({ spot, focusedSpotMark, setFocusedSpotMark }) => {
+    return (
+      <OverlayView
+        position={{ lat: spot.latitude, lng: spot.longitude }}
+        mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+      >
+        <div
+          onClick={() => setFocusedSpotMark(spot)}
+          className={
+            focusedSpotMark.id === spot.id ? "selectedMapMarker" : "mapMarker"
+          }
+        >
+          <div
+            id={
+              focusedSpotMark.id === spot.id
+                ? "selectedPriceMapMarker"
+                : "priceMapMarker"
+            }
+          >
+            ${spot.price_per_day}
+          </div>
+        </div>
+      </OverlayView>
+    );
+  }
+);
+
 const Maps = ({
   apiKey,
   center,
@@ -51,34 +81,14 @@ const Maps = ({
           )}
 
           {spotListingsPage &&
-            spots.map((spot) => {
-              return (
-                <OverlayView
-                  key={spot.id}
-                  position={{ lat: spot.latitude, lng: spot.longitude }}
-                  mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-                >
-                  <div
-                    onClick={() => setFocusedSpotMark(spot)}
-                    className={
-                      focusedSpotMark.id === spot.id
-                        ? "selectedMapMarker"
-                        : "mapMarker"
-                    }
-                  >
-                    <div
-                      id={
-                        focusedSpotMark.id === spot.id
-                          ? "selectedPriceMapMarker"
-                          : "priceMapMarker"
-                      }
-                    >
-                      ${spot.price_per_day}
-                    </div>
-                  </div>
-                </OverlayView>
-              );
-            })}
+            spots.map((spot) => (
+              <MemoizedOverlayView
+                key={spot.id}
+                spot={spot}
+                focusedSpotMark={focusedSpotMark}
+                setFocusedSpotMark={setFocusedSpotMark}
+              />
+            ))}
 
           {focusedSpotMark && (
             <InfoBox

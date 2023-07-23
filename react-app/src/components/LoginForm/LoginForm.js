@@ -13,7 +13,6 @@ const LoginForm = ({ setShowLoginModal }) => {
 
   const onLogin = async (e) => {
     e.preventDefault();
-    e.stopPropagation();
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
@@ -54,7 +53,6 @@ const LoginForm = ({ setShowLoginModal }) => {
         </div>
         <div className="loginTextInModal"> Log In</div>
       </div>
-      {/* <div style={{ display: "flex", justifyContent: "center" }}>Center</div> */}
 
       <div className="welcomeToTextLoginContainer">
         Welcome back!
