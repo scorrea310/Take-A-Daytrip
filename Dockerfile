@@ -4,7 +4,7 @@ WORKDIR /react-app
 COPY react-app/. .
 
 # You have to set this because it should be set during build time.
-ENV REACT_APP_BASE_URL=http://daytrip-alb-2013983803.us-west-1.elb.amazonaws.com
+ENV REACT_APP_BASE_URL=https://take-a-daytrip.com
 
 # Build our React App
 RUN npm install
