@@ -14,8 +14,10 @@ FROM python:3.9
 
 # Setup Flask environment
 ENV FLASK_APP=app
-ENV FLASK_ENV=production
+ENV FLASK_ENV=dev
 ENV SQLALCHEMY_ECHO=True
+ENV SECRET_KEY=secret
+ENV DATABASE_URL=postgresql://take_a_daytrip_user:password@host.docker.internal/take_a_daytrip_database
 
 EXPOSE 8000
 

@@ -1,7 +1,7 @@
 import os
 import json
 
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, jsonify
 from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
@@ -58,13 +58,13 @@ def create_app(flask_config=Config):
     # Therefore, we need to make sure that in production any
     # request made over http is redirected to https.
     # Well.........
-    @app.before_request
-    def https_redirect():
-        if os.environ.get("FLASK_ENV") == "production":
-            if request.headers.get("X-Forwarded-Proto") == "http":
-                url = request.url.replace("http://", "https://", 1)
-                code = 301
-                return redirect(url, code=code)
+    # @app.before_request
+    # def https_redirect():
+    #     if os.environ.get("FLASK_ENV") == "production":
+    #         if request.headers.get("X-Forwarded-Proto") == "http":
+    #             url = request.url.replace("http://", "https://", 1)
+    #             code = 301
+    #             return redirect(url, code=code)
 
     @app.after_request
     def inject_csrf_token(response):
@@ -84,10 +84,14 @@ def create_app(flask_config=Config):
             return app.send_static_file("favicon.ico")
         return app.send_static_file("index.html")
 
+    @app.route("/health")
+    def health_check():
+        return {"status": "ok"}, 200
+
     return app
 
 
-app = create_app()  # Assign the result of create_app() to the 'app' variable
+app = create_app()
 
 if __name__ == "__main__":
-    app.run()  # Run the app directly when executed as the main module
+    app.run(host="0.0.0.0", port=8000)
