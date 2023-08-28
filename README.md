@@ -1,14 +1,14 @@
 # Take A Daytrip
 
-[Live Link Here](https://take-a-daytrip.herokuapp.com/)
+[https://take-a-daytrip.com/](https://take-a-daytrip.com)
 
-Take A Datrip is a clone of Airbnb where users can view spots available to reserve for the day. Users can also create, update, delete, and view a reservation and a spot. 
+Take A Datrip is a clone of Airbnb where users can view spots available to reserve for the day. Users can also create, update, delete, and view a reservation. Full CRUD aviable for reviews as well. 
 
 Take A Daytrip encourages users to get out the house and experience a new place for the day. 
 
 # Technologies Used
 
-Take A Daytrip is built on a React frontend with a Flask backend using PostgreSQL as a database. I used React for all the display logic and Redux with thunks making API calls to the backend server to manage the state. The backend uses the Flask framework and a PostgreSQL database. SQLAlchemy is the ORM used to handle all data manipulation of the database. Take A Daytrip image storage is implemented through Amazon Web Services S3.
+Take A Daytrip is built on a React frontend with a Flask backend using PostgreSQL as a database. I used React for all the display logic and Redux with thunks making API calls to the backend server to manage the state. The backend uses the Flask framework and a PostgreSQL database. SQLAlchemy is the ORM used to handle all data manipulation of the database. Take A Daytrip image storage is implemented through Amazon Web Services S3. For deployment, I used Docker to host my container on AWS ECS using Fargate launch type. I'm using Amazon RDS for my db and Route 53 with an alias record pointing to the DNS hostname of my Application Load Balancer.
 
 ![pythonIcon](https://user-images.githubusercontent.com/46228676/155580259-d463ce91-0e5f-428d-b493-4fb8e2fdc26d.png) 
 ![flaskIcon](https://user-images.githubusercontent.com/46228676/155580604-551e8f24-3ebc-4c53-8eaa-f98732c4ddb9.png)
@@ -73,14 +73,13 @@ User can view, edit, and delete their reservation
 
   `flask run`
   
-  
 8. Open another terminal and change directory into /react-app and run the React app  `npm start`
 
 9. Now go to http://localhost:3000 and enjoy the site.
 
 ## Closing Thoughts
 
-This project was one I built during my coding bootcamp. I have learned how to write cleaner code since then. If I was to rewrite this project from scratch these are the things I would do differently: 
+This project was one I built during my coding bootcamp and I have learned how to write cleaner code since then. If I was to rewrite this project from scratch these are the things I would do differently: 
 
 1. Make sure my components are not re rendering when they are not supposed to. Use useMemo and useCallback where it makes sense.
 2. Use slugs instead of the actual dB record id in the frontend url. Follow OWASP security best practices.
@@ -88,6 +87,3 @@ This project was one I built during my coding bootcamp. I have learned how to wr
 4. Use Pagination on Spot Listings page for example.
 5. Write unit tests for the frontend and backend.
 6. Use Tailwind CSS and Material UI components.
-
-
-
