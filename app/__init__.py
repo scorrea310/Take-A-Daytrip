@@ -16,7 +16,6 @@ from .api.reservation_routes import reservation_routes
 from .api.maps import maps
 from .api.review_routes import review_routes
 from .seeds import seed_commands
-
 from .config import Config
 
 
