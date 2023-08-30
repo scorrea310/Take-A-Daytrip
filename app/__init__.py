@@ -1,6 +1,7 @@
 import os
 import json
 
+from werkzeug.exceptions import InternalServerError
 from flask import Flask, render_template, request, session, redirect, jsonify
 from flask_cors import CORS
 from flask_migrate import Migrate
@@ -19,11 +20,17 @@ from .seeds import seed_commands
 from .config import Config
 
 
-# Create the application factory function
+def check_db_connection():
+    try:
+        db.session.execute("SELECT 1").fetchall()
+        return True
+    except:
+        return False
+
+
 def create_app(flask_config=Config):
     app = Flask(__name__)
 
-    # Setup login manager
     login = LoginManager(app)
     login.login_view = "auth.unauthorized"
 
@@ -35,7 +42,6 @@ def create_app(flask_config=Config):
     def unauthorized():
         return {"error": "Unauthorized to make this request."}, 401
 
-    # Tell flask about our seed commands
     app.cli.add_command(seed_commands)
 
     app.config.from_object(flask_config)
@@ -48,15 +54,14 @@ def create_app(flask_config=Config):
     app.register_blueprint(review_routes, url_prefix="/api/reviews")
     db.init_app(app)
     Migrate(app, db)
-
-    # Application Security
     CORS(app)
 
-    # Since we are deploying with Docker and Flask,
-    # we won't be using a buildpack when we deploy to Heroku.
-    # Therefore, we need to make sure that in production any
-    # request made over http is redirected to https.
-    # Well.........
+    # if db connection is not healthy, we exit.
+    with app.app_context():
+        if not check_db_connection():
+            print("Failed to connect to the database. Exiting.")
+            exit(1)
+
     @app.before_request
     def https_redirect():
         if os.environ.get("FLASK_ENV") == "production":
@@ -86,6 +91,17 @@ def create_app(flask_config=Config):
     @app.route("/health")
     def health_check():
         return {"status": "ok"}, 200
+
+    @app.errorhandler(InternalServerError)
+    def handle_500(e):
+        original = getattr(e, "original_exception", None)
+
+        if original:
+            message = str(original)
+        else:
+            message = "Internal Server Error"
+
+        return jsonify(error=message), 500
 
     return app
 

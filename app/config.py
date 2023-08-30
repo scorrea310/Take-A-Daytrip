@@ -1,5 +1,4 @@
 import os
-import click
 import json
 
 db_secret = os.environ.get("DATABASE_URL")

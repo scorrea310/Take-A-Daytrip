@@ -18,8 +18,6 @@ def add_reservation(id):
     form["csrf_token"].data = request.cookies["csrf_token"]
 
     if form.validate_on_submit():
-        click.echo(click.style("it worked!!!!!!", bg="red", fg="white"))
-
         new_reservation = Reservation(
             spot_id=form.data["spot_id"],
             user_id=id,
@@ -28,13 +26,14 @@ def add_reservation(id):
             check_out=form.data["check_out"],
             price=form.data["price"],
         )
-
-        db.session.add(new_reservation)
-        db.session.commit()
+        try:
+            db.session.add(new_reservation)
+            db.session.commit()
+        except:
+            db.session.rollback()
+            raise Exception("There was an error making Reservation")
 
         return new_reservation.to_dict()
-
-    click.echo(click.style(str(form.errors), bg="red", fg="white"))
     return {"errors": form.errors}, 400
 
 
@@ -72,8 +71,6 @@ def update_reservation(id):
         db.session.commit()
 
         return old_reservation.to_dict()
-
-    click.echo(click.style(str(form.errors), bg="red", fg="white"))
     return {"errors": form.errors}, 400
 
 
