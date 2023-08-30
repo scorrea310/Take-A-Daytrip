@@ -39,14 +39,16 @@ def add_reservation(id):
 
 @reservation_routes.route("/<int:id>")
 def get_reservations_for_user(id):
-    users_reservations = Reservation.query.filter(Reservation.user_id == id)
+    try:
+        users_reservations = Reservation.query.filter(Reservation.user_id == id)
 
-    all_of_users_reservations = {}
+        all_of_users_reservations = {}
 
-    for reservation in users_reservations:
-        all_of_users_reservations[reservation.id] = reservation.to_dict()
-
-    return {"reservations": all_of_users_reservations}
+        for reservation in users_reservations:
+            all_of_users_reservations[reservation.id] = reservation.to_dict()
+        return {"reservations": all_of_users_reservations}
+    except:
+        raise Exception("Failed to retrieve reservations")
 
 
 @reservation_routes.route("/<int:id>", methods=["PATCH"])
@@ -59,18 +61,21 @@ def update_reservation(id):
     form["csrf_token"].data = request.cookies["csrf_token"]
 
     if form.validate_on_submit():
-        old_reservation = Reservation.query.get(id)
+        try:
+            old_reservation = Reservation.query.get(id)
 
-        old_reservation.spot_id = (form.data["spot_id"],)
-        old_reservation.user_id = (form.data["user_id"],)
-        old_reservation.number_of_guests = (form.data["number_of_guests"],)
-        old_reservation.check_in = (form.data["check_in"],)
-        old_reservation.check_out = (form.data["check_out"],)
-        old_reservation.price = (form.data["price"],)
+            old_reservation.spot_id = (form.data["spot_id"],)
+            old_reservation.user_id = (form.data["user_id"],)
+            old_reservation.number_of_guests = (form.data["number_of_guests"],)
+            old_reservation.check_in = (form.data["check_in"],)
+            old_reservation.check_out = (form.data["check_out"],)
+            old_reservation.price = (form.data["price"],)
 
-        db.session.commit()
+            db.session.commit()
 
-        return old_reservation.to_dict()
+            return old_reservation.to_dict()
+        except:
+            raise Exception("Failed to update Reservation.")
     return {"errors": form.errors}, 400
 
 
@@ -80,27 +85,33 @@ def delete_reservation(id):
     DELETE a Reservation
     the id above is the reservation id to DELETE
     """
+    try:
+        old_reservation = Reservation.query.get(id)
 
-    old_reservation = Reservation.query.get(id)
+        db.session.delete(old_reservation)
+        db.session.commit()
 
-    db.session.delete(old_reservation)
-    db.session.commit()
-
-    return {"message": "deleted"}
+        return {"message": "deleted"}, 200
+    except:
+        raise Exception("Failed to Delete Reservation.")
 
 
 @reservation_routes.route("/<int:id>/past-trips")
 def get_past_reservations(id):
     present = datetime.datetime.now().date()
-    users_reservations = Reservation.query.filter(Reservation.user_id == id)
 
-    past_users_reservations = {}
+    try:
+        users_reservations = Reservation.query.filter(Reservation.user_id == id)
 
-    for reservation in users_reservations:
-        obj = reservation.to_dict()
-        obj_date_string = obj["check_out"].split(" ")[0]
-        past_trip = datetime.datetime.strptime(obj_date_string, "%Y-%m-%d").date()
+        past_users_reservations = {}
 
-        if past_trip < present:
-            past_users_reservations[reservation.id] = reservation.to_dict()
-    return {"past_reservations": past_users_reservations}
+        for reservation in users_reservations:
+            obj = reservation.to_dict()
+            obj_date_string = obj["check_out"].split(" ")[0]
+            past_trip = datetime.datetime.strptime(obj_date_string, "%Y-%m-%d").date()
+
+            if past_trip < present:
+                past_users_reservations[reservation.id] = reservation.to_dict()
+        return {"past_reservations": past_users_reservations}
+    except:
+        raise Exception("Failed to retrieve past reservations")
