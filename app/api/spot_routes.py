@@ -61,16 +61,12 @@ def upload_spot_images(id):
 
     for image in images:
         if not allowed_file(image.filename):
-            return {"errors": "File type not permitted."}
+            return {"errors": "File type not permitted."}, 400
 
         image.filename = get_unique_filename(image.filename)
         upload = upload_file_to_s3(image)
 
         if "url" not in upload:
-            # if the dictionary doesn't have a url key
-            # it means that there was an error when we tried to upload
-            # so we send back that error message
-            click.echo(click.style(str(upload), bg="red", fg="white"))
             return upload, 400
 
         image_url = upload["url"]
@@ -131,7 +127,7 @@ def delete_cart_item(id):
     db.session.delete(spot_to_delete)
     db.session.commit()
 
-    return {"message": "deleted"}
+    return {"message": "deleted"}, 200
 
 
 @spot_routes.route("/users_listings/<int:id>")

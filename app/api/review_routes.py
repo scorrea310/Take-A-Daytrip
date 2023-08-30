@@ -15,24 +15,25 @@ def add_review():
     form["csrf_token"].data = request.cookies["csrf_token"]
 
     if form.validate_on_submit():
-        new_review = Review(
-            spot_id=form.data["spotId"],
-            rating=form.data["rating"],
-            description=form.data["description"],
-            user_id=form.data["userId"],
-        )
+        try:
+            new_review = Review(
+                spot_id=form.data["spotId"],
+                rating=form.data["rating"],
+                description=form.data["description"],
+                user_id=form.data["userId"],
+            )
 
-        db.session.add(new_review)
-        db.session.commit()
+            db.session.add(new_review)
+            db.session.commit()
 
-        return new_review.to_dict()
+            return new_review.to_dict()
+        except:
+            db.session.rollback()
+            raise Exception("Failed to create review. Please try again.")
 
     return {"errors": form.errors}, 400
 
 
-# Move this logic to get spots api route. Also, when spot is deleted,
-# Make sure to delete it's reviews
-# When Spot is deleted make sure to delete its Reservations
 @review_routes.route("/<int:spot_id>")
 def get_reviews(spot_id):
     reviews = Review.query.filter(Review.spot_id == spot_id)

@@ -8,33 +8,26 @@ from wtforms.fields import (
     DecimalField,
     BooleanField,
     DateTimeField,
-    DateField
+    DateField,
 )
 
 
 class ReservationForm(FlaskForm):
-
-    # spot_id	user_id	number_of_guests	reservation	price
-
     spot_id = IntegerField(
         "Spot ID",
-        validators=[ DataRequired()],
+        validators=[DataRequired()],
     )
 
-    number_of_guests = IntegerField(
-        "Number of Guests",
-        default=0
-    )
-
+    number_of_guests = IntegerField("Number of Guests", default=0)
 
     check_in = DateField(
         "Reservation Date Time",
-        validators=[ DataRequired()],
+        validators=[DataRequired()],
     )
 
-    check_out =  DateField(
+    check_out = DateField(
         "Reservation Date Time",
-        validators=[ DataRequired()],
+        validators=[DataRequired()],
     )
 
     price = DecimalField(

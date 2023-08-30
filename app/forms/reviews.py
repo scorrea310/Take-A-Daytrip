@@ -14,11 +14,6 @@ from wtforms.fields import (
 )
 
 
-# create Review
-# validate that spot with spot_id exists.
-# need user_id, description, rating, spot_id
-
-
 def does_spot_exist(form, field):
     spot = Spot.query.get(field.data)
     if spot is None:

@@ -7,7 +7,7 @@ from wtforms.fields import (
     IntegerField,
     DecimalField,
     BooleanField,
-    RadioField
+    RadioField,
 )
 
 
@@ -21,9 +21,9 @@ class SpotListingForm(FlaskForm):
                 max=1000,
                 message="Title must be between %(min)s and %(max)s characters long.",
             ),
-        ]
+        ],
     )
-    
+
     longitude = DecimalField(
         "Longitude",
         validators=[
@@ -47,40 +47,46 @@ class SpotListingForm(FlaskForm):
                 max=5000,
                 message="Name must be between %(min)s and %(max)s characters long.",
             ),
-        ]
+        ],
     )
 
     petsAllowed = BooleanField(
         "Pets Allowed",
-        false_values=(False, 'false', 0, '0', 'False'),
+        false_values=(False, "false", 0, "0", "False"),
     )
 
     totalOccupancy = IntegerField(
         "Total Occupancy",
-        validators=[NumberRange(
+        validators=[
+            NumberRange(
                 min=1,
                 message="Occupancy cannot be a negative value",
-            )],
-        default=0
+            )
+        ],
+        default=0,
     )
 
-    totalBedrooms =  IntegerField(
+    totalBedrooms = IntegerField(
         "Total Bedrooms",
-        validators=[NumberRange(
+        validators=[
+            NumberRange(
                 min=0,
                 message="Bedrooms cannot be a negative value",
-            )],
-        default=0
+            )
+        ],
+        default=0,
     )
 
     totalBathrooms = IntegerField(
         "Total Bathrooms",
-        validators=[NumberRange(
+        validators=[
+            NumberRange(
                 min=0,
                 message="Bathrooms cannot be a negative value",
-            )],
-        default=0
-    ) 
+            )
+        ],
+        default=0,
+    )
 
     description = TextAreaField(
         "Description",
@@ -96,20 +102,17 @@ class SpotListingForm(FlaskForm):
 
     hasWifi = BooleanField(
         "Has Wifi",
-        false_values=(False, 'false', 0, '0', 'False'),
-        
+        false_values=(False, "false", 0, "0", "False"),
     )
 
     hasTv = BooleanField(
         "Has TV",
-        false_values=(False, 'false', 0, '0', 'False'),
-        
+        false_values=(False, "false", 0, "0", "False"),
     )
 
     hasAc = BooleanField(
         "Has AC",
-        false_values=(False, 'false', 0, '0', 'False'),
-        
+        false_values=(False, "false", 0, "0", "False"),
     )
 
     price = DecimalField(
@@ -128,14 +131,9 @@ class SpotListingForm(FlaskForm):
         "Type",
         validators=[
             DataRequired(),
-        ]
+        ],
     )
 
     userId = IntegerField(
         "User Id",
     )
-
-
-
-
-

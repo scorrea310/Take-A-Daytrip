@@ -3,10 +3,8 @@ from wtforms import StringField
 from wtforms.validators import DataRequired, Email, ValidationError, Length
 
 
-
 class UpdateUserName(FlaskForm):
-
-     username = StringField(
+    username = StringField(
         "Username",
         validators=[
             DataRequired(),
@@ -15,5 +13,5 @@ class UpdateUserName(FlaskForm):
                 max=40,
                 message="Username must be between %(min)s and %(max)s characters long.",
             ),
-        ]
+        ],
     )
